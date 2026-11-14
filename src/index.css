@@ -1,0 +1,35 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #000;
+  color: #e6e6e6;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { margin: 0; height: 100%; }
+
+.landing {
+  min-height: 100%;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+.landing h1 { font-size: clamp(2.5rem, 8vw, 5rem); letter-spacing: 0.08em; margin: 0; }
+.landing .choices { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.landing button {
+  background: transparent;
+  color: inherit;
+  border: 1px solid;
+  padding: 1.25rem 2.5rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: grid;
+  gap: 0.25rem;
+}
+.landing small { opacity: 0.6; font-size: 0.8rem; }
+
+.experience { position: fixed; inset: 0; }
+.overlay { position: absolute; top: 1rem; left: 1rem; max-width: 22rem; }
+.overlay button { background: #111; color: inherit; border: 1px solid #444; padding: 0.4rem 0.8rem; cursor: pointer; }

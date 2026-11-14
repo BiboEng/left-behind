@@ -1,0 +1,34 @@
+{
+  "id": "placeholder-mars-2",
+  "world": "mars",
+  "tier": "hero",
+  "name": "Placeholder Mars relic 2",
+  "mission": "TBD",
+  "agency": "TBD",
+  "arrived": "1976-07-20",
+  "status": "retired",
+  "location": {
+    "name": "Placeholder site (coordinates are only for testing the globe)",
+    "lat": 22.27,
+    "lon": -48.0
+  },
+  "headline": "Placeholder so the engine has something to scroll through",
+  "story": [
+    "Delete me once real relics exist. Add real ones with /add-relic.",
+    "Second placeholder paragraph."
+  ],
+  "facts": [
+    {
+      "label": "Status",
+      "value": "placeholder"
+    }
+  ],
+  "images": [],
+  "sources": [
+    {
+      "title": "Replace with a real source",
+      "url": "https://science.nasa.gov/"
+    }
+  ],
+  "verified": false
+}

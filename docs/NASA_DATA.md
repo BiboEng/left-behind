@@ -1,0 +1,25 @@
+# NASA open data we use
+
+The hackathon requires NASA open data, so we use it everywhere **and show it**: every card
+credits its photo, hero cards credit their 3D model, and the Credits screen lists every dataset below.
+
+| What | Dataset | Used for | Who | Notes |
+|---|---|---|---|---|
+| Moon globe | **NASA SVS CGI Moon Kit** (LRO LROC color map + LOLA displacement) · https://svs.gsfc.nasa.gov/4720 | Moon texture | Ibrahim | Ready-made 2k JPG: `https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_2k.jpg`. For 4k, download the 4k TIFF and run `npm run resize`. The map is **centered on 0° longitude** (`lonOffsetDeg: 0`). Credit: NASA's Scientific Visualization Studio |
+| Mars globe | **Viking global color mosaic** (NASA Viking Orbiter, processed by USGS Astrogeology) · https://astrogeology.usgs.gov/search/map/mars_viking_global_color_mosaic_925m (public domain) | Mars texture | Rayan | The originals are huge TIFFs. Find a smaller copy of a Viking MDIM color mosaic (simple cylindrical, -180°E to 180°E), then `npm run resize -- <file> public/mars/mars-color.jpg 4096`. Calibrate with Olympus Mons (see `docs/ENGINE.md`). Credit: NASA/JPL/USGS |
+| Relic photos | **NASA Image and Video Library API**: `https://images-api.nasa.gov/search?q=<query>&media_type=image` (no API key needed) | 1–3 photos per relic | both | Use the `~medium.jpg` version: `https://images-assets.nasa.gov/image/<nasa_id>/<nasa_id>~medium.jpg`. Page: `https://images.nasa.gov/details/<nasa_id>` |
+| Landing / crash sites from orbit | **LROC** (NASA Lunar Reconnaissance Orbiter Camera) · https://www.lroc.asu.edu | "Seen from orbit" Moon photos | Ibrahim | Great for Apollo sites, Lunokhod, Vikram debris. Credit: NASA/GSFC/Arizona State University |
+| Mars hardware from orbit | **HiRISE** (NASA Mars Reconnaissance Orbiter) · https://www.uahirise.org | "Seen from orbit" Mars photos | Rayan | Beagle 2, Phoenix, Schiaparelli, InSight, Spirit. Credit: NASA/JPL-Caltech/University of Arizona |
+| 3D models | **NASA 3D Resources** · https://science.nasa.gov/3d-resources/ (GLB) | Hero relic models | both | Optimize with `npx @gltf-transform/cli optimize in.glb out.glb --compress draco --texture-compress webp` |
+| Mission facts | **NSSDCA Master Catalog** · https://nssdc.gsfc.nasa.gov/nmc/ | Dates, masses, coordinates | both | The first place to check facts |
+| More photos | **NASA Photojournal** · https://photojournal.jpl.nasa.gov | PIA images | both | Credits on each page |
+
+Non-NASA missions (Luna, Lunokhod, Mars 3, Beagle 2, Vikram, SLIM, Zhurong, Resilience): use the
+agency or company source, plus NASA orbital images of their sites where they exist. That way
+even the Soviet and Chinese relics are shown through NASA data.
+
+Rules: NASA images and models are generally free to use, but always credit them, and don't use
+the NASA logo ("meatball") or insignia as our branding.
+
+## Avoid
+- The **Mars Rover Photos API** (api.nasa.gov) has been archived. Don't build on it.

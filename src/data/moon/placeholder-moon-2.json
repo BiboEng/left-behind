@@ -1,0 +1,34 @@
+{
+  "id": "placeholder-moon-2",
+  "world": "moon",
+  "tier": "hero",
+  "name": "Placeholder Moon relic 2",
+  "mission": "TBD",
+  "agency": "TBD",
+  "arrived": "1969-07-20",
+  "status": "retired",
+  "location": {
+    "name": "Placeholder site (coordinates are only for testing the globe)",
+    "lat": 0.67,
+    "lon": 23.47
+  },
+  "headline": "Placeholder so the engine has something to scroll through",
+  "story": [
+    "Delete me once real relics exist. Add real ones with /add-relic.",
+    "Second placeholder paragraph."
+  ],
+  "facts": [
+    {
+      "label": "Status",
+      "value": "placeholder"
+    }
+  ],
+  "images": [],
+  "sources": [
+    {
+      "title": "Replace with a real source",
+      "url": "https://science.nasa.gov/"
+    }
+  ],
+  "verified": false
+}
