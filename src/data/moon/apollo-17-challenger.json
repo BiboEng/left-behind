@@ -1,0 +1,84 @@
+{
+  "id": "apollo-17-challenger",
+  "world": "moon",
+  "tier": "hero",
+  "name": "Apollo 17 Lunar Module Challenger (descent stage) and Lunar Roving Vehicle",
+  "mission": "Apollo 17",
+  "agency": "NASA",
+  "arrived": "1972-12-11",
+  "lastContact": "1972-12-14",
+  "status": "abandoned",
+  "location": {
+    "name": "Taurus–Littrow valley, on the southeastern rim of Mare Serenitatis",
+    "lat": 20.1911,
+    "lon": 30.7723
+  },
+  "headline": "The last time people walked on the Moon, and the lander and rover they left behind",
+  "story": [
+    "At 19:54 UTC on 11 December 1972, the lunar module Challenger set down in Taurus–Littrow, a valley ringed by mountains on the southeastern rim of Mare Serenitatis. Eugene Cernan and Harrison Schmitt, the first geologist to reach the Moon, would stay 75 hours. Ronald Evans circled overhead in the command module America.",
+    "Over three moonwalks totalling 22 hours, they drove their Lunar Roving Vehicle nearly 36 kilometres and gathered 110 kilograms of rock and soil. At the end, Cernan parked the rover east of the lander, facing back toward it, so that its television camera, steered from Houston, could show the departure.",
+    "On 14 December, Challenger's upper half lifted away, using the descent stage as its launch pad. Cernan was the last person to leave footprints on the Moon. The descent stage still carries a stainless-steel plaque on its ladder, and NASA's Lunar Reconnaissance Orbiter has photographed it, the parked rover and the tracks between them."
+  ],
+  "facts": [
+    { "label": "Landed", "value": "11 December 1972, 19:54:57 UTC" },
+    { "label": "Crew on the surface", "value": "Eugene A. Cernan, Harrison H. Schmitt" },
+    { "label": "Time on the Moon", "value": "75 hours, including 22 h 4 min of moonwalks" },
+    { "label": "Distance driven by the rover", "value": "35.9 km" },
+    { "label": "Samples returned", "value": "110.4 kg of rock and soil" }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/as17-134-20382/as17-134-20382~medium.jpg",
+      "caption": "13 December 1972: Harrison Schmitt stands by the flag at Taurus–Littrow, with Challenger on the left and the Lunar Roving Vehicle behind him.",
+      "credit": "NASA/JSC (photo by Eugene A. Cernan)",
+      "sourceUrl": "https://images.nasa.gov/details/as17-134-20382"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/S72-55421/S72-55421~medium.jpg",
+      "caption": "14 December 1972: Challenger's ascent stage rises off the descent stage, seen on Earth through the rover's television camera, which Mission Control steered remotely.",
+      "credit": "NASA/JSC",
+      "sourceUrl": "https://images.nasa.gov/details/S72-55421"
+    },
+    {
+      "url": "https://lroc.im-ldi.com/news/uploads/ap17_1st50km_4release.png",
+      "caption": "Seen from lunar orbit in 2009: the Challenger descent stage, the flag, the science station and the rover's final parking spot, joined by tracks and footpaths.",
+      "credit": "NASA/GSFC/Arizona State University",
+      "sourceUrl": "https://lroc.im-ldi.com/images/72"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NSSDCA: Apollo 17 Lunar Module / ALSEP",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-096C"
+    },
+    {
+      "title": "NASA: Apollo 17 mission details",
+      "url": "https://www.nasa.gov/missions/apollo/apollo-17-mission-details/"
+    },
+    {
+      "title": "NSSDCA: Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+    },
+    {
+      "title": "NASA: 50 Years Ago, Apollo 17 Heads Home to Earth",
+      "url": "https://www.nasa.gov/history/50-years-ago-apollo-17-heads-home-to-earth/"
+    },
+    {
+      "title": "LROC: Exploring the Apollo 17 Site",
+      "url": "https://lroc.im-ldi.com/images/72"
+    },
+    {
+      "title": "LROC: Apollo 17 Remains Unchallenged After Fifty Years",
+      "url": "https://lroc.im-ldi.com/images/1278"
+    },
+    {
+      "title": "NASA: Apollo 17 mission page",
+      "url": "https://www.nasa.gov/mission/apollo-17/"
+    },
+    {
+      "title": "NASA Image Library: S72-55169, the plaque left on Challenger's ladder",
+      "url": "https://images.nasa.gov/details/S72-55169"
+    }
+  ],
+  "verified": false
+}

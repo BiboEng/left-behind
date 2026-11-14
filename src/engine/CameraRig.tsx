@@ -116,9 +116,16 @@ export function CameraRig({ world, children }: { world: World; children: ReactNo
       target.copy(calibrationQuat);
       dist = DIST_CALIBRATE;
     } else if (n > 0) {
-      // scroll.offset goes 0 → 1 from top to bottom. f is a "fractional relic index":
-      // f = 2.4 means "40% of the way from relic 2 to relic 3".
-      const f = n > 1 ? scroll.offset * (n - 1) : 0;
+      // offset goes 0 → 1 from top to bottom of drei's invisible scroll <div>. We read the div's
+      // scrollTop ourselves instead of drei's scroll.offset: with @react-three/fiber 9.8, the Canvas
+      // takes its event hookup back from drei on re-render, so drei stops hearing scroll events and
+      // scroll.offset stays at 0 (scrolling did nothing). The damping below still smooths it.
+      const el = scroll.el;
+      const max = el.scrollHeight - el.clientHeight;
+      const offset = max > 0 ? Math.min(Math.max(el.scrollTop / max, 0), 1) : 0;
+
+      // f is a "fractional relic index": f = 2.4 means "40% of the way from relic 2 to relic 3".
+      const f = n > 1 ? offset * (n - 1) : 0;
       const i = Math.min(Math.floor(f), Math.max(n - 2, 0));
       const t = n > 1 ? dwell(f - i) : 0;
 
@@ -130,7 +137,7 @@ export function CameraRig({ world, children }: { world: World; children: ReactNo
       // Tell the UI where we are. The store ignores values that didn't change, so this is cheap.
       const store = useTimeline.getState();
       store.setActiveIndex(Math.round(f));
-      store.setProgress(Math.round(scroll.offset * 1000) / 1000);
+      store.setProgress(Math.round(offset * 1000) / 1000);
     }
 
     // Pull back on tall phone screens so the planet isn't cropped (see framing.ts).

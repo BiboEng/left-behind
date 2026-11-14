@@ -1,0 +1,66 @@
+{
+  "id": "apollo-11-eagle",
+  "world": "moon",
+  "tier": "hero",
+  "name": "Apollo 11 Lunar Module Eagle (descent stage)",
+  "mission": "Apollo 11",
+  "agency": "NASA",
+  "arrived": "1969-07-20",
+  "lastContact": "1969-07-21",
+  "status": "abandoned",
+  "location": {
+    "name": "Tranquility Base, Mare Tranquillitatis (Sea of Tranquility)",
+    "lat": 0.67416,
+    "lon": 23.47314
+  },
+  "headline": "The first crewed Moon landing left its lower half behind at Tranquility Base",
+  "story": [
+    "At 20:17 UTC on 20 July 1969, the Lunar Module Eagle settled onto the Sea of Tranquility with Neil Armstrong and Edwin \"Buzz\" Aldrin aboard. Hours later, Armstrong climbed down its ladder, and for the first time people walked on another world.",
+    "The next day, the descent stage became a launch pad. Eagle's upper half fired its engine and carried the crew back to orbit. The lower half, with its legs and gold foil, stayed where it had landed. Aldrin later said he looked up long enough to see the flag fall over in the blast of the ascent engine.",
+    "The descent stage is still there. A plaque on a strut behind its ladder reads: \"We came in peace for all mankind.\" Nearby lie a seismometer, a packet of memorial items and a laser reflector that observatories on Earth have regularly aimed at. From orbit, NASA's Lunar Reconnaissance Orbiter sees the site as a bright speck among the craters."
+  ],
+  "facts": [
+    { "label": "Touchdown", "value": "20 July 1969, 20:17:40 UTC" },
+    { "label": "Left behind", "value": "21 July 1969, when the ascent stage lifted off at 17:54:01 UTC" },
+    { "label": "Lunar Module mass", "value": "15,103 kg at launch (both stages, with propellant)" },
+    { "label": "Laser reflector", "value": "100 fused-silica corner cubes in a 46 cm panel" },
+    { "label": "Plaque", "value": "\"Here men from the planet Earth first set foot upon the Moon, July 1969 A.D. We came in peace for all mankind.\"" }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/as11-40-5927/as11-40-5927~medium.jpg",
+      "caption": "Eagle on the Sea of Tranquility, photographed by Neil Armstrong as Buzz Aldrin unloads experiments from the descent stage's equipment bay.",
+      "credit": "NASA",
+      "sourceUrl": "https://images.nasa.gov/details/as11-40-5927"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA12925/PIA12925~medium.jpg",
+      "caption": "Tranquility Base at high noon, seen by NASA's Lunar Reconnaissance Orbiter in 2009. The descent stage is the bright spot at left; West Crater lies to the right.",
+      "credit": "NASA/GSFC/Arizona State University",
+      "sourceUrl": "https://images.nasa.gov/details/PIA12925"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NSSDCA Master Catalog: Apollo 11 Lunar Module / EASEP (1969-059C)",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C"
+    },
+    {
+      "title": "NSSDCA: 30th anniversary of Apollo 11",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_11_30th.html"
+    },
+    {
+      "title": "NASA ILRS: Apollo 11 lunar retroreflector",
+      "url": "https://ilrs.gsfc.nasa.gov/missions/satellite_missions/current_missions/ap11_reflector.html"
+    },
+    {
+      "title": "NASA: Apollo 11 mission",
+      "url": "https://www.nasa.gov/mission/apollo-11/"
+    },
+    {
+      "title": "NASA History (ALSJ): Six Flags on the Moon: What is Their Current Condition?",
+      "url": "https://www.nasa.gov/wp-content/uploads/static/history/alsj/ApolloFlags-Condition.html"
+    }
+  ],
+  "verified": false
+}

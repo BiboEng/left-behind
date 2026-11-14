@@ -1,0 +1,67 @@
+{
+  "id": "surveyor-3",
+  "world": "moon",
+  "tier": "standard",
+  "name": "Surveyor 3 lander",
+  "mission": "Surveyor 3",
+  "agency": "NASA",
+  "arrived": "1967-04-20",
+  "lastContact": "1967-05-04",
+  "status": "abandoned",
+  "location": {
+    "name": "Oceanus Procellarum (Ocean of Storms), beside the Apollo 12 site",
+    "lat": -3.0162,
+    "lon": -23.418
+  },
+  "headline": "A robot lander that waited 2½ years for visitors, who took its camera home",
+  "story": [
+    "In the first minutes of 20 April 1967, Surveyor 3 reached the Ocean of Storms and would not stay down. Reflective rocks confused its radar, its engines kept firing, and the lander bounced twice before settling on a 14-degree slope inside a crater about 200 meters across.",
+    "For two weeks it photographed its surroundings, returning 6,326 pictures, and dug trenches up to 18 centimeters deep with a small scoop on an extending arm. Then the lunar night fell. Its last data arrived on 4 May 1967, and it never woke again.",
+    "In November 1969, Apollo 12 landed less than 200 meters away. On their second moonwalk, Pete Conrad and Alan Bean walked to the crater and removed about 10 kilograms of parts, including the television camera and the scoop, so scientists could study how the Moon had changed them. The rest of Surveyor 3 still stands on the crater slope."
+  ],
+  "facts": [
+    { "label": "Final touchdown", "value": "20 April 1967, 00:04 UTC" },
+    { "label": "Mass at landing", "value": "296 kg" },
+    { "label": "Pictures returned", "value": "6,326" },
+    { "label": "Brought home by Apollo 12", "value": "About 10 kg, including the TV camera and scoop" }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/AS12-48-7133/AS12-48-7133~medium.jpg",
+      "caption": "November 1969: Pete Conrad examines Surveyor 3's television camera before detaching it. Apollo 12's lunar module stands in the background.",
+      "credit": "NASA (Apollo 12 photo AS12-48-7133)",
+      "sourceUrl": "https://images.nasa.gov/details/AS12-48-7133"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/as12-48-7121/as12-48-7121~medium.jpg",
+      "caption": "Surveyor 3 on the side of its small crater, photographed by the Apollo 12 crew two and a half years after it landed.",
+      "credit": "NASA (Apollo 12 photo AS12-48-7121)",
+      "sourceUrl": "https://images.nasa.gov/details/as12-48-7121"
+    },
+    {
+      "url": "https://lroc.im-ldi.com/ckeditor_assets/pictures/944/content_M175428601_LRmos.str01.1100SQCROP.fix.51.png",
+      "caption": "Seen from lunar orbit: Surveyor 3, the Apollo 12 descent stage, the ALSEP experiments and the astronauts' tracks. The view is 275 meters wide.",
+      "credit": "NASA/GSFC/Arizona State University",
+      "sourceUrl": "https://lroc.im-ldi.com/images/1135"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NSSDCA Master Catalog: Surveyor 3",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1967-035A"
+    },
+    {
+      "title": "NASA Science: Surveyor 3",
+      "url": "https://science.nasa.gov/mission/surveyor-3/"
+    },
+    {
+      "title": "LROC: Apollo 12 Fifty-first Anniversary",
+      "url": "https://lroc.im-ldi.com/images/1135"
+    },
+    {
+      "title": "LROC: Surveyor Crater, Before and After",
+      "url": "https://lroc.im-ldi.com/images/609"
+    }
+  ],
+  "verified": false
+}

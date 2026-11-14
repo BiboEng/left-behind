@@ -1,0 +1,72 @@
+{
+  "id": "apollo-15-falcon",
+  "world": "moon",
+  "tier": "hero",
+  "name": "Apollo 15 Lunar Module Falcon (descent stage) and Lunar Roving Vehicle",
+  "mission": "Apollo 15",
+  "agency": "NASA",
+  "arrived": "1971-07-30",
+  "lastContact": "1971-08-02",
+  "status": "abandoned",
+  "location": {
+    "name": "Hadley–Apennine, at the foot of the Apennine Mountains",
+    "lat": 26.13239,
+    "lon": 3.6333
+  },
+  "headline": "The first car people drove on the Moon, still parked where Apollo 15 left it",
+  "story": [
+    "At 22:16 UTC on 30 July 1971, the lunar module Falcon set down at Hadley–Apennine, at the foot of the Moon's Apennine Mountains and near the winding channel of Hadley Rille. Stowed folded against its descent stage rode something no crew had carried before: a battery-powered car, the Lunar Roving Vehicle.",
+    "Across three moonwalks, David Scott and James Irwin drove it nearly 28 kilometres, ranging up to five kilometres from the lander and gathering 77 kilograms of rock and soil. At the site they also left a small figure of a fallen astronaut and a plaque bearing the names of 14 American astronauts and Soviet cosmonauts who had died.",
+    "On 2 August, the upper half of Falcon lifted off, using the descent stage as its launch pad. The rover stayed behind, parked about 160 metres to the east with its camera facing the departure. Both are still there. NASA's Lunar Reconnaissance Orbiter has photographed the rover in that final spot, its tracks still visible in the dust."
+  ],
+  "facts": [
+    { "label": "Landed", "value": "30 July 1971, 22:16 UTC" },
+    { "label": "Crew on the surface", "value": "David R. Scott, James B. Irwin" },
+    { "label": "Time on the Moon", "value": "66 hours 55 minutes" },
+    { "label": "Distance driven by the rover", "value": "27.8 km" },
+    { "label": "Samples returned", "value": "77.3 kg of rock and soil" }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/as15-86-11603/as15-86-11603~medium.jpg",
+      "caption": "31 July 1971: James Irwin works at the Lunar Roving Vehicle on the first moonwalk, with Mount Hadley behind him. The shadow of Falcon falls across the foreground.",
+      "credit": "NASA/JSC (photo by David R. Scott)",
+      "sourceUrl": "https://images.nasa.gov/details/as15-86-11603"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/as15-88-11894/as15-88-11894~medium.jpg",
+      "caption": "The memorial left at Hadley–Apennine: a plaque with the names of 14 astronauts and cosmonauts who had died, and a small figure of a fallen astronaut.",
+      "credit": "NASA/JSC",
+      "sourceUrl": "https://images.nasa.gov/details/as15-88-11894"
+    },
+    {
+      "url": "https://lroc.im-ldi.com/ckeditor_assets/pictures/1069/content_RoverVIPSite.png",
+      "caption": "Seen from lunar orbit decades later: the rover at its final parking spot, with its own tracks and the astronauts' footpath back to Falcon. LROC NAC image M175252641.",
+      "credit": "NASA/GSFC/Arizona State University",
+      "sourceUrl": "https://lroc.im-ldi.com/images/1198"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NSSDCA: Apollo 15 Lunar Module / ALSEP",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C"
+    },
+    {
+      "title": "NSSDCA: Apollo Lunar Roving Vehicle",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
+    },
+    {
+      "title": "LROC: Apollo 15, A Mission of Many Firsts",
+      "url": "https://lroc.im-ldi.com/images/1198"
+    },
+    {
+      "title": "NASA Science: Memorial to Fallen Astronauts on the Moon",
+      "url": "https://science.nasa.gov/resource/memorial-to-fallen-astronauts-on-the-moon"
+    },
+    {
+      "title": "NSSDCA: Apollo 15 mission overview",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo15info.html"
+    }
+  ],
+  "verified": false
+}
