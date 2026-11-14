@@ -7,10 +7,12 @@ export const moon: WorldConfig = {
   tagline: "TODO (Ibrahim): one line about what humanity left on the Moon",
   intro: "TODO (Ibrahim): documentary intro, 1–2 sentences",
   outro: "TODO (Ibrahim): 'this is today', plus what's coming next",
-  texture: null, // TODO: NASA SVS CGI Moon Kit color map → public/moon/ (see docs/NASA_DATA.md)
+  // NASA SVS CGI Moon Kit, LRO LROC color map (2048 × 1024). Centered on 0° longitude, east to the right.
+  // Calibrated: Apollo 11 lands on the SW edge of Mare Tranquillitatis with lonOffsetDeg 0 (open /?calibrate).
+  texture: "/moon/moon-color-2k.jpg",
   bumpMap: null,
-  textureCredit: "TODO",
-  textureSourceUrl: "TODO",
+  textureCredit: "NASA's Scientific Visualization Studio, CGI Moon Kit (LRO LROC color map)",
+  textureSourceUrl: "https://svs.gsfc.nasa.gov/4720",
   baseColor: "#8a8a8a",
   accent: "#c9d1d9",
   lonOffsetDeg: 0,

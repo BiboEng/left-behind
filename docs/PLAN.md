@@ -21,7 +21,7 @@ Tick boxes as you go. `/start-phase <ibrahim|rayan>` reads this file to tell you
 ---
 
 ## P0 · Setup (together, ~45 min)
-- [ ] Ibrahim: unzip, `npm install`, `npm run dev` works, pushed to GitHub, Rayan added
+- [x] Ibrahim: unzip, `npm install`, `npm run dev` works, pushed to GitHub, Rayan added
 - [ ] Rayan: cloned, `npm install`, `npm run dev` works
 - [ ] Both: `npm test` passes, `frontend-design` plugin installed, `/` shows the skills
 - [ ] Both: read `CLAUDE.md` and this plan
@@ -29,11 +29,11 @@ Tick boxes as you go. `/start-phase <ibrahim|rayan>` reads this file to tell you
 ## P1 · Day 1, first half
 
 ### Ibrahim · Build the engine (~4h) · agents: `world-builder`, `ui-engineer`
-- [ ] Moon texture from the NASA CGI Moon Kit in `public/moon/`, set in `src/worlds/moon.ts`
-- [ ] `Experience`, `Globe`, `CameraRig`, `SiteMarkers` per `docs/ENGINE.md`
-- [ ] Calibration check passes (Apollo 11 marker on Mare Tranquillitatis)
-- [ ] `StoryCard` + `TimelineRail` + Back button, working on the placeholder data for **both** worlds
-- [ ] `/sync` so Rayan can pull it
+- [x] Moon texture from the NASA CGI Moon Kit in `public/moon/`, set in `src/worlds/moon.ts`
+- [x] `Experience`, `Globe`, `CameraRig`, `SiteMarkers` per `docs/ENGINE.md`
+- [x] Calibration check passes (Apollo 11 marker on Mare Tranquillitatis)
+- [x] `StoryCard` + `TimelineRail` + Back button, working on the placeholder data for **both** worlds
+- [x] `/sync` so Rayan can pull it
 
 **Done when:** you can pick Moon or Mars, scroll, and the globe glides between the placeholder sites with a card for each.
 
