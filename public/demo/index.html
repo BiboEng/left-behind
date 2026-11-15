@@ -12,12 +12,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0b0c0e; --panel: #111316; --ink: #ece8de; --muted: #a7a59f; --dim: #6f6e6a;
     --gold: #e2b97f; --sage: #a8bfb4; --line: #262a2f;
-    --sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
     --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
   }
   * { box-sizing: border-box; margin: 0; }
@@ -31,8 +31,9 @@
   }
   .eyebrow { font: 500 clamp(11px, 1vw, 14px)/1.4 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
   .num { position: absolute; right: clamp(20px, 6vw, 96px); bottom: clamp(18px, 3vw, 40px); font: 400 12px var(--mono); color: var(--dim); letter-spacing: .12em; }
-  h1 { font-weight: 500; font-size: clamp(44px, 7.4vw, 120px); line-height: .95; letter-spacing: -.035em; }
-  h2 { font-weight: 500; font-size: clamp(30px, 4.2vw, 64px); line-height: 1.02; letter-spacing: -.03em; }
+  h1, h2 { font-family: "Instrument Serif", Georgia, serif; }
+  h1 { font-weight: 400; font-size: clamp(44px, 7.4vw, 120px); line-height: .95; letter-spacing: -.035em; }
+  h2 { font-weight: 400; font-size: clamp(30px, 4.2vw, 64px); line-height: 1.02; letter-spacing: -.03em; }
   h2 em, h1 em { font-style: normal; color: var(--muted); }
   p.lead { font-size: clamp(16px, 1.55vw, 23px); line-height: 1.5; color: var(--muted); max-width: 46ch; }
   .small { font-size: clamp(13px, 1.05vw, 16px); line-height: 1.5; color: var(--muted); }
@@ -253,7 +254,7 @@
     <p class="eyebrow" style="color:var(--sage)">What comes next</p>
     <div class="future">
       <p><b>A classroom kit.</b> A 45-minute teacher guide and worksheet is already live at /classroom/, fitted to Ontario Grade 6 and Grade 9 science. Next step: try it with students in Guelph.</p>
-      <p><b>More machines.</b> Apollo 12, 14 and 16, GRAIL and LADEE, using the same source-checked format.</p>
+      <p><b>More machines.</b> Apollo 12, 14 and 16 and more Mars landing hardware, in the same source-checked format.</p>
       <p><b>Visitor-made exhibitions.</b> Students curate and share their own evidence stories, with the limits kept attached.</p>
     </div>
   </div>
