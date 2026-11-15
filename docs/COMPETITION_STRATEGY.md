@@ -63,7 +63,9 @@ direction, with reproducible event counts and four-sensor arrival picks. We have
 The evidence room requires no WebGL. Six images and the unchanged InSight source audio total less than
 750 kB; a separate 2.56 MB, 16,000 Hz playback WAV avoids native-browser failures with the source's
 unusual 1,200 Hz rate. The resampling is disclosed beside the player and in exports. Both copies
-are local. The whole application is not an offline/PWA product.
+are local. Visitors can explicitly save the full evidence room for offline use: all four chapters,
+audio, catalog and exhibition tools. The bounded pack excludes remote NASA websites and atlas
+media. Downloaded editions wait for a user-triggered reload so a presentation is not interrupted.
 
 The Apollo catalog's 13,000 original sensor rows are grouped into 3,250 events. Its derived view
 loads only when the Apollo chapter is opened (about 128 kB gzip). The original 2.73 MB CSV remains

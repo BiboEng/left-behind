@@ -4,6 +4,7 @@ import { caseById, evidenceCases, signalMedia, type CaseId, type SignalChapter }
 import { openAtlas, openSignal } from "../../state/router";
 import { useSignal } from "../../state/signal";
 import { CreditsButton } from "../Credits";
+import OfflinePack from "../OfflinePack";
 import ArchiveFigure from "./ArchiveFigure";
 import Exhibition from "./Exhibition";
 import Investigation from "./Investigation";
@@ -48,6 +49,7 @@ export default function SignalRoom({ chapter }: { chapter: SignalChapter }) {
       <div className="signal-content">
         {chapter === "intro" ? <Introduction /> : chapter === "exhibit" ? <Exhibition /> : item ? <Investigation key={item.id} item={item} /> : null}
         <footer className="signal-footer">
+          <OfflinePack />
           <p>Real NASA records. Human questions.</p>
           <p>Photographs and audio are credited at the point of use. Interpretations are editorial; sources and limits stay attached.</p>
           <CreditsButton className="text-link" />

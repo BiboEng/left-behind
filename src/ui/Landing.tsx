@@ -9,6 +9,7 @@ import { worlds } from "../worlds";
 import { CreditsButton } from "./Credits";
 import { year } from "./format";
 import MissionIndex from "./MissionIndex";
+import OfflinePack from "./OfflinePack";
 import "./landing.css";
 
 const CHOICES: World[] = ["moon", "mars"];
@@ -61,6 +62,7 @@ export default function Landing() {
           })}
         </div>
       </section>
+      <OfflinePack />
       <footer className="landing-actions">
         <MissionIndex className="credits-link" />
         <button className="credits-link" aria-pressed={mode === "reading"}
