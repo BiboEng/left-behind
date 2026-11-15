@@ -17,7 +17,8 @@ done, add new ones as they come up.
 
 ## Still to do (any order)
 - [ ] Verify every relic: open its sources, then set `verified: true` (humans only). Checklist: `docs/VERIFY.md`
-- [ ] More Moon relics (NASA only): Apollo 12 Intrepid, Apollo 14 Antares, Apollo 16 Orion, Lunar Prospector, GRAIL Ebb and Flow, LADEE
+- [x] Added Lunar Prospector, GRAIL Ebb and Flow, LADEE (15 Nov, unverified)
+- [ ] More Moon relics (NASA only): Apollo 12 Intrepid, Apollo 14 Antares, Apollo 16 Orion
 - [x] Delete the `placeholder-*` files in `src/data/moon/` and `src/data/mars/`
 - [x] Hero models (8). Pathfinder moved to `standard`: NASA has no Pathfinder model
 - [ ] Taglines, intros and outros in `src/worlds/moon.ts` and `src/worlds/mars.ts`

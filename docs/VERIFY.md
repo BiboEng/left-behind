@@ -2,7 +2,7 @@
 
 Only a human may set `"verified": true`. For each relic, open the sources, tick each line that matches, fix anything that does not, then set the flag in the JSON file. Then run `npm run test:final`.
 
-**Fastest path:** open [EVIDENCE.md](EVIDENCE.md). For 145 of the 156 numbers in the facts, it quotes the exact sentence from the relic's own sources, so most boxes take a few seconds. The 8 marked ✗ sit on JPL pages that block scripted reads, so open those by hand.
+**Fastest path:** open [EVIDENCE.md](EVIDENCE.md). For 176 of the 187 numbers in the facts, it quotes the exact sentence from the relic's own sources, so most boxes take a few seconds. The 8 marked ✗ sit on JPL pages that block scripted reads, so open those by hand.
 
 AI pre-check (15 Nov, not a substitute for your review): key numbers were compared with sources for every
 relic. Spot-checked directly against NSSDCA/HiRISE: LCROSS masses (Centaur about 2,000 kg, LCROSS 534 kg
@@ -130,6 +130,23 @@ Sources:
 - [NASA: Apollo 17 mission page](https://www.nasa.gov/mission/apollo-17/)
 - [NASA Image Library: S72-55169, the plaque left on Challenger's ladder](https://images.nasa.gov/details/S72-55169)
 
+### Lunar Prospector
+
+File: `src/data/moon/lunar-prospector.json` · verified: **false**
+
+- [ ] Arrived 1999-07-31, last contact 1999-07-31, status `impacted`
+- [ ] Site: Shoemaker crater, near the lunar south pole (-87.7, 42) — shown as approximate
+- [ ] Launched: 7 January 1998, 02:28:44 UT, on an Athena 2
+- [ ] Discovery: Hydrogen at both poles, announced March 1998: evidence of water ice
+- [ ] Mass: 296.4 kg fully fueled
+- [ ] Impact: 31 July 1999, 09:52:02 UT, at about 1.69 km/s
+- [ ] Passenger: Part of the ashes of geologist Eugene Shoemaker
+- [ ] Story paragraphs match the sources (no invented numbers or quotes)
+
+Sources:
+- [NSSDCA Master Catalog: Lunar Prospector (1998-001A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1998-001A)
+- [NASA Science: Lunar Prospector](https://science.nasa.gov/mission/lunar-prospector/)
+
 ### LCROSS shepherding spacecraft and its Centaur upper stage
 
 File: `src/data/moon/lcross.json` · verified: **false**
@@ -148,6 +165,43 @@ Sources:
 - [NASA Science: LCROSS](https://science.nasa.gov/mission/lcross/)
 - [NASA press release, 13 November 2009: LCROSS Impact Data Indicates Water on Moon (NSSDCA copy)](https://nssdc.gsfc.nasa.gov/planetary/text/lcross_pr_20091113.txt)
 - [NASA Science: LCROSS impact site (LRO LOLA)](https://science.nasa.gov/image-detail/20110615lcross)
+
+### GRAIL twin probes Ebb and Flow
+
+File: `src/data/moon/grail-ebb-and-flow.json` · verified: **false**
+
+- [ ] Arrived 2012-12-17, last contact 2012-12-17, status `impacted`
+- [ ] Site: Unnamed mountain in the Moon's northern highlands (75.62, -26.63)
+- [ ] Launched: 10 September 2011, 13:08:52 UT, both on one Delta II
+- [ ] Formation: Tandem polar orbits about 50 km up, 175–225 km apart
+- [ ] Mass: 202.4 kg each, fully fueled
+- [ ] Result: The most detailed gravity map of any world at the time, revealing hidden mascons
+- [ ] Impact: 17 December 2012, at about 1.68 km/s; site 75.62° N, 26.63° W
+- [ ] Story paragraphs match the sources (no invented numbers or quotes)
+
+Sources:
+- [NSSDCA Master Catalog: GRAIL-A, Ebb (2011-046A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2011-046A)
+- [NSSDCA Master Catalog: GRAIL-B, Flow (2011-046B)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2011-046B)
+- [NASA Science: GRAIL (Ebb and Flow)](https://science.nasa.gov/mission/grail/)
+- [NASA Image Library: GRAIL Final Resting Spot (PIA16603)](https://images.nasa.gov/details/PIA16603)
+
+### LADEE lunar orbiter
+
+File: `src/data/moon/ladee.json` · verified: **false**
+
+- [ ] Arrived 2014-04-18, last contact 2014-04-18, status `impacted`
+- [ ] Site: Lunar far side, near the eastern rim of Sundman IV crater (NSSDCA) (11.8494, -93.2506)
+- [ ] Launched: 7 September 2013, 03:27 UTC (6 September, 11:27 p.m. EDT), on a Minotaur V
+- [ ] Science orbit: About 50 km up, for about 5 months
+- [ ] Mass: About 383 kg, including 135 kg of fuel
+- [ ] Also tested: Lunar Laser Communications Demonstration: data by laser
+- [ ] Impact: 18 April 2014, between 04:30 and 05:22 UT, at about 1,700 m/s
+- [ ] Story paragraphs match the sources (no invented numbers or quotes)
+
+Sources:
+- [NSSDCA Master Catalog: LADEE (2013-047A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-047A)
+- [NASA Science: LADEE](https://science.nasa.gov/mission/ladee/)
+- [NASA Image Library: LADEE Preparations (exosphere explainer)](https://images.nasa.gov/details/GSFC_20171208_Archive_e001395)
 
 ## Mars
 
@@ -408,3 +462,7 @@ Sources:
 ## After the Signal investigations
 
 These are in `src/data/signal.ts` (no verified flag). Check each observation, interpretation and limit against its listed sources, including Spirit's Canadian connection note (CSA APXS page).
+
+## Optional addition
+
+NASA named the GRAIL impact site after Sally K. Ride in December 2012. It was left out because no readable NASA source was confirmed today. Add it to the GRAIL story only with a NASA source link.

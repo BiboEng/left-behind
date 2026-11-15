@@ -7,7 +7,7 @@ challenge; this award is a positioning target, not a separately selected challen
 
 The central idea is **They went silent. Their evidence didn't.** Visitors follow a discovery from
 hardware, through a real NASA record, to an interpretation and its limits, then carry it into
-an exhibition of their own. The existing 19-story atlas supplies context and scale.
+an exhibition of their own. The existing 22-story atlas supplies context and scale.
 
 NASA's [2026 judging guide](https://www.spaceappschallenge.org/resources/judging-awards-guide/)
 assesses Impact, Creativity, Validity, Relevance and Presentation. Local awards and official Global

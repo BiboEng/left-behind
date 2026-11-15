@@ -18,7 +18,7 @@ unfinished photographs, follow the discovery exposed by Spirit's damaged wheel, 
 recorded ground vibrations, and revisit an Apollo 17 catalog to investigate vibrations associated
 with an abandoned lander. Each investigation separates observation, interpretation and scientific
 limits. Visitors then curate a source-linked exhibition they can share, print or bring into a
-classroom, including without an internet connection after saving the evidence room. A 19-story globe atlas connects these surviving records to the machines and places that
+classroom, including without an internet connection after saving the evidence room. A 22-story globe atlas connects these surviving records to the machines and places that
 produced them.
 
 ## Final project link
@@ -61,7 +61,7 @@ Visitors can inspect either channel and seek through the clip. NASA's 60× accel
 of seismic and other vibrations, and the absence of calibrated ground-motion units are stated beside
 the display. No new quake detection or interior inversion is claimed.
 
-Each investigation links to the hardware in a NASA-textured Moon/Mars atlas with 19 selected relic
+Each investigation links to the hardware in a NASA-textured Moon/Mars atlas with 22 selected relic
 stories, mission facts, imagery and optional 3D reference models. Search and a renderer-independent
 reading mode support visitors who prefer text or cannot use WebGL.
 

@@ -2,7 +2,7 @@
 
 Generated automatically on 15 Nov 2026. For every number in a relic's facts, the script searched that relic's own source pages and quotes where it appears. **A match is a lead, not a verification**: read the quote, confirm it says the same thing, then tick the box in VERIFY.md. "Not found" usually means the page is rendered by JavaScript, uses different units, or the number is derived (check by hand).
 
-Numbers matched in sources: **145 of 156**.
+Numbers matched in sources: **176 of 187**.
 
 ## Ranger 7
 
@@ -97,6 +97,21 @@ Numbers matched in sources: **145 of 156**.
 - **Samples returned:** 110.4 kg of rock and soil
   - `110.4` ✓ [NASA: Apollo 17 mission details](https://www.nasa.gov/missions/apollo/apollo-17-mission-details/): "…Lunar surface-stay time was 75 hours, and lunar orbit time 17 hours. Astronauts gathered 110.4 kilograms, or 243 pounds, of material. Crew Eugene A. Cernan, Commander Harrison H. Schmi…"
 
+## Lunar Prospector
+
+- **Launched:** 7 January 1998, 02:28:44 UT, on an Athena 2
+  - `1998` ✓ [NSSDCA Master Catalog: Lunar Prospector (1998-001A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1998-001A): "…NSSDCA - Spacecraft - Details Sunday, 15 November 2026 Lunar Prospector NSSDCA/COSPAR ID: 1998-001A Description The Lunar Prospector was designed for a low polar orbit investigation of…"
+  - `02:28:44` ✓ [NSSDCA Master Catalog: Lunar Prospector (1998-001A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1998-001A): "…ions blackout periods are received. Mission Profile Following launch on 7 January 1998 at 2:28:44 UT (6 January 21:28:44 EST) aboard a three-stage Athena 2 rocket, the Lunar Prospector had…"
+- **Discovery:** Hydrogen at both poles, announced March 1998: evidence of water ice
+  - `1998` ✓ [NSSDCA Master Catalog: Lunar Prospector (1998-001A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1998-001A): "…NSSDCA - Spacecraft - Details Sunday, 15 November 2026 Lunar Prospector NSSDCA/COSPAR ID: 1998-001A Description The Lunar Prospector was designed for a low polar orbit investigation of…"
+- **Mass:** 296.4 kg fully fueled
+  - `296.4` ✓ [NSSDCA Master Catalog: Lunar Prospector (1998-001A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1998-001A): "…d of one of the 2.5 m booms holds the magnetometer. Total initial mass (fully fueled) was 296.4 kg. It is spin-stabilized (nominal spin rate 12 rpm) with its spin axis normal to the ecl…"
+- **Impact:** 31 July 1999, 09:52:02 UT, at about 1.69 km/s
+  - `31` ✓ [NSSDCA Master Catalog: Lunar Prospector (1998-001A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1998-001A): "…nding the 1 year primary mission and beginning the extended mission. The mission ended on 31 July 1999 at 9:52:02 UT (5:52:02 a.m. EDT) when Lunar Prospector was deliberately targete…"
+  - `1999` ✓ [NSSDCA Master Catalog: Lunar Prospector (1998-001A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1998-001A): "…e 1 year primary mission and beginning the extended mission. The mission ended on 31 July 1999 at 9:52:02 UT (5:52:02 a.m. EDT) when Lunar Prospector was deliberately targeted to impac…"
+  - `09:52:02` ✓ [NSSDCA Master Catalog: Lunar Prospector (1998-001A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1998-001A): "…primary mission and beginning the extended mission. The mission ended on 31 July 1999 at 9:52:02 UT (5:52:02 a.m. EDT) when Lunar Prospector was deliberately targeted to impact in a perma…"
+  - `1.69` ✓ [NSSDCA Master Catalog: Lunar Prospector (1998-001A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1998-001A): "…south pole, at approximately 87.7 S, 42.0 E. It was hoped that the impact, at a speed of 1.69 km/s, would liberate water vapor from the suspected ice deposits in the crater and that t…"
+
 ## LCROSS shepherding spacecraft and its Centaur upper stage
 
 - **Launched:** 18 June 2009, with the Lunar Reconnaissance Orbiter, on an Atlas V
@@ -114,6 +129,43 @@ Numbers matched in sources: **145 of 156**.
 - **Result:** Water confirmed in Cabeus, announced 13 November 2009
   - `13` ✓ [NSSDCA Master Catalog: LCROSS (2009-031B)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2009-031B): "…s Lunar Reconnaissance Orbiter (LRO) - NSSDC LCROSS Impact Data Indicates Water on Moon - 13 November 2009 Ames Press Release NASA Spacecraft Impacts Lunar Crater in Search for Water…"
   - `2009` ✓ [NSSDCA Master Catalog: LCROSS (2009-031B)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2009-031B): "…5 November 2026 Lunar Crater Observation and Sensing Satellite (LCROSS) NSSDCA/COSPAR ID: 2009-031B Description The Lunar Crater Observation and Sensing Satellite (LCROSS) is designed…"
+
+## GRAIL twin probes Ebb and Flow
+
+- **Launched:** 10 September 2011, 13:08:52 UT, both on one Delta II
+  - `10` ✓ [NSSDCA Master Catalog: GRAIL-A, Ebb (2011-046A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2011-046A): "…nd GRAIL-B) were launched from Cape Canaveral Air Force Station on a single Delta II 2920-10 on 10 September 2011 at 13:08:52 UT. They were launched into 3.5 month low energy trans-l…"
+  - `2011` ✓ [NSSDCA Master Catalog: GRAIL-A, Ebb (2011-046A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2011-046A): "…ay, 15 November 2026 Gravity Recovery And Interior Laboratory-A (GRAIL) NSSDCA/COSPAR ID: 2011-046A Description The Gravity Recovery And Interior Laboratory (GRAIL) mission is a dual s…"
+  - `13:08:52` ✓ [NSSDCA Master Catalog: GRAIL-A, Ebb (2011-046A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2011-046A): "…rom Cape Canaveral Air Force Station on a single Delta II 2920-10 on 10 September 2011 at 13:08:52 UT. They were launched into 3.5 month low energy trans-lunar cruises via the Sun-Earth La…"
+- **Formation:** Tandem polar orbits about 50 km up, 175–225 km apart
+  - `50` ✓ [NSSDCA Master Catalog: GRAIL-A, Ebb (2011-046A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2011-046A): "…eight-hour elliptical polar orbits, followed by four manuevers to lower them into tandem 50 km, 113 minute near-circular lunar polar orbits separated by 175-225 km. From these orbit…"
+  - `175` ✓ [NSSDCA Master Catalog: GRAIL-A, Ebb (2011-046A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2011-046A): "…to lower them into tandem 50 km, 113 minute near-circular lunar polar orbits separated by 175-225 km. From these orbits GRAIL entered a 90 day Science Phase to perform gravity mapping…"
+  - `225` ✓ [NSSDCA Master Catalog: GRAIL-A, Ebb (2011-046A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2011-046A): "…ower them into tandem 50 km, 113 minute near-circular lunar polar orbits separated by 175-225 km. From these orbits GRAIL entered a 90 day Science Phase to perform gravity mapping of…"
+- **Mass:** 202.4 kg each, fully fueled
+  - `202.4` ✓ [NSSDCA Master Catalog: GRAIL-A, Ebb (2011-046A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2011-046A): "…angular prism with a composite structure and a dry mass of 132.6 kg, fully fueled mass is 202.4 kg. Two solar panels extend from the upper platform which also holds a 22 N thruster for…"
+- **Impact:** 17 December 2012, at about 1.68 km/s; site 75.62° N, 26.63° W
+  - `17` ✓ [NSSDCA Master Catalog: GRAIL-A, Ebb (2011-046A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2011-046A): "…to lower them into tandem 50 km, 113 minute near-circular lunar polar orbits separated by 175-225 km. From these orbits GRAIL entered a 90 day Science Phase to perform gravity mappin…"
+  - `2012` ✓ [NSSDCA Master Catalog: GRAIL-A, Ebb (2011-046A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2011-046A): "…n maneuvers roughly 25 hours apart, GRAIL-A on 31 December 2011 and GRAIL-B on 01 January 2012. They went into eight-hour elliptical polar orbits, followed by four manuevers to lower t…"
+  - `1.68` ✓ [NASA Science: GRAIL (Ebb and Flow)](https://science.nasa.gov/mission/grail/): "…es north latitude and 26.63 degrees west longitude. They hit the surface at about 1 mile (1.68 kilometers) per second. Additional Resources National Space Science Data Center Master Ca…"
+  - `75.62` ✓ [NASA Science: GRAIL (Ebb and Flow)](https://science.nasa.gov/mission/grail/): "…tion of deliberate impact on the lunar surface Dec. 17, 2012. Both spacecraft impacted at 75.62 degrees north latitude and 26.63 degrees west longitude. They hit the surface at about 1…"
+  - `26.63` ✓ [NASA Science: GRAIL (Ebb and Flow)](https://science.nasa.gov/mission/grail/): "…lunar surface Dec. 17, 2012. Both spacecraft impacted at 75.62 degrees north latitude and 26.63 degrees west longitude. They hit the surface at about 1 mile (1.68 kilometers) per second…"
+
+## LADEE lunar orbiter
+
+- **Launched:** 7 September 2013, 03:27 UTC (6 September, 11:27 p.m. EDT), on a Minotaur V
+  - `2013` ✓ [NSSDCA Master Catalog: LADEE (2013-047A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-047A): "…15 November 2026 Lunar Atmosphere and Dust Environment Explorer (LADEE) NSSDCA/COSPAR ID: 2013-047A Description The Lunar Atmosphere and Dust Environment Explorer (LADEE) launched 07 S…"
+  - `03:27` ✓ [NSSDCA Master Catalog: LADEE (2013-047A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-047A): "…The Lunar Atmosphere and Dust Environment Explorer (LADEE) launched 07 September 2013 at 03:27 UT (06 September 11:27 EDT) on a Minotaur-V from Wallops Flight Facility. LADEE is design…"
+  - `11:27` ✓ [NSSDCA Master Catalog: LADEE (2013-047A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-047A): "…nd Dust Environment Explorer (LADEE) launched 07 September 2013 at 03:27 UT (06 September 11:27 EDT) on a Minotaur-V from Wallops Flight Facility. LADEE is designed to characterize the…"
+- **Science orbit:** About 50 km up, for about 5 months
+  - `50` ✓ [NSSDCA Master Catalog: LADEE (2013-047A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-047A): "…detect and constrain the abundances of species expected to be prevalent at and below the 50 km altitude, due to the solar wind and its interactions with the surface, release from re…"
+- **Mass:** About 383 kg, including 135 kg of fuel
+  - `383` ✓ [NSSDCA Master Catalog: LADEE (2013-047A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-047A): "…ameter cylinder with a height of 2.37 meters. Total mass of the orbiter was approximately 383 kg, which included 135 kg of fuel, with solar array panels covering the outside surface p…"
+  - `135` ✓ [NSSDCA Master Catalog: LADEE (2013-047A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-047A): "…height of 2.37 meters. Total mass of the orbiter was approximately 383 kg, which included 135 kg of fuel, with solar array panels covering the outside surface producing 295 Watts at 1…"
+- **Impact:** 18 April 2014, between 04:30 and 05:22 UT, at about 1,700 m/s
+  - `18` ✓ [NSSDCA Master Catalog: LADEE (2013-047A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-047A): "…ence orbit ended up lasting approximately 5 months. LADEE impacted the Moon as planned on 18 April 2014, hitting about 800 meters from the eastern rim of Sundman IV crater on the lun…"
+  - `2014` ✓ [NSSDCA Master Catalog: LADEE (2013-047A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-047A): "…t ended up lasting approximately 5 months. LADEE impacted the Moon as planned on 18 April 2014, hitting about 800 meters from the eastern rim of Sundman IV crater on the lunar farside…"
+  - `04:30` ✓ [NSSDCA Master Catalog: LADEE (2013-047A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-047A): "…of Sundman IV crater on the lunar farside at 1700 meters/sec. The impact occurred between 4:30 and 5:22 UT, the impact site was 11.8494 N, 266.7506 E at an altitude of about 2800 meters…"
+  - `05:22` ✓ [NSSDCA Master Catalog: LADEE (2013-047A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-047A): "…n IV crater on the lunar farside at 1700 meters/sec. The impact occurred between 4:30 and 5:22 UT, the impact site was 11.8494 N, 266.7506 E at an altitude of about 2800 meters. Impact…"
+  - `1,700` ✓ [NSSDCA Master Catalog: LADEE (2013-047A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-047A): "…itting about 800 meters from the eastern rim of Sundman IV crater on the lunar farside at 1700 meters/sec. The impact occurred between 4:30 and 5:22 UT, the impact site was 11.8494 N, 2…"
 
 ## Viking 1 Lander (Thomas A. Mutch Memorial Station)
 

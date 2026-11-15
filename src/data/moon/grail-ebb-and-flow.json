@@ -1,0 +1,83 @@
+{
+  "id": "grail-ebb-and-flow",
+  "world": "moon",
+  "tier": "standard",
+  "name": "GRAIL twin probes Ebb and Flow",
+  "mission": "GRAIL (Gravity Recovery and Interior Laboratory)",
+  "agency": "NASA",
+  "arrived": "2012-12-17",
+  "lastContact": "2012-12-17",
+  "status": "impacted",
+  "location": {
+    "name": "Unnamed mountain in the Moon's northern highlands",
+    "lat": 75.62,
+    "lon": -26.63
+  },
+  "headline": "Twin probes mapped the Moon's gravity, then flew into a mountain on purpose",
+  "story": [
+    "Ebb and Flow left Cape Canaveral together on 10 September 2011 on a single Delta II and took a slow, three-and-a-half-month route to the Moon. One entered lunar orbit on 31 December 2011, the other about a day later. Then they lined up, one behind the other, about 50 kilometers above the surface.",
+    "A radio link measured the changing distance between them. Where the Moon's gravity pulled a little harder, the gap shifted. From those tiny shifts, GRAIL built the highest-resolution gravity map of any world at the time and pinpointed mascons, dense masses hidden beneath the surface where no camera can see. Each probe also carried MoonKAM cameras for middle school students, an education project run with Sally Ride Science.",
+    "On 17 December 2012, with their mapping done, both probes were steered into a mountain in the Moon's far north at roughly 1.7 kilometers per second. They came down about two kilometers apart on its slope."
+  ],
+  "facts": [
+    {
+      "label": "Launched",
+      "value": "10 September 2011, 13:08:52 UT, both on one Delta II"
+    },
+    {
+      "label": "Formation",
+      "value": "Tandem polar orbits about 50 km up, 175–225 km apart"
+    },
+    {
+      "label": "Mass",
+      "value": "202.4 kg each, fully fueled"
+    },
+    {
+      "label": "Result",
+      "value": "The most detailed gravity map of any world at the time, revealing hidden mascons"
+    },
+    {
+      "label": "Impact",
+      "value": "17 December 2012, at about 1.68 km/s; site 75.62° N, 26.63° W"
+    }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA14558/PIA14558~orig.jpg",
+      "caption": "August 2011: the twin GRAIL spacecraft are lowered onto the second stage of their Delta II rocket.",
+      "credit": "NASA/JPL-Caltech/KSC (PIA14558)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA14558"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA16585/PIA16585~orig.jpg",
+      "caption": "Gravity gradients measured by GRAIL. Red and blue mark the strongest changes in the Moon's pull.",
+      "credit": "NASA/JPL-Caltech/CSM (PIA16585)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA16585"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA16493/PIA16493~orig.jpg",
+      "caption": "Side-by-side 3D views of the unnamed mountain chosen for the controlled impact of Ebb and Flow.",
+      "credit": "NASA/JPL-Caltech/MIT/GSFC (PIA16493)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA16493"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NSSDCA Master Catalog: GRAIL-A, Ebb (2011-046A)",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2011-046A"
+    },
+    {
+      "title": "NSSDCA Master Catalog: GRAIL-B, Flow (2011-046B)",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2011-046B"
+    },
+    {
+      "title": "NASA Science: GRAIL (Ebb and Flow)",
+      "url": "https://science.nasa.gov/mission/grail/"
+    },
+    {
+      "title": "NASA Image Library: GRAIL Final Resting Spot (PIA16603)",
+      "url": "https://images.nasa.gov/details/PIA16603"
+    }
+  ],
+  "verified": false
+}

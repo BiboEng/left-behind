@@ -19,7 +19,7 @@ The team's selected challenge in its Space Apps registration is not stored in th
 | --- | --- |
 | Make mission history engaging | Chronological, NASA-textured Moon/Mars globes; documentary stories and world introductions/endings |
 | Connect engineering with science | Mission facts, launch/landing context, and six source-linked learning questions about photos, staging, water evidence, quakes and flight |
-| Use real historical/scientific data | 19 relic records with source URLs, NASA imagery and reported coordinates; uncertainty labels for targets and approximate positions |
+| Use real historical/scientific data | 22 relic records with source URLs, NASA imagery and reported coordinates; uncertainty labels for targets and approximate positions |
 | Show how the hardware worked | Eight optional NASA model references, with descriptions explaining generic, twin-mission and pre-damage models |
 | Reach younger and casual audiences | Searchable mission index, simple question feedback and a reading mode with no WebGL requirement |
 | Keep claims traceable | Per-photo/model credits, mission sources, an aggregate Credits dialog and a human-verification release gate |

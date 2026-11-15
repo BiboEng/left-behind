@@ -4,7 +4,7 @@
 
 An interactive documentary about NASA hardware left on the Moon and Mars. **After the Signal**
 invites visitors to investigate archive images and seismic audio, then curate a source-linked
-exhibition to share or print. The companion atlas explores 19 relic stories through NASA imagery,
+exhibition to share or print. The companion atlas explores 22 relic stories through NASA imagery,
 a scroll-through-time globe and an accessible reading mode.
 
 A NASA Space Apps project by **Ibrahim and Rayan**, responding to
