@@ -643,3 +643,25 @@ a { color: inherit; text-underline-offset: 2px; }
 .rail button { text-shadow: 0 0 2px #000, 0 1px 10px rgba(0, 0, 0, 0.95); }
 .rail .year { color: var(--ink-2); }
 .rail .active .year { color: var(--accent); }
+
+/* ── Home button (HomeButton.tsx): the same pill in the same top-left spot on every screen and
+   every width. The wordmark beside it is decoration and gives way first when space runs out. ── */
+.home-button { flex: none; white-space: nowrap; }
+.site-header .header-start { display: flex; align-items: center; gap: 1rem; }
+@media (max-width: 1000px) { .topbar .wordmark { display: none; } }
+@media (max-width: 759px) { .topbar .home-button { order: 0; } }
+@media (max-width: 680px) { .signal-site-header .wordmark { display: none; } }
+/* Phones: room for Home without extra rows. The Ctrl K hint means nothing on a touch screen. */
+@media (max-width: 759px) { .topbar-index kbd { display: none; } }
+@media (max-width: 680px) {
+  .site-header { gap: 0.5rem; }
+  .site-header nav .nav-search kbd { display: none; }
+  .site-header nav { flex-wrap: nowrap; }
+  .site-header nav button { padding: 0.6rem 0.75rem; }
+  .site-header nav .nav-search { margin-left: 0; }
+}
+@media (max-width: 380px) {
+  .topbar .back { padding: 0.5rem; }
+  .world-switch button { padding: 0.55rem 0.55rem; }
+  .topbar .current-year { font-size: 1.3rem; }
+}

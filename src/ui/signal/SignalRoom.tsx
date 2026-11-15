@@ -1,7 +1,8 @@
 // A deliberate documentary route: real records first, interpretations and uncertainty alongside.
 import { useEffect, useRef } from "react";
 import { caseById, evidenceCases, signalMedia, type CaseId, type SignalChapter } from "../../data/signal";
-import { openAtlas, openSignal } from "../../state/router";
+import { goHome, openSignal } from "../../state/router";
+import HomeButton from "../HomeButton";
 import { useTimeline } from "../../state/timeline";
 import MissionIndex from "../MissionIndex";
 import { useSignal } from "../../state/signal";
@@ -33,7 +34,10 @@ export default function SignalRoom({ chapter }: { chapter: SignalChapter }) {
   return <main className="signal-shell" ref={main}>
     <button className="signal-skip" onClick={() => main.current?.querySelector<HTMLElement>("#signal-heading")?.focus()}>Skip to investigation</button>
     <header className="site-header signal-site-header">
-      <button className="wordmark display" onClick={openAtlas}>Left Behind</button>
+      <div className="header-start">
+        <HomeButton />
+        <button className="wordmark display" onClick={goHome} tabIndex={-1} aria-hidden>Left Behind</button>
+      </div>
       <nav aria-label="Main">
         <button aria-current="page" onClick={() => openSignal("intro")}>The story</button>
         <button onClick={() => useTimeline.getState().setWorld("moon")}>Moon</button>

@@ -36,14 +36,16 @@
   .foot { margin-top: 18px; padding-top: 10px; border-top: 1px solid var(--rule); font-size: 12px; color: var(--muted); display: flex; justify-content: space-between; gap: 16px; }
   a { color: inherit; }
   .print { position: fixed; right: 18px; bottom: 18px; font: 600 14px Inter, system-ui, sans-serif; padding: 10px 16px; border: 0; background: #16181b; color: #fff; cursor: pointer; }
+  .home { display: inline-block; margin: 0 0 18px; font: 600 14px Inter, system-ui, sans-serif; padding: 8px 14px; background: #fff; color: #16181b; border: 1px solid #16181b; text-decoration: none; }
   .break { break-before: page; margin-top: 40px; padding-top: 24px; border-top: 2px dashed var(--rule); }
   @media print { .break { margin-top: 0; padding-top: 0; border: 0; } }
   @media (max-width: 640px) { .page { padding: 24px 18px; margin: 0; } .meta, .cols { grid-template-columns: 1fr; } ol.steps li { grid-template-columns: 1fr; } }
-  @media print { html { background: white; } .page { box-shadow: none; margin: 0; max-width: none; padding: 0.45in 0.55in; } .print { display: none; } @page { size: letter; margin: 0; } }
+  @media print { html { background: white; } .page { box-shadow: none; margin: 0; max-width: none; padding: 0.45in 0.55in; } .print, .home { display: none; } @page { size: letter; margin: 0; } }
 </style>
 </head>
 <body>
 <main class="page">
+  <a class="home" href="/">← Back to Left Behind</a>
   <p class="eyebrow">Left Behind · Classroom guide</p>
   <h1>Evidence after the signal</h1>
   <p class="muted">A 45-minute activity built on real NASA records. Students investigate machines that stopped working on the Moon and Mars, then curate a small exhibition that keeps the evidence and its limits together.</p>

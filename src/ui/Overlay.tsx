@@ -15,6 +15,7 @@ import type { Relic, World } from "../types/relic";
 import { worlds } from "../worlds";
 import { year } from "./format";
 import { CreditsButton } from "./Credits";
+import HomeButton from "./HomeButton";
 import StoryCard from "./StoryCard";
 import MissionIndex from "./MissionIndex";
 import TimelineRail, { ProgressBar } from "./TimelineRail";
@@ -34,7 +35,8 @@ export default function Overlay({ world }: { world: World }) {
   return (
     <div className="overlay" onWheel={reading ? undefined : forwardWheel}>
       <header className="topbar">
-        <button className="wordmark display" onClick={goHome} aria-label="Left Behind, back to the start">Left Behind</button>
+        <HomeButton />
+        <button className="wordmark display" onClick={goHome} tabIndex={-1} aria-hidden>Left Behind</button>
         <div className="world-switch" role="group" aria-label="Choose a world">
           {(["moon", "mars"] as World[]).map((w) => <button key={w} aria-pressed={w === world}
             onClick={() => w !== world && useTimeline.getState().setWorld(w)}>{worlds[w].name}</button>)}

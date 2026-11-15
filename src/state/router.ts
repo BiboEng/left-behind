@@ -42,9 +42,14 @@ export function signalUrl(chapter: SignalChapter = "exhibit") {
   url.hash = chapter === "intro" ? "signal" : `signal/${chapter}`;
   return url;
 }
+/** True while the current URL is the title page. Read just before a push, it tells goHome later
+ *  whether stepping Back lands on the title page or somewhere else (another world, a chapter). */
+function onTitlePage() {
+  return !parseSignalChapter(window.location.hash) && !parse().world;
+}
 function visit(url: URL) {
   if (pathOf(url) === window.location.pathname + window.location.search + window.location.hash) return;
-  window.history.pushState({ leftBehind: true }, "", pathOf(url));
+  window.history.pushState({ leftBehind: true, backIsHome: onTitlePage() }, "", pathOf(url));
   window.dispatchEvent(new PopStateEvent("popstate"));
 }
 export function openSignal(chapter: SignalChapter = "intro") { visit(signalUrl(chapter)); }
@@ -102,7 +107,7 @@ export function startRouter(): () => void {
     else url.searchParams.delete("view");
     const relic = s.world ? relics[s.world][s.target ?? s.activeIndex] : undefined;
     url.hash = s.world ? `#${s.world}${relic ? "/" + relic.id : ""}` : "";
-    if (changedWorld && s.world) window.history.pushState({ leftBehind: true }, "", pathOf(url));
+    if (changedWorld && s.world) window.history.pushState({ leftBehind: true, backIsHome: onTitlePage() }, "", pathOf(url));
     else window.history.replaceState(s.world ? window.history.state : null, "", pathOf(url));
   });
   const unsubscribeSignal = useSignal.subscribe((s, prev) => {
@@ -130,7 +135,9 @@ export function startRouter(): () => void {
   return stopRouter;
 }
 
+/** Always lands on the title page. Steps Back when the previous entry IS the title page (keeps the
+ *  browser history tidy); otherwise (Moon → Mars, chapter → world, a shared link) it goes there directly. */
 export function goHome() {
-  if (window.history.state?.leftBehind) window.history.back();
-  else useTimeline.getState().setWorld(null);
+  if (window.history.state?.backIsHome) window.history.back();
+  else openAtlas();
 }
