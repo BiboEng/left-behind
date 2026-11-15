@@ -78,7 +78,8 @@ limits and citations. Visitors can add a title and reader question, copy a share
 and download plain-text source notes. No account or backend database is required. Reader captions
 are explicitly distinct from NASA statements.
 
-The application uses React, TypeScript, Vite, Zustand, Three.js, React Three Fiber and drei. Vitest
+On the live site, Lighthouse (mobile) scores 97–98 for performance and 100 for accessibility, best
+practices and SEO. The application uses React, TypeScript, Vite, Zustand, Three.js, React Three Fiber and drei. Vitest
 checks data contracts, routing/history, source/media integrity, waveform and catalog reproducibility.
 An optional offline pack saves every chapter, local evidence asset, audio, catalog, font and exhibition
 tool. Each edition is content-fingerprinted, and SHA-256 integrity checks verify every downloaded
