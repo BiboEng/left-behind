@@ -9,6 +9,8 @@
   "lastContact": "1999-12-03",
   "status": "lost",
   "location": {
+    "precision": "target",
+    "note": "Intended south-polar region only. Neither microprobe was heard from on the surface or located afterward.",
     "name": "Target area near the south polar layered terrain (never found)",
     "lat": -73,
     "lon": 150

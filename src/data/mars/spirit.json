@@ -46,6 +46,12 @@
       "sourceUrl": "https://images.nasa.gov/details/PIA12205"
     }
   ],
+  "model": {
+    "path": "/mars/models/mer-rover.glb",
+    "credit": "NASA 3D Resources",
+    "sourceUrl": "https://science.nasa.gov/3d-resources/mars-exploration-rover-opportunity-mer-b/",
+    "description": "NASA's Opportunity model illustrates the twin Mars Exploration Rover design. It does not reconstruct Spirit's damaged wheel, burial in sand, or final pose."
+  },
   "sources": [
     {
       "title": "NASA Science: Mars Exploration Rover Spirit",

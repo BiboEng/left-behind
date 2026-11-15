@@ -1,7 +1,7 @@
 {
   "id": "opportunity",
   "world": "mars",
-  "tier": "standard",
+  "tier": "hero",
   "name": "Opportunity rover (MER-B)",
   "mission": "Mars Exploration Rover Opportunity",
   "agency": "NASA",
@@ -46,6 +46,12 @@
       "sourceUrl": "https://images.nasa.gov/details/PIA22929"
     }
   ],
+  "model": {
+    "path": "/mars/models/mer-rover.glb",
+    "credit": "NASA 3D Resources",
+    "sourceUrl": "https://science.nasa.gov/3d-resources/mars-exploration-rover-opportunity-mer-b/",
+    "description": "Opportunity's rover design, not a reconstruction of its final condition or position in Perseverance Valley."
+  },
   "sources": [
     {
       "title": "NASA Science: Mars Exploration Rover Opportunity",

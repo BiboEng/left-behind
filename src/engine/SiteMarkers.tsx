@@ -1,4 +1,4 @@
-// A marker on the surface at every relic's real landing coordinates. Click one to fly there;
+// Markers follow reported/approximate sites or explicitly labeled target regions. Click to fly there;
 // hover one to see what it is.
 //
 // The markers are CHILDREN of the globe group (see CameraRig), so when the globe turns they turn
@@ -15,6 +15,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { DoubleSide, type Mesh, Quaternion, RingGeometry, SphereGeometry, Vector3 } from "three";
 import { relics } from "../data";
 import { useTimeline } from "../state/timeline";
+import { useReducedMotion } from "../state/reducedMotion";
 import type { Relic, World } from "../types/relic";
 import { year } from "../ui/format";
 import { worlds } from "../worlds";
@@ -123,7 +124,7 @@ function Marker({ relic, position, facing, state, color, size, shapes }: MarkerP
 
   return (
     <group position={position}>
-      {state === "future" ? (
+      {state === "future" || relic.location.precision === "target" ? (
         // Hollow ring lying flat on the ground: "not yet".
         <mesh quaternion={facing} scale={scale} geometry={shapes.ring}>
           <meshBasicMaterial color={color} transparent opacity={hovered ? 1 : 0.75} side={DoubleSide} depthWrite={false} />
@@ -162,6 +163,7 @@ function Marker({ relic, position, facing, state, color, size, shapes }: MarkerP
         <Html zIndexRange={[0, 0]} style={{ pointerEvents: "none" }}>
           <div className={`marker-label mono ${labelLeft ? "on-left" : ""}`}>
             <span className="marker-year">{year(relic.arrived)}</span> {relic.name}
+            {relic.location.precision === "target" && " · target region, position unknown"}
           </div>
         </Html>
       )}
@@ -182,11 +184,12 @@ function PulseRing({
   size: number;
 }) {
   const ring = useRef<Mesh>(null);
-  const reduceMotion = useMemo(() => window.matchMedia("(prefers-reduced-motion: reduce)").matches, []);
+  const reduceMotion = useReducedMotion();
 
   useFrame(({ clock }) => {
     const m = ring.current;
-    if (!m || reduceMotion) return;
+    if (!m) return;
+    if (reduceMotion) { m.scale.setScalar(size); (m.material as { opacity: number }).opacity = 0.6; return; }
     const t = (clock.elapsedTime % 2) / 2; // 0 → 1 every 2 seconds
     m.scale.setScalar(size * (1 + t * 2.5));
     (m.material as { opacity: number }).opacity = 0.8 * (1 - t);

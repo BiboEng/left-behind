@@ -63,6 +63,12 @@ export default function StoryCard({ relic, index, total, direction }: Props) {
               {relic.location.name}
               <br />
               <span className="coords">{formatCoords(relic.location.lat, relic.location.lon)}</span>
+              {relic.location.precision && relic.location.precision !== "reported" && (
+                <span className="location-note">
+                  <strong>{relic.location.precision === "target" ? "Target region · position unknown" : "Approximate location"}</strong>
+                  {relic.location.note}
+                </span>
+              )}
             </dd>
           </div>
         </dl>
@@ -96,6 +102,7 @@ export default function StoryCard({ relic, index, total, direction }: Props) {
             ) : <button className="back model-load" onClick={() => setShowModel(true)}>Explore NASA's 3D model</button>)}
             <figcaption className="credit">
               3D model: <a href={relic.model.sourceUrl} target="_blank" rel="noreferrer">{relic.model.credit}</a>
+              {relic.model.description && <span className="model-description">{relic.model.description}</span>}
             </figcaption>
           </figure>
         )}

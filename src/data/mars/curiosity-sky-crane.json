@@ -9,6 +9,8 @@
   "lastContact": "2012-08-06",
   "status": "impacted",
   "location": {
+    "precision": "approximate",
+    "note": "Approximate debris-site marker near Curiosity's landing area; use the linked orbital imagery to identify the hardware.",
     "name": "Gale crater, about 650 m from where Curiosity landed",
     "lat": -4.624,
     "lon": 137.402

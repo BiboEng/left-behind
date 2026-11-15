@@ -46,6 +46,12 @@
       "sourceUrl": "https://images.nasa.gov/details/PIA26238"
     }
   ],
+  "model": {
+    "path": "/mars/models/ingenuity.glb",
+    "credit": "NASA 3D Resources",
+    "sourceUrl": "https://science.nasa.gov/3d-resources/ingenuity-mars-helicopter/",
+    "description": "Ingenuity's flight hardware before its final landing. The damaged rotor blades are not reconstructed."
+  },
   "sources": [
     {
       "title": "NASA Science: Ingenuity Mars Helicopter",

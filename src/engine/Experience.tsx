@@ -59,7 +59,7 @@ export default function Experience({ world }: { world: World }) {
 
 function LoadingStatus() {
   const { active, progress } = useProgress();
-  return active ? <p className="globe-loading mono" role="status">Loading NASA surface maps · {Math.round(progress)}%</p> : null;
+  return active ? <p className="globe-loading mono" role="status">Loading NASA assets · {Math.round(progress)}%</p> : null;
 }
 
 function ContextRecovery() {

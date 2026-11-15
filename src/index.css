@@ -425,6 +425,12 @@ a { color: inherit; text-underline-offset: 2px; }
   .odo-strip, .rail-name, .landing .choice { transition: none; }
 }
 
+.location-note { display: grid; gap: 0.35rem; padding: 0.75rem; margin-top: 0.75rem; border-left: 2px solid var(--accent); background: #131519; font-family: var(--font-sans); font-size: 0.8rem; line-height: 1.5; }
+.model-description { display: block; margin-top: 0.5rem; line-height: 1.6; }
+.model-controls { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; font-size: 0.7rem; color: var(--muted); margin: 0.5rem 0 1rem; }
+.model-controls button { font-size: 0.7rem; }
+.model-controls button:disabled { opacity: 0.7; cursor: default; }
+.model-loading { color: var(--muted); font-size: 0.65rem; white-space: nowrap; }
 /* Renderer-independent navigation and reading layout. */
 .globe-loading { position: absolute; left: 50%; top: 18%; transform: translateX(-50%); font-size: 0.7rem; color: var(--muted); max-width: 28rem; text-align: center; }
 .step-nav { display: flex; justify-content: space-between; position: absolute; bottom: 1.5rem; left: calc(50% - min(200px, 12vw)); transform: translateX(-50%); width: min(26rem, 40vw); gap: 1rem; }

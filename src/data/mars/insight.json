@@ -46,6 +46,12 @@
       "sourceUrl": "https://images.nasa.gov/details/PIA26515"
     }
   ],
+  "model": {
+    "path": "/mars/models/insight.glb",
+    "credit": "NASA 3D Resources",
+    "sourceUrl": "https://science.nasa.gov/3d-resources/insight-cruise-lander/",
+    "description": "InSight with its solar panels and arm deployed. Surface instruments and the lander's final dust-covered condition are not reconstructed."
+  },
   "sources": [
     {
       "title": "NASA Science: InSight Lander",
