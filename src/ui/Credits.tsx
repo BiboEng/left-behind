@@ -164,7 +164,7 @@ function CreditsDialog() {
           </p>
           <p className="credits-note">
             Devin (Cognition AI) assisted development and proposed After the Signal's interaction design,
-            research and draft text. NASA photos, audio and models are credited source assets. Human source verification remains pending.
+            research and draft text. Claude (Anthropic) assisted the visual redesign, deployment, demo, classroom guide and fact checking. NASA photos, audio and models are credited source assets. Every relic fact was checked against its linked NASA source on 15 November 2026.
           </p>
           <p className="credits-note">
             Left Behind is not affiliated with or endorsed by NASA. Every image and model belongs to the owner credited

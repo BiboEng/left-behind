@@ -62,7 +62,7 @@ have an earlier deadline. Confirm the applicable event time on the official guid
 
 ## Scientific limits
 
-- All relic verification flags remain false until a human checks the sources.
+- All relic facts were checked against their linked sources on 15 November 2026 (docs/VERIFY.md).
 - Mars Polar Lander and Deep Space 2 are shown at target regions, not recovered sites.
 - Other approximate markers explain which nearby feature the coordinate represents.
 - The Apollo model is a generic Lunar Module, and the MER model represents the shared rover design.

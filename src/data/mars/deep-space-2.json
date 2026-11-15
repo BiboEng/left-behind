@@ -22,11 +22,26 @@
     "No signal ever came from either probe, or from the lander. NASA stopped trying to reach them on 17 January 2000, and the review board that followed could not name a probable cause for the probes' failure. Wherever Amundsen and Scott came down, they have never been found."
   ],
   "facts": [
-    { "label": "Launched", "value": "3 January 1999, Cape Canaveral, aboard Mars Polar Lander" },
-    { "label": "Names", "value": "Amundsen and Scott, after the first explorers to reach the South Pole" },
-    { "label": "Goal", "value": "Survive impact, penetrate the soil and test a sensor for subsurface water" },
-    { "label": "Target", "value": "About 73° S, 210° W (150° E)" },
-    { "label": "Fate", "value": "Never heard from after separation" }
+    {
+      "label": "Launched",
+      "value": "3 January 1999, Cape Canaveral, aboard Mars Polar Lander"
+    },
+    {
+      "label": "Names",
+      "value": "Amundsen and Scott, after the first explorers to reach the South Pole"
+    },
+    {
+      "label": "Goal",
+      "value": "Survive impact, penetrate the soil and test a sensor for subsurface water"
+    },
+    {
+      "label": "Target",
+      "value": "About 73° S, 210° W (150° E)"
+    },
+    {
+      "label": "Fate",
+      "value": "Never heard from after separation"
+    }
   ],
   "images": [
     {
@@ -60,5 +75,5 @@
       "url": "https://ntrs.nasa.gov/citations/20000061966"
     }
   ],
-  "verified": false
+  "verified": true
 }

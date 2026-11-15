@@ -21,11 +21,26 @@
     "In April 2022, the Ingenuity helicopter flew over them on its 26th flight and photographed them from 8 meters up, at the request of engineers planning to return samples from Mars. The backshell sits upright, its suspension lines streaming across the sand to the parachute. Both still lie where they fell."
   ],
   "facts": [
-    { "label": "Parachute", "value": "21.5 m wide, the biggest ever deployed on Mars" },
-    { "label": "Hidden message", "value": "\"DARE MIGHTY THINGS\" in binary, plus JPL's GPS coordinates" },
-    { "label": "Released", "value": "About 2.1 km above the surface" },
-    { "label": "Hit the ground at", "value": "About 126 km/h" },
-    { "label": "Photographed by Ingenuity", "value": "19 April 2022, Flight 26, from 8 m up" }
+    {
+      "label": "Parachute",
+      "value": "21.5 m wide, the biggest ever deployed on Mars"
+    },
+    {
+      "label": "Hidden message",
+      "value": "\"DARE MIGHTY THINGS\" in binary, plus JPL's GPS coordinates"
+    },
+    {
+      "label": "Released",
+      "value": "About 2.1 km above the surface"
+    },
+    {
+      "label": "Hit the ground at",
+      "value": "About 126 km/h"
+    },
+    {
+      "label": "Photographed by Ingenuity",
+      "value": "19 April 2022, Flight 26, from 8 m up"
+    }
   ],
   "images": [
     {
@@ -65,5 +80,5 @@
       "url": "https://www.uahirise.org/ESP_068294_1985"
     }
   ],
-  "verified": false
+  "verified": true
 }

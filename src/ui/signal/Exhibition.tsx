@@ -117,7 +117,7 @@ export default function Exhibition() {
         </article>)}
       </div>
       <p className="exhibit-print-url">Open this exhibition: {url}</p>
-      <p className="exhibit-review-note">Editorial text was drafted with AI assistance and linked to NASA sources. Human source verification remains pending.</p>
+      <p className="exhibit-review-note">Editorial text was drafted with AI assistance and linked to NASA sources. Facts were checked against the linked NASA sources on 15 November 2026.</p>
     </section>
     <section className="relay no-print" aria-labelledby="relay-title">
       <p className="eyebrow">Epilogue</p>

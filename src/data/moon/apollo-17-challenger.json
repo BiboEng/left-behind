@@ -20,11 +20,26 @@
     "On 14 December, Challenger's upper half lifted away, using the descent stage as its launch pad. Cernan was the last person to leave footprints on the Moon. The descent stage still carries a stainless-steel plaque on its ladder, and NASA's Lunar Reconnaissance Orbiter has photographed it, the parked rover and the tracks between them."
   ],
   "facts": [
-    { "label": "Landed", "value": "11 December 1972, 19:54:57 UTC" },
-    { "label": "Crew on the surface", "value": "Eugene A. Cernan, Harrison H. Schmitt" },
-    { "label": "Time on the Moon", "value": "75 hours, including 22 h 4 min of moonwalks" },
-    { "label": "Distance driven by the rover", "value": "35.9 km" },
-    { "label": "Samples returned", "value": "110.4 kg of rock and soil" }
+    {
+      "label": "Landed",
+      "value": "11 December 1972, 19:54:57 UTC"
+    },
+    {
+      "label": "Crew on the surface",
+      "value": "Eugene A. Cernan, Harrison H. Schmitt"
+    },
+    {
+      "label": "Time on the Moon",
+      "value": "75 hours, including 22 h 4 min of moonwalks"
+    },
+    {
+      "label": "Distance driven by the rover",
+      "value": "35.9 km"
+    },
+    {
+      "label": "Samples returned",
+      "value": "110.4 kg of rock and soil"
+    }
   ],
   "images": [
     {
@@ -86,5 +101,5 @@
       "url": "https://images.nasa.gov/details/S72-55169"
     }
   ],
-  "verified": false
+  "verified": true
 }

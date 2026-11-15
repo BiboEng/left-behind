@@ -2,7 +2,7 @@
 
 Generated automatically on 15 Nov 2026. For every number in a relic's facts, the script searched that relic's own source pages and quotes where it appears. **A match is a lead, not a verification**: read the quote, confirm it says the same thing, then tick the box in VERIFY.md. "Not found" usually means the page is rendered by JavaScript, uses different units, or the number is derived (check by hand).
 
-Numbers matched in sources: **178 of 186**.
+Numbers matched in sources: **178 of 185**.
 
 ## Ranger 7
 
@@ -285,12 +285,11 @@ Numbers matched in sources: **178 of 186**.
   - `28.06` ✓ [NASA Science: Mars Exploration Rover Opportunity](https://science.nasa.gov/mission/mer-opportunity/): "…for 26.219 miles (42.195 kilometers). When it fell silent in 2018, Opportunity had run up 28.06 miles (45.16 kilometers) on its unearthly odometer, an extra-terrestrial record that stoo…"
 - **Images returned:** More than 217,000
   - `217,000` ✗ not found in the pages that could be read automatically. Check by hand (likely in a blocked JPL page above)
-- **Mission ended:** 13 February 2019, after its last signal on 10 June 2018 (sol 5,111)
+- **Mission ended:** 13 February 2019, after its last signal on 10 June 2018
   - `13` ✓ [NASA Science: Mars Exploration Rover Opportunity](https://science.nasa.gov/mission/mer-opportunity/): "…aunch Jan. 24, 2004: Mars landing June 10, 2018: Last communication with Opportunity Feb. 13, 2019: NASA declares End of Mission In Depth: Opportunity Opportunity launched at 20:18:1…"
   - `2019` ✓ [NASA Science: Mars Exploration Rover Opportunity](https://science.nasa.gov/mission/mer-opportunity/): "…h Jan. 24, 2004: Mars landing June 10, 2018: Last communication with Opportunity Feb. 13, 2019: NASA declares End of Mission In Depth: Opportunity Opportunity launched at 20:18:15 July…"
   - `10` ✓ [NASA Science: Mars Exploration Rover Opportunity](https://science.nasa.gov/mission/mer-opportunity/): "…iven by any rover on Mars Key Dates July 7, 2003: Launch Jan. 24, 2004: Mars landing June 10, 2018: Last communication with Opportunity Feb. 13, 2019: NASA declares End of Mission In…"
   - `2018` ✓ [NASA Science: Mars Exploration Rover Opportunity](https://science.nasa.gov/mission/mer-opportunity/): "…mmunicating with Earth after a severe Mars-wide dust storm blanketed its location in June 2018. During its lengthy travels, Opportunity rolled past numerous milestones, breaking off-wo…"
-  - `5,111` ✗ not found in the pages that could be read automatically. Check by hand (likely in a blocked JPL page above)
 
 ## Phoenix Mars Lander
 

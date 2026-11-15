@@ -20,11 +20,26 @@
     "The descent stage is still there. A plaque on a strut behind its ladder reads: \"We came in peace for all mankind.\" Nearby lie a seismometer, a packet of memorial items and a laser reflector that observatories on Earth have regularly aimed at. From orbit, NASA's Lunar Reconnaissance Orbiter sees the site as a bright speck among the craters."
   ],
   "facts": [
-    { "label": "Touchdown", "value": "20 July 1969, 20:17:40 UTC" },
-    { "label": "Left behind", "value": "21 July 1969, when the ascent stage lifted off at 17:54:01 UTC" },
-    { "label": "Lunar Module mass", "value": "15,103 kg at launch (both stages, with propellant)" },
-    { "label": "Laser reflector", "value": "100 fused-silica corner cubes in a 46 cm panel" },
-    { "label": "Plaque", "value": "\"Here men from the planet Earth first set foot upon the Moon, July 1969 A.D. We came in peace for all mankind.\"" }
+    {
+      "label": "Touchdown",
+      "value": "20 July 1969, 20:17:40 UTC"
+    },
+    {
+      "label": "Left behind",
+      "value": "21 July 1969, when the ascent stage lifted off at 17:54:01 UTC"
+    },
+    {
+      "label": "Lunar Module mass",
+      "value": "15,103 kg at launch (both stages, with propellant)"
+    },
+    {
+      "label": "Laser reflector",
+      "value": "100 fused-silica corner cubes in a 46 cm panel"
+    },
+    {
+      "label": "Plaque",
+      "value": "\"Here men from the planet Earth first set foot upon the Moon, July 1969 A.D. We came in peace for all mankind.\""
+    }
   ],
   "images": [
     {
@@ -68,5 +83,5 @@
       "url": "https://www.nasa.gov/wp-content/uploads/static/history/alsj/ApolloFlags-Condition.html"
     }
   ],
-  "verified": false
+  "verified": true
 }

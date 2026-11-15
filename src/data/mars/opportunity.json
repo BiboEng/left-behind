@@ -20,11 +20,26 @@
     "In June 2018 a dust storm wrapped the whole planet and blotted out the Sun the solar-powered rover lived on. Its last signal arrived on 10 June. More than a thousand recovery commands went unanswered, and NASA declared the mission over on 13 February 2019. Opportunity rests in Perseverance Valley, a shallow gully on the inner slope of Endeavour's western rim, where HiRISE has photographed it from orbit."
   ],
   "facts": [
-    { "label": "Landed", "value": "25 January 2004, 04:54 UTC (24 January in California)" },
-    { "label": "Planned mission", "value": "90 sols and about 1,000 meters of driving" },
-    { "label": "Distance driven", "value": "45.16 km (28.06 miles)" },
-    { "label": "Images returned", "value": "More than 217,000" },
-    { "label": "Mission ended", "value": "13 February 2019, after its last signal on 10 June 2018 (sol 5,111)" }
+    {
+      "label": "Landed",
+      "value": "25 January 2004, 04:54 UTC (24 January in California)"
+    },
+    {
+      "label": "Planned mission",
+      "value": "90 sols and about 1,000 meters of driving"
+    },
+    {
+      "label": "Distance driven",
+      "value": "45.16 km (28.06 miles)"
+    },
+    {
+      "label": "Images returned",
+      "value": "More than 217,000"
+    },
+    {
+      "label": "Mission ended",
+      "value": "13 February 2019, after its last signal on 10 June 2018"
+    }
   ],
   "images": [
     {
@@ -82,5 +97,5 @@
       "url": "https://an.rsl.wustl.edu/mera/AN/pages/mer/mer_traverse.htm"
     }
   ],
-  "verified": false
+  "verified": true
 }

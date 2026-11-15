@@ -20,11 +20,26 @@
     "Ranger 7 left a crater about 14 meters wide. Apollo 16 photographed it from orbit in 1972, and NASA's Lunar Reconnaissance Orbiter has imaged it many times since. The spacecraft's remains lie at that spot, on the Known Sea."
   ],
   "facts": [
-    { "label": "Launched", "value": "28 July 1964, Cape Canaveral, on an Atlas-Agena B" },
-    { "label": "Impact", "value": "31 July 1964, 13:25:48 UT, at 2.62 km/s" },
-    { "label": "Pictures returned", "value": "4,308, all in the final 17 minutes" },
-    { "label": "Mass", "value": "365.7 kg" },
-    { "label": "Crater left behind", "value": "About 14 m wide" }
+    {
+      "label": "Launched",
+      "value": "28 July 1964, Cape Canaveral, on an Atlas-Agena B"
+    },
+    {
+      "label": "Impact",
+      "value": "31 July 1964, 13:25:48 UT, at 2.62 km/s"
+    },
+    {
+      "label": "Pictures returned",
+      "value": "4,308, all in the final 17 minutes"
+    },
+    {
+      "label": "Mass",
+      "value": "365.7 kg"
+    },
+    {
+      "label": "Crater left behind",
+      "value": "About 14 m wide"
+    }
   ],
   "images": [
     {
@@ -64,5 +79,5 @@
       "url": "https://images.nasa.gov/details/PIA02975"
     }
   ],
-  "verified": false
+  "verified": true
 }

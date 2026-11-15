@@ -20,11 +20,26 @@
     "On 13 November 2009, the team announced the result: Cabeus holds water. The Centaur had dug a crater about 20 meters wide and thrown up roughly 350 metric tons of lunar material. Both spacecraft now lie in permanent darkness, in the crater where they proved there is ice on the Moon."
   ],
   "facts": [
-    { "label": "Launched", "value": "18 June 2009, with the Lunar Reconnaissance Orbiter, on an Atlas V" },
-    { "label": "Centaur impact", "value": "9 October 2009, 11:31:19 UT, about 2.5 km/s" },
-    { "label": "LCROSS impact", "value": "11:35:36 UT, about four minutes later" },
-    { "label": "Mass", "value": "Centaur about 2,000 kg; LCROSS 534 kg dry" },
-    { "label": "Result", "value": "Water confirmed in Cabeus, announced 13 November 2009" }
+    {
+      "label": "Launched",
+      "value": "18 June 2009, with the Lunar Reconnaissance Orbiter, on an Atlas V"
+    },
+    {
+      "label": "Centaur impact",
+      "value": "9 October 2009, 11:31:19 UT, about 2.5 km/s"
+    },
+    {
+      "label": "LCROSS impact",
+      "value": "11:35:36 UT, about four minutes later"
+    },
+    {
+      "label": "Mass",
+      "value": "Centaur about 2,000 kg; LCROSS 534 kg dry"
+    },
+    {
+      "label": "Result",
+      "value": "Water confirmed in Cabeus, announced 13 November 2009"
+    }
   ],
   "images": [
     {
@@ -58,5 +73,5 @@
       "url": "https://science.nasa.gov/image-detail/20110615lcross"
     }
   ],
-  "verified": false
+  "verified": true
 }

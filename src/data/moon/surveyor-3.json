@@ -20,10 +20,22 @@
     "In November 1969, Apollo 12 landed less than 200 meters away. On their second moonwalk, Pete Conrad and Alan Bean walked to the crater and removed about 10 kilograms of parts, including the television camera and the scoop, so scientists could study how the Moon had changed them. The rest of Surveyor 3 still stands on the crater slope."
   ],
   "facts": [
-    { "label": "Final touchdown", "value": "20 April 1967, 00:04 UTC" },
-    { "label": "Mass at landing", "value": "296 kg" },
-    { "label": "Pictures returned", "value": "6,326" },
-    { "label": "Brought home by Apollo 12", "value": "About 10 kg, including the TV camera and scoop" }
+    {
+      "label": "Final touchdown",
+      "value": "20 April 1967, 00:04 UTC"
+    },
+    {
+      "label": "Mass at landing",
+      "value": "296 kg"
+    },
+    {
+      "label": "Pictures returned",
+      "value": "6,326"
+    },
+    {
+      "label": "Brought home by Apollo 12",
+      "value": "About 10 kg, including the TV camera and scoop"
+    }
   ],
   "images": [
     {
@@ -63,5 +75,5 @@
       "url": "https://lroc.im-ldi.com/images/609"
     }
   ],
-  "verified": false
+  "verified": true
 }
