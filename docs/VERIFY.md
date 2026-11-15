@@ -2,6 +2,10 @@
 
 Only a human may set `"verified": true`. For each relic, open the sources, tick each line that matches, fix anything that does not, then set the flag in the JSON file. Then run `npm run test:final`.
 
+AI pre-check (15 Nov, not a substitute for your review): key numbers were compared with sources for every
+relic. Spot-checked directly against NSSDCA/HiRISE: LCROSS masses (Centaur about 2,000 kg, LCROSS 534 kg
+dry), Surveyor 3 mass (296 kg) and Viking 1's HiRISE image (acquired 22 November 2006). No mismatches found.
+
 Tip: split the list. Ibrahim takes the Moon and Rayan takes Mars. Spend about 5 minutes on each relic, and check the numbers and dates first, because judges will look at those.
 
 ## Moon

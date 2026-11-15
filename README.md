@@ -85,7 +85,9 @@ Live: https://left-behind-steel.vercel.app · Demo deck: https://left-behind-ste
 Ibrahim and Rayan defined the project concept and original direction. Devin (Cognition) assisted
 with mission discovery, narrative polish, reading-mode/navigation changes and model integration,
 and proposed and implemented After the Signal, including interaction design, draft prose, tests and
-documentation. The team must review this contribution against current Space Apps SI guidance and
+documentation. Claude (Anthropic) assisted with deployment, an offline-mode fix, the demo deck and
+captioned screen recording, the classroom guide, the Canadian Space Agency connection text and
+submission drafting. The team must review this contribution against current Space Apps SI guidance and
 disclose it accurately. New educational text is an AI-assisted draft grounded in linked NASA sources
 and still needs human review. NASA photos, audio, textures and models are credited source assets,
 not AI-generated media.
