@@ -2,7 +2,7 @@
 
 Only a human may set `"verified": true`. For each relic, open the sources, tick each line that matches, fix anything that does not, then set the flag in the JSON file. Then run `npm run test:final`.
 
-**Fastest path:** open [EVIDENCE.md](EVIDENCE.md). For 177 of the 186 numbers in the facts, it quotes the exact sentence from the relic's own sources, so most boxes take a few seconds. The 6 marked ✗ sit on JPL pages that block scripted reads, so open those by hand.
+**Fastest path:** open [EVIDENCE.md](EVIDENCE.md). For 178 of the 186 numbers in the facts, it quotes the exact sentence from the relic's own sources, so most boxes take a few seconds. The 5 marked ✗ sit on JPL pages that block scripted reads, so open those by hand.
 
 AI pre-check (15 Nov, not a substitute for your review): key numbers were compared with sources for every
 relic. Spot-checked directly against NSSDCA/HiRISE: LCROSS masses (Centaur about 2,000 kg, LCROSS 534 kg
@@ -322,6 +322,7 @@ File: `src/data/mars/spirit.json` · verified: **false**
 - [ ] Story paragraphs match the sources (no invented numbers or quotes)
 
 Sources:
+- [NSSDCA Master Catalog: Mars Exploration Rover A, Spirit (2003-027A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A)
 - [NASA Science: Mars Exploration Rover Spirit](https://science.nasa.gov/mission/mer-spirit/)
 - [JPL: NASA's Spirit Rover Completes Mission on Mars (25 May 2011)](https://www.jpl.nasa.gov/news/nasas-spirit-rover-completes-mission-on-mars/)
 - [JPL: Mars Rover Spirit Unearths Surprise Evidence of Wetter Past (21 May 2007)](https://www.jpl.nasa.gov/news/mars-rover-spirit-unearths-surprise-evidence-of-wetter-past/)

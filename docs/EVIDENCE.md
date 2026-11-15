@@ -2,7 +2,7 @@
 
 Generated automatically on 15 Nov 2026. For every number in a relic's facts, the script searched that relic's own source pages and quotes where it appears. **A match is a lead, not a verification**: read the quote, confirm it says the same thing, then tick the box in VERIFY.md. "Not found" usually means the page is rendered by JavaScript, uses different units, or the number is derived (check by hand).
 
-Numbers matched in sources: **177 of 186**.
+Numbers matched in sources: **178 of 186**.
 
 ## Ranger 7
 
@@ -254,17 +254,17 @@ Numbers matched in sources: **177 of 186**.
 > ⚠️ Could not read [JPL: Mars Rover Spirit Unearths Surprise Evidence of Wetter Past (21 May 2007)](https://www.jpl.nasa.gov/news/mars-rover-spirit-unearths-surprise-evidence-of-wetter-past/) automatically (the site blocks scripted reads or needs JavaScript). Open it by hand.
 
 - **Landed:** 4 January 2004, 04:35 UTC (3 January, 20:35 PST)
-  - `2004` ✓ [NASA Science: Mars Exploration Rover Spirit](https://science.nasa.gov/mission/mer-spirit/): "…on Technology Applications and Development (VTAD) Key Dates June 10, 2003: Launch Jan. 3, 2004: Mars landing May 25, 2011: NASA officially ends efforts to contact the rover In Depth: S…"
-  - `04:35` ✗ not found in the pages that could be read automatically. Check by hand (likely in a blocked JPL page above)
+  - `2004` ✓ [NSSDCA Master Catalog: Mars Exploration Rover A, Spirit (2003-027A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A): "…one of two rovers launched to Mars in mid-2003. The rovers arrived at Mars in January of 2004 equipped with a battery of scientific instruments and will be able to traverse 100 meters…"
+  - `04:35` ✓ [NSSDCA Master Catalog: Mars Exploration Rover A, Spirit (2003-027A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A): "…rbags deflated and retracted, the petals opened, and the rover deployed its solar arrays. 04:35 UTC (Local True Solar Time (LTST) 14:25:09) at The landing took place at 04:35 UT on 4 Ja…"
   - `20:35` ✓ [NASA Science: Mars Exploration Rover Spirit](https://science.nasa.gov/mission/mer-spirit/): "…achutes alone cannot reduce velocity. The entire rover package hit the Martian surface at 20:35 PST Jan. 3, 2004, at a velocity of about 46 feet per second (14 meters per second), bounc…"
 - **Planned mission:** 90 sols (about three months)
   - `90` ✓ [NASA Science: Mars Exploration Rover Spirit](https://science.nasa.gov/mission/mer-spirit/): "…insights into the composition of Martian soil. The mission was originally planned to last 90 Martian days, until about April 4, 2004. Yet, mission planners were able to repeatedly fo…"
 - **Distance driven:** 7.73 km
-  - `7.73` ✓ [NASA Science: Mars Exploration Rover Spirit](https://science.nasa.gov/mission/mer-spirit/): "…19 days, more than 25 times its original intended lifetime. The rover traveled 4.8 miles (7.73 kilometers) across the Martian plains. On May 25, 2011, NASA ended efforts to contact the…"
+  - `7.73` ✓ [NSSDCA Master Catalog: Mars Exploration Rover A, Spirit (2003-027A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A): "…e last transmission from Spirit occurred on 22 March 2010. The rover travelled a total of 7.73 km over a period of 6 years, 2 months. Alternate Names MER 2 MER-A Mars Exploration Rover…"
 - **Images returned:** More than 124,000
   - `124,000` ✗ not found in the pages that could be read automatically. Check by hand (likely in a blocked JPL page above)
 - **Mission ended:** 25 May 2011, after the last attempts to contact it
-  - `25` ✓ [NASA Science: Mars Exploration Rover Spirit](https://science.nasa.gov/mission/mer-spirit/): "…ts Spirit Mars Exploration Rover – Spirit Type Rover Launch June 10, 2003 Mission End May 25, 2011 Objective Clues of Past Water An illustration of NASA's Spirit rover on Mars. Credi…"
+  - `25` ✓ [NSSDCA Master Catalog: Mars Exploration Rover A, Spirit (2003-027A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A): "…nd propellant mass is 50 kg. Mission Profile Spirit was launched on a standard Delta II 7925 on 10 June 2003 at 17:58:46.773 UT. After insertion into a circular Earth parking orbit,…"
   - `2011` ✓ [NASA Science: Mars Exploration Rover Spirit](https://science.nasa.gov/mission/mer-spirit/): "…pirit Mars Exploration Rover – Spirit Type Rover Launch June 10, 2003 Mission End May 25, 2011 Objective Clues of Past Water An illustration of NASA's Spirit rover on Mars. Credit: NAS…"
 
 ## Opportunity rover (MER-B)
