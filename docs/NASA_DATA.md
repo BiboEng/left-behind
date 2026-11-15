@@ -44,5 +44,23 @@ Draco decompression is served locally from `public/decoders/`, copied from Three
 glTF decoder distribution. Its Apache 2.0 license and provenance are included there. The model
 viewer does not require an external decoder CDN.
 
+## After the Signal: archival evidence
+
+The evidence room has a typed source/media registry in src/data/signal.ts. Five locally bundled
+images and NASA's unchanged Sol 128 stereo WAV total less than 600 kB. Original URLs, source pages,
+credits and processing notes appear beside the records and in Credits.
+See [asset provenance](../public/evidence/README.md).
+
+Ranger uses PIA02975 and NSSDC CP1002; Spirit uses PIA09491 and JPL's silica report;
+InSight uses PIA25287, PIA25680 and NASA's first-likely-marsquake resource.
+[SUBMISSION.md](SUBMISSION.md) lists the source links and interpretations.
+
+The npm run signal:waveform command deterministically extracts 256 peak-amplitude bins per channel.
+This is a display envelope, not calibrated ground motion. Tests verify the original WAV checksum
+and recompute every plotted peak. NASA's 60× acceleration is disclosed in the player and exports.
+
+No raw seismic dataset, event classifier or new scientific discovery is claimed. Local evidence
+assets do not make the wider application offline; source pages and some atlas images need a network.
+
 ## Avoid
 - The **Mars Rover Photos API** (api.nasa.gov) has been archived. Don't build on it.

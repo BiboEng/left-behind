@@ -1,7 +1,11 @@
 # Left Behind
 
-An interactive documentary atlas of **selected NASA hardware left on the Moon and Mars**.
-Explore 19 stories through NASA imagery, a scroll-through-time globe, and an accessible reading mode.
+**They went silent. Their evidence didn't.**
+
+An interactive documentary about NASA hardware left on the Moon and Mars. **After the Signal**
+invites visitors to investigate archive images and seismic audio, then curate a source-linked
+exhibition to share or print. The companion atlas explores 19 relic stories through NASA imagery,
+a scroll-through-time globe and an accessible reading mode.
 
 A NASA Space Apps project by **Ibrahim and Rayan**, responding to
 [Abandoned but not Forgotten: Storytelling about NASA's Discarded Equipment on the Moon and Mars](https://www.spaceappschallenge.org/2026/challenges/nasas-discarded-equipment-storytelling/).
@@ -23,6 +27,12 @@ npm run preview
 ```
 
 ## Explore
+
+- Enter **After the Signal**: Ranger 7's incomplete photographs, Spirit's silica discovery and InSight's recorded vibrations.
+- Separate observation from interpretation, reveal scientific limits and inspect NASA sources.
+- Keep stories and build an exhibition. Copy its link, print/Save PDF or download source notes.
+- Direct links include #signal/ranger, #signal/spirit, #signal/insight and #signal/exhibit.
+- InSight plays NASA's unchanged 60× stereo sonification. Rebuild its sample-derived display with npm run signal:waveform.
 
 - Choose the Moon or Mars, then scroll through the timeline or use the labeled Previous / Next buttons.
 - Open **Mission index** to search stories, dates and places, or filter by world and mission status.
@@ -58,11 +68,15 @@ still has no suitable bundled NASA model. Do not mark sources verified without h
 - [Relic data contract](docs/DATA_CONTRACT.md)
 - [NASA data and attribution](docs/NASA_DATA.md)
 - [Challenge alignment and submission reference](docs/CHALLENGE.md)
+- [Global award strategy and prior-winner research](docs/COMPETITION_STRATEGY.md)
+- [Submission draft and 30-second demo script](docs/SUBMISSION.md)
 
 ## AI assistance
 
 Ibrahim and Rayan defined the project concept and original direction. Devin (Cognition) assisted
-with mission discovery, narrative polish, reading-mode/navigation changes, model integration,
-draft educational questions, tests and documentation. New educational text is an AI-assisted
-draft grounded in the linked NASA sources and still needs the team's source review. NASA photos,
-textures and spacecraft models are credited source assets, not AI-generated imagery.
+with mission discovery, narrative polish, reading-mode/navigation changes and model integration,
+and proposed and implemented After the Signal, including interaction design, draft prose, tests and
+documentation. The team must review this contribution against current Space Apps SI guidance and
+disclose it accurately. New educational text is an AI-assisted draft grounded in linked NASA sources
+and still needs human review. NASA photos, audio, textures and models are credited source assets,
+not AI-generated media.

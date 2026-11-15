@@ -158,8 +158,8 @@ function CreditsDialog() {
             Ibrahim and Rayan, for a NASA open data hackathon. Built with React, three.js, React Three Fiber and drei.
           </p>
           <p className="credits-note">
-            Development, draft educational questions and the After the Signal documentary were assisted by Devin
-            (Cognition). NASA photos, audio and models are credited source assets. Human source verification remains pending.
+            Devin (Cognition AI) assisted development and proposed After the Signal's interaction design,
+            research and draft text. NASA photos, audio and models are credited source assets. Human source verification remains pending.
           </p>
           <p className="credits-note">
             Left Behind is not affiliated with or endorsed by NASA. Every image and model belongs to the owner credited
