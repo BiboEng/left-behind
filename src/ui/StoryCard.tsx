@@ -9,6 +9,8 @@ import ErrorBoundary from "./ErrorBoundary";
 import { formatCoords, formatDate, STATUS_LABEL } from "./format";
 import { worlds } from "../worlds";
 import { useTimeline } from "../state/timeline";
+import { evidenceCases } from "../data/signal";
+import { openSignal } from "../state/router";
 
 interface Props {
   relic: Relic;
@@ -21,6 +23,7 @@ interface Props {
 export default function StoryCard({ relic, index, total, direction }: Props) {
   const [showModel, setShowModel] = useState(false);
   const reading = useTimeline((s) => s.mode === "reading");
+  const investigation = evidenceCases.find((c) => c.relicId === relic.id);
   return (
     // key = relic id: React builds a fresh card per relic, which restarts the slide-in
     // and resets the photo gallery and the card's scroll position.
@@ -33,16 +36,16 @@ export default function StoryCard({ relic, index, total, direction }: Props) {
 
       <div className="story-body">
         {index === 0 && <aside className="chapter-note">
-          <p className="kicker mono">The journey begins · {worlds[relic.world].name}</p>
+          <p className="kicker">The journey begins</p>
           <p>{worlds[relic.world].intro}</p>
         </aside>}
-        <p className="kicker mono">
-          {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")} · {relic.agency}
+        <p className="kicker">
+          {index + 1} of {total} · {worlds[relic.world].name}
         </p>
         <h2 id={`title-${relic.id}`}>{relic.name}</h2>
         <p className="mission">{relic.mission}</p>
 
-        <dl className="meta mono">
+        <dl className="meta">
           <div>
             <dt>Arrived</dt>
             <dd>{formatDate(relic.arrived)}</dd>
@@ -76,6 +79,11 @@ export default function StoryCard({ relic, index, total, direction }: Props) {
         </dl>
 
         <p className="headline">{relic.headline}</p>
+        {investigation && <button className="investigate-link" onClick={() => openSignal(investigation.id)}>
+          <span className="label">Part of the story · Act {Number(investigation.number)}</span>
+          <span>{investigation.title}</span>
+          <span className="arrow" aria-hidden>→</span>
+        </button>}
         {relic.story.map((paragraph, i) => (
           <p key={i} className="story">
             {paragraph}
@@ -127,11 +135,14 @@ export default function StoryCard({ relic, index, total, direction }: Props) {
         )}
 
         {index === total - 1 && <aside className="chapter-note journey-end">
-          <p className="kicker mono">The story continues</p>
+          <p className="kicker">The story continues</p>
           <p>{worlds[relic.world].outro}</p>
-          <button className="back" onClick={() => useTimeline.getState().setWorld(relic.world === "moon" ? "mars" : "moon")}>
-            Explore {relic.world === "moon" ? "Mars" : "the Moon"} <span aria-hidden>→</span>
-          </button>
+          <div className="journey-actions">
+            <button className="btn btn-primary" onClick={() => useTimeline.getState().setWorld(relic.world === "moon" ? "mars" : "moon")}>
+              Travel to {relic.world === "moon" ? "Mars" : "the Moon"} <span className="arrow" aria-hidden>→</span>
+            </button>
+            <button className="btn" onClick={() => openSignal()}>Open the evidence room</button>
+          </div>
         </aside>}
         {/* Only in `npm run dev`: a reminder that a human still has to check this relic. */}
         {import.meta.env.DEV && !relic.verified && <p className="unverified mono">Unverified (dev only)</p>}

@@ -23,6 +23,10 @@ export default function SignalRoom({ chapter }: { chapter: SignalChapter }) {
     document.title = `${item?.title ?? (chapter === "exhibit" ? "Your exhibition" : "After the Signal")} | Left Behind`;
     main.current?.scrollTo(0, 0);
     main.current?.querySelector<HTMLElement>("#signal-heading")?.focus({ preventScroll: true });
+    // On narrow screens the stepper scrolls sideways: keep the current chapter in view.
+    const steps = main.current?.querySelector<HTMLElement>(".chapter-steps");
+    const current = steps?.querySelector<HTMLElement>("[aria-current]");
+    if (steps && current) steps.scrollLeft = current.offsetLeft - (steps.clientWidth - current.offsetWidth) / 2;
     return () => { document.title = previousTitle; };
   }, [chapter, item]);
 
