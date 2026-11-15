@@ -459,6 +459,26 @@ a { color: inherit; text-underline-offset: 2px; }
   .reading-mode .photo-frame { aspect-ratio: 16 / 9; }
 }
 
+/* Evidence-based learning, with the same restrained card styling. */
+.explorer-question { border: 1px solid var(--rule); padding: 1.25rem; margin: 1.5rem 0; }
+.explorer-question fieldset { padding: 0; margin: 0; border: 0; min-width: 0; }
+.explorer-question legend { font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; }
+.explorer-options { display: grid; gap: 0.5rem; }
+.explorer-options button {
+  color: var(--text); background: #111317; border: 1px solid var(--rule);
+  padding: 0.85rem; text-align: left; font: inherit; font-size: 0.8rem; line-height: 1.5; cursor: pointer;
+}
+.explorer-options button:enabled:hover, .explorer-options button[aria-pressed="true"] { border-color: var(--accent); }
+.explorer-options button:disabled { cursor: default; }
+.explorer-options button[data-correct="true"] { border-color: var(--accent); background: #1a2024; }
+.explorer-feedback { font-size: 0.8rem; line-height: 1.7; }
+.explorer-feedback:empty { display: none; }
+.explorer-feedback a { display: block; margin-bottom: 0.75rem; }
+.photo-frame { position: relative; }
+.photo-loading { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-size: 0.7rem; }
+.photo-frame .photo-missing { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; padding: 1.5rem; text-align: center; font-size: 0.8rem; }
+.photo-missing p { margin: 0; }
+
 /* Mission discovery and documentary chapters. */
 .landing { height: 100%; overflow-y: auto; align-content: safe center; }
 .landing .landing-kicker { font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0; }

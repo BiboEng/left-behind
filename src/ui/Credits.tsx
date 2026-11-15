@@ -52,8 +52,8 @@ function CreditsDialog() {
 
       <div className="credits-body">
         <p className="credits-lead">
-          Everything in Left Behind is real. The globes, photos, models and facts come from NASA open data and from
-          the agencies that flew each mission.
+          Explore NASA hardware through credited photos, mission records and reference models. A marker shows a
+          reported site or a labeled approximate or target region; a model is not a reconstruction of today's remains.
         </p>
 
         {credits.textures.length > 0 && (
@@ -139,6 +139,10 @@ function CreditsDialog() {
           <h3>Made by</h3>
           <p className="credits-note">
             Ibrahim and Rayan, for a NASA open data hackathon. Built with React, three.js, React Three Fiber and drei.
+          </p>
+          <p className="credits-note">
+            Development and draft educational questions assisted by Devin (Cognition). NASA photos and models are
+            credited originals. The team reviews mission facts against the sources on each card.
           </p>
           <p className="credits-note">
             Left Behind is not affiliated with or endorsed by NASA. Every image and model belongs to the owner credited
