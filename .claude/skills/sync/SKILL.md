@@ -1,7 +1,7 @@
 ---
 name: sync
 description: Save and share work safely — commit my changes, pull my teammate's, run the tests, and push. Use whenever someone says sync, save, commit, push, or "get Rayan's/Ibrahim's changes".
-argument-hint: [short description of what changed]
+argument-hint: "[short description of what changed]"
 allowed-tools: Bash(git *) Bash(npm run build) Bash(npm test) Read Grep
 ---
 
