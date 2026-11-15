@@ -243,3 +243,14 @@
 /* Buttons and headings reset fonts; restore the intended families. */
 .signal-shell .step-label, .signal-shell .partner-note h2 { font-family: var(--font-sans); }
 .intro-cases button { font: inherit; }
+.relay { margin: 4rem 0 2rem; }
+.relay h2 { font-size: var(--step-4); margin: 0.5rem 0 1rem; line-height: 1; }
+.relay ol { list-style: none; margin: 2rem 0 0; padding: 0; border-top: 1px solid var(--rule); }
+.relay li { display: flex; align-items: center; gap: 1rem; border-bottom: 1px solid var(--rule); }
+.relay-step { flex: 1; display: grid; grid-template-columns: 5rem minmax(0, 1fr); gap: 1.5rem; align-items: baseline; padding: 1.25rem 0.5rem; background: none; border: 0; color: var(--ink); text-align: left; cursor: pointer; font: inherit; border-radius: var(--radius-sm); }
+.relay-step:hover { background: rgba(255, 255, 255, 0.035); }
+.relay-year { font: 400 var(--step-2)/1 var(--font-display); color: var(--gold); }
+.relay-step strong { display: block; font: 400 var(--step-2)/1.2 var(--font-display); }
+.relay-step strong + span { color: var(--ink-2); }
+.relay li > a { color: var(--ink-3); font-size: var(--step--1); white-space: nowrap; padding-right: 0.5rem; }
+@media (max-width: 680px) { .relay-step { grid-template-columns: 3.5rem minmax(0, 1fr); gap: 0.75rem; } .relay li { flex-wrap: wrap; } .relay li > a { padding: 0 0.5rem 1rem 4.25rem; } }

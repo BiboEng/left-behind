@@ -1,9 +1,18 @@
+import { useTimeline } from "../../state/timeline";
 import { useRef, useState } from "react";
 import { exhibitionText } from "../../data/exhibition";
 import { caseById, evidenceCases, signalAudio, signalMedia, signalSources } from "../../data/signal";
 import { openSignal, signalUrl } from "../../state/router";
 import { DEFAULT_EXHIBIT_TITLE, MAX_CAPTION, MAX_TITLE, useSignal } from "../../state/signal";
 import ArchiveFigure from "./ArchiveFigure";
+
+const RELAY = [
+  { year: "1964", relic: "ranger-7", title: "Ranger 7 proved the ground was there", text: "Its close-ups gave scientists the confidence to try soft landings with Surveyor.", source: "https://www.nasa.gov/history/60-years-ago-ranger-7-photographs-the-moon/" },
+  { year: "1967", relic: "surveyor-3", title: "Surveyor 3 waited for visitors", text: "Apollo 12 landed beside it two and a half years later and brought parts of it home.", source: "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1967-035A" },
+  { year: "1998", relic: "lunar-prospector", title: "Lunar Prospector found hydrogen at the poles", text: "NASA read it as the first direct evidence of water ice there.", source: "https://science.nasa.gov/mission/lunar-prospector/" },
+  { year: "2009", relic: "lcross", title: "LCROSS crashed into the dark to check", text: "Its impact confirmed water in Cabeus crater near the south pole.", source: "https://nssdc.gsfc.nasa.gov/planetary/text/lcross_pr_20091113.txt" },
+  { year: "Next", relic: "lcross", title: "Artemis aims for the south pole", text: "NASA's candidate Artemis III landing regions surround the pole, where shadowed craters can preserve water.", source: "https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/" },
+] as const;
 
 export default function Exhibition() {
   const cards = useSignal((s) => s.cards);
@@ -109,6 +118,20 @@ export default function Exhibition() {
       </div>
       <p className="exhibit-print-url">Open this exhibition: {url}</p>
       <p className="exhibit-review-note">Editorial text was drafted with AI assistance and linked to NASA sources. Human source verification remains pending.</p>
+    </section>
+    <section className="relay no-print" aria-labelledby="relay-title">
+      <p className="eyebrow">Epilogue</p>
+      <h2 id="relay-title">The relay</h2>
+      <p className="signal-lead">No machine in this story finished the job alone. Each one handed something to the next.</p>
+      <ol>
+        {RELAY.map((step) => <li key={step.relic}>
+          <button className="relay-step" onClick={() => useTimeline.getState().jumpToRelic(step.relic)}>
+            <span className="relay-year">{step.year}</span>
+            <span><strong>{step.title}</strong><span>{step.text}</span></span>
+          </button>
+          <a href={step.source} target="_blank" rel="noreferrer">Source ↗</a>
+        </li>)}
+      </ol>
     </section>
     <details className="classroom-guide no-print">
       <summary>Bring this into a classroom</summary>
