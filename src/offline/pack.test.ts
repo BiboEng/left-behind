@@ -1,5 +1,6 @@
 import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
+import { createHash } from "node:crypto";
 import { join } from "node:path";
 import { afterEach, expect, it } from "vitest";
 import { buildOfflinePack } from "../../scripts/build-offline-pack.mjs";
@@ -16,7 +17,11 @@ it("pins the whole documentary edition, including unvisited chapters, without ca
   expect(pack.files).toEqual(["/assets/LunarLab-test.js", "/assets/entry.js", "/assets/font.woff2", "/assets/style.css", "/evidence/audio.wav", "/evidence/photo.webp", "/evidence/source.csv", "/favicon.svg", "/index.html", "/offline-pack.json"]);
   expect(JSON.parse(readFileSync(join(directory, "offline-pack.json"), "utf8"))).toEqual(pack);
   const worker = readFileSync(join(directory, "offline-sw.js"), "utf8");
-  expect(worker).toContain(JSON.stringify(pack));
+  const embedded = JSON.parse(worker.match(/const PACK = (.+);/)![1]);
+  expect(embedded).toMatchObject(pack);
+  const digest = (bytes: Buffer) => `sha256-${createHash("sha256").update(bytes).digest("base64")}`;
+  for (const file of pack.files.filter((file) => file !== "/offline-pack.json")) expect(pack.integrity[file]).toBe(digest(readFileSync(join(directory, file.slice(1)))));
+  expect(embedded.manifestIntegrity).toBe(digest(readFileSync(join(directory, "offline-pack.json"))));
   expect(worker).not.toContain("/* EVIDENCE_PACK */ null");
   expect(buildOfflinePack(directory)).toEqual(pack);
   // An identical-sized change must still produce a fresh edition.

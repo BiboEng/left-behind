@@ -11,15 +11,16 @@ Left Behind: After the Signal
 
 NASA's machines may stop transmitting, but their evidence can keep working. Left Behind is an
 interactive documentary about hardware left on the Moon and Mars. Visitors inspect Ranger 7's
-unfinished photographs, follow the discovery exposed by Spirit's damaged wheel, and hear InSight's
-recorded ground vibrations. Each investigation separates observation, interpretation and scientific
+unfinished photographs, follow the discovery exposed by Spirit's damaged wheel, hear InSight's
+recorded ground vibrations, and revisit an Apollo 17 catalog to investigate vibrations associated
+with an abandoned lander. Each investigation separates observation, interpretation and scientific
 limits. Visitors then curate a source-linked exhibition they can share, print or bring into a
-classroom. A 19-story globe atlas connects these surviving records to the machines and places that
+classroom, including without an internet connection after saving the evidence room. A 19-story globe atlas connects these surviving records to the machines and places that
 produced them.
 
 ## Final project link
 
-Add the approved public deployment URL. Check the landing, a direct #signal/insight link and
+Add the approved public deployment URL. Check the landing, direct #signal/insight and #signal/apollo links and
 a shared exhibition without authentication.
 
 ## Demo link
@@ -30,7 +31,7 @@ A long browser-test recording is development evidence, not a compliant submissio
 ## Detailed description
 
 Left Behind answers “Abandoned but not Forgotten” by following NASA equipment's scientific role
-after its operational life. Visitors investigate three records and preserve a story with its sources attached.
+after its operational life. Visitors investigate four records and preserve a story with its sources attached.
 
 Ranger 7 shows that destruction can be a mission's planned conclusion. An archive composite preserves
 two incomplete final camera frames. The interaction explains what their surface detail can establish
@@ -52,15 +53,25 @@ Each investigation links to the hardware in a NASA-textured Moon/Mars atlas with
 stories, mission facts, imagery and optional 3D reference models. Search and a renderer-independent
 reading mode support visitors who prefer text or cannot use WebGL.
 
+Apollo 17 reverses the question: what if the equipment became part of the measurement? Visitors
+compare 3,250 selected LSPE seismic events from Civilini, Husker and Weber's published catalog.
+They can filter by month, direction and estimate quality, remove the lunar-module direction sector,
+and compare the four published sensor-arrival picks behind an event. A shareable investigation
+URL and downloadable evidence receipt preserve the filters, counts, picks, sources and limits.
+The unchanged CC0 CSV is bundled with a pinned SHA-256. The explorer reproduces catalog results;
+it calculates no new source locations, and a direction match does not prove an event's source.
+
 The final exhibition is the visitor's contribution. Selected stories retain observations, interpretations,
 limits and citations. Visitors can add a title and reader question, copy a share URL, print/Save PDF
 and download plain-text source notes. No account or backend database is required. Reader captions
 are explicitly distinct from NASA statements.
 
 The application uses React, TypeScript, Vite, Zustand, Three.js, React Three Fiber and drei. Vitest
-checks data contracts, routing/history, source/media integrity and waveform reproducibility. Core
-evidence images/audio are bundled locally. Source pages and some atlas imagery need a connection;
-the application is not an offline product.
+checks data contracts, routing/history, source/media integrity, waveform and catalog reproducibility.
+An optional offline pack saves every chapter, local evidence asset, audio, catalog, font and exhibition
+tool. Each edition is content-fingerprinted, and SHA-256 integrity checks verify every downloaded
+resource before the complete batch is saved. Updates wait for an explicit reload. Offline audio
+seeking uses byte-range responses. External source websites and atlas media still need a connection.
 
 The audience is school-age explorers and casual space enthusiasts. The classroom guide asks visitors
 to distinguish observations from interpretations and ask what further evidence they need. These are
@@ -78,6 +89,10 @@ intended benefits, not measured classroom outcomes.
 - [JPL: InSight retirement](https://www.jpl.nasa.gov/news/nasa-retires-insight-mars-lander-mission-after-years-of-science/)
 - [Final selfie, PIA25287](https://images.nasa.gov/details/PIA25287)
 - [One of InSight's last images, PIA25680](https://images.nasa.gov/details/PIA25680)
+- [NASA PDS: Apollo 17 Lunar Seismic Profiling Experiment](https://pds.nasa.gov/ds-view/pds/viewContext.jsp?identifier=urn%3Anasa%3Apds%3Acontext%3Ainstrument%3Alspe.a17a&version=1.2)
+- [NASA-funded Apollo 17 research: Caltech's lunar alarm clock](https://www.caltech.edu/about/news/the-lunar-alarm-clock-new-study-characterizes-regular-moonquakes)
+- [Civilini, Husker and Weber's LSPE catalog, CaltechDATA v2.0, CC0](https://data.caltech.edu/records/d7mk4-f8t44)
+- [Apollo 17 photograph, NASA/JSC, AS17-134-20382](https://images.nasa.gov/details/as17-134-20382)
 - Atlas: NASA Image and Video Library, NSSDCA mission catalog, LRO LROC/LOLA,
   MRO HiRISE, Viking/USGS imagery, MOLA and NASA 3D Resources. See [NASA_DATA.md](NASA_DATA.md).
 
@@ -85,6 +100,10 @@ Credits appear in the application and exported notes. Audio credit:
 NASA/JPL-Caltech/CNES/IPGP/Imperial College London. The original audio is unchanged and drives the
 waveform; browser playback uses a disclosed 16,000 Hz resampling. The envelope is a described display
 transformation, not a calibrated measurement.
+
+The LSPE catalog is a published research product from NASA instrument records. The educational
+view counts events once, groups four sensor rows per event, and preserves source direction estimates
+and arrival picks. These are described transformations, not AI-generated scientific measurements.
 
 ## Other references and tools
 
@@ -109,10 +128,10 @@ not generated by an AI model. Reader captions are user-authored. Human source ve
 | Time | Show | Suggested narration |
 | --- | --- | --- |
 | 0–4 s | Landing and dusty InSight selfie | “The machines went silent. Their evidence didn't.” |
-| 4–9 s | Ranger final frames; reveal interpretation | “An unfinished photograph. A spacecraft designed to crash.” |
-| 9–14 s | Spirit image → instrument result | “A broken wheel exposed a clue. Instruments connected it to water.” |
-| 14–21 s | Play InSight; seek the waveform | “A silent lander left a record of a moving planet.” |
-| 21–27 s | Select stories; show sourced exhibition | “Follow the evidence. Keep its limits. Curate what survives.” |
+| 4–8 s | Ranger final frames → Spirit's disturbed soil | “An unfinished photograph. A broken wheel. A surviving clue.” |
+| 8–12 s | Play InSight; seek the waveform | “A silent lander left a record of a moving planet.” |
+| 12–21 s | Apollo: compare all directions and lander sector | “On the Moon, an abandoned lander became a seismic source. Inspect the published catalog.” |
+| 21–27 s | Four-story exhibition and saved-offline status | “Compare the records. Keep their limits. Take your story offline.” |
 | 27–30 s | Exhibition and project title | “Left Behind. NASA stories that keep working.” |
 
 Show actual behavior. Keep the “about 90%,” “60×” and scientific limits visible where possible.

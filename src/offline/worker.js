@@ -35,8 +35,12 @@ if (typeof self !== "undefined" && PACK) {
   const paths = new Set(PACK.files);
   async function save() {
     const cache = await caches.open(name);
-    // addAll commits the batch only when every same-origin resource succeeds.
-    await cache.addAll(PACK.files.map((path) => new Request(path, { cache: "reload", credentials: "same-origin" })));
+    // SRI verifies the actual bytes before addAll's atomic commit. A host's HTML fallback
+    // can return 200 for a missing CSV; response.ok alone would falsely certify that pack.
+    await cache.addAll(PACK.files.map((path) => new Request(path, {
+      cache: "reload", credentials: "same-origin",
+      integrity: path === "/offline-pack.json" ? PACK.manifestIntegrity : PACK.integrity[path],
+    })));
   }
   async function complete() {
     if (!await caches.has(name)) return false;
