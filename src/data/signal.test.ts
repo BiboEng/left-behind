@@ -78,6 +78,12 @@ describe("evidence provenance", () => {
 });
 
 describe("portable exhibition", () => {
+  it("retains reader caption line breaks as plain text in source-note downloads", () => {
+    const text = exhibitionText({ cards: ["ranger"], title: "Our exhibit", caption: "First line.\r\nSecond line.\u0000" });
+    expect(text).toContain("READER'S CAPTION (not a NASA statement)\nFirst line.\nSecond line.\n");
+    expect(text).not.toContain("\u0000");
+  });
+
   it("keeps evidence, uncertainty, original credits and primary sources in the export", () => {
     const text = exhibitionText({ cards: ["insight", "ranger", "insight"], title: "Beyond the last signal", caption: "What survives?" });
     expect(text.startsWith("Beyond the last signal")).toBe(true);

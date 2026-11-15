@@ -22,7 +22,7 @@ function writeExhibition(url: URL) {
   const title = cleanText(s.title, MAX_TITLE);
   if (title && title !== DEFAULT_EXHIBIT_TITLE) url.searchParams.set("exhibitTitle", title);
   else url.searchParams.delete("exhibitTitle");
-  const caption = cleanText(s.caption, MAX_CAPTION);
+  const caption = cleanText(s.caption, MAX_CAPTION, true);
   if (caption) url.searchParams.set("exhibitNote", caption);
   else url.searchParams.delete("exhibitNote");
 }
@@ -63,7 +63,7 @@ export function startRouter(): () => void {
         useSignal.setState({
           chapter, cards: parseCards(url.searchParams.get("collection")),
           title: cleanText(url.searchParams.get("exhibitTitle"), MAX_TITLE) || DEFAULT_EXHIBIT_TITLE,
-          caption: cleanText(url.searchParams.get("exhibitNote"), MAX_CAPTION),
+          caption: cleanText(url.searchParams.get("exhibitNote"), MAX_CAPTION, true),
         });
         s.setWorld(null);
         s.setMode(url.searchParams.get("view") === "reading" ? "reading" : "globe");

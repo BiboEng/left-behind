@@ -16,6 +16,7 @@ export default function Exhibition() {
   const selected = cards.flatMap((id) => { const item = caseById.get(id); return item ? [item] : []; });
 
   const copy = async () => {
+    setCopied("");
     try {
       if (!navigator.clipboard?.writeText) throw new Error("Clipboard unavailable");
       await navigator.clipboard.writeText(url);
@@ -68,7 +69,8 @@ export default function Exhibition() {
         <button className="signal-button" disabled={!cards.length} onClick={() => window.print()}>Print / Save PDF</button>
         <button className="signal-button" disabled={!cards.length} onClick={download}>Download source notes</button>
       </div>
-      <p className="collection-note" role="status">{copied === url ? "Your link contains these stories, title and caption. It can be opened without an account." :
+      <p className="collection-note" role="status">{copied === url ? "Your link contains these stories, title and caption. It can be opened without an account." : fallback ?
+        "Automatic copying is unavailable. Select the link below and copy it." :
         "Your choices are encoded in the link. No account, tracking or server upload is needed. Anyone with the link can read your caption."}</p>
       {fallback && <label className="share-fallback">Copy this exhibition URL
         <input ref={linkInput} value={url} readOnly onFocus={() => linkInput.current?.select()} />

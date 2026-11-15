@@ -34,6 +34,17 @@ describe("documentary and atlas route boundary", () => {
     expect(useSignal.getState()).toMatchObject({ chapter: "exhibit", cards: ["insight", "ranger"], title: "Our evidence" });
   });
 
+  it("preserves multiline captions when sharing and reopening while normalizing other controls", () => {
+    stop = startRouter();
+    openSignal("exhibit");
+    useSignal.getState().setCaption("First line.\r\nSecond line.\u0000");
+    const shared = signalUrl();
+    expect(shared.searchParams.get("exhibitNote")).toBe("First line.\nSecond line.");
+    navigate(shared.pathname + shared.search + shared.hash);
+    expect(useSignal.getState().caption).toBe("First line.\nSecond line.");
+    expect(cleanText("First\nSecond", 80)).toBe("First Second");
+  });
+
   it("keeps edits in one URL entry, preserves unrelated parameters and pushes chapter changes", () => {
     stop = startRouter();
     openSignal("ranger");

@@ -13,9 +13,11 @@ export function parseCards(value: string | null): CaseId[] {
   }
   return result;
 }
-export function cleanText(value: string | null, max: number) {
-  return Array.from(value ?? "", (char) => {
+export function cleanText(value: string | null, max: number, multiline = false) {
+  // Textarea line breaks belong in shared captions too; normalize Windows line endings.
+  return Array.from((value ?? "").replace(/\r\n?/g, "\n"), (char) => {
     const code = char.charCodeAt(0);
+    if (multiline && code === 10) return char;
     return code < 32 || code === 127 ? " " : char;
   }).join("").trim().slice(0, max);
 }

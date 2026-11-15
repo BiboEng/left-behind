@@ -13,7 +13,7 @@ export function exhibitionText(exhibition: Exhibition) {
     "LEFT BEHIND / AFTER THE SIGNAL",
     "A reader-curated exhibition of NASA evidence.", "",
   ];
-  const caption = cleanText(exhibition.caption, MAX_CAPTION);
+  const caption = cleanText(exhibition.caption, MAX_CAPTION, true);
   if (caption) lines.push("READER'S CAPTION (not a NASA statement)", caption, "");
   for (const id of [...new Set(exhibition.cards)]) {
     const item = caseById.get(id);
