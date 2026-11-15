@@ -20,6 +20,7 @@ export default function SeismicRecord() {
     </div>
     <h2 id="seismic-title">Listen through the ground.</h2>
     <p>The vibrations were too slow to hear. NASA sped them up 60 times. Headphones separate the two sensor channels.</p>
+    <p className="audio-alternative">Playback copy resampled for browsers; NASA's speed and pitch retained. The waveform uses the unchanged original.</p>
     <div className="record-channel" role="group" aria-label="Waveform channels to display">
       {(["both", "vbb", "sp"] as const).map((value) => <button className="back" key={value}
         aria-pressed={channel === value} onClick={() => setChannel(value)}>
@@ -60,10 +61,11 @@ export default function SeismicRecord() {
       {" "}<button className="back" onClick={() => { setFailed(false); audio.current?.load(); }}>Retry audio</button></p>}
     <p id="audio-alternative" className="audio-alternative">{signalAudio.description}</p>
     <details className="record-method"><summary>How to read this waveform</summary>
-      <p>{waveform.method} The channel buttons change the displayed traces; playback remains NASA's original stereo mix.
+      <p>{waveform.method} The channel buttons change the displayed traces; playback retains NASA's stereo mix.
         A large peak alone does not identify a marsquake. No event boundaries or quake detections have been inferred here.</p>
       <p>{signalAudio.processing}</p>
-      <p><a href={signalSources.insightSound.url} target="_blank" rel="noreferrer">NASA source, original file and description ↗</a></p>
+      <p><a href={signalSources.insightSound.url} target="_blank" rel="noreferrer">NASA source and description ↗</a>
+        {" · "}<a href={signalAudio.sourcePath} download>Download unchanged source WAV</a></p>
       <p className="source-credit">{signalAudio.credit}</p>
     </details>
   </section>;

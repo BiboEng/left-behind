@@ -53,8 +53,10 @@ We have not established a world-first claim.
 7. **Wider context.** Jump into the relevant atlas relic. Mission search, reading mode, models,
    approximate-location labels and aggregate Credits remain available.
 
-The evidence room requires no WebGL. Its five images and original audio total less than 600 kB,
-bundled locally for reliable access. The whole application is not an offline/PWA product.
+The evidence room requires no WebGL. Five images and the unchanged source audio total less than
+600 kB; a separate 2.56 MB, 16,000 Hz playback WAV avoids native-browser failures with the source's
+unusual 1,200 Hz rate. The resampling is disclosed beside the player and in exports. Both copies
+are local. The whole application is not an offline/PWA product.
 
 ## Rubric evidence
 

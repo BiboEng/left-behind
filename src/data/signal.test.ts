@@ -36,9 +36,11 @@ describe("evidence provenance", () => {
       nasaUrl(media.original);
       expect(media.credit.trim()).toBeTruthy();
       expect(media.processing.trim()).toBeTruthy();
-      size += statSync(resolve("public", media.path.slice(1))).size;
+      const path = media === signalAudio ? signalAudio.sourcePath : media.path;
+      size += statSync(resolve("public", path.slice(1))).size;
     }
     expect(size).toBeLessThan(750_000);
+    expect(statSync(resolve("public", signalAudio.path.slice(1))).size).toBeLessThan(3_000_000);
   });
 
   it("reproduces every plotted peak and exact duration from NASA's unmodified audio", () => {
@@ -54,6 +56,16 @@ describe("evidence provenance", () => {
       expect(channel).toHaveLength(256);
       expect(channel.every((value) => value >= 0 && value <= 1)).toBe(true);
     }
+  });
+
+  it("provides a standard-rate stereo playback copy with the original duration and visible processing notes", () => {
+    const copy = waveformFromWav(readFileSync(resolve("public", signalAudio.path.slice(1))));
+    expect(copy.sampleRate).toBe(16000);
+    expect(copy.duration).toBeCloseTo(waveform.duration, 4);
+    expect(copy.channels).toHaveLength(2);
+    expect(signalAudio.sourcePath).not.toBe(signalAudio.path);
+    expect(signalAudio.processing).toContain("resampled");
+    expect(signalAudio.processing).toContain("60×");
   });
 
   it("rejects a truncated or non-PCM source instead of silently fabricating a waveform", () => {

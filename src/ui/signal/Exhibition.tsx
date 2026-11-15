@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { exhibitionText } from "../../data/exhibition";
-import { caseById, evidenceCases, signalMedia, signalSources } from "../../data/signal";
+import { caseById, evidenceCases, signalAudio, signalMedia, signalSources } from "../../data/signal";
 import { openSignal, signalUrl } from "../../state/router";
 import { DEFAULT_EXHIBIT_TITLE, MAX_CAPTION, MAX_TITLE, useSignal } from "../../state/signal";
 import ArchiveFigure from "./ArchiveFigure";
@@ -99,6 +99,7 @@ export default function Exhibition() {
             <details className="exhibit-source-list" open>
               <summary>Follow the evidence</summary>
               <ul>{item.sources.map((key) => <li key={key}><a href={signalSources[key].url} target="_blank" rel="noreferrer">{signalSources[key].title}</a></li>)}</ul>
+              {item.id === "insight" && <p><strong>Audio credit:</strong> {signalAudio.credit}. {signalAudio.processing}</p>}
             </details>
             <button className="text-link no-print" onClick={() => openSignal(item.id)}>Reopen this investigation <span aria-hidden>↗</span></button>
           </div>

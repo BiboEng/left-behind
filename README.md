@@ -32,7 +32,8 @@ npm run preview
 - Separate observation from interpretation, reveal scientific limits and inspect NASA sources.
 - Keep stories and build an exhibition. Copy its link, print/Save PDF or download source notes.
 - Direct links include #signal/ranger, #signal/spirit, #signal/insight and #signal/exhibit.
-- InSight plays NASA's unchanged 60× stereo sonification. Rebuild its sample-derived display with npm run signal:waveform.
+- InSight plays a browser-compatible resampling of NASA's 60× stereo sonification. The unchanged original drives the waveform.
+- Rebuild its sample-derived display with `npm run signal:waveform`. Regenerating the committed playback copy uses `npm run signal:audio` and requires FFmpeg; normal builds do not.
 
 - Choose the Moon or Mars, then scroll through the timeline or use the labeled Previous / Next buttons.
 - Open **Mission index** to search stories, dates and places, or filter by world and mission status.

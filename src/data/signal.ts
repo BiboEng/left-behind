@@ -106,11 +106,12 @@ export const signalMedia = {
 } as const satisfies Record<string, EvidenceMedia>;
 
 export const signalAudio = {
-  path: "/evidence/insight-sol128.wav",
+  path: "/evidence/insight-sol128-playback.wav",
+  sourcePath: "/evidence/insight-sol128.wav",
   original: "https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/4/42692_insight_quake_sol128.wav",
   source: "insightSound" as const,
   credit: "NASA/JPL-Caltech/CNES/IPGP/Imperial College London",
-  processing: "NASA's supplied stereo audio, unchanged. NASA accelerated the vibrations 60× to make them audible. Left: very broad band sensors; right: short period sensors.",
+  processing: "NASA accelerated the vibrations 60× to make them audible. The browser playback copy is resampled from 1,200 to 16,000 Hz with FFmpeg, retaining that speed and pitch. The unchanged original is retained for the waveform. Left: very broad band sensors; right: short period sensors.",
   description: "Nonverbal audio contains wind-related vibration, the first likely marsquake, and movement of the robotic arm. It is a sonification of ground vibrations, not a microphone recording. The waveform provides a visual alternative to listening.",
 };
 

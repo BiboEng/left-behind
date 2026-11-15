@@ -25,6 +25,16 @@ NASA accelerated the vibrations 60×. This is not microphone audio or calibrated
 telemetry. It contains wind-related vibration, a likely marsquake and arm movement.
 The file contains 48,002 stereo frames at 1,200 Hz (40.001666… seconds).
 
+insight-sol128-playback.wav is a separate stereo PCM16 copy resampled to 16,000 Hz with FFmpeg
+for browser compatibility. The source's unusual 1,200 Hz rate failed native Chrome playback.
+NASA's 60× speed and pitch are retained. The copy lasts 40.001688 seconds (within one output
+sample of the original), uses 2.56 MB, and is not the source of the plotted waveform.
+
+Run npm run signal:audio to regenerate this copy; install FFmpeg only for this optional
+regeneration step. Normal builds and tests use the committed asset and do not require FFmpeg.
+It was generated with FFmpeg 4.4.2/libswresample 3.9.100, PCM16 stereo, 16,000 Hz, metadata removed,
+bitexact flags, no gain/normalization or event selection. See scripts/build-signal-audio.mjs.
+
 Run npm run signal:waveform from the repository root to regenerate src/data/insight-waveform.json.
 The script computes peak absolute PCM sample per equal time bin, normalizing both channels with
 one shared maximum. This is display amplitude only. Tests recompute every peak and verify the

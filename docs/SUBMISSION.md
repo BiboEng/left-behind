@@ -40,8 +40,10 @@ Spirit shows how damage can unexpectedly expose a clue. Visitors compare bright 
 an explanation of the Alpha Particle X-ray Spectrometer's approximately 90% silica finding.
 Water-related geological interpretations are distinguished from a claim of life.
 
-InSight connects a silent lander to a surviving record. NASA's supplied stereo Sol 128 WAV plays locally.
-A reproducible script parses 48,002 stereo PCM frames into 256 peak-amplitude bins per channel.
+InSight connects a silent lander to a surviving record. A browser-compatible copy of NASA's stereo
+Sol 128 WAV plays locally. It is resampled from 1,200 to 16,000 Hz with FFmpeg, retaining NASA's speed,
+pitch and stereo channels. The unchanged original remains downloadable and is the waveform source.
+A reproducible script parses its 48,002 stereo PCM frames into 256 peak-amplitude bins per channel.
 Visitors can inspect either channel and seek through the clip. NASA's 60× acceleration, the mixture
 of seismic and other vibrations, and the absence of calibrated ground-motion units are stated beside
 the display. No new quake detection or interior inversion is claimed.
@@ -80,8 +82,9 @@ intended benefits, not measured classroom outcomes.
   MRO HiRISE, Viking/USGS imagery, MOLA and NASA 3D Resources. See [NASA_DATA.md](NASA_DATA.md).
 
 Credits appear in the application and exported notes. Audio credit:
-NASA/JPL-Caltech/CNES/IPGP/Imperial College London. Audio is unchanged; the envelope is a
-described display transformation, not a calibrated measurement.
+NASA/JPL-Caltech/CNES/IPGP/Imperial College London. The original audio is unchanged and drives the
+waveform; browser playback uses a disclosed 16,000 Hz resampling. The envelope is a described display
+transformation, not a calibrated measurement.
 
 ## Other references and tools
 
