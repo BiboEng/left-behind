@@ -10,6 +10,8 @@ done, add new ones as they come up.
 - [x] Moon texture (NASA CGI Moon Kit)
 - [x] Moon relics researched: Luna 2, Luna 9, Surveyor 3, Apollo 11, Lunokhod 1, Apollo 15, Apollo 17
 - [x] Mars relics researched: all 12 in `docs/RELICS.md`
+- [x] Mars texture (Viking MDIM 2.1 color mosaic), calibrated on Olympus Mons
+- [x] Credits screen (`src/ui/Credits.tsx`), built automatically from the data
 
 ## Still to do (any order)
 - [ ] Verify every relic: open its sources, then set `verified: true` (humans only)
@@ -18,8 +20,6 @@ done, add new ones as they come up.
 - [ ] Hero models: download the NASA `.glb`, optimize, put in `public/<world>/models/`, set `model` in the JSON
       (Moon: Apollo Lunar Module · Mars: Viking lander, Mars Exploration Rover, InSight, Ingenuity;
       NASA has no Pathfinder model)
-- [ ] Mars texture (Viking color mosaic) in `public/mars/`, set in `src/worlds/mars.ts`, calibration check (Olympus Mons)
-- [ ] Credits screen `src/ui/Credits.tsx`: every NASA dataset, photo and model credit, pulled from the data
 - [ ] Taglines, intros and outros in `src/worlds/moon.ts` and `src/worlds/mars.ts`
 - [ ] Landing screen polish; loading screen so textures don't pop in
 - [ ] Read every card start to end and fix anything awkward

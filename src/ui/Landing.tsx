@@ -3,6 +3,7 @@ import { relics } from "../data";
 import { useTimeline } from "../state/timeline";
 import type { World } from "../types/relic";
 import { worlds } from "../worlds";
+import { CreditsButton } from "./Credits";
 
 const CHOICES: World[] = ["moon", "mars"];
 
@@ -21,6 +22,7 @@ export default function Landing() {
           </button>
         ))}
       </div>
+      <CreditsButton className="credits-link" />
     </main>
   );
 }

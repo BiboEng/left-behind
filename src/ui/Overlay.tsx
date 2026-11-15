@@ -8,10 +8,12 @@ import { type WheelEvent, useEffect, useRef } from "react";
 import { relics } from "../data";
 import { CALIBRATION, calibrating } from "../engine/calibration";
 import { scrollTimelineBy } from "../engine/scrollBridge";
+import { useCredits } from "../state/credits";
 import { useTimeline } from "../state/timeline";
 import type { World } from "../types/relic";
 import { worlds } from "../worlds";
 import { year } from "./format";
+import { CreditsButton } from "./Credits";
 import StoryCard from "./StoryCard";
 import TimelineRail, { ProgressBar } from "./TimelineRail";
 
@@ -34,6 +36,7 @@ export default function Overlay({ world }: { world: World }) {
           Left Behind <span className="sep">·</span> {config.name}
         </p>
         {relic && <p className="current-year mono" aria-hidden>{year(relic.arrived)}</p>}
+        <CreditsButton className="back topbar-credits" />
       </header>
       <ProgressBar />
 
@@ -92,6 +95,8 @@ function useKeyboard(world: World) {
     const list = relics[world];
     const onKey = (e: KeyboardEvent) => {
       if (e.altKey || e.ctrlKey || e.metaKey) return;
+      // The Credits screen handles its own keys (Esc closes it, arrows scroll it).
+      if (useCredits.getState().open) return;
       const { activeIndex, jumpToRelic, setWorld } = useTimeline.getState();
       if (e.key === "Escape") {
         setWorld(null);
