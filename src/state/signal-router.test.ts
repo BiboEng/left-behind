@@ -4,12 +4,15 @@ import { relics } from "../data";
 import { openAtlas, openSignal, signalUrl, startRouter } from "./router";
 import { cleanText, DEFAULT_EXHIBIT_TITLE, parseCards, parseSignalChapter, useSignal } from "./signal";
 import { useTimeline } from "./timeline";
+import { useLunar } from "./lunar";
+import { DEFAULT_LUNAR_VIEW } from "../data/lunar-view";
 
 let stop: (() => void) | undefined;
 beforeEach(() => {
   window.history.replaceState(null, "", "/demo/?calibrate&campaign=school");
   useTimeline.setState({ world: null, mode: "reading", progress: 0, activeIndex: 0, target: null, jumpTo: null });
   useSignal.setState({ chapter: null, cards: [], title: DEFAULT_EXHIBIT_TITLE, caption: "" });
+  useLunar.setState({ view: { ...DEFAULT_LUNAR_VIEW } });
 });
 afterEach(() => { stop?.(); stop = undefined; vi.restoreAllMocks(); });
 
@@ -19,6 +22,29 @@ const navigate = (path: string) => {
 };
 
 describe("documentary and atlas route boundary", () => {
+  it("shares the Apollo filters and event, restores them on Back, and keeps atlas URLs clean", async () => {
+    stop = startRouter();
+    openSignal("apollo");
+    const length = window.history.length;
+    const view = { month: "1976-08", direction: "module", tight: false, eventId: "760815-10-M1" } as const;
+    useLunar.getState().setView(view);
+    useSignal.getState().toggleCard("apollo");
+    expect(window.history.length).toBe(length);
+    const url = signalUrl("apollo");
+    expect(url.searchParams.get("moonDirection")).toBe("module");
+    expect(url.searchParams.get("moonEvent")).toBe(view.eventId);
+    expect(url.searchParams.get("collection")).toBe("apollo");
+    openSignal("insight");
+    expect(window.location.search).not.toContain("moonEvent");
+    window.history.back();
+    await vi.waitFor(() => expect(useSignal.getState().chapter).toBe("apollo"));
+    expect(useLunar.getState().view).toEqual(view);
+    useTimeline.getState().jumpToRelic("apollo-17-challenger");
+    expect(window.location.hash).toBe("#moon/apollo-17-challenger");
+    expect(window.location.search).not.toContain("moonDirection");
+    expect(window.location.search).not.toContain("collection");
+    expect(window.location.search).toContain("campaign=school");
+  });
   it("opens and reloads a portable exhibition without an account, storage or a renderer", () => {
     navigate("/demo/?campaign=school&collection=insight,ranger,insight,unknown&exhibitTitle=Our+evidence&exhibitNote=A+question#signal/exhibit");
     stop = startRouter();

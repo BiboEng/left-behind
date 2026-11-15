@@ -1,9 +1,10 @@
 // A deliberate documentary route: real records first, interpretations and uncertainty alongside.
 import { useEffect, useRef } from "react";
-import { caseById, evidenceCases, signalMedia, type SignalChapter } from "../../data/signal";
+import { caseById, evidenceCases, signalMedia, type CaseId, type SignalChapter } from "../../data/signal";
 import { openAtlas, openSignal } from "../../state/router";
 import { useSignal } from "../../state/signal";
 import { CreditsButton } from "../Credits";
+import OfflinePack from "../OfflinePack";
 import ArchiveFigure from "./ArchiveFigure";
 import Exhibition from "./Exhibition";
 import Investigation from "./Investigation";
@@ -12,7 +13,7 @@ import "./signal.css";
 export default function SignalRoom({ chapter }: { chapter: SignalChapter }) {
   const cards = useSignal((s) => s.cards);
   const main = useRef<HTMLElement>(null);
-  const item = caseById.get(chapter as "ranger" | "spirit" | "insight");
+  const item = caseById.get(chapter as CaseId);
   useEffect(() => {
     const previousTitle = document.title;
     document.title = `${item?.title ?? (chapter === "exhibit" ? "Your exhibition" : "After the Signal")} | Left Behind`;
@@ -41,13 +42,14 @@ export default function SignalRoom({ chapter }: { chapter: SignalChapter }) {
           {cards.includes(entry.id) && <span className="nav-collected" aria-label="Collected">•</span>}
         </button>)}
         <button className="nav-exhibit" aria-current={chapter === "exhibit" ? "page" : undefined} onClick={() => openSignal("exhibit")}>
-          <span className="nav-number">{cards.length}/3</span><span className="nav-label">Your exhibition</span>
+          <span className="nav-number">{cards.length}/{evidenceCases.length}</span><span className="nav-label">Your exhibition</span>
         </button>
-        <p className="nav-footnote">Three machines.<br />Three ways a mission<br />outlives its hardware.</p>
+        <p className="nav-footnote">Four investigations.<br />A mission can outlive<br />its hardware.</p>
       </nav>
       <div className="signal-content">
         {chapter === "intro" ? <Introduction /> : chapter === "exhibit" ? <Exhibition /> : item ? <Investigation key={item.id} item={item} /> : null}
         <footer className="signal-footer">
+          <OfflinePack />
           <p>Real NASA records. Human questions.</p>
           <p>Photographs and audio are credited at the point of use. Interpretations are editorial; sources and limits stay attached.</p>
           <CreditsButton className="text-link" />
@@ -67,7 +69,7 @@ function Introduction() {
       <div>
         <p className="eyebrow">The question worth bringing back</p>
         <h2>When does a mission really end?</h2>
-        <p>Inspect three real records. Separate what was measured from what it means. Then build an exhibition about what survives the last signal.</p>
+        <p>Inspect four real records. Separate what was measured from what it means. Return to an Apollo archive, then build an exhibition about what survives the last signal.</p>
         <button className="signal-button primary" onClick={() => openSignal("ranger")}>Open the first record <span aria-hidden>→</span></button>
         <p className="intro-note">No timers. No scores. Listen, look closely, and keep the evidence that changes your view.</p>
       </div>

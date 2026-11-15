@@ -1,9 +1,25 @@
 // AI-assisted with Devin. Editorial interpretation is separate from observation; source review stays human.
-export const CASE_IDS = ["ranger", "spirit", "insight"] as const;
+export const CASE_IDS = ["ranger", "spirit", "insight", "apollo"] as const;
 export type CaseId = typeof CASE_IDS[number];
 export type SignalChapter = "intro" | CaseId | "exhibit";
 
 export const signalSources = {
+  apolloInstrument: {
+    title: "NASA PDS: Apollo 17 Lunar Seismic Profiling Experiment",
+    url: "https://pds.nasa.gov/ds-view/pds/viewContext.jsp?identifier=urn%3Anasa%3Apds%3Acontext%3Ainstrument%3Alspe.a17a&version=1.2",
+  },
+  apolloCatalog: {
+    title: "Civilini, Husker & Weber: Apollo 17 seismic catalog, CaltechDATA v2.0 (CC0)",
+    url: "https://data.caltech.edu/records/d7mk4-f8t44",
+  },
+  apolloResearch: {
+    title: "Caltech: the lunar alarm clock, NASA-funded study (7 September 2023)",
+    url: "https://www.caltech.edu/about/news/the-lunar-alarm-clock-new-study-characterizes-regular-moonquakes",
+  },
+  apolloPhoto: {
+    title: "NASA Image Library: Apollo 17, AS17-134-20382",
+    url: "https://images.nasa.gov/details/as17-134-20382",
+  },
   rangerCatalog: {
     title: "NSSDC: Ranger 7 impact frames, CP1002",
     url: "https://nssdc.gsfc.nasa.gov/imgcat/html/object_page/ra7_p200.html",
@@ -58,6 +74,15 @@ export interface EvidenceMedia {
 }
 
 export const signalMedia = {
+  apolloLander: {
+    path: "/evidence/apollo17-lander.webp",
+    original: "https://images-assets.nasa.gov/image/as17-134-20382/as17-134-20382~medium.jpg",
+    source: "apolloPhoto",
+    credit: "NASA/JSC · Eugene A. Cernan · AS17-134-20382",
+    alt: "Harrison Schmitt stands beside the flag at Taurus–Littrow, with the Apollo 17 lunar module at the left and the rover behind him.",
+    caption: "13 December 1972. The crew would leave the next day. Challenger's descent stage remained, near the seismic experiment the astronauts deployed.",
+    processing: "Resized to 900 × 900 and converted to WebP; no synthetic detail or measurement overlay.",
+  },
   rangerFirst: {
     path: "/evidence/ranger-first.webp",
     original: "https://images-assets.nasa.gov/image/PIA02975/PIA02975~orig.jpg",
@@ -184,6 +209,22 @@ export const evidenceCases: readonly EvidenceCase[] = [
     reflection: "What could another scientist ask of this record in the future?",
     media: "insightLast",
     sources: ["insightSound", "insightInterior", "insightRetirement", "insightLast"],
+  },
+  {
+    id: "apollo", relicId: "apollo-17-challenger", number: "04", world: "moon", date: "1976–77 records · 2023 research",
+    eyebrow: "The machine becomes the signal",
+    title: "The lander that shook after everyone left.",
+    shortTitle: "An unexpected source",
+    question: "What if the equipment was part of the measurement?",
+    lead: "Apollo 17 left a lander base and four geophones on the Moon. Decades later, researchers returned to their seismic records. Some vibrations pointed toward an unexpected source: the abandoned lander itself.",
+    observation: "The published Grade-A catalog contains 3,250 events, each with arrival picks at four geophones and an estimated direction. A concentration appears in the direction the researchers associated with the lunar module.",
+    interpretation: "Civilini, Husker and Weber connected regular morning vibrations to heating and expansion of Apollo 17's lander base. A machine left behind had become a source of seismic signals, preserved by another instrument left nearby.",
+    limit: "Direction alone does not establish the source of an individual event. The catalog contains selected detections and derived estimates, not raw waveforms, an earthquake-risk map or a live record. The explorer does not recalculate source locations or reproduce every exclusion in the paper.",
+    legacy: "A machine can become part of the question its instruments were sent to answer.",
+    exhibitLabel: "An archive can make an abandoned machine speak again.",
+    reflection: "How would you distinguish a planet's behaviour from the equipment used to observe it?",
+    media: "apolloLander",
+    sources: ["apolloInstrument", "apolloCatalog", "apolloResearch", "apolloPhoto"],
   },
 ];
 

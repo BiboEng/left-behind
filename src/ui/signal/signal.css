@@ -43,10 +43,11 @@
 .signal-button:disabled { opacity: 0.42; cursor: not-allowed; }
 .signal-button.is-collected { color: var(--accent); border-color: #8d775a; }
 .signal-button > span { font-size: 1rem; flex: none; }
-.intro-cases { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 3rem; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.intro-cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 3rem; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
 .intro-cases button { display: flex; flex-direction: column; align-items: flex-start; gap: 0.8rem; color: #b2b4ba; text-align: left; background: none; border: 0; border-right: 1px solid var(--rule); padding: 1.7rem; cursor: pointer; font-size: 0.75rem; line-height: 1.7; }
-.intro-cases button:first-child { padding-left: 0; }
-.intro-cases button:last-child { border-right: 0; }
+.intro-cases button:nth-child(odd) { padding-left: 0; }
+.intro-cases button:nth-child(even) { border-right: 0; }
+.intro-cases button:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
 .intro-cases button:hover { background: #ffffff04; }
 .intro-cases strong { font-size: clamp(1.1rem, 1.5vw, 1.5rem); color: #e1dfd9; font-weight: 450; letter-spacing: -0.04em; }
 .intro-arrow { color: var(--accent); margin-top: auto; }
@@ -133,7 +134,7 @@
 .exhibit-editor fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
 .exhibit-editor legend { font-size: 0.8rem; width: 100%; display: flex; gap: 1rem; justify-content: space-between; margin-bottom: 1rem; }
 .exhibit-editor legend > span { color: var(--accent); font-size: 0.65rem; }
-.exhibit-choices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+.exhibit-choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
 .exhibit-choices label { display: flex; gap: 0.75rem; align-items: center; padding: 0.9rem; border: 1px solid var(--rule); cursor: pointer; font-size: 0.72rem; line-height: 1.6; }
 .exhibit-choices label:has(input:checked) { border-color: #8e7657; background: #b7a47e08; }
 .exhibit-choices input { width: 1rem; height: 1rem; flex: none; margin: 0; accent-color: var(--accent); }
@@ -195,9 +196,9 @@
   .signal-brand { display: grid; gap: 0.35rem; font-size: 0.73rem; }
   .signal-brand span { border: 0; padding: 0; font-size: 0.56rem; }
   .signal-body { display: block; }
-  .signal-nav { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; top: 4.5rem; padding: 0 1.25rem; background: #0b0c0e; z-index: 3; border-bottom: 1px solid var(--rule); }
+  .signal-nav { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0; top: 4.5rem; padding: 0 1.25rem; background: #0b0c0e; z-index: 3; border-bottom: 1px solid var(--rule); }
   .signal-nav > .eyebrow, .nav-footnote, .signal-nav .nav-label small, .nav-collected { display: none; }
-  .signal-nav > button, .signal-nav .nav-exhibit { display: grid; align-content: start; gap: 0.4rem; padding: 0.85rem 0.3rem; border: 0; border-bottom: 2px solid transparent; margin: 0; font-size: 0.62rem; line-height: 1.5; min-height: 4.5rem; }
+  .signal-nav > button, .signal-nav .nav-exhibit { display: grid; align-content: start; gap: 0.4rem; padding: 0.85rem 0.3rem; border: 0; border-bottom: 2px solid transparent; margin: 0; font-size: 0.62rem; line-height: 1.5; min-height: 4.5rem; min-width: 0; overflow-wrap: anywhere; }
   .signal-nav > button[aria-current] { border-bottom-color: var(--accent); }
   .signal-nav .nav-number { font-size: 0.56rem; }
   .signal-content { border: 0; padding: 2.5rem 1.25rem; }

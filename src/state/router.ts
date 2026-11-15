@@ -1,9 +1,11 @@
 // Hash routes keep both the atlas and the evidence room shareable without a server rewrite.
 import { relicById, relics } from "../data";
+import { clearLunarView, parseLunarView, writeLunarView } from "../data/lunar-view";
 import type { SignalChapter } from "../data/signal";
 import type { World } from "../types/relic";
 import { cleanText, DEFAULT_EXHIBIT_TITLE, MAX_CAPTION, MAX_TITLE, parseCards, parseSignalChapter, useSignal } from "./signal";
 import { useTimeline } from "./timeline";
+import { useLunar } from "./lunar";
 
 const WORLDS: readonly World[] = ["moon", "mars"];
 let stopRouter: (() => void) | null = null;
@@ -28,12 +30,15 @@ function writeExhibition(url: URL) {
 }
 function clearExhibition(url: URL) {
   for (const key of ["collection", "exhibitTitle", "exhibitNote"]) url.searchParams.delete(key);
+  clearLunarView(url.searchParams);
 }
 const pathOf = (url: URL) => url.pathname + url.search + url.hash;
 
 export function signalUrl(chapter: SignalChapter = "exhibit") {
   const url = new URL(window.location.href);
   writeExhibition(url);
+  if (chapter === "apollo") writeLunarView(url.searchParams, useLunar.getState().view);
+  else clearLunarView(url.searchParams);
   url.hash = chapter === "intro" ? "signal" : `signal/${chapter}`;
   return url;
 }
@@ -60,6 +65,7 @@ export function startRouter(): () => void {
       const chapter = parseSignalChapter(url.hash);
       const s = useTimeline.getState();
       if (chapter) {
+        if (chapter === "apollo") useLunar.setState({ view: parseLunarView(url.searchParams) });
         useSignal.setState({
           chapter, cards: parseCards(url.searchParams.get("collection")),
           title: cleanText(url.searchParams.get("exhibitTitle"), MAX_TITLE) || DEFAULT_EXHIBIT_TITLE,
@@ -106,10 +112,17 @@ export function startRouter(): () => void {
     writeExhibition(url);
     window.history.replaceState(window.history.state, "", pathOf(url));
   });
+  const unsubscribeLunar = useLunar.subscribe((s, prev) => {
+    if (applyingUrl || useSignal.getState().chapter !== "apollo" || s.view === prev.view) return;
+    const url = new URL(window.location.href);
+    writeLunarView(url.searchParams, s.view);
+    window.history.replaceState(window.history.state, "", pathOf(url));
+  });
 
   stopRouter = () => {
     unsubscribe();
     unsubscribeSignal();
+    unsubscribeLunar();
     window.removeEventListener("popstate", applyUrl);
     window.removeEventListener("hashchange", applyUrl);
     stopRouter = null;

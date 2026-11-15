@@ -63,5 +63,15 @@ and recompute every plotted peak. NASA's 60× acceleration is disclosed in the p
 No raw seismic dataset, event classifier or new scientific discovery is claimed. Local evidence
 assets do not make the wider application offline; source pages and some atlas images need a network.
 
-## Avoid
+## Apollo 17 LSPE catalog
+
+The fourth investigation uses the NASA Apollo 17 Lunar Seismic Profiling Experiment,
+documented in [PDS](https://pds.nasa.gov/ds-view/pds/viewContext.jsp?identifier=urn%3Anasa%3Apds%3Acontext%3Ainstrument%3Alspe.a17a&version=1.2),
+through [Civilini, Husker and Weber's published Grade-A catalog](https://doi.org/10.22002/d7mk4-f8t44).
+This NASA-funded reanalysis is distributed by CaltechDATA under CC0. The unchanged CSV, checksum,
+derivation and image credit are documented in [asset provenance](../public/evidence/README.md).
+The UI groups four sensors into one event, compares published direction estimates and shows
+relative arrival picks. It calculates no new source locations and makes no discovery claim.
+
+## Avoid archived APIs
 - The **Mars Rover Photos API** (api.nasa.gov) has been archived. Don't build on it.

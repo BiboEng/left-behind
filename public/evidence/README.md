@@ -39,3 +39,35 @@ Run npm run signal:waveform from the repository root to regenerate src/data/insi
 The script computes peak absolute PCM sample per equal time bin, normalizing both channels with
 one shared maximum. This is display amplitude only. Tests recompute every peak and verify the
 original audio checksum. No event segmentation, quake detection or ground-motion calibration is performed.
+
+## Apollo 17: a machine in the measurement
+
+`apollo17-catalog.csv` is an unchanged copy of `GradeA_thermal_mq_catalog_final.csv` from
+[Civilini, Husker and Weber's CaltechDATA archive, v2.0](https://doi.org/10.22002/d7mk4-f8t44),
+published 24 October 2024 under CC0. The v2 update corrects hourly SAC timestamps; this CSV is
+identical to v1 (published MD5 `b17645fb59c08f9f0a6a3c2e723ba13f`). Original download:
+https://data.caltech.edu/records/d7mk4-f8t44/files/GradeA_thermal_mq_catalog_final.csv?download=1
+
+SHA-256: `c3ee72f706b1f8bbbced6ee81f98ed10f3e23c8bb99616242f89a6ff2d3ba82d`.
+
+Run `npm run lunar:catalog` to reproduce `src/data/lunar-catalog.json`. It groups 13,000 sensor
+rows into 3,250 events, preserves all four published arrival strings and takes event direction
+and variance from geo1, consistently with the authors' assessment code. One geo4 direction
+differs in the source; no source row is corrected or discarded. Catalog coverage is 15 August
+1976–25 April 1977, as represented by the actual rows, rather than the dates in the news summary.
+
+The explorer's 80° < direction < 120° comparison and azimuth-variance ≤50 option follow
+[the authors' assessment script](https://github.com/civilinifr/thermal_mq_analysis/blob/main/P15_assess_catalog.py).
+It does not reproduce every manual exclusion in that analysis. The cutoff is not a confidence
+percentage. These are cataloged picks and estimated directions, not raw waveforms or new
+source locations. Direction alone does not identify an individual event's source. Relative
+arrival times retain microsecond precision; the display does not imply matching measurement accuracy.
+
+NASA's [LSPE instrument record](https://pds.nasa.gov/ds-view/pds/viewContext.jsp?identifier=urn%3Anasa%3Apds%3Acontext%3Ainstrument%3Alspe.a17a&version=1.2)
+documents the four-geophone network. The lander-heating interpretation is credited to
+[Civilini, Husker and Weber, summarized by Caltech in 2023](https://www.caltech.edu/about/news/the-lunar-alarm-clock-new-study-characterizes-regular-moonquakes).
+
+`apollo17-lander.webp`: NASA/JSC, photograph by Eugene A. Cernan, AS17-134-20382.
+Source: https://images.nasa.gov/details/as17-134-20382 . Original copy:
+https://images-assets.nasa.gov/image/as17-134-20382/as17-134-20382~medium.jpg .
+Resized to 900 × 900 and converted to WebP; no synthetic detail or measurement overlay.

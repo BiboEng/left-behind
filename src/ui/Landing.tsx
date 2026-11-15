@@ -9,6 +9,7 @@ import { worlds } from "../worlds";
 import { CreditsButton } from "./Credits";
 import { year } from "./format";
 import MissionIndex from "./MissionIndex";
+import OfflinePack from "./OfflinePack";
 import "./landing.css";
 
 const CHOICES: World[] = ["moon", "mars"];
@@ -33,7 +34,7 @@ export default function Landing() {
           <button className="landing-primary" onClick={() => openSignal()}>
             <span>Enter After the Signal</span><span aria-hidden>↗</span>
           </button>
-          <p className="landing-duration mono">Three investigations · Two worlds · A story to take home</p>
+          <p className="landing-duration mono">Four investigations · Two worlds · A story to take home</p>
         </div>
         <figure className="landing-archive">
           <img src={hero.path} alt={hero.alt} fetchPriority="high" />
@@ -61,6 +62,7 @@ export default function Landing() {
           })}
         </div>
       </section>
+      <OfflinePack />
       <footer className="landing-actions">
         <MissionIndex className="credits-link" />
         <button className="credits-link" aria-pressed={mode === "reading"}
