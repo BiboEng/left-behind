@@ -77,7 +77,8 @@ export interface DatasetUse {
 }
 
 export interface Credits {
-  textures: { world: World; name: string; credit: string; url: string }[];
+  /** globe color maps and terrain relief maps */
+  textures: { key: string; world: World; name: string; credit: string; url: string }[];
   datasets: DatasetUse[];
   /** sources that aren't a NASA archive (other agencies, journals, press) */
   otherSources: number;
@@ -102,11 +103,19 @@ export function buildCredits(): Credits {
     uses.set(dataset, use);
   };
 
-  const textures = WORLD_ORDER.filter((w) => worlds[w].texture).map((w) => {
+  const textures: Credits["textures"] = [];
+  for (const w of WORLD_ORDER) {
     const config = worlds[w];
-    count(config.textureSourceUrl, "textures");
-    return { world: w, name: config.name, credit: config.textureCredit, url: config.textureSourceUrl };
-  });
+    if (config.texture) {
+      count(config.textureSourceUrl, "textures");
+      textures.push({ key: `${w}-color`, world: w, name: config.name, credit: config.textureCredit, url: config.textureSourceUrl });
+    }
+    if (config.relief) {
+      count(config.relief.sourceUrl, "textures");
+      const name = `${config.name}, terrain relief`;
+      textures.push({ key: `${w}-relief`, world: w, name, credit: config.relief.credit, url: config.relief.sourceUrl });
+    }
+  }
 
   const all = WORLD_ORDER.flatMap((w) => relics[w]);
   const models: Credits["models"] = [];

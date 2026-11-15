@@ -3,6 +3,7 @@
 import type { CSSProperties } from "react";
 import Experience from "./engine/Experience";
 import Credits from "./ui/Credits";
+import ErrorBoundary from "./ui/ErrorBoundary";
 import { useTimeline } from "./state/timeline";
 import Landing from "./ui/Landing";
 import Overlay from "./ui/Overlay";
@@ -16,7 +17,12 @@ export default function App() {
       {world ? (
         // key={world}: switching worlds builds a fresh scene, so the scroll starts at the first relic.
         <main className="experience" key={world} style={{ "--accent": worlds[world].accent } as CSSProperties}>
-          <Experience world={world} />
+          {/* No WebGL (old device, blocked GPU): keep the cards and rail usable without the globe. */}
+          <ErrorBoundary
+            fallback={<p className="no-3d muted">The 3D globe can't run in this browser. The timeline still works.</p>}
+          >
+            <Experience world={world} />
+          </ErrorBoundary>
           <Overlay world={world} />
         </main>
       ) : (

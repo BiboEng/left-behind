@@ -6,11 +6,23 @@ import type { Relic, RelicImage } from "../types/relic";
 import ErrorBoundary from "./ErrorBoundary";
 import { formatCoords, formatDate, STATUS_LABEL } from "./format";
 
-export default function StoryCard({ relic, index, total }: { relic: Relic; index: number; total: number }) {
+interface Props {
+  relic: Relic;
+  index: number;
+  total: number;
+  /** 1 = moving forward in time (card slides up from below), -1 = moving back (slides down) */
+  direction: 1 | -1;
+}
+
+export default function StoryCard({ relic, index, total, direction }: Props) {
   return (
-    // key = relic id: React builds a fresh card per relic, which restarts the fade-in
+    // key = relic id: React builds a fresh card per relic, which restarts the slide-in
     // and resets the photo gallery and the card's scroll position.
-    <article className="story-card" key={relic.id} aria-live="polite" aria-labelledby={`title-${relic.id}`}>
+    <article
+      className={`story-card ${direction > 0 ? "enter-forward" : "enter-back"}`}
+      key={relic.id}
+      aria-labelledby={`title-${relic.id}`}
+    >
       {relic.images.length > 0 && <Gallery images={relic.images} />}
 
       <div className="story-body">
@@ -98,25 +110,45 @@ export default function StoryCard({ relic, index, total }: { relic: Relic; index
   );
 }
 
+const MAX_RETRIES = 2;
+
 /** Main photo plus small thumbnails to switch between up to 3 photos. */
 function Gallery({ images }: { images: RelicImage[] }) {
   const [current, setCurrent] = useState(0);
-  const [broken, setBroken] = useState<Set<number>>(() => new Set());
+  // The photo stays invisible until it has downloaded, then fades in (no half-drawn image).
+  const [loaded, setLoaded] = useState<Set<string>>(() => new Set());
+  // NASA's image server sometimes fails a request that works a second later, so a failed photo
+  // is retried a couple of times before we give up and say "Photo unavailable".
+  const [failures, setFailures] = useState<Record<string, number>>({});
   const img = images[current];
+  const failed = failures[img.url] ?? 0;
+
+  const onError = () => {
+    const url = img.url;
+    if (failed >= MAX_RETRIES) return setFailures((f) => ({ ...f, [url]: MAX_RETRIES + 1 }));
+    setTimeout(() => setFailures((f) => ({ ...f, [url]: (f[url] ?? 0) + 1 })), 700 * (failed + 1));
+  };
 
   return (
     <figure className="gallery">
-      {broken.has(current) ? (
-        <div className="photo photo-missing">Photo unavailable</div>
-      ) : (
-        <img
-          className="photo"
-          src={img.url}
-          alt={img.caption}
-          loading="lazy"
-          onError={() => setBroken((b) => new Set(b).add(current))}
-        />
-      )}
+      <div className="photo-frame">
+        {failed > MAX_RETRIES ? (
+          <div className="photo photo-missing">Photo unavailable</div>
+        ) : (
+          // key = photo + attempt: a fresh <img> per photo, so switching thumbnails replays the
+          // fade-in, and a retry is a brand-new request.
+          // alt="" because the caption right below already describes it (no double reading).
+          <img
+            key={`${img.url}#${failed}`}
+            className={`photo ${loaded.has(img.url) ? "loaded" : ""}`}
+            src={failed ? `${img.url}?retry=${failed}` : img.url}
+            alt=""
+            loading="lazy"
+            onLoad={() => setLoaded((l) => new Set(l).add(img.url))}
+            onError={onError}
+          />
+        )}
+      </div>
       <figcaption>
         {img.caption}{" "}
         <span className="credit">

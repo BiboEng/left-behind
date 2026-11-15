@@ -41,8 +41,9 @@ in chat what you are working on, and `/sync` often.
 
 ## Contracts
 1. **Data**: `src/types/relic.ts` + `docs/DATA_CONTRACT.md`. Import from `src/data/index.ts`.
-2. **State**: `src/state/timeline.ts`. The engine writes `progress` and `activeIndex` and clears `jumpTo`.
-   The UI sets `world` and calls `jumpToRelic()`.
+2. **State**: `src/state/timeline.ts`. The engine writes `progress` and `activeIndex`, clears `jumpTo`, and
+   clears `target` when a jump lands. The UI sets `world` and calls `jumpToRelic()`, and shows
+   `useShownIndex()` (the jump destination while travelling). `src/state/router.ts` mirrors it into the URL.
 3. **World config**: `src/worlds/<world>.ts` (texture, colors, intro and outro text, `lonOffsetDeg`).
 4. **Geo math**: `src/engine/geo.ts` is tested; use it, don't rewrite it.
 

@@ -6,8 +6,8 @@
 import { useTexture } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import { useCallback, useMemo } from "react";
-import { SRGBColorSpace, type Texture } from "three";
-import type { WorldConfig } from "../worlds/types";
+import { SRGBColorSpace, type Texture, Vector2 } from "three";
+import type { Relief, WorldConfig } from "../worlds/types";
 
 // 128 × 128 segments: smooth enough that the edge of the planet looks round when zoomed in.
 const SEGMENTS = 128;
@@ -22,24 +22,38 @@ export function PlainGlobe({ color }: { color: string }) {
   );
 }
 
-/** Textured sphere. useTexture "suspends" while downloading, so wrap it in <Suspense>. */
-function TexturedGlobe({ texture, bumpMap }: { texture: string; bumpMap?: string | null }) {
+/**
+ * Textured sphere. useTexture "suspends" while downloading, so wrap it in <Suspense>.
+ *
+ * Relief: a NORMAL MAP stores, per pixel, which way the ground faces (made from NASA elevation data
+ * by scripts/make-normal-map.mjs). The sphere stays perfectly round; only the LIGHTING changes, so
+ * crater rims facing the sun brighten and slopes facing away darken. It's cheap (one extra
+ * texture, no extra triangles) and it's real topography, not a painted effect.
+ */
+function TexturedGlobe({ texture, relief }: { texture: string; relief?: Relief | null }) {
   const gl = useThree((s) => s.gl);
-  const urls = useMemo(() => (bumpMap ? [texture, bumpMap] : [texture]), [texture, bumpMap]);
+  const urls = useMemo(() => (relief ? [texture, relief.normalMap] : [texture]), [texture, relief]);
 
   // Runs once the images are loaded, before they're sent to the graphics card.
   const prepare = useCallback(
     (loaded: Texture | Texture[]) => {
-      const color = Array.isArray(loaded) ? loaded[0] : loaded;
+      const [color, normal] = Array.isArray(loaded) ? loaded : [loaded];
       // The color map is a photo, so tell three.js it's in sRGB; otherwise it looks washed out.
+      // (The normal map is data, not a photo: it keeps the default "no color space".)
       color.colorSpace = SRGBColorSpace;
-      // Anisotropy keeps the map sharp near the planet's edge, where the surface is seen at an angle.
-      color.anisotropy = gl.capabilities.getMaxAnisotropy();
-      color.needsUpdate = true;
+      // Anisotropy keeps the maps sharp near the planet's edge, where the surface is seen at an angle.
+      const anisotropy = gl.capabilities.getMaxAnisotropy();
+      for (const t of [color, normal]) {
+        if (!t) continue;
+        t.anisotropy = anisotropy;
+        t.needsUpdate = true;
+      }
     },
     [gl],
   );
-  const [color, bump] = useTexture(urls, prepare) as Texture[];
+  const [color, normal] = useTexture(urls, prepare) as Texture[];
+  const strength = relief?.strength ?? 0;
+  const normalScale = useMemo(() => new Vector2(strength, strength), [strength]);
 
   return (
     <mesh>
@@ -47,8 +61,8 @@ function TexturedGlobe({ texture, bumpMap }: { texture: string; bumpMap?: string
       {/* roughness 1 + metalness 0 = dusty rock, no shiny highlight (realistic, no glow) */}
       <meshStandardMaterial
         map={color}
-        bumpMap={bump ?? null}
-        bumpScale={bump ? 0.6 : 0}
+        normalMap={normal ?? null}
+        normalScale={normalScale}
         roughness={1}
         metalness={0}
       />
@@ -58,5 +72,5 @@ function TexturedGlobe({ texture, bumpMap }: { texture: string; bumpMap?: string
 
 export function Globe({ config }: { config: WorldConfig }) {
   if (!config.texture) return <PlainGlobe color={config.baseColor} />;
-  return <TexturedGlobe texture={config.texture} bumpMap={config.bumpMap} />;
+  return <TexturedGlobe texture={config.texture} relief={config.relief} />;
 }

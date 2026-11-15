@@ -61,7 +61,7 @@ function CreditsDialog() {
             <h3>Globes</h3>
             <ul className="credit-list">
               {credits.textures.map((t) => (
-                <li key={t.world}>
+                <li key={t.key}>
                   <strong>{t.name}</strong>
                   <a href={t.url} target="_blank" rel="noreferrer">
                     {t.credit}

@@ -7,6 +7,7 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import { relics } from "../data";
 import type { World } from "../types/relic";
+import ErrorBoundary from "../ui/ErrorBoundary";
 import { worlds } from "../worlds";
 import { CameraRig } from "./CameraRig";
 import { Globe, PlainGlobe } from "./Globe";
@@ -36,10 +37,14 @@ export default function Experience({ world }: { world: World }) {
       {/* scrollbarWidth none: hide the native scrollbar of drei's invisible scroll layer */}
       <ScrollControls pages={n + 1} damping={0.2} style={{ scrollbarWidth: "none" }}>
         <CameraRig world={world}>
-          {/* Show a plain sphere while the NASA texture downloads, instead of an empty screen. */}
-          <Suspense fallback={<PlainGlobe color={config.baseColor} />}>
-            <Globe config={config} />
-          </Suspense>
+          {/* Show a plain sphere while the NASA texture downloads, instead of an empty screen.
+              If the texture fails to load (missing file, network), the ErrorBoundary keeps the plain
+              sphere instead of the error taking down the whole page. */}
+          <ErrorBoundary fallback={<PlainGlobe color={config.baseColor} />}>
+            <Suspense fallback={<PlainGlobe color={config.baseColor} />}>
+              <Globe config={config} />
+            </Suspense>
+          </ErrorBoundary>
           <SiteMarkers world={world} />
         </CameraRig>
       </ScrollControls>

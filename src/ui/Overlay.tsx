@@ -4,51 +4,107 @@
 // and touch go straight through to the globe's scroller. Only the buttons, rail and card take
 // clicks. Wheel events over the card are forwarded to the timeline unless the card itself can
 // still scroll in that direction.
-import { type WheelEvent, useEffect, useRef } from "react";
+import { type WheelEvent, useEffect, useState } from "react";
 import { relics } from "../data";
 import { CALIBRATION, calibrating } from "../engine/calibration";
 import { scrollTimelineBy } from "../engine/scrollBridge";
 import { useCredits } from "../state/credits";
-import { useTimeline } from "../state/timeline";
-import type { World } from "../types/relic";
+import { goHome } from "../state/router";
+import { useShownIndex, useTimeline } from "../state/timeline";
+import type { Relic, World } from "../types/relic";
 import { worlds } from "../worlds";
 import { year } from "./format";
 import { CreditsButton } from "./Credits";
 import StoryCard from "./StoryCard";
 import TimelineRail, { ProgressBar } from "./TimelineRail";
+import YearCounter from "./YearCounter";
 
 export default function Overlay({ world }: { world: World }) {
   const config = worlds[world];
   const list = relics[world];
-  const activeIndex = useTimeline((s) => s.activeIndex);
-  const setWorld = useTimeline((s) => s.setWorld);
-  const relic = list[Math.min(activeIndex, list.length - 1)];
+  // During a jump this is the destination, so the card doesn't flash every relic on the way.
+  const shownIndex = Math.min(useShownIndex(), list.length - 1);
+  const relic = list[shownIndex];
+  const direction = useDirection(shownIndex);
 
   useKeyboard(world);
 
   return (
     <div className="overlay" onWheel={forwardWheel}>
       <header className="topbar">
-        <button className="back" onClick={() => setWorld(null)}>
+        <button className="back" onClick={goHome}>
           <span aria-hidden>‹</span> Back
         </button>
         <p className="title">
           Left Behind <span className="sep">·</span> {config.name}
         </p>
-        {relic && <p className="current-year mono" aria-hidden>{year(relic.arrived)}</p>}
+        {relic && <YearCounter year={year(relic.arrived)} className="current-year mono" />}
         <CreditsButton className="back topbar-credits" />
       </header>
       <ProgressBar />
+
+      {/* Screen readers hear one short line per relic, not the whole card. */}
+      <p className="sr-only" aria-live="polite">
+        {relic && `${year(relic.arrived)}: ${relic.name}`}
+      </p>
 
       {calibrating ? (
         <CalibrationNote world={world} />
       ) : (
         <>
           <TimelineRail list={list} />
-          {relic && <StoryCard relic={relic} index={activeIndex} total={list.length} />}
+          <ScrollHint />
+          <StepNav list={list} index={shownIndex} />
+          {relic && <StoryCard relic={relic} index={shownIndex} total={list.length} direction={direction} />}
         </>
       )}
     </div>
+  );
+}
+
+/** +1 when the last change moved forward in time, -1 when it moved back (drives the card slide). */
+function useDirection(index: number): 1 | -1 {
+  const [state, setState] = useState({ index, direction: 1 as 1 | -1 });
+  if (state.index !== index) setState({ index, direction: index > state.index ? 1 : -1 });
+  return state.direction;
+}
+
+/** "Scroll to travel through time" on the first relic, gone for good after the first scroll. */
+function ScrollHint() {
+  const moved = useTimeline((s) => s.progress > 0.01 || s.target !== null);
+  // Remember it: scrolling back to the first relic shouldn't bring the hint back.
+  const [dismissed, setDismissed] = useState(false);
+  if (moved && !dismissed) setDismissed(true);
+  if (dismissed || moved) return null;
+  return (
+    <p className="scroll-hint" aria-hidden>
+      <span className="hint-desktop">Scroll to travel forward in time</span>
+      <span className="hint-touch">Swipe the globe to travel in time</span>
+      <span className="hint-arrow">↓</span>
+    </p>
+  );
+}
+
+/** Phone only (hidden on desktop by CSS): previous / next relic buttons above the bottom sheet. */
+function StepNav({ list, index }: { list: Relic[]; index: number }) {
+  const jumpToRelic = useTimeline((s) => s.jumpToRelic);
+  const prev = list[index - 1];
+  const next = list[index + 1];
+  return (
+    <nav className="step-nav" aria-label="Previous and next relic">
+      {prev ? (
+        <button onClick={() => jumpToRelic(prev.id)} aria-label={`Previous: ${prev.name}`}>
+          <span aria-hidden>‹</span> {year(prev.arrived)}
+        </button>
+      ) : (
+        <span />
+      )}
+      {next && (
+        <button onClick={() => jumpToRelic(next.id)} aria-label={`Next: ${next.name}`}>
+          {year(next.arrived)} <span aria-hidden>›</span>
+        </button>
+      )}
+    </nav>
   );
 }
 
@@ -87,22 +143,25 @@ function forwardWheel(e: WheelEvent<HTMLDivElement>) {
 
 /** ↑/↓ and PageUp/PageDown: previous/next relic. Home/End: first/last. Esc: back to the title. */
 function useKeyboard(world: World) {
-  // Where the last key press was heading. While the globe is still gliding there, activeIndex
-  // hasn't caught up, so pressing ↓ twice quickly should go two relics, not one.
-  const pending = useRef<number | null>(null);
-
   useEffect(() => {
     const list = relics[world];
     const onKey = (e: KeyboardEvent) => {
       if (e.altKey || e.ctrlKey || e.metaKey) return;
       // The Credits screen handles its own keys (Esc closes it, arrows scroll it).
       if (useCredits.getState().open) return;
-      const { activeIndex, jumpToRelic, setWorld } = useTimeline.getState();
       if (e.key === "Escape") {
-        setWorld(null);
+        goHome();
         return;
       }
-      const base = pending.current !== null && pending.current !== activeIndex ? pending.current : activeIndex;
+      // Arrow keys inside the story card scroll its text, like on any page. PageUp/Down still step.
+      const inCard = e.target instanceof Element && e.target.closest(".story-card");
+      if (inCard && (e.key === "ArrowDown" || e.key === "ArrowUp")) return;
+
+      const { activeIndex, target, jumpToRelic } = useTimeline.getState();
+      // While still gliding to an earlier key press, count from where we're heading, so pressing ↓
+      // twice quickly goes two relics. `target` clears itself when the glide ends or the user
+      // scrolls by hand, so it never goes stale.
+      const base = target ?? activeIndex;
       let next: number | null = null;
       if (e.key === "ArrowDown" || e.key === "PageDown") next = base + 1;
       else if (e.key === "ArrowUp" || e.key === "PageUp") next = base - 1;
@@ -112,7 +171,6 @@ function useKeyboard(world: World) {
 
       e.preventDefault(); // stop the browser's own scroll, we do it properly instead
       next = Math.max(0, Math.min(list.length - 1, next));
-      pending.current = next;
       jumpToRelic(list[next].id);
     };
     window.addEventListener("keydown", onKey);

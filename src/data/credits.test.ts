@@ -24,6 +24,15 @@ describe("credits screen", () => {
     }
   });
 
+  test("every terrain relief map is credited", () => {
+    for (const config of Object.values(worlds)) {
+      if (!config.relief) continue;
+      expect(config.relief.credit, config.id).not.toMatch(/TODO/);
+      expect(() => new URL(config.relief.sourceUrl), config.id).not.toThrow();
+      expect(credits.textures.some((t) => t.key === `${config.id}-relief`), config.id).toBe(true);
+    }
+  });
+
   test("archives are recognized by their web address", () => {
     expect(datasetFor("https://images.nasa.gov/details/PIA12205")?.name).toBe("NASA Image and Video Library");
     expect(datasetFor("https://science.nasa.gov/3d-resources/viking-lander/")?.name).toBe("NASA 3D Resources");

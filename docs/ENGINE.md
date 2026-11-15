@@ -26,7 +26,7 @@ The real coordinates of each relic do the storytelling.
 src/engine/
   geo.ts            ✅ done + tested: latLonToVector3(), faceSiteQuaternion()
   Experience.tsx    <Canvas> + <ScrollControls pages={relics.length + 1}> + lights + <Stars>
-  Globe.tsx         sphere + NASA texture (worlds[world].texture), optional bump map
+  Globe.tsx         sphere + NASA texture (worlds[world].texture) + terrain normal map (worlds[world].relief)
   SiteMarkers.tsx   a small glowing dot at every relic; the active one pulses
   CameraRig.tsx     reads useScroll(), slerps the globe between sites, writes progress/activeIndex
   ModelViewer.tsx   small separate <Canvas> with <Stage> + <OrbitControls autoRotate> for hero GLBs

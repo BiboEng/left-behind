@@ -71,10 +71,28 @@ export function CameraRig({ world, children }: { world: World; children: ReactNo
   }, [camera, calibrationQuat, siteQuats, get]);
 
   // Let the HTML overlay forward mouse-wheel events to the timeline (see scrollBridge.ts).
+  // If the user grabs the scroll (wheel, touch, drag) during a jump, the jump is over: stop
+  // holding the card on the jump's destination (see `target` in state/timeline.ts).
   useEffect(() => {
-    registerScrollElement(scroll.el);
-    return () => registerScrollElement(null);
+    const el = scroll.el;
+    registerScrollElement(el);
+    const takeOver = () => useTimeline.getState().clearTarget();
+    const opts = { passive: true };
+    el.addEventListener("wheel", takeOver, opts);
+    el.addEventListener("touchstart", takeOver, opts);
+    el.addEventListener("pointerdown", takeOver, opts);
+    return () => {
+      registerScrollElement(null);
+      el.removeEventListener("wheel", takeOver);
+      el.removeEventListener("touchstart", takeOver);
+      el.removeEventListener("pointerdown", takeOver);
+    };
   }, [scroll.el]);
+
+  // A jump has ended when the scroll position stops changing for a moment (the smooth scroll
+  // arrived, or the browser cancelled it). Tracked in useFrame below.
+  const lastTop = useRef(-1);
+  const lastMove = useRef(0);
 
   // Slide the globe out from under the story card: on desktop the card covers the right side, on
   // phones it's a bottom sheet. setViewOffset shifts the picture without moving the camera, so the
@@ -101,6 +119,7 @@ export function CameraRig({ world, children }: { world: World; children: ReactNo
         const top = (index / (n - 1)) * (el.scrollHeight - el.clientHeight);
         el.scrollTo({ top, behavior: reduceMotion() ? "auto" : "smooth" });
       }
+      lastMove.current = performance.now(); // give the smooth scroll a moment to start
       useTimeline.getState().clearJump();
     });
     return () => cancelAnimationFrame(frame);
@@ -138,6 +157,19 @@ export function CameraRig({ world, children }: { world: World; children: ReactNo
       const store = useTimeline.getState();
       store.setActiveIndex(Math.round(f));
       store.setProgress(Math.round(offset * 1000) / 1000);
+
+      // End a jump when the scroll reaches the destination. Fallback: the scroll has been still for
+      // a full second (the browser cancelled it). Wheel/touch take-overs are handled above.
+      const now = performance.now();
+      if (el.scrollTop !== lastTop.current) {
+        lastTop.current = el.scrollTop;
+        lastMove.current = now;
+      }
+      if (store.target !== null && !store.jumpTo && n > 1) {
+        const targetTop = (store.target / (n - 1)) * max;
+        const arrived = Math.abs(el.scrollTop - targetTop) < 2;
+        if (arrived || now - lastMove.current > 1000) store.clearTarget();
+      }
     }
 
     // Pull back on tall phone screens so the planet isn't cropped (see framing.ts).

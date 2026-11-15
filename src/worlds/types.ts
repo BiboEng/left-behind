@@ -1,5 +1,15 @@
 import type { World } from "../types/relic";
 
+export interface Relief {
+  /** normal map in public/<world>/, e.g. "/moon/moon-normal.jpg" */
+  normalMap: string;
+  /** how strongly the relief shows (three.js normalScale). 1 = as generated */
+  strength: number;
+  /** elevation dataset credit (shown on the credits screen) */
+  credit: string;
+  sourceUrl: string;
+}
+
 /** Everything the shared engine needs to know to draw one world. */
 export interface WorldConfig {
   id: World;
@@ -12,8 +22,12 @@ export interface WorldConfig {
   outro: string;
   /** NASA global color map in public/<world>/, e.g. "/moon/moon-color-2k.jpg". null = plain color */
   texture: string | null;
-  /** optional NASA displacement/bump map */
-  bumpMap?: string | null;
+  /**
+   * Terrain relief: a NASA elevation grid turned into a normal map (`npm run normal-map`, see
+   * scripts/make-normal-map.mjs), so craters, volcanoes and canyons catch the sunlight.
+   * null = smooth sphere.
+   */
+  relief?: Relief | null;
   /** where the texture came from (shown on the credits screen) */
   textureCredit: string;
   textureSourceUrl: string;
