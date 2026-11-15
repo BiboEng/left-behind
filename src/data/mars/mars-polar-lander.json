@@ -1,0 +1,80 @@
+{
+  "id": "mars-polar-lander",
+  "world": "mars",
+  "tier": "standard",
+  "name": "Mars Polar Lander",
+  "mission": "Mars Polar Lander / Deep Space 2 (Mars Surveyor '98)",
+  "agency": "NASA",
+  "arrived": "1999-12-03",
+  "lastContact": "1999-12-03",
+  "status": "lost",
+  "location": {
+    "name": "South polar layered terrain (targeted site; never found)",
+    "lat": -76.1,
+    "lon": 164.7
+  },
+  "headline": "A polar lander that fell silent on the way down and has never been found",
+  "story": [
+    "On 3 December 1999, Mars Polar Lander sent its last signal to Earth just before it plunged into the Martian atmosphere. It was aiming for the layered terrain near the edge of the south polar cap, carrying a robotic arm to dig for water ice and two Deep Space 2 microprobes. By design, it sent no data during the descent. The call expected after landing never came.",
+    "Engineers kept listening for weeks. Mars Global Surveyor began photographing the landing zone on 16 December, and on 17 January 2000 NASA stopped trying to reach the lander. A review board found the probable cause: as the legs unfolded, they could send a false touchdown signal. At 40 meters up, the engines would have shut off, leaving the lander to hit the ground at about 22 meters per second.",
+    "In 2005, a camera team thought it had spotted the lander's parachute in old images. A sharper picture showed only a small hill. Mars Polar Lander has never been found. Whatever is left of it lies somewhere in a landing zone about 200 kilometers long near 76 degrees south, unseen for more than a quarter of a century."
+  ],
+  "facts": [
+    { "label": "Launched", "value": "3 January 1999, Cape Canaveral, on a Delta II" },
+    { "label": "Last contact", "value": "3 December 1999, about 20:00 UTC, just before atmospheric entry" },
+    { "label": "Lander mass", "value": "290 kg" },
+    { "label": "Probable cause", "value": "A false touchdown signal shut off the engines about 40 m above the surface" },
+    { "label": "Targeted site", "value": "About 76° S, 195° W (165° E), near the south polar cap" }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/KSC-98pc1648/KSC-98pc1648~medium.jpg",
+      "caption": "November 1998, Kennedy Space Center: the two Deep Space 2 microprobes mounted on opposite sides of Mars Polar Lander, weeks before launch.",
+      "credit": "NASA/KSC (photo KSC-98pc1648)",
+      "sourceUrl": "https://images.nasa.gov/details/KSC-98pc1648"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/KSC-99pc03/KSC-99pc03~medium.jpg",
+      "caption": "3 January 1999: a Delta II rocket lifts off from Cape Canaveral with Mars Polar Lander, beginning an 11-month journey to Mars.",
+      "credit": "NASA/KSC (photo KSC-99pc03)",
+      "sourceUrl": "https://images.nasa.gov/details/KSC-99pc03"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA02349/PIA02349~medium.jpg",
+      "caption": "The search begins: Mars Global Surveyor's first image of the landing zone, taken 16 December 1999. At 1.5 meters per pixel, the lander would be only a few pixels across.",
+      "credit": "NASA/JPL/Malin Space Science Systems",
+      "sourceUrl": "https://images.nasa.gov/details/PIA02349"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NSSDCA Master Catalog: Mars Polar Lander",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1999-001A"
+    },
+    {
+      "title": "NASA Science: Mars Polar Lander / Deep Space 2",
+      "url": "https://science.nasa.gov/mission/mars-polar-lander-deep-space-2/"
+    },
+    {
+      "title": "NSSDCA: Mars Polar Lander and Deep Space 2 Landing Sites",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/mars/polar_lander/mpl_ds2_landsite.html"
+    },
+    {
+      "title": "JPL news releases, 3 December 1999 (landing-day status and best-estimate site)",
+      "url": "https://www.jpl.nasa.gov/nmp/ds2/news/pressreleases/mpl991203.html"
+    },
+    {
+      "title": "JPL Special Review Board: Report on the Loss of the Mars Polar Lander and Deep Space 2 Missions (JPL D-18709, 22 March 2000), NASA NTRS",
+      "url": "https://ntrs.nasa.gov/citations/20000061966"
+    },
+    {
+      "title": "NASA Photojournal PIA02349: Mars Polar Lander, The Search Begins",
+      "url": "https://science.nasa.gov/photojournal/mars-polar-lander-the-search-begins"
+    },
+    {
+      "title": "NASA Photojournal PIA03044: Mars Polar Lander NOT Found",
+      "url": "https://science.nasa.gov/photojournal/mars-polar-lander-not-found"
+    }
+  ],
+  "verified": false
+}

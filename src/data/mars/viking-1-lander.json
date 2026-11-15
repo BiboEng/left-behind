@@ -1,0 +1,76 @@
+{
+  "id": "viking-1-lander",
+  "world": "mars",
+  "tier": "hero",
+  "name": "Viking 1 Lander (Thomas A. Mutch Memorial Station)",
+  "mission": "Viking 1",
+  "agency": "NASA",
+  "arrived": "1976-07-20",
+  "lastContact": "1982-11-11",
+  "status": "lost",
+  "location": {
+    "name": "Western Chryse Planitia",
+    "lat": 22.27,
+    "lon": -47.95
+  },
+  "headline": "It watched Mars for six years, until one wrong command turned its antenna from Earth",
+  "story": [
+    "At 11:53 UT on 20 July 1976, the Viking 1 lander set down on the western slopes of Chryse Planitia. Twenty-five seconds later it began sending its first picture: angular rocks, fine dust and the edge of one of its own footpads. NASA calls it the first photograph ever taken on the surface of Mars. A color view of the plain followed the next day.",
+    "Powered by two small nuclear generators, the lander kept working long after its main mission ended, sending home pictures and weather reports. Renamed the Thomas A. Mutch Memorial Station after its late imaging team leader, it was expected to keep reporting until 1994. Then, in November 1982, a command meant to change how it charged its batteries overwrote the data that kept its antenna pointed at Earth.",
+    "Engineers spent months sending commands into the silence, and in 1983 they gave up. In 2006, NASA's Mars Reconnaissance Orbiter found the lander from orbit: a bright speck about three meters across, with its probable backshell and heat shield nearby. It still stands on the plain where it landed."
+  ],
+  "facts": [
+    { "label": "Touchdown", "value": "20 July 1976, 11:53:06 UT" },
+    { "label": "Time in contact", "value": "About 6 years and 4 months (July 1976 to November 1982)" },
+    { "label": "Power", "value": "Two plutonium-238 radioisotope generators" },
+    { "label": "Why it went silent", "value": "A battery-charging update overwrote its antenna-pointing data" },
+    { "label": "First seen from orbit", "value": "November 2006, by HiRISE on Mars Reconnaissance Orbiter" }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA00381/PIA00381~orig.jpg",
+      "caption": "20 July 1976: minutes after landing, Viking 1 returns the first photograph taken on the surface of Mars. One of its footpads sits at right.",
+      "credit": "NASA/JPL",
+      "sourceUrl": "https://images.nasa.gov/details/PIA00381"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA00563/PIA00563~orig.jpg",
+      "caption": "The first color image from Viking Lander 1, taken the day after landing: a rock-strewn plain under a pale sky.",
+      "credit": "NASA/JPL",
+      "sourceUrl": "https://images.nasa.gov/details/PIA00563"
+    },
+    {
+      "url": "https://static.uahirise.org/images/2016/details/cut/ESP_046170_2025.jpg",
+      "caption": "June 2016, seen from orbit by HiRISE: the lander and its backshell, still where they came to rest in Chryse Planitia forty years earlier.",
+      "credit": "NASA/JPL-Caltech/UArizona",
+      "sourceUrl": "https://www.uahirise.org/ESP_046170_2025"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NSSDCA Master Catalog: Viking 1 Lander",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075C"
+    },
+    {
+      "title": "NASA Science: Viking 1",
+      "url": "https://science.nasa.gov/mission/viking-1/"
+    },
+    {
+      "title": "JPL: Attempts to Communicate to Viking Lander 1 Concluded (1983)",
+      "url": "https://www.jpl.nasa.gov/news/attempts-to-communicate-to-viking-lander-1-concluded/"
+    },
+    {
+      "title": "JPL Publication 82-107: The Viking Lander Monitor Mission, May 1980 to March 1983 (NASA NTRS)",
+      "url": "https://ntrs.nasa.gov/citations/19830017477"
+    },
+    {
+      "title": "HiRISE: Viking Lander 1 (Thomas Mutch Memorial Station), PSP_001521_2025",
+      "url": "https://www.uahirise.org/PSP_001521_2025"
+    },
+    {
+      "title": "HiRISE: Viking Lander 1 on the 40th Anniversary of the Smithsonian's National Air and Space Museum",
+      "url": "https://www.uahirise.org/ESP_046170_2025"
+    }
+  ],
+  "verified": false
+}

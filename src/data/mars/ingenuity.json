@@ -1,0 +1,80 @@
+{
+  "id": "ingenuity",
+  "world": "mars",
+  "tier": "hero",
+  "name": "Ingenuity Mars Helicopter",
+  "mission": "Mars 2020 (Ingenuity Mars Helicopter technology demonstration)",
+  "agency": "NASA",
+  "arrived": "2021-02-18",
+  "lastContact": "2024-01-25",
+  "status": "retired",
+  "location": {
+    "name": "\"Valinor Hills\", Ingenuity's final airfield (Flight 72), Jezero crater",
+    "lat": 18.4973,
+    "lon": 77.3225
+  },
+  "headline": "The first aircraft to fly on another world, grounded on a Martian sand ripple",
+  "story": [
+    "Ingenuity reached Mars on 18 February 2021, folded beneath the belly of the Perseverance rover in Jezero crater. On 19 April 2021, the 1.8-kilogram helicopter rose 3 meters into the thin air, hovered, and settled back down: the first powered, controlled flight on another planet. It carried a small swatch of muslin from the wing of the Wright brothers' Flyer 1.",
+    "It was built for up to five test flights over 30 days. Instead it flew for almost three years: 72 flights, more than two hours aloft, about 17 kilometers covered. On 18 January 2024, over a stretch of smooth, featureless sand, its navigation system lost track of the ground. Ingenuity came down hard on the slope of a ripple, and its rotor blades broke.",
+    "NASA ended the mission on 25 January 2024. The team nicknamed the spot Valinor Hills, after a place in J.R.R. Tolkien's novels. Ingenuity still stands there, tilted near the crest of a sand ripple, with a piece of one blade lying about 15 meters to the west. It has become a stationary testbed, waking to record temperatures and photograph the sand around it."
+  ],
+  "facts": [
+    { "label": "First flight", "value": "19 April 2021: 39.1 seconds, up to 3 meters high" },
+    { "label": "Planned", "value": "Up to 5 test flights over 30 days" },
+    { "label": "Flown", "value": "72 flights, 128.8 minutes in the air, about 17 km" },
+    { "label": "Size", "value": "1.8 kg, rotor blades spanning about 1.2 m" },
+    { "label": "Final flight", "value": "Flight 72, 18 January 2024; mission ended 25 January 2024" }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA24586/PIA24586~orig.jpg",
+      "caption": "19 April 2021: seen by Perseverance's Navcam from 64 meters away, Ingenuity hovers above Jezero crater on the first powered, controlled flight on another planet.",
+      "credit": "NASA/JPL-Caltech (PIA24586)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA24586"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA26236/PIA26236~medium.jpg",
+      "caption": "4 February 2024: from about 450 meters away, Perseverance's Mastcam-Z finds Ingenuity at its final airfield, Valinor Hills, after the hard landing of Flight 72. Enhanced color.",
+      "credit": "NASA/JPL-Caltech/ASU/MSSS (PIA26236)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA26236"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA26238/PIA26238~medium.jpg",
+      "caption": "24 February 2024: Perseverance's SuperCam zooms in from 415 meters. Ingenuity stands tilted near the crest of a ripple (right); a large piece of a rotor blade lies about 15 meters to the west.",
+      "credit": "NASA/JPL-Caltech/LANL/CNES/CNRS (PIA26238)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA26238"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NASA Science: Ingenuity Mars Helicopter",
+      "url": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/"
+    },
+    {
+      "title": "JPL: After Three Years on Mars, NASA's Ingenuity Helicopter Mission Ends (25 January 2024)",
+      "url": "https://www.jpl.nasa.gov/news/after-three-years-on-mars-nasas-ingenuity-helicopter-mission-ends/"
+    },
+    {
+      "title": "JPL: NASA's Ingenuity Mars Helicopter Team Says Goodbye … for Now (16 April 2024)",
+      "url": "https://www.jpl.nasa.gov/news/nasas-ingenuity-mars-helicopter-team-says-goodbye-for-now/"
+    },
+    {
+      "title": "JPL: NASA Performs First Aircraft Accident Investigation on Another World (11 December 2024)",
+      "url": "https://www.jpl.nasa.gov/news/nasa-performs-first-aircraft-accident-investigation-on-another-world/"
+    },
+    {
+      "title": "NASA Photojournal: Ingenuity's Hard Landing (PIA26482)",
+      "url": "https://science.nasa.gov/photojournal/ingenuitys-hard-landing/"
+    },
+    {
+      "title": "NASA Photojournal: Perseverance's Mastcam-Z Video of Ingenuity's First Full Flight (PIA24521)",
+      "url": "https://science.nasa.gov/photojournal/perseverances-mastcam-z-video-of-ingenuitys-first-full-flight/"
+    },
+    {
+      "title": "NASA Mars 2020 map data: Ingenuity flight waypoints (Flight 72 position)",
+      "url": "https://mars.nasa.gov/mmgis-maps/M20/Layers/json/m20_heli_waypoints.json"
+    }
+  ],
+  "verified": false
+}

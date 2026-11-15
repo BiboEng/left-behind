@@ -1,0 +1,80 @@
+{
+  "id": "mars-pathfinder",
+  "world": "mars",
+  "tier": "hero",
+  "name": "Mars Pathfinder lander (Carl Sagan Memorial Station) and Sojourner rover",
+  "mission": "Mars Pathfinder",
+  "agency": "NASA",
+  "arrived": "1997-07-04",
+  "lastContact": "1997-09-27",
+  "status": "retired",
+  "location": {
+    "name": "Ares Vallis, Chryse Planitia",
+    "lat": 19.097,
+    "lon": -33.254
+  },
+  "headline": "It bounced into Ares Vallis on airbags, then set loose the first rover to drive on Mars",
+  "story": [
+    "On 4 July 1997, Mars Pathfinder dropped into Ares Vallis wrapped in a cocoon of airbags. It struck the ground at about 50 kilometers per hour and bounced at least 15 times before rolling to a stop. On 6 July its passenger, a six-wheeled rover named Sojourner, backed down a ramp onto the soil: the first rover ever to drive on Mars.",
+    "Sojourner weighed 10.6 kilograms. It crept between rocks the team named Barnacle Bill and Yogi, pressing a spectrometer against them to read their chemistry. Built for seven days, it ran for twelve times that. The lander, built for 30 days, lasted nearly three times as long and sent home more than 16,500 pictures.",
+    "The last data arrived on 27 September 1997, most likely after the lander's battery ran down. Renamed the Carl Sagan Memorial Station, it was spotted from orbit in December 2006 by the HiRISE camera, its ramps and deflated airbags still visible. A speck nearby may be Sojourner. Both remain on the flood plain where they stopped."
+  ],
+  "facts": [
+    { "label": "Touchdown", "value": "4 July 1997, 16:56:55 UT" },
+    { "label": "First rover on Mars", "value": "Sojourner (10.6 kg), rolled onto the surface on 6 July 1997" },
+    { "label": "Design life vs. actual", "value": "Lander: 30 days, lasted nearly 3 times longer. Rover: 7 days, lasted 12 times longer" },
+    { "label": "Data returned", "value": "More than 16,500 lander images, 550 rover images and more than 15 chemical analyses" },
+    { "label": "Sojourner's drive", "value": "About 100 m in total, never more than about 12 m from the lander" }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA00611/PIA00611~orig.jpg",
+      "caption": "4 July 1997: one of the first pictures from the lander. Sojourner is still folded on a solar petal, deflated airbags heaped beside it, two hills on the horizon.",
+      "credit": "NASA/JPL (PIA00611)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA00611"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA01003/PIA01003~orig.jpg",
+      "caption": "Sols 8 to 10: rover tracks lead from the lander's ramp to Sojourner, its spectrometer pressed against the boulder Yogi. Lander petals and airbags fill the foreground.",
+      "credit": "NASA/JPL (PIA01003)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA01003"
+    },
+    {
+      "url": "https://static.uahirise.org/images/2007/details/cut/closeup_labels.jpg",
+      "caption": "December 2006, seen from orbit by HiRISE: the Pathfinder site between Twin Peaks and Big Crater, landmarks the lander once photographed from the ground.",
+      "credit": "NASA/JPL-Caltech/University of Arizona",
+      "sourceUrl": "https://www.uahirise.org/PSP_001890_1995"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NSSDCA Master Catalog: Mars Pathfinder Rover / Lander (1996-068A)",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1996-068A"
+    },
+    {
+      "title": "NASA Science: Mars Pathfinder",
+      "url": "https://science.nasa.gov/mission/mars-pathfinder/"
+    },
+    {
+      "title": "JPL: Mars Pathfinder Winds Down After Phenomenal Mission (4 November 1997)",
+      "url": "https://www.jpl.nasa.gov/news/mars-pathfinder-winds-down-after-phenomenal-mission/"
+    },
+    {
+      "title": "NASA History: 25 Years Ago, Mars Pathfinder Launches to Mars to Deploy Sojourner, the First Planetary Rover",
+      "url": "https://www.nasa.gov/history/25-years-ago-mars-pathfinder-launches-to-mars-to-deploy-sojourner-the-first-planetary-rover/"
+    },
+    {
+      "title": "JPL: New NASA Orbiter Sees Details of 1997 Pathfinder Site (11 January 2007)",
+      "url": "https://www.jpl.nasa.gov/news/new-nasa-orbiter-sees-details-of-1997-pathfinder-site/"
+    },
+    {
+      "title": "HiRISE: Mars Pathfinder Site (PSP_001890_1995)",
+      "url": "https://www.uahirise.org/PSP_001890_1995"
+    },
+    {
+      "title": "NASA Image Library: Sojourner at \"Moe\" - Color (PIA00967), final transmission and mission end",
+      "url": "https://images.nasa.gov/details/PIA00967"
+    }
+  ],
+  "verified": false
+}

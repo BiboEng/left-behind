@@ -1,0 +1,62 @@
+{
+  "id": "mars-3",
+  "world": "mars",
+  "tier": "standard",
+  "name": "Mars 3 lander",
+  "mission": "Mars 3",
+  "agency": "USSR",
+  "arrived": "1971-12-02",
+  "lastContact": "1971-12-02",
+  "status": "lost",
+  "location": {
+    "name": "Ptolemaeus Crater (planned landing area)",
+    "lat": -45,
+    "lon": -158
+  },
+  "headline": "The first spacecraft to land softly on Mars spoke for 20 seconds, then went silent",
+  "story": [
+    "On 2 December 1971, while a powerful dust storm raged across Mars, the Mars 3 capsule fell through the atmosphere under its parachute and fired its retrorockets. It struck the surface at about 20 meters per second. Ninety seconds later its four petals had opened and it began transmitting to its orbiter overhead. It was the first spacecraft to make a soft landing on Mars.",
+    "About 20 seconds later the transmission stopped, and no further signal from the surface ever reached Earth. The only result was part of an image showing no detail. The cause is still unknown; one explanation is that the dust storm damaged its radio. A small walking rover on skis, PROP-M, was never set down.",
+    "In 2007 and again in 2013, NASA's Mars Reconnaissance Orbiter photographed the planned landing area in Ptolemaeus Crater. Russian enthusiasts found what may be its parachute, heat shield, retrorocket and the lander itself. Scientists call it a remarkable match, but it is not confirmed. If it is Mars 3, the lander still sits where it came down."
+  ],
+  "facts": [
+    { "label": "Touchdown", "value": "2 December 1971, 13:50:35 UTC (about ±3 minutes)" },
+    { "label": "Signal from the surface", "value": "About 20 seconds, starting 90 seconds after landing" },
+    { "label": "Landing capsule mass", "value": "358 kg" },
+    { "label": "Launched", "value": "28 May 1971 from Baikonur, with the Mars 3 orbiter" },
+    { "label": "Never deployed", "value": "PROP-M, a 4.5 kg rover that walked on skis" }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA16920/PIA16920~medium.jpg",
+      "caption": "Two HiRISE views of the planned landing area, from 2007 and 2013, with the candidates marked: a parachute, a heat shield, a retrorocket and possibly the lander.",
+      "credit": "NASA/JPL-Caltech/University of Arizona (PIA16920)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA16920"
+    },
+    {
+      "url": "https://static.uahirise.org/images/2013/details/ESP_031036_1345.jpg",
+      "caption": "The bright spot near the center is thought to be the Mars 3 parachute, about 7.5 meters across, photographed from orbit on 10 March 2013.",
+      "credit": "NASA/JPL-Caltech/University of Arizona",
+      "sourceUrl": "https://www.uahirise.org/ESP_031036_1345"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NSSDCA Master Catalog: Mars 3 Lander",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-049F"
+    },
+    {
+      "title": "JPL: NASA Mars Orbiter Images May Show 1971 Soviet Lander",
+      "url": "https://www.jpl.nasa.gov/news/nasa-mars-orbiter-images-may-show-1971-soviet-lander/"
+    },
+    {
+      "title": "HiRISE: Could This Be the Soviet Mars 3 Lander? (ESP_031036_1345)",
+      "url": "https://www.uahirise.org/ESP_031036_1345"
+    },
+    {
+      "title": "NASA Image Library: Could This Be the Mars Soviet 3 Lander? (PIA16920)",
+      "url": "https://images.nasa.gov/details/PIA16920"
+    }
+  ],
+  "verified": false
+}

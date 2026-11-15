@@ -1,6 +1,9 @@
 # Start here
 
-**Left Behind**: the Moon (Ibrahim) and Mars (Rayan). Two days. Read this once, then follow `docs/PLAN.md`.
+**Left Behind**: the Moon (Ibrahim) and Mars (Rayan). Two days. Read this once.
+
+> **Update:** the phases and per-person tasks below are retired. Setup steps still apply; after that,
+> just prompt Claude with what you want to do. What is left is in `docs/PLAN.md`.
 
 ## 0. Both of you, before anything (~10 min)
 

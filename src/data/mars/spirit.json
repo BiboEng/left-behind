@@ -1,0 +1,80 @@
+{
+  "id": "spirit",
+  "world": "mars",
+  "tier": "hero",
+  "name": "Spirit rover (MER-A)",
+  "mission": "Mars Exploration Rover Spirit",
+  "agency": "NASA",
+  "arrived": "2004-01-04",
+  "lastContact": "2010-03-22",
+  "status": "retired",
+  "location": {
+    "name": "Troy, beside Home Plate, Columbia Hills, Gusev crater",
+    "lat": -14.6004,
+    "lon": 175.5254
+  },
+  "headline": "Dragging a dead wheel, it plowed up hints of ancient hot springs, then sank in sand",
+  "story": [
+    "Late on 3 January 2004, Pacific time, Spirit bounced to a stop on its airbags inside Gusev crater. It was built for a mission of 90 Martian days. Instead it drove for more than five years, became the first robot to climb a hill on another planet, and covered 7.73 kilometers.",
+    "In 2006 its right front wheel stopped turning, so its drivers sent Spirit backward, dragging the dead wheel behind. In May 2007 that furrow exposed bright soil that was about 90 percent silica. Scientists read it as a sign that water once worked here, perhaps in hot springs or steam vents.",
+    "In the spring of 2009, driving beside a low plateau called Home Plate, Spirit broke through a thin crust into soft sand at a spot named Troy. Months of effort could not free it. It sent its last signal on 22 March 2010, as Martian winter set in. Spirit still sits at Troy, visible from orbit beside Home Plate."
+  ],
+  "facts": [
+    { "label": "Landed", "value": "4 January 2004, 04:35 UTC (3 January, 20:35 PST)" },
+    { "label": "Planned mission", "value": "90 sols (about three months)" },
+    { "label": "Distance driven", "value": "7.73 km" },
+    { "label": "Images returned", "value": "More than 124,000" },
+    { "label": "Mission ended", "value": "25 May 2011, after the last attempts to contact it" }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA09491/PIA09491~orig.jpg",
+      "caption": "May 2007: the furrow left by Spirit's dragging wheel exposes a bright patch of soil about 90 percent silica, nicknamed \"Gertrude Weise.\"",
+      "credit": "NASA/JPL/Cornell (PIA09491)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA09491"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA12203/PIA12203~medium.jpg",
+      "caption": "Spirit's last home: a full-circle panorama from its Pancam of the terrain around Troy, where it became embedded in soft soil in 2009.",
+      "credit": "NASA/JPL-Caltech/Cornell University (PIA12203)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA12203"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA12205/PIA12205~orig.jpg",
+      "caption": "Seen from orbit by HiRISE: the pale plateau is Home Plate, about 80 meters across. The bright dot at its 9 o'clock position is Spirit, stuck at Troy.",
+      "credit": "NASA/JPL-Caltech/University of Arizona (PIA12205)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA12205"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NASA Science: Mars Exploration Rover Spirit",
+      "url": "https://science.nasa.gov/mission/mer-spirit/"
+    },
+    {
+      "title": "JPL: NASA's Spirit Rover Completes Mission on Mars (25 May 2011)",
+      "url": "https://www.jpl.nasa.gov/news/nasas-spirit-rover-completes-mission-on-mars/"
+    },
+    {
+      "title": "JPL: Mars Rover Spirit Unearths Surprise Evidence of Wetter Past (21 May 2007)",
+      "url": "https://www.jpl.nasa.gov/news/mars-rover-spirit-unearths-surprise-evidence-of-wetter-past/"
+    },
+    {
+      "title": "NASA Photojournal: Orbital View of Spirit at Troy (PIA12205)",
+      "url": "https://science.nasa.gov/photojournal/orbital-view-of-spirit-at-troy/"
+    },
+    {
+      "title": "NASA Photojournal: Spirit Traverse Map, Sol 2471 (PIA13730)",
+      "url": "https://science.nasa.gov/photojournal/spirit-traverse-map-sol-2471/"
+    },
+    {
+      "title": "HiRISE: Spirit, Spirit, Shining Bright (ESP_021925_1650, 2011)",
+      "url": "https://www.uahirise.org/ESP_021925_1650"
+    },
+    {
+      "title": "PDS Geosciences Node MER Analyst's Notebook: Spirit traverse data (final position)",
+      "url": "https://an.rsl.wustl.edu/mera/AN/pages/mer/mer_traverse.htm"
+    }
+  ],
+  "verified": false
+}

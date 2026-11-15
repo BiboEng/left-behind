@@ -10,7 +10,7 @@ recent. Each stop has a card with real NASA photos, a short documentary-style st
 sources, and, for hero relics, a spinning NASA 3D model.
 
 ## Key docs
-- `docs/PLAN.md`: the 2-day plan, who does what, checkboxes
+- `docs/PLAN.md`: loose backlog of what is done and what is left (no phases, no assignments)
 - `docs/ENGINE.md`: how the 3D works (keep it this simple)
 - `docs/DATA_CONTRACT.md`: the relic JSON format and voice
 - `docs/RELICS.md`: the 25 relics to research
@@ -28,6 +28,12 @@ use npm scripts and Node, not bash-only commands, in anything the humans have to
 - `npm test`: data contract + geo math tests
 - `npm run test:final`: also fails on placeholders, unverified relics, missing photos or hero models
 - `npm run resize -- <in> <out.jpg> [width]`: resize/convert NASA images and textures (works on Mac and Windows)
+
+## How we work
+There are **no fixed phases or task assignments** anymore: Ibrahim and Rayan work from prompts and
+pick whatever is most useful next (see the backlog in `docs/PLAN.md`). Some skills and agents still
+mention phases (P0–P5), "Day 1" or PLAN.md phase checkboxes; ignore those parts. Everything else
+they say still applies.
 
 ## Who owns what
 | Path | Owner |

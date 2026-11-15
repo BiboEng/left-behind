@@ -1,0 +1,80 @@
+{
+  "id": "opportunity",
+  "world": "mars",
+  "tier": "standard",
+  "name": "Opportunity rover (MER-B)",
+  "mission": "Mars Exploration Rover Opportunity",
+  "agency": "NASA",
+  "arrived": "2004-01-25",
+  "lastContact": "2018-06-10",
+  "status": "lost",
+  "location": {
+    "name": "Perseverance Valley, western rim of Endeavour crater, Meridiani Planum",
+    "lat": -2.3309,
+    "lon": -5.349
+  },
+  "headline": "Built for 90 days, it drove a marathon across Mars in 14 years, until dust hid the Sun",
+  "story": [
+    "Early on 25 January 2004, Universal Time, Opportunity bounced to a stop on its airbags in Meridiani Planum, inside a small crater later named Eagle. It was built to work for 90 Martian days and drive about 1,000 meters. Right at its landing site it found hematite, a mineral that forms in water.",
+    "It kept going for more than 14 years. In July 2014 it passed the 39 kilometers driven on the Moon by the Soviet Lunokhod 2, setting the off-world driving record, and in March 2015 its odometer passed the length of a marathon. On the rim of Endeavour crater it found strong signs of ancient water much like a drinkable lake on Earth.",
+    "In June 2018 a dust storm wrapped the whole planet and blotted out the Sun the solar-powered rover lived on. Its last signal arrived on 10 June. More than a thousand recovery commands went unanswered, and NASA declared the mission over on 13 February 2019. Opportunity rests in Perseverance Valley, a shallow gully on the inner slope of Endeavour's western rim, where HiRISE has photographed it from orbit."
+  ],
+  "facts": [
+    { "label": "Landed", "value": "25 January 2004, 04:54 UTC (24 January in California)" },
+    { "label": "Planned mission", "value": "90 sols and about 1,000 meters of driving" },
+    { "label": "Distance driven", "value": "45.16 km (28.06 miles)" },
+    { "label": "Images returned", "value": "More than 217,000" },
+    { "label": "Mission ended", "value": "13 February 2019, after its last signal on 10 June 2018 (sol 5,111)" }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA22909/PIA22909~orig.jpg",
+      "caption": "Opportunity's last panorama, 354 frames taken from 13 May to 10 June 2018 at its final spot in Perseverance Valley. Its tracks descend from Endeavour's rim on the horizon.",
+      "credit": "NASA/JPL-Caltech/Cornell/ASU (PIA22909)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA22909"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA22549/PIA22549~medium.jpg",
+      "caption": "Seen by HiRISE on 20 September 2018, as the dust storm cleared: Opportunity is the small blip at the center of this view of Perseverance Valley.",
+      "credit": "NASA/JPL-Caltech/University of Arizona (PIA22549)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA22549"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA22929/PIA22929~orig.jpg",
+      "caption": "The last image Opportunity sent home, on 10 June 2018: a dark, noisy Pancam frame aimed at a Sun hidden by dust. The transmission stopped before the frame was complete.",
+      "credit": "NASA/JPL-Caltech/Cornell/ASU (PIA22929)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA22929"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NASA Science: Mars Exploration Rover Opportunity",
+      "url": "https://science.nasa.gov/mission/mer-opportunity/"
+    },
+    {
+      "title": "JPL: NASA's Opportunity Rover Mission on Mars Comes to End (13 February 2019)",
+      "url": "https://www.jpl.nasa.gov/news/nasas-opportunity-rover-mission-on-mars-comes-to-end/"
+    },
+    {
+      "title": "JPL: NASA Long-Lived Mars Opportunity Rover Sets Off-World Driving Record (28 July 2014)",
+      "url": "https://www.jpl.nasa.gov/news/nasa-long-lived-mars-opportunity-rover-sets-off-world-driving-record/"
+    },
+    {
+      "title": "NSSDCA: MER-B Opportunity",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-032A"
+    },
+    {
+      "title": "NASA: Opportunity Rover Surpasses Marathon Distance (PIA19157)",
+      "url": "https://images.nasa.gov/details/PIA19157"
+    },
+    {
+      "title": "HiRISE: Opportunity Rover in Western Endeavour Crater (ESP_056955_1775, 2018)",
+      "url": "https://www.uahirise.org/ESP_056955_1775"
+    },
+    {
+      "title": "PDS Geosciences Node MER Analyst's Notebook: Opportunity traverse data (final position)",
+      "url": "https://an.rsl.wustl.edu/mera/AN/pages/mer/mer_traverse.htm"
+    }
+  ],
+  "verified": false
+}

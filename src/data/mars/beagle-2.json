@@ -1,0 +1,75 @@
+{
+  "id": "beagle-2",
+  "world": "mars",
+  "tier": "standard",
+  "name": "Beagle 2 lander",
+  "mission": "Mars Express / Beagle 2",
+  "agency": "ESA / UK",
+  "arrived": "2003-12-25",
+  "status": "lost",
+  "location": {
+    "name": "Isidis Planitia",
+    "lat": 11.5288,
+    "lon": 90.4314
+  },
+  "headline": "Lost on Christmas Day 2003, spotted 11 years later by a NASA orbiter, partly unfolded",
+  "story": [
+    "On Christmas Day 2003, Beagle 2 was due to fall through the Martian sky onto Isidis Planitia, slowed by a heat shield, parachutes and airbags. Six days earlier, ESA's Mars Express had released it toward the planet. The small British-led lander, named after Darwin's ship, carried a miniature laboratory to look for signs of life. It never called home.",
+    "Attempts to contact it went on through January and February 2004. On 6 February, the Beagle 2 Management Board declared it lost, and for more than a decade no one knew what had happened. Then Michael Croon, a former member of the Mars Express operations team, spotted it in images from HiRISE, the camera on NASA's Mars Reconnaissance Orbiter.",
+    "The find was announced on 16 January 2015. Beagle 2 had landed about 5 kilometers from the center of its target, with its rear cover and parachute nearby. Its solar panels had only partly unfolded, most likely leaving its radio antenna covered. It still rests there, half open, on the plains of Isidis."
+  ],
+  "facts": [
+    { "label": "Launched", "value": "2 June 2003, aboard ESA's Mars Express" },
+    { "label": "Released from Mars Express", "value": "19 December 2003" },
+    { "label": "Declared lost", "value": "6 February 2004" },
+    { "label": "Found", "value": "Announced 16 January 2015, in NASA HiRISE images" },
+    { "label": "Distance from target", "value": "About 5 km from the center of its landing area" }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA19108/PIA19108~orig.jpg",
+      "caption": "15 December 2014: the bright speck on the plain is Beagle 2, seen from orbit by HiRISE. The scale bar is 10 meters.",
+      "credit": "NASA/JPL-Caltech/Univ. of Arizona/University of Leicester",
+      "sourceUrl": "https://images.nasa.gov/details/PIA19108"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA19106/PIA19106~medium.jpg",
+      "caption": "June 2014: the lander, its rear cover and what is probably its parachute, scattered a short distance apart on Isidis Planitia.",
+      "credit": "NASA/JPL-Caltech/Univ. of Arizona/University of Leicester",
+      "sourceUrl": "https://images.nasa.gov/details/PIA19106"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA19107/PIA19107~orig.jpg",
+      "caption": "Two HiRISE views from 2013 and 2014, with the Sun at different angles, catch glints in different places on the lander: a sign that more than one panel opened.",
+      "credit": "NASA/JPL-Caltech/Univ. of Arizona/University of Leicester",
+      "sourceUrl": "https://images.nasa.gov/details/PIA19107"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NASA JPL: Lost 2003 Mars Lander Found by Mars Reconnaissance Orbiter",
+      "url": "https://www.jpl.nasa.gov/news/lost-2003-mars-lander-found-by-mars-reconnaissance-orbiter"
+    },
+    {
+      "title": "HiRISE: Finding Beagle 2 (ESP_039308_1915)",
+      "url": "https://hirise.lpl.arizona.edu/ESP_039308_1915"
+    },
+    {
+      "title": "UK Space Agency: UK-led Beagle 2 lander found on Mars",
+      "url": "https://www.gov.uk/government/news/uk-led-beagle-2-lander-found-on-mars"
+    },
+    {
+      "title": "ESA: Beagle 2 lander",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Mars_Express/Beagle_2_lander"
+    },
+    {
+      "title": "ESA: UK and ESA announce Beagle 2 inquiry",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Mars_Express/UK_and_ESA_announce_Beagle_2_inquiry"
+    },
+    {
+      "title": "Bridges et al. (2017), Identification of the Beagle 2 lander on Mars, Royal Society Open Science",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5666264"
+    }
+  ],
+  "verified": false
+}
