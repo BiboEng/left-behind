@@ -1,5 +1,6 @@
 /* An archive room, not a simulated live control panel. Everything is readable without a canvas. */
-.signal-shell { --accent: #e4bc83; height: 100%; overflow: auto; background: #0b0c0e; color: #e9e7e2; }
+/* Leave room inside the scrollport for sticky navigation when a keyboard target scrolls into view. */
+.signal-shell { --accent: #e4bc83; height: 100%; overflow: auto; scroll-padding-block: 6.25rem 1rem; background: #0b0c0e; color: #e9e7e2; }
 .signal-shell button, .signal-shell input, .signal-shell textarea { font-family: inherit; }
 .signal-shell button, .signal-shell a, .signal-shell input, .signal-shell textarea, .signal-shell summary { touch-action: manipulation; }
 .signal-shell h1:focus { outline: none; }
@@ -188,6 +189,8 @@
   .exhibit-choices label { padding: 0.7rem; }
 }
 @media (max-width: 850px) {
+  /* The chapter navigation becomes a second sticky row on narrow screens. */
+  .signal-shell { scroll-padding-top: 12rem; }
   .signal-header { min-height: 4.5rem; padding: 0.85rem 1.25rem; }
   .signal-brand { display: grid; gap: 0.35rem; font-size: 0.73rem; }
   .signal-brand span { border: 0; padding: 0; font-size: 0.56rem; }
