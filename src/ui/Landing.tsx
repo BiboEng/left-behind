@@ -1,6 +1,5 @@
 // Title screen: pick a world.
-import { useTexture } from "@react-three/drei";
-import { type CSSProperties, useEffect } from "react";
+import { type CSSProperties } from "react";
 import { relics } from "../data";
 import { useTimeline } from "../state/timeline";
 import type { World } from "../types/relic";
@@ -14,15 +13,7 @@ const CHOICES: World[] = ["moon", "mars"];
 export default function Landing() {
   const setWorld = useTimeline((s) => s.setWorld);
 
-  // Start downloading both globe textures while the visitor reads the title, so the planet
-  // appears already textured instead of as a plain sphere that pops in a second later.
-  useEffect(() => {
-    // Same URL list as Globe.tsx asks for, so the download is shared rather than repeated.
-    for (const w of CHOICES) {
-      const { texture, relief } = worlds[w];
-      if (texture) useTexture.preload(relief ? [texture, relief.normalMap] : [texture]);
-    }
-  }, []);
+  const mode = useTimeline((s) => s.mode);
 
   return (
     <main className="landing">
@@ -54,6 +45,10 @@ export default function Landing() {
       <p className="landing-scope mono">{relics.moon.length + relics.mars.length} selected relics · NASA open data · No account needed</p>
       <div className="landing-actions">
         <MissionIndex className="credits-link" />
+        <button className="credits-link" aria-pressed={mode === "reading"}
+          onClick={() => useTimeline.getState().setMode(mode === "reading" ? "globe" : "reading")}>
+          {mode === "reading" ? "Reading mode on" : "Read without 3D"}
+        </button>
         <CreditsButton className="credits-link" />
       </div>
     </main>

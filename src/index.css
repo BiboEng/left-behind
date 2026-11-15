@@ -425,6 +425,34 @@ a { color: inherit; text-underline-offset: 2px; }
   .odo-strip, .rail-name, .landing .choice { transition: none; }
 }
 
+/* Renderer-independent navigation and reading layout. */
+.globe-loading { position: absolute; left: 50%; top: 18%; transform: translateX(-50%); font-size: 0.7rem; color: var(--muted); max-width: 28rem; text-align: center; }
+.step-nav { display: flex; justify-content: space-between; position: absolute; bottom: 1.5rem; left: calc(50% - min(200px, 12vw)); transform: translateX(-50%); width: min(26rem, 40vw); gap: 1rem; }
+.step-nav button { background: var(--panel); color: var(--text); border: 1px solid var(--rule); padding: 0.65rem 1rem; font: inherit; font-size: 0.8rem; cursor: pointer; }
+.scroll-hint { bottom: 5.25rem; }
+.reading-mode { background: radial-gradient(ellipse at top, #141619, #000 70%); }
+.reading-note { position: absolute; top: 4.5rem; left: 15rem; margin: 0; color: var(--muted); font-size: 0.7rem; }
+.reading-mode .story-card { left: 15rem; right: 2rem; top: 7rem; bottom: 5rem; width: auto; max-width: 60rem; margin: 0 auto; background: #08090b; }
+.reading-mode .story-body { max-width: 44rem; margin: 0 auto; }
+.reading-mode .photo-frame { aspect-ratio: 21 / 9; }
+.reading-mode .step-nav { left: 15rem; right: 2rem; width: auto; max-width: 60rem; margin: 0 auto; transform: none; }
+.model-load { width: 100%; margin-bottom: 0.75rem; }
+@media (max-width: 759px) {
+  .topbar { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+  .topbar .back { text-align: center; }
+  .topbar .current-year { grid-column: 2; grid-row: 1; margin: auto; }
+  .topbar-credits { grid-column: 3; grid-row: 1; }
+  .topbar-index { grid-column: 1 / 3; grid-row: 2; }
+  .topbar-mode { grid-column: 3; grid-row: 2; }
+  .progress { top: 6.5rem; }
+  .scroll-hint { top: 7.5rem; bottom: auto; }
+  .step-nav { left: 0; width: auto; transform: none; bottom: calc(46vh + 0.6rem); bottom: calc(46dvh + 0.6rem); }
+  .reading-note { top: 7rem; left: 1rem; font-size: 0.65rem; }
+  .reading-mode .story-card { left: 0; right: 0; top: 9rem; bottom: 4.5rem; max-height: none; }
+  .reading-mode .step-nav { left: 0; right: 0; bottom: 0.75rem; }
+  .reading-mode .photo-frame { aspect-ratio: 16 / 9; }
+}
+
 /* Mission discovery and documentary chapters. */
 .landing { height: 100%; overflow-y: auto; align-content: safe center; }
 .landing .landing-kicker { font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0; }

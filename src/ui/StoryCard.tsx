@@ -1,7 +1,7 @@
 // The card for the relic in focus: photos, who/when/where, the story, quick facts, the hero
 // model, and sources. Desktop: a panel on the right. Phone: a bottom sheet (see index.css).
-import { useState } from "react";
-import ModelViewer from "../engine/ModelViewer";
+import { lazy, Suspense, useState } from "react";
+const ModelViewer = lazy(() => import("../engine/ModelViewer"));
 import type { Relic, RelicImage } from "../types/relic";
 import ErrorBoundary from "./ErrorBoundary";
 import { formatCoords, formatDate, STATUS_LABEL } from "./format";
@@ -17,6 +17,8 @@ interface Props {
 }
 
 export default function StoryCard({ relic, index, total, direction }: Props) {
+  const [showModel, setShowModel] = useState(false);
+  const reading = useTimeline((s) => s.mode === "reading");
   return (
     // key = relic id: React builds a fresh card per relic, which restarts the slide-in
     // and resets the photo gallery and the card's scroll position.
@@ -85,9 +87,13 @@ export default function StoryCard({ relic, index, total, direction }: Props) {
 
         {relic.model && (
           <figure className="model">
-            <ErrorBoundary fallback={<p className="muted">3D model unavailable.</p>}>
-              <ModelViewer path={relic.model.path} label={relic.name} />
-            </ErrorBoundary>
+            {!reading && (showModel ? (
+              <ErrorBoundary fallback={<p className="muted">3D model unavailable. Open the NASA source below.</p>}>
+                <Suspense fallback={<p className="muted" role="status">Loading model viewer…</p>}>
+                  <ModelViewer path={relic.model.path} label={relic.name} />
+                </Suspense>
+              </ErrorBoundary>
+            ) : <button className="back model-load" onClick={() => setShowModel(true)}>Explore NASA's 3D model</button>)}
             <figcaption className="credit">
               3D model: <a href={relic.model.sourceUrl} target="_blank" rel="noreferrer">{relic.model.credit}</a>
             </figcaption>

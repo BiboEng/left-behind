@@ -10,6 +10,7 @@ import { type ReactNode, useEffect, useLayoutEffect, useMemo, useRef } from "rea
 import { type Group, Quaternion } from "three";
 import { relics } from "../data";
 import { useTimeline } from "../state/timeline";
+import { useReducedMotion } from "../state/reducedMotion";
 import type { World } from "../types/relic";
 import { worlds } from "../worlds";
 import { CALIBRATION, calibrating } from "./calibration";
@@ -36,10 +37,9 @@ function dwell(raw: number) {
   return x * x * (3 - 2 * x); // "smoothstep": starts and ends gently
 }
 
-const reduceMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
 export function CameraRig({ world, children }: { world: World; children: ReactNode }) {
   const config = worlds[world];
+  const reducedMotion = useReducedMotion();
   const list = relics[world];
   const n = list.length;
 
@@ -64,7 +64,8 @@ export function CameraRig({ world, children }: { world: World; children: ReactNo
   // to snap back to the first site; useFrame below already adjusts the distance smoothly.
   const get = useThree((s) => s.get);
   useLayoutEffect(() => {
-    const start = calibrating ? calibrationQuat : siteQuats[0];
+    const s = useTimeline.getState();
+    const start = calibrating ? calibrationQuat : siteQuats[s.target ?? s.activeIndex];
     if (globe.current && start) globe.current.quaternion.copy(start);
     const { width, height } = get().size;
     camera.position.set(0, 0, (calibrating ? DIST_CALIBRATE : DIST_AT_SITE) * narrowScreenFactor(width, height));
@@ -117,13 +118,13 @@ export function CameraRig({ world, children }: { world: World; children: ReactNo
       const el = scroll.el;
       if (index >= 0 && n > 1) {
         const top = (index / (n - 1)) * (el.scrollHeight - el.clientHeight);
-        el.scrollTo({ top, behavior: reduceMotion() ? "auto" : "smooth" });
+        el.scrollTo({ top, behavior: reducedMotion ? "instant" : "smooth" });
       }
       lastMove.current = performance.now(); // give the smooth scroll a moment to start
       useTimeline.getState().clearJump();
     });
     return () => cancelAnimationFrame(frame);
-  }, [jumpTo, list, n, scroll.el]);
+  }, [jumpTo, list, n, scroll.el, reducedMotion]);
 
   // Runs every frame (~60×/s).
   useFrame((state, delta) => {
@@ -152,6 +153,10 @@ export function CameraRig({ world, children }: { world: World; children: ReactNo
       target.slerpQuaternions(siteQuats[i], siteQuats[Math.min(i + 1, n - 1)], t);
       // sin(π·t) is 0 at each site and 1 halfway: pull back in between, move in on arrival.
       dist = DIST_AT_SITE + DIST_BETWEEN_EXTRA * Math.sin(Math.PI * t);
+      if (reducedMotion) {
+        target.copy(siteQuats[Math.round(f)]);
+        dist = DIST_AT_SITE;
+      }
 
       // Tell the UI where we are. The store ignores values that didn't change, so this is cheap.
       const store = useTimeline.getState();
@@ -176,8 +181,13 @@ export function CameraRig({ world, children }: { world: World; children: ReactNo
     dist *= narrowScreenFactor(state.size.width, state.size.height);
 
     // Damping = glide toward the target instead of snapping to it.
-    easing.dampQ(g.quaternion, target, TURN_SMOOTH, delta);
-    easing.damp(camera.position, "z", dist, ZOOM_SMOOTH, delta);
+    if (reducedMotion) {
+      g.quaternion.copy(target);
+      camera.position.setZ(dist);
+    } else {
+      easing.dampQ(g.quaternion, target, TURN_SMOOTH, delta);
+      easing.damp(camera.position, "z", dist, ZOOM_SMOOTH, delta);
+    }
   });
 
   return <group ref={globe}>{children}</group>;
