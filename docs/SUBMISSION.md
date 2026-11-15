@@ -85,9 +85,16 @@ tool. Each edition is content-fingerprinted, and SHA-256 integrity checks verify
 resource before the complete batch is saved. Updates wait for an explicit reload. Offline audio
 seeking uses byte-range responses. External source websites and atlas media still need a connection.
 
-The audience is school-age explorers and casual space enthusiasts. The classroom guide asks visitors
-to distinguish observations from interpretations and ask what further evidence they need. These are
-intended benefits, not measured classroom outcomes.
+The audience is school-age explorers and casual space enthusiasts. A printable 45-minute teacher guide
+and student worksheet (https://left-behind-steel.vercel.app/classroom/) fits Ontario Grade 6 Science and
+Technology (Strand E: Space) and Grade 9 Science (SNC1W, Strand E). It asks students to separate
+observations from interpretations and to name what further evidence they need. These are intended
+benefits, not measured classroom outcomes; the next step is a trial with students in Guelph.
+
+The story also reaches home. Phoenix carried the Canadian Space Agency's weather station, which detected
+snow falling on Mars, and Curiosity carries Canada's APXS spectrometer, whose science team is led from
+the University of Guelph. Spirit's investigation shows how the same kind of instrument kept making
+discoveries after Spirit fell silent.
 
 ## NASA data
 

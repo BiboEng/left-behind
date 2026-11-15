@@ -253,6 +253,7 @@ a { color: inherit; text-underline-offset: 2px; }
   color: var(--muted);
 }
 .landing .credits-link:hover { background: none; color: var(--text); }
+.landing a.credits-link { text-decoration: none; }
 /* no year on screen (e.g. calibration mode) still pushes Credits to the right */
 .topbar-credits { margin-left: auto; }
 .current-year + .topbar-credits { margin-left: 0; }

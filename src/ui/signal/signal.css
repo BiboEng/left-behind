@@ -269,3 +269,9 @@
   .exhibit-print-url { display: block; font: 7pt/1.6 var(--font-mono); overflow-wrap: anywhere; border-top: 1px solid #aaa; padding-top: 4mm; }
   .exhibit-review-note { color: #555; font-size: 7pt; }
 }
+
+/* Phones: keep secondary text at a legible size (about 12.5px and up) for younger readers. */
+@media (max-width: 760px) {
+  .evidence-sources a, .evidence-sources ol, .archive-figure figcaption, .signal-footer p, .partner-note a,
+  .nav-label small, .collection-note, .input-limit { font-size: 0.78rem; }
+}

@@ -84,3 +84,7 @@
   .lunar-controls, .lunar-direction, .lunar-event select, .lunar-event-nav { display: none; }
   .lunar-workbench { grid-template-columns: 1fr 1fr; }
 }
+
+@media (max-width: 760px) {
+  .lunar-lab .lunar-sector-note, .lunar-rose figcaption, .lunar-lab .lunar-small, .lunar-lab small, .lunar-checksum { font-size: 0.78rem; }
+}

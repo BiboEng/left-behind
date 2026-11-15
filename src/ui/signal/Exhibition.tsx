@@ -118,6 +118,7 @@ export default function Exhibition() {
         <p><strong>Investigate (8 minutes):</strong> Assign one record to each small group. Ask them to name one observation, one scientific interpretation and one thing the record cannot establish. Sound is optional; the waveform and description carry the audio investigation.</p>
         <p><strong>Share (5 minutes):</strong> Assemble an exhibition, print it or open its link, and return to the opening question. Ask which evidence changed an answer.</p>
         <p>These are suggested activities, not a validated curriculum or measured learning result. No student names or sign-in are needed.</p>
+        <p><a className="text-link" href="/classroom/" target="_blank" rel="noreferrer">Printable 45-minute teacher guide and student worksheet <span aria-hidden>↗</span></a></p>
         <button className="signal-button" disabled={!cards.length} onClick={() => window.print()}>Print the evidence exhibition</button>
       </div>
     </details>

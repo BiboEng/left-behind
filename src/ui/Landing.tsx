@@ -69,6 +69,7 @@ export default function Landing() {
           onClick={() => useTimeline.getState().setMode(mode === "reading" ? "globe" : "reading")}>
           {mode === "reading" ? "Reading mode on" : "Read without 3D"}
         </button>
+        <a className="credits-link" href="/classroom/" target="_blank" rel="noreferrer">Classroom guide</a>
         <span className="mono">No account needed · Sources stay attached</span>
       </footer>
     </main>

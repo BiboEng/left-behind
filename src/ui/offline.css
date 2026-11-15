@@ -11,3 +11,4 @@
 .offline-pack .offline-error { color: #e2b8a1; }
 @media (max-width: 750px) { .offline-pack { grid-template-columns: 1fr; gap: 1.25rem; } }
 @media print { .offline-pack { display: none; } }
+@media (max-width: 760px) { .offline-pack .offline-explanation, .offline-pack .offline-status, .offline-pack .offline-note, .offline-pack .offline-error { font-size: 0.78rem; } }

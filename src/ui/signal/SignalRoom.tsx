@@ -35,8 +35,7 @@ export default function SignalRoom({ chapter }: { chapter: SignalChapter }) {
         <button aria-current={chapter === "intro" ? "page" : undefined} onClick={() => openSignal("intro")}>
           <span className="nav-number">00</span><span className="nav-label">The question</span>
         </button>
-        {evidenceCases.map((entry) => <button key={entry.id} aria-current={chapter === entry.id ? "page" : undefined}
-          aria-label={`Act ${entry.number}: ${entry.shortTitle}`} onClick={() => openSignal(entry.id)}>
+        {evidenceCases.map((entry) => <button key={entry.id} aria-current={chapter === entry.id ? "page" : undefined} onClick={() => openSignal(entry.id)}>
           <span className="nav-number">{entry.number}</span><span className="nav-label">{entry.shortTitle}
             {cards.includes(entry.id) && <small>In your exhibition</small>}</span>
           {cards.includes(entry.id) && <span className="nav-collected" aria-label="Collected">•</span>}
