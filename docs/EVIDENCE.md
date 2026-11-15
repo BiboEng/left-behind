@@ -2,7 +2,7 @@
 
 Generated automatically on 15 Nov 2026. For every number in a relic's facts, the script searched that relic's own source pages and quotes where it appears. **A match is a lead, not a verification**: read the quote, confirm it says the same thing, then tick the box in VERIFY.md. "Not found" usually means the page is rendered by JavaScript, uses different units, or the number is derived (check by hand).
 
-Numbers matched in sources: **176 of 187**.
+Numbers matched in sources: **177 of 186**.
 
 ## Ranger 7
 
@@ -302,16 +302,15 @@ Numbers matched in sources: **176 of 187**.
 > ⚠️ Could not read [PDS Geosciences Node Phoenix Analyst's Notebook: Landing Site (68.2188 N, 234.2508 E, IAU 2000 areocentric)](https://an.rsl.wustl.edu/phx2008/help/landing_site.htm) automatically (the site blocks scripted reads or needs JavaScript). Open it by hand.
 
 - **Touchdown:** 25 May 2008, 23:38 UT
-  - `25` ✓ [NASA Science: Mars Phoenix](https://science.nasa.gov/mission/mars-phoenix/): "…he Martian atmosphere at nearly 13,000 miles per hour (21,000 kilometers per hour) on May 25, 2008, and touched down safely on the surface at 23:38:38 UT in the Green Valley of Vasti…"
-  - `2008` ✓ [NASA Science: Mars Phoenix](https://science.nasa.gov/mission/mars-phoenix/): "…artian atmosphere at nearly 13,000 miles per hour (21,000 kilometers per hour) on May 25, 2008, and touched down safely on the surface at 23:38:38 UT in the Green Valley of Vastitas Bo…"
+  - `25` ✓ [NSSDCA Master Catalog: Phoenix Mars Lander (2007-034A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-034A): "…Profile Phoenix launched on 04 August 2007 at 09:26:34 UT (5:26 a.m. EDT) on a Delta II 7925 from Cape Canaveral Air Force Station. The 681 million km heliocentric cruise to Mars too…"
+  - `2008` ✓ [NSSDCA Master Catalog: Phoenix Mars Lander (2007-034A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-034A): "…ion The Phoenix mission has officially ended, its last signal was received on 02 November 2008. The Phoenix Mars Lander is designed to study the surface and near-surface environment of…"
   - `23:38` ✓ [NASA Science: Mars Phoenix](https://science.nasa.gov/mission/mars-phoenix/): "…r (21,000 kilometers per hour) on May 25, 2008, and touched down safely on the surface at 23:38:38 UT in the Green Valley of Vastitas Borealis. It was the first successful landing of a…"
-- **Working life:** Science on 149 of its 152 Martian days; planned for three months
-  - `149` ✗ not found in the pages that could be read automatically. Check by hand (likely in a blocked JPL page above)
-  - `152` ✗ not found in the pages that could be read automatically. Check by hand (likely in a blocked JPL page above)
+- **Working life:** Planned for at least 90 Martian days; worked for more than five months
+  - `90` ✓ [NSSDCA Master Catalog: Phoenix Mars Lander (2007-034A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-034A): "…the surface, and composition of the lower atmosphere around 70 degrees north for at least 90 sols; determine the atmospheric characteristics during descent through the atmosphere; ch…"
 - **Pictures returned:** More than 25,000
   - `25,000` ✓ [Canadian Space Agency: Phoenix Mars Mission, Canada's meteorological station](https://www.asc-csa.gc.ca/eng/astronomy/mars/phoenix/): "…yssey orbiter first detected remotely in 2002 . Phoenix's cameras also returned more than 25,000 pictures from sweeping vistas using its stereo camera to particles one millionth of a met…"
 - **Last signal:** 2 November 2008, relayed by NASA's Mars Odyssey orbiter
-  - `2008` ✓ [NASA Science: Mars Phoenix](https://science.nasa.gov/mission/mars-phoenix/): "…artian atmosphere at nearly 13,000 miles per hour (21,000 kilometers per hour) on May 25, 2008, and touched down safely on the surface at 23:38:38 UT in the Green Valley of Vastitas Bo…"
+  - `2008` ✓ [NSSDCA Master Catalog: Phoenix Mars Lander (2007-034A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-034A): "…ion The Phoenix mission has officially ended, its last signal was received on 02 November 2008. The Phoenix Mars Lander is designed to study the surface and near-surface environment of…"
 
 ## Curiosity's sky crane (Mars Science Laboratory descent stage)
 

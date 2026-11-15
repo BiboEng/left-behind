@@ -2,7 +2,7 @@
 
 Only a human may set `"verified": true`. For each relic, open the sources, tick each line that matches, fix anything that does not, then set the flag in the JSON file. Then run `npm run test:final`.
 
-**Fastest path:** open [EVIDENCE.md](EVIDENCE.md). For 176 of the 187 numbers in the facts, it quotes the exact sentence from the relic's own sources, so most boxes take a few seconds. The 8 marked ✗ sit on JPL pages that block scripted reads, so open those by hand.
+**Fastest path:** open [EVIDENCE.md](EVIDENCE.md). For 177 of the 186 numbers in the facts, it quotes the exact sentence from the relic's own sources, so most boxes take a few seconds. The 6 marked ✗ sit on JPL pages that block scripted reads, so open those by hand.
 
 AI pre-check (15 Nov, not a substitute for your review): key numbers were compared with sources for every
 relic. Spot-checked directly against NSSDCA/HiRISE: LCROSS masses (Centaur about 2,000 kg, LCROSS 534 kg
@@ -360,12 +360,13 @@ File: `src/data/mars/phoenix.json` · verified: **false**
 - [ ] Site: Green Valley, Vastitas Borealis (northern arctic plains) (68.2188, -125.7492)
 - [ ] Touchdown: 25 May 2008, 23:38 UT
 - [ ] A first: First successful landing in a polar region of Mars
-- [ ] Working life: Science on 149 of its 152 Martian days; planned for three months
+- [ ] Working life: Planned for at least 90 Martian days; worked for more than five months
 - [ ] Pictures returned: More than 25,000
 - [ ] Last signal: 2 November 2008, relayed by NASA's Mars Odyssey orbiter
 - [ ] Story paragraphs match the sources (no invented numbers or quotes)
 
 Sources:
+- [NSSDCA Master Catalog: Phoenix Mars Lander (2007-034A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-034A)
 - [NASA Science: Mars Phoenix](https://science.nasa.gov/mission/mars-phoenix/)
 - [JPL: NASA's Phoenix Spacecraft Reports Good Health After Mars Landing (25 May 2008)](https://www.jpl.nasa.gov/news/nasas-phoenix-spacecraft-reports-good-health-after-mars-landing/)
 - [JPL: Bright Chunks at Phoenix Lander's Mars Site Must Have Been Ice (19 June 2008)](https://www.jpl.nasa.gov/news/bright-chunks-at-phoenix-landers-mars-site-must-have-been-ice/)

@@ -30,7 +30,7 @@
     },
     {
       "label": "Working life",
-      "value": "Science on 149 of its 152 Martian days; planned for three months"
+      "value": "Planned for at least 90 Martian days; worked for more than five months"
     },
     {
       "label": "Pictures returned",
@@ -56,6 +56,10 @@
     }
   ],
   "sources": [
+    {
+      "title": "NSSDCA Master Catalog: Phoenix Mars Lander (2007-034A)",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-034A"
+    },
     {
       "title": "NASA Science: Mars Phoenix",
       "url": "https://science.nasa.gov/mission/mars-phoenix/"
