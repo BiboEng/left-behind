@@ -14,7 +14,7 @@ done, add new ones as they come up.
 ## Still to do (any order)
 - [ ] Verify every relic: open its sources, then set `verified: true` (humans only)
 - [ ] More Moon relics: Lunokhod 2, Lunar Prospector, LCROSS, Vikram (Chandrayaan-2), SLIM, Resilience
-- [ ] Delete the `placeholder-*` files in `src/data/moon/` and `src/data/mars/`
+- [x] Delete the `placeholder-*` files in `src/data/moon/` and `src/data/mars/`
 - [ ] Hero models: download the NASA `.glb`, optimize, put in `public/<world>/models/`, set `model` in the JSON
       (Moon: Apollo Lunar Module · Mars: Viking lander, Mars Exploration Rover, InSight, Ingenuity;
       NASA has no Pathfinder model)

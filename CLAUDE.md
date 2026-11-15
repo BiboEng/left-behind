@@ -35,16 +35,9 @@ pick whatever is most useful next (see the backlog in `docs/PLAN.md`). Some skil
 mention phases (P0–P5), "Day 1" or PLAN.md phase checkboxes; ignore those parts. Everything else
 they say still applies.
 
-## Who owns what
-| Path | Owner |
-|---|---|
-| `src/data/moon/**`, `src/worlds/moon.ts`, `public/moon/**`, `src/ui/Landing.tsx` | Ibrahim |
-| `src/data/mars/**`, `src/worlds/mars.ts`, `public/mars/**`, `src/ui/Credits.tsx` | Rayan |
-| `src/engine/**`, other `src/ui/**` | Ibrahim builds them on Day 1; after that, either of you, but say so in the commit message |
-| `src/types/**`, `src/state/**`, `src/data/index.ts`, `src/worlds/types.ts`, `CLAUDE.md`, `.claude/**`, `docs/**`, `package.json` | Shared. Tell your teammate before changing |
-
-When working for one person, don't edit the other person's world files. If something there needs
-to change, stop and say what, so they can be told.
+There is **no file ownership** either: either of you can edit any file, Moon or Mars. Ignore any skill
+or agent rule about "the other person's world" or an ownership table. To avoid merge conflicts, say
+in chat what you are working on, and `/sync` often.
 
 ## Contracts
 1. **Data**: `src/types/relic.ts` + `docs/DATA_CONTRACT.md`. Import from `src/data/index.ts`.
