@@ -64,8 +64,11 @@ The first three checks validate data contracts, coordinates, credits, embedded G
 timeline state, routing, and the production bundle. Pull requests run them in GitHub Actions.
 
 **The final check is a stricter release gate.** It also requires human source verification and a
-model for every hero entry. Source verification remains pending (`verified: false`); Pathfinder
-still has no suitable bundled NASA model. Do not mark sources verified without human review.
+model for every hero entry. Every hero now has a NASA model (Pathfinder became a standard entry because
+NASA publishes no Pathfinder model), so the only remaining failure is human source verification
+(`verified: false`). Use [docs/VERIFY.md](docs/VERIFY.md). Do not mark sources verified without human review.
+
+Live: https://left-behind-steel.vercel.app · Demo deck: https://left-behind-steel.vercel.app/demo/
 
 ## Project documentation
 

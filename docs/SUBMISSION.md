@@ -1,7 +1,10 @@
 # Project submission draft
 
-Describes implemented behavior. Replace the two public links after publishing, review facts and
-SI attribution, and check the [official guide](https://www.spaceappschallenge.org/resources/project-submission-guide/).
+Describes implemented behavior. Paste each section into the matching field on the team's Project
+page, review facts and SI attribution, and check the
+[official guide](https://www.spaceappschallenge.org/resources/project-submission-guide/).
+Deadline: **Sunday 15 November 2026, 11:59 p.m. Guelph time (ET)**. Only clicking
+**Submit for Judging** counts; saving progress does not.
 
 ## Project name
 
@@ -20,13 +23,19 @@ produced them.
 
 ## Final project link
 
-Add the approved public deployment URL. Check the landing, direct #signal/insight and #signal/apollo links and
-a shared exhibition without authentication.
+https://left-behind-steel.vercel.app
+
+Public, no sign-in. Checked on the live deployment: the landing page, `#signal/apollo`, `#mars/insight`, a
+shared exhibition link and the offline save (29 files, all integrity-checked).
 
 ## Demo link
 
-Add a public video of 30 seconds or less or a deck of at most seven slides including its title.
-A long browser-test recording is development evidence, not a compliant submission demo.
+https://left-behind-steel.vercel.app/demo/
+
+A seven-slide deck (the limit includes the title slide), hosted with the project, so it needs no sign-in.
+It shows the team name, members and challenge, as the guide requires. Use the arrow keys to move
+between slides. A PDF copy is in `docs/demo-deck.pdf` if a file upload is needed elsewhere.
+The deck shows no faces or voices: Space Apps forbids the likeness of anyone under 18.
 
 ## Detailed description
 
@@ -139,7 +148,15 @@ Avoid invented user statistics, global-first claims or a claim that this one cli
 
 ## Final submission steps
 
-Human-review sources and SI disclosure; confirm the registered challenge and Guelph's global-nomination
-process; replace both public links and test them without signing in; use an allowed demo length;
-include resource and tool references; submit through the official team page. Saving a draft or
-opening a development PR does not submit the project.
+1. **Human source review**: work through [VERIFY.md](VERIFY.md) and set `verified: true` only after
+   checking each relic yourselves. Redeploy afterwards (`npx vercel deploy --prod`).
+2. **SI disclosure**: the guide says SI tools "should not be used to come up with your idea". The
+   atlas concept is yours; After the Signal was proposed by Devin. Describe this accurately in the SI field.
+3. **Team page**: confirm both members are registered for the Guelph Local Event and appear on the
+   Members tab. Edit the Project tab and paste the fields above. Replace the team name on slides 1 and 7 of
+   `public/demo/index.html` if it is not "Left Behind".
+4. **Links**: open both links in a private window to confirm they work without signing in.
+5. Optional but recommended by Space Apps: request a FortiGuard Web Filter classification for
+   `left-behind-steel.vercel.app` (category: Education) so judges' networks do not block it.
+6. Tick both checkboxes and click **Submit for Judging** before 11:59 p.m. ET. A confirmation banner
+   appears when it worked. You can edit and resubmit until the deadline.

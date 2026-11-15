@@ -1,7 +1,7 @@
 {
   "id": "mars-pathfinder",
   "world": "mars",
-  "tier": "hero",
+  "tier": "standard",
   "name": "Mars Pathfinder lander (Carl Sagan Memorial Station) and Sojourner rover",
   "mission": "Mars Pathfinder",
   "agency": "NASA",

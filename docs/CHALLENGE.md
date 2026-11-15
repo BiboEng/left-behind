@@ -67,7 +67,7 @@ have an earlier deadline. Confirm the applicable event time on the official guid
 - Other approximate markers explain which nearby feature the coordinate represents.
 - The Apollo model is a generic Lunar Module, and the MER model represents the shared rover design.
 - Reference models show hardware design, not the damage or exact present-day condition.
-- Pathfinder remains a hero story without a suitable bundled model, so the strict final gate fails.
+- Pathfinder is a standard entry because NASA publishes no Pathfinder 3D model; every hero entry has one.
 - Remote NASA imagery and source pages require a network connection. Text and bundled models
   do not depend on live API calls; this is not an offline/PWA application.
 

@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Left Behind · Project demo</title>
+<meta name="description" content="Seven-slide NASA Space Apps 2026 demo for Left Behind: After the Signal.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0c0e; --panel: #111316; --ink: #ece8de; --muted: #a7a59f; --dim: #6f6e6a;
+    --gold: #e2b97f; --sage: #a8bfb4; --line: #262a2f;
+    --sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { background: var(--bg); color: var(--ink); font-family: var(--sans); }
+  body { scroll-snap-type: y mandatory; overflow-y: auto; height: 100vh; }
+  a { color: inherit; }
+  .slide {
+    position: relative; scroll-snap-align: start; height: 100vh; min-height: 560px;
+    padding: clamp(28px, 5vw, 72px) clamp(20px, 6vw, 96px); display: grid; overflow: hidden;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow { font: 500 clamp(11px, 1vw, 14px)/1.4 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+  .num { position: absolute; right: clamp(20px, 6vw, 96px); bottom: clamp(18px, 3vw, 40px); font: 400 12px var(--mono); color: var(--dim); letter-spacing: .12em; }
+  h1 { font-weight: 500; font-size: clamp(44px, 7.4vw, 120px); line-height: .95; letter-spacing: -.035em; }
+  h2 { font-weight: 500; font-size: clamp(30px, 4.2vw, 64px); line-height: 1.02; letter-spacing: -.03em; }
+  h2 em, h1 em { font-style: normal; color: var(--muted); }
+  p.lead { font-size: clamp(16px, 1.55vw, 23px); line-height: 1.5; color: var(--muted); max-width: 46ch; }
+  .small { font-size: clamp(13px, 1.05vw, 16px); line-height: 1.5; color: var(--muted); }
+  .mono { font-family: var(--mono); }
+  img.shot { width: 100%; height: 100%; object-fit: cover; object-position: top left; border: 1px solid var(--line); display: block; }
+  figure { margin: 0; min-height: 0; display: grid; grid-template-rows: 1fr auto; gap: 8px; }
+  figcaption { font: 400 11px/1.4 var(--mono); color: var(--dim); letter-spacing: .04em; }
+
+  /* 1 · title */
+  .s1 { grid-template-columns: 1.15fr .85fr; gap: clamp(24px, 4vw, 64px); align-items: center; }
+  .s1 .team { margin-top: clamp(20px, 3vw, 40px); display: grid; gap: 6px; }
+  .s1 .team b { font-weight: 500; color: var(--ink); }
+  .s1 .live { display: grid; gap: 18px; justify-items: start; }
+  .s1 .live img.qr { width: clamp(120px, 14vw, 200px); }
+  .s1 .live img.hero { width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: top; border: 1px solid var(--line); }
+
+  /* 2 · challenge */
+  .s2 { grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 64px); align-items: center; }
+  .s2 ol { list-style: none; padding: 0; display: grid; gap: 14px; margin-top: 28px; }
+  .s2 li { display: grid; grid-template-columns: 90px 1fr; gap: 12px; border-top: 1px solid var(--line); padding-top: 12px; font-size: clamp(14px, 1.2vw, 18px); line-height: 1.45; color: var(--muted); }
+  .s2 li span { font: 500 12px var(--mono); color: var(--gold); letter-spacing: .1em; padding-top: 3px; }
+  .s2 li b { color: var(--ink); font-weight: 500; }
+
+  /* 3 · investigations */
+  .s3 { grid-template-rows: auto 1fr; gap: clamp(18px, 2.4vw, 32px); }
+  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(10px, 1.4vw, 20px); min-height: 0; }
+  .case { display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 12px; min-height: 0; }
+  .case img { width: 100%; height: 100%; object-fit: cover; object-position: center top; border: 1px solid var(--line); background: var(--panel); min-height: 0; }
+  .case h3 { font-weight: 500; font-size: clamp(15px, 1.35vw, 21px); letter-spacing: -.01em; }
+  .case p { font-size: clamp(12px, 1vw, 15px); line-height: 1.45; color: var(--muted); margin-top: 4px; }
+  .case .k { font: 500 11px var(--mono); color: var(--gold); letter-spacing: .12em; text-transform: uppercase; }
+
+  /* 4 · apollo */
+  .s4 { grid-template-columns: .9fr 1.1fr; gap: clamp(24px, 4vw, 64px); align-items: center; }
+  .s4 .rose { max-height: 78vh; width: 100%; object-fit: contain; }
+  .stats { display: grid; grid-template-columns: repeat(3, auto); gap: 8px 32px; margin: 28px 0; justify-content: start; }
+  .stats b { display: block; font: 500 clamp(24px, 2.6vw, 40px) var(--mono); color: var(--ink); }
+  .stats span { font: 400 11px var(--mono); color: var(--dim); letter-spacing: .1em; text-transform: uppercase; }
+
+  /* 5 · exhibition */
+  .s5 { grid-template-columns: 1fr 1.25fr; gap: clamp(24px, 4vw, 64px); align-items: center; }
+  .triad { display: grid; gap: 10px; margin: 24px 0; }
+  .triad div { border-left: 2px solid var(--gold); padding: 4px 0 4px 14px; font-size: clamp(13px, 1.15vw, 17px); color: var(--muted); line-height: 1.45; }
+  .triad div b { display: block; font: 500 11px var(--mono); letter-spacing: .14em; color: var(--gold); text-transform: uppercase; margin-bottom: 2px; }
+  .triad div:nth-child(3) { border-color: var(--sage); }
+  .triad div:nth-child(3) b { color: var(--sage); }
+  .s5 figure { height: 74vh; }
+
+  /* 6 · atlas */
+  .s6 { grid-template-columns: 1.35fr .65fr; gap: clamp(24px, 4vw, 56px); align-items: center; }
+  .s6 figure { height: 80vh; }
+  .s6 ul { list-style: none; padding: 0; margin-top: 24px; display: grid; gap: 10px; }
+  .s6 li { font-size: clamp(13px, 1.15vw, 17px); line-height: 1.45; color: var(--muted); border-top: 1px solid var(--line); padding-top: 10px; }
+  .s6 li b { color: var(--ink); font-weight: 500; }
+
+  /* 7 · data + future */
+  .s7 { grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 64px); align-content: center; }
+  .s7 .data { columns: 2; column-gap: 28px; margin-top: 18px; padding: 0; list-style: none; }
+  .s7 .data li { break-inside: avoid; font-size: clamp(12px, 1vw, 15px); line-height: 1.4; color: var(--muted); margin-bottom: 10px; }
+  .s7 .data li b { color: var(--ink); font-weight: 500; }
+  .s7 .future { display: grid; gap: 14px; margin-top: 18px; }
+  .s7 .future p { font-size: clamp(14px, 1.25vw, 19px); line-height: 1.45; color: var(--muted); }
+  .s7 .future p b { color: var(--ink); font-weight: 500; }
+  .s7 .close { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: end; gap: 24px; border-top: 1px solid var(--line); padding-top: clamp(18px, 2.4vw, 32px); }
+  .s7 .close h2 { font-size: clamp(26px, 3.2vw, 48px); }
+
+  .hint { position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%); font: 400 11px var(--mono); color: var(--dim); letter-spacing: .1em; pointer-events: none; }
+
+  @media (max-width: 860px) {
+    body { scroll-snap-type: none; }
+    .slide { height: auto; min-height: 100vh; grid-template-columns: 1fr !important; gap: 28px; }
+    .grid4 { grid-template-columns: 1fr 1fr; }
+    .case img { height: 180px; }
+    .s5 figure, .s6 figure { height: 56vh; }
+    .s7 .data { columns: 1; }
+    .s7 .close { flex-direction: column; align-items: start; }
+    .hint { display: none; }
+  }
+  @media print {
+    @page { size: 1600px 900px; margin: 0; }
+    body { height: auto; overflow: visible; scroll-snap-type: none; }
+    .slide { width: 1600px; height: 900px; min-height: 0; break-after: page; border: 0; }
+    .hint { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 1 · TITLE -->
+<section class="slide s1" aria-label="Slide 1 of 7: title">
+  <div>
+    <p class="eyebrow">NASA Space Apps 2026 · Guelph</p>
+    <h1 style="margin-top:22px">Left Behind<br><em>After the Signal</em></h1>
+    <p class="lead" style="margin-top:26px">They went silent. Their evidence didn't. An interactive documentary about the NASA hardware left on the Moon and Mars, and what it is still teaching us.</p>
+    <div class="team small">
+      <span><b>Team</b> <span data-team-name>Left Behind</span> · <b>Members</b> Ibrahim and Rayan</span>
+      <span><b>Challenge</b> Abandoned but not Forgotten: Storytelling about NASA's Discarded Equipment on the Moon and Mars</span>
+    </div>
+  </div>
+  <div class="live">
+    <img class="hero" src="landing.jpg" alt="Left Behind landing screen: What survives the last signal? beside InSight's final selfie">
+    <div style="display:flex;gap:20px;align-items:center">
+      <img class="qr" src="qr.svg" alt="QR code to the live project">
+      <div class="small"><span class="eyebrow" style="color:var(--sage)">Try it now · no sign-in</span><br><a class="mono" href="https://left-behind-steel.vercel.app">left-behind-steel.vercel.app</a></div>
+    </div>
+  </div>
+  <span class="num">01 / 07</span>
+</section>
+
+<!-- 2 · CHALLENGE + IDEA -->
+<section class="slide s2" aria-label="Slide 2 of 7: the challenge and our idea">
+  <div>
+    <p class="eyebrow">The challenge</p>
+    <h2 style="margin-top:18px">Landers, rovers and impact craters are not just junk. <em>Each one is the end of a story most people never hear.</em></h2>
+    <p class="lead" style="margin-top:22px">NASA asked for a story-driven tool that shows school-age and casual space fans what was left behind, why it was sent and what it discovered.</p>
+  </div>
+  <div>
+    <p class="eyebrow" style="color:var(--sage)">Our answer: follow the evidence after the signal stops</p>
+    <ol>
+      <li><span>MEANING 1</span><div><b>An ending by design.</b> Ranger 7 was built to crash, and it photographed the Moon until impact.</div></li>
+      <li><span>MEANING 2</span><div><b>A clue exposed by damage.</b> Spirit's broken wheel dug up soil about 90% silica.</div></li>
+      <li><span>MEANING 3</span><div><b>A record that outlives its machine.</b> InSight is silent, but its marsquake recordings remain.</div></li>
+      <li><span>THE TWIST</span><div><b>The abandoned machine becomes the signal.</b> Apollo 17's leftover lander base turns up in the Moon's own seismic records.</div></li>
+    </ol>
+  </div>
+  <span class="num">02 / 07</span>
+</section>
+
+<!-- 3 · FOUR INVESTIGATIONS -->
+<section class="slide s3" aria-label="Slide 3 of 7: four investigations">
+  <div>
+    <p class="eyebrow">The visitor experience</p>
+    <h2 style="margin-top:14px">Four investigations built on real NASA records. <em>No timers, no scores. Look closely.</em></h2>
+  </div>
+  <div class="grid4">
+    <div class="case"><img src="ranger.jpg" alt="Ranger 7's last two incomplete camera frames, cut off at impact"><div><span class="k">01 · Moon · 1964</span><h3>A photograph</h3><p>Switch between Ranger 7's first view and its last frames, exposed under half a second before impact.</p></div></div>
+    <div class="case"><img src="spirit.jpg" alt="Spirit's chemistry readout showing about 90 percent silica"><div><span class="k">02 · Mars · 2007</span><h3>A scar in the soil</h3><p>Compare what the camera saw with what the spectrometer actually measured.</p></div></div>
+    <div class="case"><img src="insight-wave.jpg" alt="InSight Sol 128 two-channel waveform with playback controls"><div><span class="k">03 · Mars · 2019</span><h3>A tremor</h3><p>Play and scrub NASA's Sol 128 sonification, which holds the first likely marsquake. The waveform is drawn from the original audio.</p></div></div>
+    <div class="case"><img src="apollo-rose.jpg" alt="Direction chart of Apollo 17 seismic events with the lunar module sector highlighted"><div><span class="k">04 · Moon · 1976–77</span><h3>An unexpected source</h3><p>Filter 3,250 cataloged seismic events and see how many point back toward the lander.</p></div></div>
+  </div>
+  <span class="num">03 / 07</span>
+</section>
+
+<!-- 4 · NASA DATA AT THE CORE -->
+<section class="slide s4" aria-label="Slide 4 of 7: NASA data at the core">
+  <figure style="max-height:82vh"><img class="rose" src="apollo-rose.jpg" alt="Rose chart: event counts by direction, with the 80 to 120 degree sector toward the Apollo 17 lunar module highlighted"><figcaption>Live chart, default view: 3,062 of 3,250 events with tighter published direction estimates (azimuth variance ≤ 50)</figcaption></figure>
+  <div>
+    <p class="eyebrow">NASA data is the story, not decoration</p>
+    <h2 style="margin-top:16px">The lander that shook after everyone left.</h2>
+    <p class="lead" style="margin-top:18px">Apollo 17's seismic experiment kept recording after the astronauts left. Researchers re-read those NASA records in 2023. Visitors filter the published catalog by month, direction and quality, then inspect each event's four-sensor arrival times.</p>
+    <div class="stats">
+      <div><b>3,250</b><span>Cataloged events</span></div>
+      <div><b>4</b><span>Geophones per event</span></div>
+      <div><b>SHA-256</b><span>Checksum on the source CSV</span></div>
+    </div>
+    <p class="small">The unchanged CC0 catalog (Civilini, Husker and Weber, CaltechDATA) is bundled and checked by automated tests. The tool reproduces published results. It never invents new source locations, and every view can be shared or downloaded as an evidence receipt.</p>
+  </div>
+  <span class="num">04 / 07</span>
+</section>
+
+<!-- 5 · EXHIBITION -->
+<section class="slide s5" aria-label="Slide 5 of 7: the visitor's exhibition">
+  <div>
+    <p class="eyebrow">Curated by you</p>
+    <h2 style="margin-top:16px">The machines stay. <em>The story travels.</em></h2>
+    <div class="triad">
+      <div><b>Observed</b>What the instrument actually recorded.</div>
+      <div><b>Interpreted</b>What scientists concluded from it.</div>
+      <div><b>Still limited</b>What the evidence cannot tell us yet.</div>
+    </div>
+    <p class="lead">Every story keeps these three apart. Visitors pick the stories to keep, add a title and a question for the next reader, then share a link, print a PDF or download source notes.</p>
+    <p class="small" style="margin-top:14px">No account and no server. One tap saves the whole evidence room for offline classroom use, and every file is integrity-checked before it is saved.</p>
+  </div>
+  <figure><img class="shot" src="exhibit.jpg" alt="Exhibition view listing observed, interpreted and still-limited evidence for each kept story"><figcaption>Live exhibition: four stories kept, sources attached</figcaption></figure>
+  <span class="num">05 / 07</span>
+</section>
+
+<!-- 6 · ATLAS -->
+<section class="slide s6" aria-label="Slide 6 of 7: the atlas">
+  <figure><img class="shot" src="mars.jpg" alt="NASA-textured Mars globe turned to the InSight landing site, with the InSight story card"><figcaption>Mars atlas · Viking MDIM 2.1 mosaic · InSight at Elysium Planitia</figcaption></figure>
+  <div>
+    <p class="eyebrow">The atlas behind the evidence</p>
+    <h2 style="margin-top:16px">19 NASA machines, <em>on the spot where each one stopped.</em></h2>
+    <ul>
+      <li><b>Scroll through time.</b> Real NASA/USGS globes turn to each landing site, from Ranger 7 (1964) to the Perseverance parachute (2021).</li>
+      <li><b>Real archive photos.</b> Every image is credited and linked to its NASA source, alongside 8 NASA 3D models.</li>
+      <li><b>Honest uncertainty.</b> Lost landers are shown at their target regions and labeled that way.</li>
+      <li><b>For everyone.</b> Search, keyboard navigation and a reading mode that works without 3D.</li>
+    </ul>
+  </div>
+  <span class="num">06 / 07</span>
+</section>
+
+<!-- 7 · DATA + FUTURE -->
+<section class="slide s7" aria-label="Slide 7 of 7: NASA data used and what comes next">
+  <div>
+    <p class="eyebrow">NASA open data used</p>
+    <ul class="data">
+      <li><b>Apollo 17 LSPE</b> · NASA PDS + CaltechDATA catalog (CC0)</li>
+      <li><b>InSight SEIS</b> · Sol 128 sonification, NASA/JPL-Caltech</li>
+      <li><b>Ranger 7</b> · NSSDCA impact frames, CP1002</li>
+      <li><b>Spirit APXS</b> · JPL silica result, PIA09491</li>
+      <li><b>NASA Image and Video Library</b> · mission photos</li>
+      <li><b>NSSDCA</b> · mission facts and dates</li>
+      <li><b>LRO LROC / LOLA</b> · Moon surface, sites from orbit</li>
+      <li><b>MRO HiRISE</b> · Mars hardware seen from orbit</li>
+      <li><b>Viking MDIM 2.1 / USGS, MOLA</b> · Mars globe</li>
+      <li><b>NASA 3D Resources</b> · lander and rover models</li>
+    </ul>
+  </div>
+  <div>
+    <p class="eyebrow" style="color:var(--sage)">What comes next</p>
+    <div class="future">
+      <p><b>A classroom kit.</b> The offline evidence room plus a teacher guide, tried first with students in Guelph.</p>
+      <p><b>More machines.</b> Apollo 12, 14 and 16, GRAIL and LADEE, using the same source-checked format.</p>
+      <p><b>Visitor-made exhibitions.</b> Students curate and share their own evidence stories, with the limits kept attached.</p>
+    </div>
+  </div>
+  <div class="close">
+    <h2>NASA stories that keep working.</h2>
+    <div class="small mono" style="text-align:right">left-behind-steel.vercel.app<br><span style="color:var(--dim)">Team <span data-team-name>Left Behind</span> · Ibrahim and Rayan · Guelph</span></div>
+  </div>
+  <span class="num">07 / 07</span>
+</section>
+
+<p class="hint">↓ / → next slide · ↑ / ← previous</p>
+<script>
+  // Arrow keys and Page Up/Down move one slide at a time (scroll-snap does the rest).
+  const slides = [...document.querySelectorAll('.slide')];
+  const current = () => slides.reduce((best, s, i) => Math.abs(s.getBoundingClientRect().top) < Math.abs(slides[best].getBoundingClientRect().top) ? i : best, 0);
+  addEventListener('keydown', (e) => {
+    const step = { ArrowDown: 1, ArrowRight: 1, PageDown: 1, ' ': 1, ArrowUp: -1, ArrowLeft: -1, PageUp: -1 }[e.key];
+    if (!step) return;
+    e.preventDefault();
+    const next = Math.max(0, Math.min(slides.length - 1, current() + step));
+    slides[next].scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  });
+</script>
+</body>
+</html>
