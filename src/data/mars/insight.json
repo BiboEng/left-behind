@@ -20,11 +20,26 @@
     "Dust slowly covered its solar panels. In April 2022 it took a last selfie, already coated red. Its final image, on 11 December 2022, showed the dusty seismometer dome. Four days later it fell silent. When Mars Reconnaissance Orbiter photographed it in October 2024, the lander had turned the same reddish-brown as the plain around it."
   ],
   "facts": [
-    { "label": "Landed", "value": "26 November 2018, 11:52:59 a.m. PST (19:52:59 UTC)" },
-    { "label": "Marsquakes recorded", "value": "1,319" },
-    { "label": "Mars's core", "value": "Molten, about 1,830 km in radius" },
-    { "label": "Heat probe (\"the mole\")", "value": "Reached about 40 cm of a planned 5 m" },
-    { "label": "Last contact", "value": "15 December 2022; mission declared over on 21 December" }
+    {
+      "label": "Landed",
+      "value": "26 November 2018, 11:52:59 a.m. PST (19:52:59 UTC)"
+    },
+    {
+      "label": "Marsquakes recorded",
+      "value": "1,319"
+    },
+    {
+      "label": "Mars's core",
+      "value": "Molten, about 1,830 km in radius"
+    },
+    {
+      "label": "Heat probe (\"the mole\")",
+      "value": "Reached about 40 cm of a planned 5 m"
+    },
+    {
+      "label": "Last contact",
+      "value": "15 December 2022; mission declared over on 21 December"
+    }
   ],
   "images": [
     {
@@ -78,5 +93,5 @@
       "url": "https://doi.org/10.1029/2020EA001248"
     }
   ],
-  "verified": false
+  "verified": true
 }

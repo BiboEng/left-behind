@@ -1,0 +1,79 @@
+{
+  "id": "ladee",
+  "world": "moon",
+  "tier": "standard",
+  "name": "LADEE lunar orbiter",
+  "mission": "LADEE (Lunar Atmosphere and Dust Environment Explorer)",
+  "agency": "NASA",
+  "arrived": "2014-04-18",
+  "lastContact": "2014-04-18",
+  "status": "impacted",
+  "location": {
+    "name": "Lunar far side, near the eastern rim of Sundman IV crater (NSSDCA)",
+    "lat": 11.8494,
+    "lon": -93.2506
+  },
+  "headline": "It sampled the Moon's thin air, then skimmed lower until it struck the far side",
+  "story": [
+    "LADEE lifted off from NASA's Wallops Flight Facility in Virginia on the night of 6 September 2013, the first deep space mission launched from there. Apollo astronauts had reported a faint glow tens of kilometers above the lunar surface. LADEE was sent to find out whether it was sodium or floating dust, and what the Moon's thin atmosphere is made of.",
+    "That atmosphere is an exosphere, so thin that its molecules almost never collide. For about five months, LADEE circled the Moon around 50 kilometers up, sampling gas and counting dust grains. It also tested sending data from lunar orbit by laser instead of radio.",
+    "When the science was done, its orbit was lowered on purpose. On 18 April 2014 UTC, LADEE struck the far side at about 1.7 kilometers per second, near the eastern rim of a crater. Ground controllers at NASA's Ames Research Center confirmed the impact at 10:59 p.m. Pacific time on 17 April."
+  ],
+  "facts": [
+    {
+      "label": "Launched",
+      "value": "7 September 2013, 03:27 UTC (6 September, 11:27 p.m. EDT), on a Minotaur V"
+    },
+    {
+      "label": "Science orbit",
+      "value": "About 50 km up, for about 5 months"
+    },
+    {
+      "label": "Mass",
+      "value": "About 383 kg, including 135 kg of fuel"
+    },
+    {
+      "label": "Also tested",
+      "value": "Lunar Laser Communications Demonstration: data by laser"
+    },
+    {
+      "label": "Impact",
+      "value": "18 April 2014, between 04:30 and 05:22 UT, at about 1,700 m/s"
+    }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/201309060010HQ/201309060010HQ~large.jpg",
+      "caption": "6 September 2013: LADEE launches on a Minotaur V rocket from NASA's Wallops Flight Facility in Virginia.",
+      "credit": "NASA/Carla Cioffi (201309060010HQ)",
+      "sourceUrl": "https://images.nasa.gov/details/201309060010HQ"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001395/GSFC_20171208_Archive_e001395~medium.jpg",
+      "caption": "LADEE in the clean room at Wallops before launch.",
+      "credit": "NASA (GSFC_20171208_Archive_e001395)",
+      "sourceUrl": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001395"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA18160/PIA18160~orig.jpg",
+      "caption": "Artist's concept: LADEE approaching lunar orbit.",
+      "credit": "NASA/Ames (PIA18160)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA18160"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NSSDCA Master Catalog: LADEE (2013-047A)",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-047A"
+    },
+    {
+      "title": "NASA Science: LADEE",
+      "url": "https://science.nasa.gov/mission/ladee/"
+    },
+    {
+      "title": "NASA Image Library: LADEE Preparations (exosphere explainer)",
+      "url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001395"
+    }
+  ],
+  "verified": true
+}

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { byteRangeResponse, parseByteRange } from "./worker.js";
+import { byteRangeResponse, offlineCacheKey, parseByteRange } from "./worker.js";
 
 describe("offline NASA audio byte ranges", () => {
   it("handles bounded, open-ended and suffix ranges without changing the requested bytes", async () => {
@@ -30,5 +30,22 @@ describe("offline NASA audio byte ranges", () => {
       expect(await response.text()).toBe("");
     }
     expect(parseByteRange("bytes=0-", 0)).toBeNull();
+  });
+});
+
+describe("offline page routing", () => {
+  const paths = new Set(["/index.html", "/assets/app.js", "/evidence/audio.wav"]);
+  it("serves the saved app shell only for the app's own page", () => {
+    expect(offlineCacheKey("/", "navigate", paths)).toBe("/index.html");
+    expect(offlineCacheKey("/index.html", "navigate", paths)).toBe("/index.html");
+  });
+  it("leaves other pages on the site, such as the demo deck, to the network", () => {
+    expect(offlineCacheKey("/demo/", "navigate", paths)).toBeNull();
+    expect(offlineCacheKey("/demo/index.html", "navigate", paths)).toBeNull();
+  });
+  it("serves saved files by exact path and ignores everything else", () => {
+    expect(offlineCacheKey("/assets/app.js", "cors", paths)).toBe("/assets/app.js");
+    expect(offlineCacheKey("/evidence/audio.wav", "no-cors", paths)).toBe("/evidence/audio.wav");
+    expect(offlineCacheKey("/demo/mars.jpg", "no-cors", paths)).toBeNull();
   });
 });

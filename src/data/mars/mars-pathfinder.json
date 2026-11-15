@@ -1,7 +1,7 @@
 {
   "id": "mars-pathfinder",
   "world": "mars",
-  "tier": "hero",
+  "tier": "standard",
   "name": "Mars Pathfinder lander (Carl Sagan Memorial Station) and Sojourner rover",
   "mission": "Mars Pathfinder",
   "agency": "NASA",
@@ -20,11 +20,26 @@
     "The last data arrived on 27 September 1997, most likely after the lander's battery ran down. Renamed the Carl Sagan Memorial Station, it was spotted from orbit in December 2006 by the HiRISE camera, its ramps and deflated airbags still visible. A speck nearby may be Sojourner. Both remain on the flood plain where they stopped."
   ],
   "facts": [
-    { "label": "Touchdown", "value": "4 July 1997, 16:56:55 UT" },
-    { "label": "First rover on Mars", "value": "Sojourner (10.6 kg), rolled onto the surface on 6 July 1997" },
-    { "label": "Design life vs. actual", "value": "Lander: 30 days, lasted nearly 3 times longer. Rover: 7 days, lasted 12 times longer" },
-    { "label": "Data returned", "value": "More than 16,500 lander images, 550 rover images and more than 15 chemical analyses" },
-    { "label": "Sojourner's drive", "value": "About 100 m in total, never more than about 12 m from the lander" }
+    {
+      "label": "Touchdown",
+      "value": "4 July 1997, 16:56:55 UT"
+    },
+    {
+      "label": "First rover on Mars",
+      "value": "Sojourner (10.6 kg), rolled onto the surface on 6 July 1997"
+    },
+    {
+      "label": "Design life vs. actual",
+      "value": "Lander: 30 days, lasted nearly 3 times longer. Rover: 7 days, lasted 12 times longer"
+    },
+    {
+      "label": "Data returned",
+      "value": "More than 16,500 lander images, 550 rover images and more than 15 chemical analyses"
+    },
+    {
+      "label": "Sojourner's drive",
+      "value": "About 100 m in total, never more than about 12 m from the lander"
+    }
   ],
   "images": [
     {
@@ -76,5 +91,5 @@
       "url": "https://images.nasa.gov/details/PIA00967"
     }
   ],
-  "verified": false
+  "verified": true
 }

@@ -34,12 +34,12 @@ export default function Overlay({ world }: { world: World }) {
   return (
     <div className="overlay" onWheel={reading ? undefined : forwardWheel}>
       <header className="topbar">
-        <button className="back" onClick={goHome}>
-          <span aria-hidden>‹</span> Back
-        </button>
-        <p className="title">
-          Left Behind <span className="sep">·</span> {config.name}
-        </p>
+        <button className="wordmark display" onClick={goHome} aria-label="Left Behind, back to the start">Left Behind</button>
+        <div className="world-switch" role="group" aria-label="Choose a world">
+          {(["moon", "mars"] as World[]).map((w) => <button key={w} aria-pressed={w === world}
+            onClick={() => w !== world && useTimeline.getState().setWorld(w)}>{worlds[w].name}</button>)}
+        </div>
+        <span className="sr-only">{config.name}</span>
         {relic && <YearCounter year={year(relic.arrived)} className="current-year mono" />}
         <MissionIndex world={world} className="back topbar-index" />
         <button className="back topbar-mode" aria-pressed={reading}
@@ -61,7 +61,7 @@ export default function Overlay({ world }: { world: World }) {
         <>
           <TimelineRail list={list} />
           {reading
-            ? <p className="reading-note mono">Reading mode · {config.name} · {shownIndex + 1} of {list.length} relics</p>
+            ? <p className="reading-note">Reading mode · {config.name} · {shownIndex + 1} of {list.length}</p>
             : <ScrollHint />}
           <StepNav list={list} index={shownIndex} />
           {relic && <StoryCard key={relic.id} relic={relic} index={shownIndex} total={list.length} direction={direction} />}

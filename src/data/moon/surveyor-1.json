@@ -20,11 +20,26 @@
     "Its battery voltage dropped sharply after sunset, and the mission ended on 13 July 1966. Engineers kept calling it until 7 January 1967. Decades later, NASA's Lunar Reconnaissance Orbiter photographed Surveyor 1 from orbit, still standing on the plain where it landed."
   ],
   "facts": [
-    { "label": "Landed", "value": "2 June 1966, 06:17:36 UT" },
-    { "label": "First", "value": "U.S. soft landing on the Moon" },
-    { "label": "Mass at landing", "value": "294.3 kg" },
-    { "label": "Pictures returned", "value": "11,240" },
-    { "label": "Mission ended", "value": "13 July 1966; engineering contacts until 7 January 1967" }
+    {
+      "label": "Landed",
+      "value": "2 June 1966, 06:17:36 UT"
+    },
+    {
+      "label": "First",
+      "value": "U.S. soft landing on the Moon"
+    },
+    {
+      "label": "Mass at landing",
+      "value": "294.3 kg"
+    },
+    {
+      "label": "Pictures returned",
+      "value": "11,240"
+    },
+    {
+      "label": "Mission ended",
+      "value": "13 July 1966; engineering contacts until 7 January 1967"
+    }
   ],
   "images": [
     {
@@ -54,5 +69,5 @@
       "url": "https://images.nasa.gov/details/PIA02976"
     }
   ],
-  "verified": false
+  "verified": true
 }

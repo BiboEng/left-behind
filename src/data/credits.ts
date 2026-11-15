@@ -54,6 +54,11 @@ export const DATASETS: Dataset[] = [
     hosts: ["science.nasa.gov", "assets.science.nasa.gov", "photojournal.jpl.nasa.gov", "mars.nasa.gov"],
   },
   { name: "NASA.gov", url: "https://www.nasa.gov", hosts: ["www.nasa.gov", "nasa.gov"] },
+  {
+    name: "Canadian Space Agency (Space Apps partner): Phoenix weather station and Curiosity's APXS",
+    url: "https://www.asc-csa.gc.ca/eng/astronomy/mars/",
+    hosts: ["www.asc-csa.gc.ca", "asc-csa.gc.ca", "www.csa-asc.gc.ca"],
+  },
 ];
 
 export function datasetFor(url: string): Dataset | undefined {

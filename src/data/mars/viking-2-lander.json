@@ -20,11 +20,26 @@
     "After 1,281 Martian days its batteries failed, and on 11 April 1980 it was switched off. In 2001 it was renamed the Gerald A. Soffen Memorial Station, after Viking's project scientist. In 2006 the HiRISE camera found it from orbit, still standing where it landed, with its heat shield and back shell nearby."
   ],
   "facts": [
-    { "label": "Landed", "value": "3 September 1976, Utopia Planitia" },
-    { "label": "Lander mass", "value": "572 kg" },
-    { "label": "Worked for", "value": "1,281 Martian days" },
-    { "label": "Switched off", "value": "11 April 1980, after its batteries failed" },
-    { "label": "Distance from Viking 1", "value": "About 6,460 km" }
+    {
+      "label": "Landed",
+      "value": "3 September 1976, Utopia Planitia"
+    },
+    {
+      "label": "Lander mass",
+      "value": "572 kg"
+    },
+    {
+      "label": "Worked for",
+      "value": "1,281 Martian days"
+    },
+    {
+      "label": "Switched off",
+      "value": "11 April 1980, after its batteries failed"
+    },
+    {
+      "label": "Distance from Viking 1",
+      "value": "About 6,460 km"
+    }
   ],
   "images": [
     {
@@ -64,5 +79,5 @@
       "url": "https://science.nasa.gov/photojournal/frost-at-the-viking-lander-2-site"
     }
   ],
-  "verified": false
+  "verified": true
 }

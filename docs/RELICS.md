@@ -21,7 +21,10 @@ does.
 | 4 | ★ Apollo 11 "Eagle" descent stage | 1969-07-20 | abandoned | The first crewed landing. The flag, laser reflector and memorial items are still there |
 | 5 | ★ Apollo 15 "Falcon" + Lunar Roving Vehicle | 1971-07-30 | abandoned | The first car driven on the Moon, and the "Fallen Astronaut" memorial |
 | 6 | ★ Apollo 17 "Challenger" + Lunar Roving Vehicle | 1972-12-11 | abandoned | The last time humans stood on the Moon |
-| 7 | LCROSS + Centaur stage | 2009-10-09 | impacted | Crashed on purpose into a permanently dark crater, and found water |
+| 7 | Lunar Prospector | 1999-07-31 | impacted | Found hydrogen at the poles, then carried Eugene Shoemaker's ashes into a shadowed crater |
+| 8 | LCROSS + Centaur stage | 2009-10-09 | impacted | Crashed on purpose into a permanently dark crater, and found water |
+| 9 | GRAIL Ebb and Flow | 2012-12-17 | impacted | Mapped the Moon's gravity in record detail, then flew into a northern mountain |
+| 10 | LADEE | 2014-04-18 | impacted | Sampled the Moon's thin exosphere, then struck the far side |
 
 ## 🔴 Mars (Rayan), 1976 → 2021
 
@@ -45,6 +48,6 @@ does.
 ## If you finish early (stretch goals, NASA only)
 1. A second photo per relic, ideally a NASA orbital image of the site today (LROC / HiRISE)
 2. More relics: Ranger 8 and 9, Surveyor 5, 6 and 7, Apollo 12, Apollo 14 (golf balls), Apollo 16,
-   Lunar Prospector, GRAIL Ebb and Flow, LADEE · Curiosity's heat shield, Perseverance's descent stage
+   Curiosity's heat shield, Perseverance's descent stage
 3. "Did you know?" hidden extras in cards (Shepard's golf balls, Charlie Duke's family photo,
    the Phoenix DVD, Ingenuity's piece of the Wright Flyer)

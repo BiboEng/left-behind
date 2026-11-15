@@ -16,14 +16,15 @@ done, add new ones as they come up.
 - [x] Credits screen (`src/ui/Credits.tsx`), built automatically from the data
 
 ## Still to do (any order)
-- [ ] Verify every relic: open its sources, then set `verified: true` (humans only)
-- [ ] More Moon relics (NASA only): Apollo 12 Intrepid, Apollo 14 Antares, Apollo 16 Orion, Lunar Prospector, GRAIL Ebb and Flow, LADEE
+- [ ] Verify every relic: open its sources, then set `verified: true` (humans only). Checklist: `docs/VERIFY.md`
+- [x] Added Lunar Prospector, GRAIL Ebb and Flow, LADEE (15 Nov, unverified)
+- [ ] More Moon relics (NASA only): Apollo 12 Intrepid, Apollo 14 Antares, Apollo 16 Orion
 - [x] Delete the `placeholder-*` files in `src/data/moon/` and `src/data/mars/`
-- [ ] Hero models: download the NASA `.glb`, optimize, put in `public/<world>/models/`, set `model` in the JSON
-      (Moon: Apollo Lunar Module · Mars: Viking lander, Mars Exploration Rover, InSight, Ingenuity;
-      NASA has no Pathfinder model)
+- [x] Hero models (8). Pathfinder moved to `standard`: NASA has no Pathfinder model
 - [ ] Taglines, intros and outros in `src/worlds/moon.ts` and `src/worlds/mars.ts`
 - [ ] Landing screen polish; loading screen so textures don't pop in
 - [ ] Read every card start to end and fix anything awkward
 - [ ] Test: `/preview` on both laptops and a phone; `npm run test:final` passes
-- [ ] Deploy (`/deploy`), record a 1–2 minute video, submit (live URL, repo, video, NASA data used)
+- [x] Deployed: https://left-behind-steel.vercel.app (Vercel project `left-behind`)
+- [x] Demo: 7-slide deck at https://left-behind-steel.vercel.app/demo/ (Space Apps allows 7 slides or 30 s of video, not 1–2 minutes)
+- [ ] Submit on the Space Apps team page before 11:59 p.m. ET, 15 Nov 2026 (fields in `docs/SUBMISSION.md`)

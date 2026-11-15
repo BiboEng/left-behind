@@ -1,7 +1,10 @@
 # Project submission draft
 
-Describes implemented behavior. Replace the two public links after publishing, review facts and
-SI attribution, and check the [official guide](https://www.spaceappschallenge.org/resources/project-submission-guide/).
+Describes implemented behavior. Paste each section into the matching field on the team's Project
+page, review facts and SI attribution, and check the
+[official guide](https://www.spaceappschallenge.org/resources/project-submission-guide/).
+Deadline: **Sunday 15 November 2026, 11:59 p.m. Guelph time (ET)**. Only clicking
+**Submit for Judging** counts; saving progress does not.
 
 ## Project name
 
@@ -15,18 +18,27 @@ unfinished photographs, follow the discovery exposed by Spirit's damaged wheel, 
 recorded ground vibrations, and revisit an Apollo 17 catalog to investigate vibrations associated
 with an abandoned lander. Each investigation separates observation, interpretation and scientific
 limits. Visitors then curate a source-linked exhibition they can share, print or bring into a
-classroom, including without an internet connection after saving the evidence room. A 19-story globe atlas connects these surviving records to the machines and places that
+classroom, including without an internet connection after saving the evidence room. A 22-story globe atlas connects these surviving records to the machines and places that
 produced them.
 
 ## Final project link
 
-Add the approved public deployment URL. Check the landing, direct #signal/insight and #signal/apollo links and
-a shared exhibition without authentication.
+https://left-behind-steel.vercel.app
+
+Public, no sign-in. Checked on the live deployment: the landing page, `#signal/apollo`, `#mars/insight`, a
+shared exhibition link and the offline save (29 files, all integrity-checked).
 
 ## Demo link
 
-Add a public video of 30 seconds or less or a deck of at most seven slides including its title.
-A long browser-test recording is development evidence, not a compliant submission demo.
+https://left-behind-steel.vercel.app/demo/
+
+A seven-slide deck (the limit includes the title slide), hosted with the project, so it needs no sign-in.
+Slide 1 embeds a 29-second captioned walkthrough recorded from the live site, also available on its own at
+https://left-behind-steel.vercel.app/demo/left-behind-demo.mp4 (MP4/H.264, silent, under the 30-second limit).
+If you prefer to submit the video as the demo, use that link, or upload the MP4 to YouTube as Public or Unlisted.
+It shows the team name, members and challenge, as the guide requires. Use the arrow keys to move
+between slides. A PDF copy is in `docs/demo-deck.pdf` if a file upload is needed elsewhere.
+The deck shows no faces or voices: Space Apps forbids the likeness of anyone under 18.
 
 ## Detailed description
 
@@ -49,7 +61,7 @@ Visitors can inspect either channel and seek through the clip. NASA's 60× accel
 of seismic and other vibrations, and the absence of calibrated ground-motion units are stated beside
 the display. No new quake detection or interior inversion is claimed.
 
-Each investigation links to the hardware in a NASA-textured Moon/Mars atlas with 19 selected relic
+Each investigation links to the hardware in a NASA-textured Moon/Mars atlas with 22 selected relic
 stories, mission facts, imagery and optional 3D reference models. Search and a renderer-independent
 reading mode support visitors who prefer text or cannot use WebGL.
 
@@ -66,16 +78,24 @@ limits and citations. Visitors can add a title and reader question, copy a share
 and download plain-text source notes. No account or backend database is required. Reader captions
 are explicitly distinct from NASA statements.
 
-The application uses React, TypeScript, Vite, Zustand, Three.js, React Three Fiber and drei. Vitest
+On the live site, Lighthouse (mobile) scores 97–98 for performance and 100 for accessibility, best
+practices and SEO. The application uses React, TypeScript, Vite, Zustand, Three.js, React Three Fiber and drei. Vitest
 checks data contracts, routing/history, source/media integrity, waveform and catalog reproducibility.
 An optional offline pack saves every chapter, local evidence asset, audio, catalog, font and exhibition
 tool. Each edition is content-fingerprinted, and SHA-256 integrity checks verify every downloaded
 resource before the complete batch is saved. Updates wait for an explicit reload. Offline audio
 seeking uses byte-range responses. External source websites and atlas media still need a connection.
 
-The audience is school-age explorers and casual space enthusiasts. The classroom guide asks visitors
-to distinguish observations from interpretations and ask what further evidence they need. These are
-intended benefits, not measured classroom outcomes.
+The audience is school-age explorers and casual space enthusiasts. A printable 45-minute teacher guide
+and student worksheet (https://left-behind-steel.vercel.app/classroom/) fits Ontario Grade 6 Science and
+Technology (Strand E: Space) and Grade 9 Science (SNC1W, Strand E). It asks students to separate
+observations from interpretations and to name what further evidence they need. These are intended
+benefits, not measured classroom outcomes; the next step is a trial with students in Guelph.
+
+The story also reaches home. Phoenix carried the Canadian Space Agency's weather station, which detected
+snow falling on Mars, and Curiosity carries Canada's APXS spectrometer, whose science team is led from
+the University of Guelph. Spirit's investigation shows how the same kind of instrument kept making
+discoveries after Spirit fell silent.
 
 ## NASA data
 
@@ -105,6 +125,14 @@ The LSPE catalog is a published research product from NASA instrument records. T
 view counts events once, groups four sensor rows per event, and preserves source direction estimates
 and arrival picks. These are described transformations, not AI-generated scientific measurements.
 
+## Space Agency Partner data
+
+- [Canadian Space Agency: Phoenix Mars Mission](https://www.asc-csa.gc.ca/eng/astronomy/mars/phoenix/):
+  Canada's meteorological station on Phoenix, whose lidar detected snow falling from clouds about 4 km up.
+- [Canadian Space Agency: APXS, Canada's contribution to Curiosity](https://www.asc-csa.gc.ca/eng/astronomy/mars/apxs.asp):
+  the CSA-funded spectrometer whose science team is led by Ralf Gellert of the University of Guelph. Spirit's
+  investigation links its silica result to this successor instrument.
+
 ## Other references and tools
 
 React, TypeScript, Vite, Zustand, Three.js, React Three Fiber, drei, maath, Inter, Sharp,
@@ -116,12 +144,17 @@ Exact versions are in the lockfile; in-app Credits identifies all image/model ow
 Ibrahim and Rayan originated the NASA hardware documentary-atlas concept. Devin, a Cognition AI
 development assistant, researched sources and prior projects, proposed the After the Signal
 extension, and assisted its interaction design, code, tests, documentation and draft prose.
-The original atlas was also improved with AI assistance. The team must review this contribution
-against current SI guidance; do not describe the extension as wholly human-conceived.
+The original atlas was also improved with AI assistance. On 15 November, Claude (Anthropic) assisted
+with deployment, an offline-mode fix, the demo deck and 29-second captioned screen recording, the
+classroom guide and worksheet, the Canadian Space Agency connection text, the visual redesign, three added Moon relics, a fact-by-fact source check, and submission drafting.
+The team must review this contribution against current SI guidance; do not describe the extension
+as wholly human-conceived.
 
-No generative images, video scenes, voices, models or scientific measurements were created.
+No generative images, video scenes, voices, models or scientific measurements were created. The demo
+video is a real screen recording of the project with typed captions; it contains no AI-generated imagery
+or audio.
 NASA imagery/audio are credited archive assets. The waveform is computed from the supplied WAV,
-not generated by an AI model. Reader captions are user-authored. Human source verification remains pending.
+not generated by an AI model. Reader captions are user-authored. Relic facts were checked one by one against their linked NASA sources on 15 November 2026 (see docs/VERIFY.md and docs/EVIDENCE.md).
 
 ## 30-second demo script
 
@@ -139,7 +172,15 @@ Avoid invented user statistics, global-first claims or a claim that this one cli
 
 ## Final submission steps
 
-Human-review sources and SI disclosure; confirm the registered challenge and Guelph's global-nomination
-process; replace both public links and test them without signing in; use an allowed demo length;
-include resource and tool references; submit through the official team page. Saving a draft or
-opening a development PR does not submit the project.
+1. **Human source review**: work through [VERIFY.md](VERIFY.md) and set `verified: true` only after
+   checking each relic yourselves. Redeploy afterwards (`npx vercel deploy --prod`).
+2. **SI disclosure**: the guide says SI tools "should not be used to come up with your idea". The
+   atlas concept is yours; After the Signal was proposed by Devin. Describe this accurately in the SI field.
+3. **Team page**: confirm both members are registered for the Guelph Local Event and appear on the
+   Members tab. Edit the Project tab and paste the fields above. Replace the team name on slides 1 and 7 of
+   `public/demo/index.html` if it is not "Left Behind".
+4. **Links**: open both links in a private window to confirm they work without signing in.
+5. Optional but recommended by Space Apps: request a FortiGuard Web Filter classification for
+   `left-behind-steel.vercel.app` (category: Education) so judges' networks do not block it.
+6. Tick both checkboxes and click **Submit for Judging** before 11:59 p.m. ET. A confirmation banner
+   appears when it worked. You can edit and resubmit until the deadline.

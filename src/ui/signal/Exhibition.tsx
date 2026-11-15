@@ -1,9 +1,18 @@
+import { useTimeline } from "../../state/timeline";
 import { useRef, useState } from "react";
 import { exhibitionText } from "../../data/exhibition";
 import { caseById, evidenceCases, signalAudio, signalMedia, signalSources } from "../../data/signal";
 import { openSignal, signalUrl } from "../../state/router";
 import { DEFAULT_EXHIBIT_TITLE, MAX_CAPTION, MAX_TITLE, useSignal } from "../../state/signal";
 import ArchiveFigure from "./ArchiveFigure";
+
+const RELAY = [
+  { year: "1964", relic: "ranger-7", title: "Ranger 7 proved the ground was there", text: "Its close-ups gave scientists the confidence to try soft landings with Surveyor.", source: "https://www.nasa.gov/history/60-years-ago-ranger-7-photographs-the-moon/" },
+  { year: "1967", relic: "surveyor-3", title: "Surveyor 3 waited for visitors", text: "Apollo 12 landed beside it two and a half years later and brought parts of it home.", source: "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1967-035A" },
+  { year: "1998", relic: "lunar-prospector", title: "Lunar Prospector found hydrogen at the poles", text: "NASA read it as the first direct evidence of water ice there.", source: "https://science.nasa.gov/mission/lunar-prospector/" },
+  { year: "2009", relic: "lcross", title: "LCROSS crashed into the dark to check", text: "Its impact confirmed water in Cabeus crater near the south pole.", source: "https://nssdc.gsfc.nasa.gov/planetary/text/lcross_pr_20091113.txt" },
+  { year: "Next", relic: "lcross", title: "Artemis aims for the south pole", text: "NASA's candidate Artemis III landing regions surround the pole, where shadowed craters can preserve water.", source: "https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/" },
+] as const;
 
 export default function Exhibition() {
   const cards = useSignal((s) => s.cards);
@@ -108,7 +117,21 @@ export default function Exhibition() {
         </article>)}
       </div>
       <p className="exhibit-print-url">Open this exhibition: {url}</p>
-      <p className="exhibit-review-note">Editorial text was drafted with AI assistance and linked to NASA sources. Human source verification remains pending.</p>
+      <p className="exhibit-review-note">Editorial text was drafted with AI assistance and linked to NASA sources. Facts were checked against the linked NASA sources on 15 November 2026.</p>
+    </section>
+    <section className="relay no-print" aria-labelledby="relay-title">
+      <p className="eyebrow">Epilogue</p>
+      <h2 id="relay-title">The relay</h2>
+      <p className="signal-lead">No machine in this story finished the job alone. Each one handed something to the next.</p>
+      <ol>
+        {RELAY.map((step) => <li key={step.relic}>
+          <button className="relay-step" onClick={() => useTimeline.getState().jumpToRelic(step.relic)}>
+            <span className="relay-year">{step.year}</span>
+            <span><strong>{step.title}</strong><span>{step.text}</span></span>
+          </button>
+          <a href={step.source} target="_blank" rel="noreferrer">Source ↗</a>
+        </li>)}
+      </ol>
     </section>
     <details className="classroom-guide no-print">
       <summary>Bring this into a classroom</summary>
@@ -118,6 +141,7 @@ export default function Exhibition() {
         <p><strong>Investigate (8 minutes):</strong> Assign one record to each small group. Ask them to name one observation, one scientific interpretation and one thing the record cannot establish. Sound is optional; the waveform and description carry the audio investigation.</p>
         <p><strong>Share (5 minutes):</strong> Assemble an exhibition, print it or open its link, and return to the opening question. Ask which evidence changed an answer.</p>
         <p>These are suggested activities, not a validated curriculum or measured learning result. No student names or sign-in are needed.</p>
+        <p><a className="text-link" href="/classroom/" target="_blank" rel="noreferrer">Printable 45-minute teacher guide and student worksheet <span aria-hidden>↗</span></a></p>
         <button className="signal-button" disabled={!cards.length} onClick={() => window.print()}>Print the evidence exhibition</button>
       </div>
     </details>

@@ -1,8 +1,11 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-// Inter, self-hosted (bundled by Vite, no Google Fonts request). The browser only downloads the
-// character subsets the page actually uses (unicode-range).
-import '@fontsource-variable/inter/wght.css'
+// Self-hosted type (bundled by Vite, no Google Fonts request, saved in the offline pack):
+// Instrument Serif for display headlines, Instrument Sans for reading, JetBrains Mono for data.
+import '@fontsource/instrument-serif/latin-400.css'
+import '@fontsource/instrument-serif/latin-400-italic.css'
+import '@fontsource-variable/instrument-sans/wght.css'
+import '@fontsource-variable/jetbrains-mono/wght.css'
 import './index.css'
 import App from './App.tsx'
 import { startRouter } from './state/router'

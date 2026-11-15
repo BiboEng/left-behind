@@ -17,14 +17,29 @@
   "story": [
     "At 23:38 UT on 25 May 2008, Phoenix touched down on a flat valley floor in the far north of Mars. It was the first successful landing in a polar region of the planet. The ground was cracked into polygons, the pattern of frozen soil, and the team expected ice to lie just beneath the surface, within reach of the lander's robotic arm.",
     "On 15 June the arm widened a trench nicknamed Dodo-Goldilocks, leaving dice-sized chunks of bright material at the bottom. Within four days they had vanished, turned straight to vapor. \"It must be ice,\" said principal investigator Peter Smith. On 31 July, an oven aboard the lander heated a scoop of soil and settled it. \"We have water,\" said William Boynton.",
-    "Phoenix also watched snow fall from Martian clouds and found perchlorate salt in the soil. Built for three months, it worked for five, until the arctic autumn starved its solar panels. Its last signal arrived on 2 November 2008. In 2010, HiRISE saw that one panel no longer cast a shadow, probably crushed by winter frost. The lander still stands on the plain, coated in dust."
+    "Its weather station, Canada's contribution to the mission, detected snow falling from clouds about 4 kilometres above the lander. Phoenix also found perchlorate salt in the soil. Built for three months, it worked for five, until the arctic autumn starved its solar panels. Its last signal arrived on 2 November 2008. In 2010, HiRISE saw that one panel no longer cast a shadow, probably crushed by winter frost. The lander still stands on the plain, coated in dust."
   ],
   "facts": [
-    { "label": "Touchdown", "value": "25 May 2008, 23:38 UT" },
-    { "label": "A first", "value": "First successful landing in a polar region of Mars" },
-    { "label": "Working life", "value": "Science on 149 of its 152 Martian days; planned for three months" },
-    { "label": "Pictures returned", "value": "More than 25,000" },
-    { "label": "Last signal", "value": "2 November 2008, relayed by NASA's Mars Odyssey orbiter" }
+    {
+      "label": "Touchdown",
+      "value": "25 May 2008, 23:38 UT"
+    },
+    {
+      "label": "A first",
+      "value": "First successful landing in a polar region of Mars"
+    },
+    {
+      "label": "Working life",
+      "value": "Planned for at least 90 Martian days; worked for more than five months"
+    },
+    {
+      "label": "Pictures returned",
+      "value": "More than 25,000"
+    },
+    {
+      "label": "Last signal",
+      "value": "2 November 2008, relayed by NASA's Mars Odyssey orbiter"
+    }
   ],
   "images": [
     {
@@ -41,6 +56,10 @@
     }
   ],
   "sources": [
+    {
+      "title": "NSSDCA Master Catalog: Phoenix Mars Lander (2007-034A)",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-034A"
+    },
     {
       "title": "NASA Science: Mars Phoenix",
       "url": "https://science.nasa.gov/mission/mars-phoenix/"
@@ -76,7 +95,11 @@
     {
       "title": "PDS Geosciences Node Phoenix Analyst's Notebook: Landing Site (68.2188 N, 234.2508 E, IAU 2000 areocentric)",
       "url": "https://an.rsl.wustl.edu/phx2008/help/landing_site.htm"
+    },
+    {
+      "title": "Canadian Space Agency: Phoenix Mars Mission, Canada's meteorological station",
+      "url": "https://www.asc-csa.gc.ca/eng/astronomy/mars/phoenix/"
     }
   ],
-  "verified": false
+  "verified": true
 }

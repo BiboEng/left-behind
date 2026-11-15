@@ -22,10 +22,26 @@
     "HiRISE photographed the crash site from orbit the next day: a dark scar where the sky crane hit, with possible pieces of it scattered nearby. Scientists have watched the scar ever since; by 2015 it was fading more slowly than predicted. The broken descent stage still lies there, in the crater where it set Curiosity down."
   ],
   "facts": [
-    { "label": "Landing", "value": "6 August 2012 (UTC), Gale crater" },
-    { "label": "Flew after setting the rover down", "value": "About 650 m before hitting the ground" },
-    { "label": "First seen from orbit", "value": "7 August 2012, by HiRISE (ESP_028269_1755)" },
-    { "label": "Why it crashed", "value": "On purpose: it was programmed to fly away from the rover" }
+    {
+      "label": "Landing",
+      "value": "6 August 2012 (UTC), Gale crater"
+    },
+    {
+      "label": "Flew after setting the rover down",
+      "value": "About 650 m before hitting the ground"
+    },
+    {
+      "label": "First seen from orbit",
+      "value": "7 August 2012, by HiRISE (ESP_028269_1755)"
+    },
+    {
+      "label": "Why it crashed",
+      "value": "On purpose: it was programmed to fly away from the rover"
+    },
+    {
+      "label": "Canadian connection",
+      "value": "The rover it lowered carries Canada's APXS spectrometer, led from the University of Guelph"
+    }
   ],
   "images": [
     {
@@ -63,7 +79,11 @@
     {
       "title": "NASA Science: Mars Science Laboratory (Curiosity)",
       "url": "https://science.nasa.gov/mission/msl-curiosity/"
+    },
+    {
+      "title": "Canadian Space Agency: The APXS instrument, Canada's contribution to Curiosity",
+      "url": "https://www.asc-csa.gc.ca/eng/astronomy/mars/apxs.asp"
     }
   ],
-  "verified": false
+  "verified": true
 }

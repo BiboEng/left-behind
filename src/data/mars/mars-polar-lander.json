@@ -22,11 +22,26 @@
     "In 2005, a camera team thought it had spotted the lander's parachute in old images. A sharper picture showed only a small hill. Mars Polar Lander has never been found. Whatever is left of it lies somewhere in a landing zone about 200 kilometers long near 76 degrees south, unseen for more than a quarter of a century."
   ],
   "facts": [
-    { "label": "Launched", "value": "3 January 1999, Cape Canaveral, on a Delta II" },
-    { "label": "Last contact", "value": "3 December 1999, about 20:00 UTC, just before atmospheric entry" },
-    { "label": "Lander mass", "value": "290 kg" },
-    { "label": "Probable cause", "value": "A false touchdown signal shut off the engines about 40 m above the surface" },
-    { "label": "Targeted site", "value": "About 76° S, 195° W (165° E), near the south polar cap" }
+    {
+      "label": "Launched",
+      "value": "3 January 1999, Cape Canaveral, on a Delta II"
+    },
+    {
+      "label": "Last contact",
+      "value": "3 December 1999, about 20:00 UTC, just before atmospheric entry"
+    },
+    {
+      "label": "Lander mass",
+      "value": "290 kg"
+    },
+    {
+      "label": "Probable cause",
+      "value": "A false touchdown signal shut off the engines about 40 m above the surface"
+    },
+    {
+      "label": "Targeted site",
+      "value": "About 76° S, 195° W (165° E), near the south polar cap"
+    }
   ],
   "images": [
     {
@@ -78,5 +93,5 @@
       "url": "https://science.nasa.gov/photojournal/mars-polar-lander-not-found"
     }
   ],
-  "verified": false
+  "verified": true
 }

@@ -1,0 +1,77 @@
+{
+  "id": "lunar-prospector",
+  "world": "moon",
+  "tier": "standard",
+  "name": "Lunar Prospector",
+  "mission": "Lunar Prospector (NASA Discovery Program)",
+  "agency": "NASA",
+  "arrived": "1999-07-31",
+  "lastContact": "1999-07-31",
+  "status": "impacted",
+  "location": {
+    "name": "Shoemaker crater, near the lunar south pole",
+    "lat": -87.7,
+    "lon": 42.0,
+    "precision": "approximate",
+    "note": "NSSDCA gives the impact point as approximately 87.7° S, 42.0° E, in a permanently shadowed crater near the south pole."
+  },
+  "headline": "It found hints of polar ice, then carried a geologist's ashes into a shadowed crater",
+  "story": [
+    "On 7 January 1998, Lunar Prospector left Cape Canaveral on an Athena 2 rocket. It was a plain drum 1.37 meters wide with three long instrument booms and no onboard computer: every command came from the ground. From a polar orbit about 100 kilometers up, it set out to map what the Moon is made of.",
+    "Within two months it had news. In March 1998, NASA announced that its neutron spectrometer had detected hydrogen at both poles, most likely water ice mixed into the soil. NASA called it the first direct evidence of water ice at the lunar poles. The spacecraft also mapped magnetic fields, rock types and the Moon's gravity.",
+    "On 31 July 1999, controllers steered it into the shadowed Shoemaker crater near the south pole at about 1.7 kilometers per second, hoping the impact would throw up water vapor that telescopes could see. They saw none. Lunar Prospector carried part of the ashes of the geologist Eugene Shoemaker, and they remain with it in the dark."
+  ],
+  "facts": [
+    {
+      "label": "Launched",
+      "value": "7 January 1998, 02:28:44 UT, on an Athena 2"
+    },
+    {
+      "label": "Discovery",
+      "value": "Hydrogen at both poles, announced March 1998: evidence of water ice"
+    },
+    {
+      "label": "Mass",
+      "value": "296.4 kg fully fueled"
+    },
+    {
+      "label": "Impact",
+      "value": "31 July 1999, 09:52:02 UT, at about 1.69 km/s"
+    },
+    {
+      "label": "Passenger",
+      "value": "Part of the ashes of geologist Eugene Shoemaker"
+    }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/KSC-97PC1831/KSC-97PC1831~orig.jpg",
+      "caption": "23 December 1997, Cape Canaveral: Lunar Prospector is mated to its Athena II rocket at Launch Complex 46, two weeks before launch.",
+      "credit": "NASA/KSC (KSC-97PC1831)",
+      "sourceUrl": "https://images.nasa.gov/details/KSC-97PC1831"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA16586/PIA16586~orig.jpg",
+      "caption": "The Moon's gravity field as measured by Lunar Prospector, with the far side in the center and the near side at either edge.",
+      "credit": "NASA/ARC/MIT (PIA16586)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA16586"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA18162/PIA18162~orig.jpg",
+      "caption": "Artist's concept: Lunar Prospector in orbit with its three instrument masts deployed.",
+      "credit": "NASA/Ames (PIA18162)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA18162"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NSSDCA Master Catalog: Lunar Prospector (1998-001A)",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1998-001A"
+    },
+    {
+      "title": "NASA Science: Lunar Prospector",
+      "url": "https://science.nasa.gov/mission/lunar-prospector/"
+    }
+  ],
+  "verified": true
+}

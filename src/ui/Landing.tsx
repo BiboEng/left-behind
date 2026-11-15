@@ -1,7 +1,7 @@
-// An editorial entry into a guided documentary, with the original atlas still one click away.
+// The front door: one strong archive image, one question, two clear ways in.
 import { type CSSProperties } from "react";
 import { relics } from "../data";
-import { signalMedia, signalSources } from "../data/signal";
+import { evidenceCases, signalMedia, signalSources } from "../data/signal";
 import { openSignal } from "../state/router";
 import { useTimeline } from "../state/timeline";
 import type { World } from "../types/relic";
@@ -12,64 +12,81 @@ import MissionIndex from "./MissionIndex";
 import OfflinePack from "./OfflinePack";
 import "./landing.css";
 
-const CHOICES: World[] = ["moon", "mars"];
+const WORLD_IMAGE: Record<World, keyof typeof signalMedia> = { moon: "apolloLander", mars: "spiritSoil" };
 
 export default function Landing() {
   const setWorld = useTimeline((s) => s.setWorld);
   const mode = useTimeline((s) => s.mode);
   const hero = signalMedia.insightSelfie;
+  const total = relics.moon.length + relics.mars.length;
+  const showWays = () => document.getElementById("ways-in")?.scrollIntoView({ behavior: "smooth", block: "start" });
 
   return (
     <main className="landing documentary-landing">
-      <header className="landing-masthead">
-        <span className="landing-wordmark">Left Behind</span>
-        <span className="mono">A NASA open-data documentary</span>
-        <CreditsButton className="credits-link" />
+      <header className="site-header">
+        <span className="wordmark display">Left Behind</span>
+        <nav aria-label="Main">
+          <button onClick={() => openSignal()}>The story</button>
+          <button onClick={() => setWorld("moon")}>Moon</button>
+          <button onClick={() => setWorld("mars")}>Mars</button>
+          <MissionIndex className="nav-search" />
+          <CreditsButton className="nav-quiet" />
+        </nav>
       </header>
-      <section className="landing-documentary" aria-labelledby="landing-title">
-        <div className="landing-editorial">
-          <p className="landing-kicker mono">The hardware stayed. The knowledge travelled.</p>
-          <h1 id="landing-title">What survives<br />the last signal?</h1>
-          <p className="landing-deck">On the Moon and Mars, machines have gone silent. Their photographs, discoveries and records are still changing the story.</p>
-          <button className="landing-primary" onClick={() => openSignal()}>
-            <span>Enter After the Signal</span><span aria-hidden>↗</span>
-          </button>
-          <p className="landing-duration mono">Four investigations · Two worlds · A story to take home</p>
+
+      <section className="hero" aria-labelledby="landing-title">
+        <div className="hero-text">
+          <p className="label">A NASA open-data documentary · Moon and Mars</p>
+          <h1 id="landing-title" className="display">Left Behind</h1>
+          <p className="hero-question display">What survives the last signal?</p>
+          <p className="hero-deck">NASA's machines on the Moon and Mars have gone silent. Their photographs, measurements and recordings are still changing what we know.</p>
+          <div className="hero-actions">
+            <button className="btn btn-primary" onClick={() => openSignal()}>Begin the story <span className="arrow" aria-hidden>→</span></button>
+            <button className="btn" onClick={showWays}>Choose a world</button>
+          </div>
+          <p className="hero-meta">{evidenceCases.length} investigations · {total} machines · no sign-in</p>
         </div>
-        <figure className="landing-archive">
-          <img src={hero.path} alt={hero.alt} fetchPriority="high" />
+        <figure className="hero-figure">
+          <div className="hero-frame"><img src={hero.path} alt={hero.alt} fetchPriority="high" /></div>
           <figcaption>
-            <span className="mono">InSight <span aria-hidden> / </span> 24 April 2022</span>
-            <p>The final selfie. The beginning of another way to see what was left behind.</p>
-            <a href={signalSources[hero.source].url} target="_blank" rel="noreferrer">{hero.credit} <span aria-hidden>↗</span></a>
+            InSight's final selfie, 24 April 2022. <a href={signalSources[hero.source].url} target="_blank" rel="noreferrer">{hero.credit}</a>
           </figcaption>
         </figure>
       </section>
-      <section className="landing-atlas" aria-labelledby="atlas-title">
-        <div className="atlas-introduction"><p className="landing-kicker mono">Or follow your own orbit</p>
-          <h2 id="atlas-title">Explore the atlas.</h2>
-          <p>{relics.moon.length + relics.mars.length} selected NASA relics. Real locations, stories, sources and optional 3D models.</p>
-        </div>
-        <div className="choices">
-          {CHOICES.map((w) => {
+
+      <section className="ways" id="ways-in" aria-labelledby="ways-title">
+        <h2 id="ways-title" className="display">Three ways in</h2>
+        <div className="ways-grid">
+          <button className="way surface" onClick={() => openSignal()}>
+            <img src={signalMedia.rangerLast.path} alt="" loading="lazy" />
+            <span className="label">The story · After the Signal</span>
+            <strong className="display">Four records that outlived their machines</strong>
+            <span className="way-text">A last photograph, a scar in the soil, a marsquake and an Apollo mystery. Then build your own exhibition.</span>
+            <span className="way-go">Begin <span className="arrow" aria-hidden>→</span></span>
+          </button>
+          {(["moon", "mars"] as World[]).map((w) => {
             const list = relics[w];
-            return <button key={w} className="choice" onClick={() => setWorld(w)}
-              style={{ "--accent": worlds[w].accent } as CSSProperties}>
-              <span className="choice-name">{worlds[w].name}<span aria-hidden>↗</span></span>
-              <span className="choice-tagline">{worlds[w].tagline}</span>
-              <small>{list.length} relics · {year(list[0].arrived)}–{year(list[list.length - 1].arrived)}</small>
+            return <button key={w} className="way surface" onClick={() => setWorld(w)} style={{ "--accent": worlds[w].accent } as CSSProperties}>
+              <img src={signalMedia[WORLD_IMAGE[w]].path} alt="" loading="lazy" />
+              <span className="label">The atlas · {list.length} machines · {year(list[0].arrived)}–{year(list[list.length - 1].arrived)}</span>
+              <strong className="display">{worlds[w].name}</strong>
+              <span className="way-text">{worlds[w].tagline}</span>
+              <span className="way-go">Travel through time <span className="arrow" aria-hidden>→</span></span>
             </button>;
           })}
         </div>
       </section>
+
       <OfflinePack />
-      <footer className="landing-actions">
-        <MissionIndex className="credits-link" />
-        <button className="credits-link" aria-pressed={mode === "reading"}
+
+      <footer className="site-footer">
+        <button className="link" aria-pressed={mode === "reading"}
           onClick={() => useTimeline.getState().setMode(mode === "reading" ? "globe" : "reading")}>
-          {mode === "reading" ? "Reading mode on" : "Read without 3D"}
+          {mode === "reading" ? "Reading mode is on" : "Read without 3D"}
         </button>
-        <span className="mono">No account needed · Sources stay attached</span>
+        <a className="link" href="/classroom/" target="_blank" rel="noreferrer">Classroom guide</a>
+        <a className="link" href="/demo/" target="_blank" rel="noreferrer">Project demo</a>
+        <span>Real NASA records. Sources stay attached.</span>
       </footer>
     </main>
   );

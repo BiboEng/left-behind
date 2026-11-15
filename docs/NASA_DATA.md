@@ -39,6 +39,7 @@ These self-contained, unmodified NASA GLBs are each below 10 MB:
 | Mars Exploration Rover Opportunity | https://science.nasa.gov/3d-resources/mars-exploration-rover-opportunity-mer-b/ | Opportunity and Spirit's shared rover design |
 | InSight | https://science.nasa.gov/3d-resources/insight-cruise-lander/ | InSight; reference configuration described on its card |
 | Ingenuity Mars Helicopter | https://science.nasa.gov/3d-resources/ingenuity-mars-helicopter/ | Ingenuity before rotor damage |
+| Partner data (Canada) | **Canadian Space Agency** · https://www.asc-csa.gc.ca/eng/astronomy/mars/phoenix/ and https://www.asc-csa.gc.ca/eng/astronomy/mars/apxs.asp | Phoenix story (Canadian weather station, snow detection), Curiosity sky crane fact and Spirit's "Canadian connection" note (APXS, University of Guelph) | Both | Space Apps Space Agency Partner. Facts only, no CSA images. Credited automatically in Credits |
 
 Draco decompression is served locally from `public/decoders/`, copied from Three.js's compatible
 glTF decoder distribution. Its Apache 2.0 license and provenance are included there. The model

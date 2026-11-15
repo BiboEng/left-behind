@@ -19,7 +19,7 @@ The team's selected challenge in its Space Apps registration is not stored in th
 | --- | --- |
 | Make mission history engaging | Chronological, NASA-textured Moon/Mars globes; documentary stories and world introductions/endings |
 | Connect engineering with science | Mission facts, launch/landing context, and six source-linked learning questions about photos, staging, water evidence, quakes and flight |
-| Use real historical/scientific data | 19 relic records with source URLs, NASA imagery and reported coordinates; uncertainty labels for targets and approximate positions |
+| Use real historical/scientific data | 22 relic records with source URLs, NASA imagery and reported coordinates; uncertainty labels for targets and approximate positions |
 | Show how the hardware worked | Eight optional NASA model references, with descriptions explaining generic, twin-mission and pre-damage models |
 | Reach younger and casual audiences | Searchable mission index, simple question feedback and a reading mode with no WebGL requirement |
 | Keep claims traceable | Per-photo/model credits, mission sources, an aggregate Credits dialog and a human-verification release gate |
@@ -62,12 +62,12 @@ have an earlier deadline. Confirm the applicable event time on the official guid
 
 ## Scientific limits
 
-- All relic verification flags remain false until a human checks the sources.
+- All relic facts were checked against their linked sources on 15 November 2026 (docs/VERIFY.md).
 - Mars Polar Lander and Deep Space 2 are shown at target regions, not recovered sites.
 - Other approximate markers explain which nearby feature the coordinate represents.
 - The Apollo model is a generic Lunar Module, and the MER model represents the shared rover design.
 - Reference models show hardware design, not the damage or exact present-day condition.
-- Pathfinder remains a hero story without a suitable bundled model, so the strict final gate fails.
+- Pathfinder is a standard entry because NASA publishes no Pathfinder 3D model; every hero entry has one.
 - Remote NASA imagery and source pages require a network connection. Text and bundled models
   do not depend on live API calls; this is not an offline/PWA application.
 

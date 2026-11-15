@@ -20,11 +20,26 @@
     "In the spring of 2009, driving beside a low plateau called Home Plate, Spirit broke through a thin crust into soft sand at a spot named Troy. Months of effort could not free it. It sent its last signal on 22 March 2010, as Martian winter set in. Spirit still sits at Troy, visible from orbit beside Home Plate."
   ],
   "facts": [
-    { "label": "Landed", "value": "4 January 2004, 04:35 UTC (3 January, 20:35 PST)" },
-    { "label": "Planned mission", "value": "90 sols (about three months)" },
-    { "label": "Distance driven", "value": "7.73 km" },
-    { "label": "Images returned", "value": "More than 124,000" },
-    { "label": "Mission ended", "value": "25 May 2011, after the last attempts to contact it" }
+    {
+      "label": "Landed",
+      "value": "4 January 2004, 04:35 UTC (3 January, 20:35 PST)"
+    },
+    {
+      "label": "Planned mission",
+      "value": "90 sols (about three months)"
+    },
+    {
+      "label": "Distance driven",
+      "value": "7.73 km"
+    },
+    {
+      "label": "Images returned",
+      "value": "More than 124,000"
+    },
+    {
+      "label": "Mission ended",
+      "value": "25 May 2011, after the last attempts to contact it"
+    }
   ],
   "images": [
     {
@@ -54,6 +69,10 @@
   },
   "sources": [
     {
+      "title": "NSSDCA Master Catalog: Mars Exploration Rover A, Spirit (2003-027A)",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A"
+    },
+    {
       "title": "NASA Science: Mars Exploration Rover Spirit",
       "url": "https://science.nasa.gov/mission/mer-spirit/"
     },
@@ -82,5 +101,5 @@
       "url": "https://an.rsl.wustl.edu/mera/AN/pages/mer/mer_traverse.htm"
     }
   ],
-  "verified": false
+  "verified": true
 }

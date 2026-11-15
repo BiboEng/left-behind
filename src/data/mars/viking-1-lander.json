@@ -20,11 +20,26 @@
     "Engineers spent months sending commands into the silence, and in 1983 they gave up. In 2006, NASA's Mars Reconnaissance Orbiter found the lander from orbit: a bright speck about three meters across, with its probable backshell and heat shield nearby. It still stands on the plain where it landed."
   ],
   "facts": [
-    { "label": "Touchdown", "value": "20 July 1976, 11:53:06 UT" },
-    { "label": "Time in contact", "value": "About 6 years and 4 months (July 1976 to November 1982)" },
-    { "label": "Power", "value": "Two plutonium-238 radioisotope generators" },
-    { "label": "Why it went silent", "value": "A battery-charging update overwrote its antenna-pointing data" },
-    { "label": "First seen from orbit", "value": "November 2006, by HiRISE on Mars Reconnaissance Orbiter" }
+    {
+      "label": "Touchdown",
+      "value": "20 July 1976, 11:53:06 UT"
+    },
+    {
+      "label": "Time in contact",
+      "value": "About 6 years and 4 months (July 1976 to November 1982)"
+    },
+    {
+      "label": "Power",
+      "value": "Two plutonium-238 radioisotope generators"
+    },
+    {
+      "label": "Why it went silent",
+      "value": "A battery-charging update overwrote its antenna-pointing data"
+    },
+    {
+      "label": "First seen from orbit",
+      "value": "November 2006, by HiRISE on Mars Reconnaissance Orbiter"
+    }
   ],
   "images": [
     {
@@ -78,5 +93,5 @@
       "url": "https://www.uahirise.org/ESP_046170_2025"
     }
   ],
-  "verified": false
+  "verified": true
 }

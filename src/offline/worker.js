@@ -14,6 +14,17 @@ export function parseByteRange(header, size) {
   return start <= end && start < size && (first !== null || last > 0) ? { start, end } : null;
 }
 
+/**
+ * Which saved file answers a same-origin GET, or null to leave it to the network.
+ * Only the app shell ("/" and "/index.html") is served from the pack for page loads; the app routes
+ * with query strings and hashes on that one path. Other pages on the site, such as the /demo/ deck,
+ * must load normally instead of being replaced by the saved app shell.
+ */
+export function offlineCacheKey(pathname, mode, paths) {
+  if (mode === "navigate") return pathname === "/" || pathname === "/index.html" ? "/index.html" : null;
+  return paths.has(pathname) ? pathname : null;
+}
+
 export async function byteRangeResponse(request, response) {
   const bytes = await response.arrayBuffer();
   const range = parseByteRange(request.headers.get("Range"), bytes.byteLength);
@@ -71,12 +82,13 @@ if (typeof self !== "undefined" && PACK) {
     const request = event.request;
     const url = new URL(request.url);
     if (request.method !== "GET" || url.origin !== self.location.origin) return;
-    if (request.mode !== "navigate" && !paths.has(url.pathname)) return;
+    const key = offlineCacheKey(url.pathname, request.mode, paths);
+    if (!key) return;
     event.respondWith((async () => {
       const cache = await caches.open(name);
       // Serve one coherent saved edition, including its lazy chunks. Updates are explicit.
       // Only static path keys are used: exhibition captions and shared URLs are never cached.
-      const cached = await cache.match(request.mode === "navigate" ? "/index.html" : url.pathname, { ignoreVary: true });
+      const cached = await cache.match(key, { ignoreVary: true });
       if (!cached) return fetch(request);
       return request.headers.has("Range") ? byteRangeResponse(request, cached) : cached;
     })());

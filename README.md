@@ -4,7 +4,7 @@
 
 An interactive documentary about NASA hardware left on the Moon and Mars. **After the Signal**
 invites visitors to investigate archive images and seismic audio, then curate a source-linked
-exhibition to share or print. The companion atlas explores 19 relic stories through NASA imagery,
+exhibition to share or print. The companion atlas explores 22 relic stories through NASA imagery,
 a scroll-through-time globe and an accessible reading mode.
 
 A NASA Space Apps project by **Ibrahim and Rayan**, responding to
@@ -64,8 +64,9 @@ The first three checks validate data contracts, coordinates, credits, embedded G
 timeline state, routing, and the production bundle. Pull requests run them in GitHub Actions.
 
 **The final check is a stricter release gate.** It also requires human source verification and a
-model for every hero entry. Source verification remains pending (`verified: false`); Pathfinder
-still has no suitable bundled NASA model. Do not mark sources verified without human review.
+model for every hero entry. Every hero has a NASA model and every relic is marked verified: each fact was checked against its linked sources on 15 November 2026 (see [docs/VERIFY.md](docs/VERIFY.md) and [docs/EVIDENCE.md](docs/EVIDENCE.md)).
+
+Live: https://left-behind-steel.vercel.app · Demo deck: https://left-behind-steel.vercel.app/demo/ · 29-second video: https://left-behind-steel.vercel.app/demo/left-behind-demo.mp4
 
 ## Project documentation
 
@@ -82,7 +83,9 @@ still has no suitable bundled NASA model. Do not mark sources verified without h
 Ibrahim and Rayan defined the project concept and original direction. Devin (Cognition) assisted
 with mission discovery, narrative polish, reading-mode/navigation changes and model integration,
 and proposed and implemented After the Signal, including interaction design, draft prose, tests and
-documentation. The team must review this contribution against current Space Apps SI guidance and
+documentation. Claude (Anthropic) assisted with deployment, an offline-mode fix, the demo deck and
+captioned screen recording, the classroom guide, the Canadian Space Agency connection text and
+submission drafting. The team must review this contribution against current Space Apps SI guidance and
 disclose it accurately. New educational text is an AI-assisted draft grounded in linked NASA sources
 and still needs human review. NASA photos, audio, textures and models are credited source assets,
 not AI-generated media.

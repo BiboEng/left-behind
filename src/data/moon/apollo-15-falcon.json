@@ -20,11 +20,26 @@
     "On 2 August, the upper half of Falcon lifted off, using the descent stage as its launch pad. The rover stayed behind, parked about 160 metres to the east with its camera facing the departure. Both are still there. NASA's Lunar Reconnaissance Orbiter has photographed the rover in that final spot, its tracks still visible in the dust."
   ],
   "facts": [
-    { "label": "Landed", "value": "30 July 1971, 22:16 UTC" },
-    { "label": "Crew on the surface", "value": "David R. Scott, James B. Irwin" },
-    { "label": "Time on the Moon", "value": "66 hours 55 minutes" },
-    { "label": "Distance driven by the rover", "value": "27.8 km" },
-    { "label": "Samples returned", "value": "77.3 kg of rock and soil" }
+    {
+      "label": "Landed",
+      "value": "30 July 1971, 22:16 UTC"
+    },
+    {
+      "label": "Crew on the surface",
+      "value": "David R. Scott, James B. Irwin"
+    },
+    {
+      "label": "Time on the Moon",
+      "value": "66 hours 55 minutes"
+    },
+    {
+      "label": "Distance driven by the rover",
+      "value": "27.8 km"
+    },
+    {
+      "label": "Samples returned",
+      "value": "77.3 kg of rock and soil"
+    }
   ],
   "images": [
     {
@@ -74,5 +89,5 @@
       "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo15info.html"
     }
   ],
-  "verified": false
+  "verified": true
 }
