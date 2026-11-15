@@ -2,6 +2,8 @@
 import { useEffect, useRef } from "react";
 import { caseById, evidenceCases, signalMedia, type CaseId, type SignalChapter } from "../../data/signal";
 import { openAtlas, openSignal } from "../../state/router";
+import { useTimeline } from "../../state/timeline";
+import MissionIndex from "../MissionIndex";
 import { useSignal } from "../../state/signal";
 import { CreditsButton } from "../Credits";
 import OfflinePack from "../OfflinePack";
@@ -14,6 +16,8 @@ export default function SignalRoom({ chapter }: { chapter: SignalChapter }) {
   const cards = useSignal((s) => s.cards);
   const main = useRef<HTMLElement>(null);
   const item = caseById.get(chapter as CaseId);
+  const order: SignalChapter[] = ["intro", ...evidenceCases.map((c) => c.id), "exhibit"];
+  const progress = Math.max(0, order.indexOf(chapter)) / (order.length - 1);
   useEffect(() => {
     const previousTitle = document.title;
     document.title = `${item?.title ?? (chapter === "exhibit" ? "Your exhibition" : "After the Signal")} | Left Behind`;
@@ -24,34 +28,37 @@ export default function SignalRoom({ chapter }: { chapter: SignalChapter }) {
 
   return <main className="signal-shell" ref={main}>
     <button className="signal-skip" onClick={() => main.current?.querySelector<HTMLElement>("#signal-heading")?.focus()}>Skip to investigation</button>
-    <header className="signal-header">
-      <button className="signal-brand" onClick={openAtlas}>Left Behind <span>After the Signal</span></button>
-      <div><button className="back" onClick={openAtlas}>Explore the atlas <span aria-hidden>↗</span></button>
-        <CreditsButton className="back" /></div>
-    </header>
-    <div className="signal-body">
-      <nav className="signal-nav" aria-label="After the Signal chapters">
-        <p className="eyebrow">The evidence room</p>
-        <button aria-current={chapter === "intro" ? "page" : undefined} onClick={() => openSignal("intro")}>
-          <span className="nav-number">00</span><span className="nav-label">The question</span>
-        </button>
-        {evidenceCases.map((entry) => <button key={entry.id} aria-current={chapter === entry.id ? "page" : undefined} onClick={() => openSignal(entry.id)}>
-          <span className="nav-number">{entry.number}</span><span className="nav-label">{entry.shortTitle}
-            {cards.includes(entry.id) && <small>In your exhibition</small>}</span>
-          {cards.includes(entry.id) && <span className="nav-collected" aria-label="Collected">•</span>}
-        </button>)}
-        <button className="nav-exhibit" aria-current={chapter === "exhibit" ? "page" : undefined} onClick={() => openSignal("exhibit")}>
-          <span className="nav-number">{cards.length}/{evidenceCases.length}</span><span className="nav-label">Your exhibition</span>
-        </button>
-        <p className="nav-footnote">Four investigations.<br />A mission can outlive<br />its hardware.</p>
+    <header className="site-header signal-site-header">
+      <button className="wordmark display" onClick={openAtlas}>Left Behind</button>
+      <nav aria-label="Main">
+        <button aria-current="page" onClick={() => openSignal("intro")}>The story</button>
+        <button onClick={() => useTimeline.getState().setWorld("moon")}>Moon</button>
+        <button onClick={() => useTimeline.getState().setWorld("mars")}>Mars</button>
+        <MissionIndex className="nav-search" />
+        <CreditsButton className="nav-quiet" />
       </nav>
+    </header>
+    <nav className="chapter-steps" aria-label="After the Signal chapters">
+      <ol>
+        <li><button aria-current={chapter === "intro" ? "page" : undefined} onClick={() => openSignal("intro")}>
+          <span className="step-num">Prologue</span><span className="step-name">The question</span>
+        </button></li>
+        {evidenceCases.map((entry, i) => <li key={entry.id}><button aria-current={chapter === entry.id ? "page" : undefined} onClick={() => openSignal(entry.id)}>
+          <span className="step-num">Act {i + 1}{cards.includes(entry.id) && <span className="step-kept" aria-label=", kept in your exhibition"> · kept</span>}</span>
+          <span className="step-name">{entry.shortTitle}</span>
+        </button></li>)}
+        <li><button aria-current={chapter === "exhibit" ? "page" : undefined} onClick={() => openSignal("exhibit")}>
+          <span className="step-num">Finale · {cards.length}/{evidenceCases.length}</span><span className="step-name">Your exhibition</span>
+        </button></li>
+      </ol>
+      <div className="chapter-progress" aria-hidden><span style={{ width: `${progress * 100}%` }} /></div>
+    </nav>
+    <div className="signal-body">
       <div className="signal-content">
         {chapter === "intro" ? <Introduction /> : chapter === "exhibit" ? <Exhibition /> : item ? <Investigation key={item.id} item={item} /> : null}
         <footer className="signal-footer">
-          <OfflinePack />
-          <p>Real NASA records. Human questions.</p>
-          <p>Photographs and audio are credited at the point of use. Interpretations are editorial; sources and limits stay attached.</p>
-          <CreditsButton className="text-link" />
+          {(chapter === "intro" || chapter === "exhibit") && <OfflinePack />}
+          <p>Real NASA records, credited where they appear. Interpretations are editorial; sources and limits stay attached. <CreditsButton className="text-link" /></p>
         </footer>
       </div>
     </div>
@@ -60,24 +67,30 @@ export default function SignalRoom({ chapter }: { chapter: SignalChapter }) {
 
 function Introduction() {
   return <article className="signal-introduction">
-    <p className="eyebrow">An interactive documentary <span> / </span> Moon + Mars</p>
+    <p className="eyebrow">Prologue</p>
     <h1 id="signal-heading" tabIndex={-1}>They went silent.<br /><span>Their evidence didn't.</span></h1>
-    <p className="signal-lead">A photograph cut short. A scar in the soil. A tremor from another world. The hardware stayed behind, but these records made it home.</p>
+    <p className="signal-lead">A photograph cut short. A scar in the soil. A tremor from another world. A lander that kept shaking after everyone left. The hardware stayed behind, but these records made it home.</p>
     <div className="intro-feature">
       <ArchiveFigure media={signalMedia.insightSelfie} eager />
       <div>
-        <p className="eyebrow">The question worth bringing back</p>
         <h2>When does a mission really end?</h2>
-        <p>Inspect four real records. Separate what was measured from what it means. Return to an Apollo archive, then build an exhibition about what survives the last signal.</p>
-        <button className="signal-button primary" onClick={() => openSignal("ranger")}>Open the first record <span aria-hidden>→</span></button>
-        <p className="intro-note">No timers. No scores. Listen, look closely, and keep the evidence that changes your view.</p>
+        <p>In four short acts, look at a real NASA record, decide what it shows, then reveal what scientists concluded and where the evidence stops. Keep the stories that change your mind. At the end, they become an exhibition you can share or print.</p>
+        <button className="btn btn-primary" onClick={() => openSignal("ranger")}>Begin Act 1 <span className="arrow" aria-hidden>→</span></button>
+        <p className="intro-note">No timers, no scores. Sound is optional.</p>
       </div>
     </div>
-    <div className="intro-cases">
-      {evidenceCases.map((item) => <button key={item.id} onClick={() => openSignal(item.id)}>
-        <span className="eyebrow">{item.number} <span> / </span> {item.world === "moon" ? "Moon" : "Mars"}</span>
-        <strong>{item.shortTitle}</strong><span>{item.question}</span><span className="intro-arrow" aria-hidden>↗</span>
-      </button>)}
-    </div>
+    <h2 className="acts-title">The four acts</h2>
+    <ol className="intro-cases">
+      {evidenceCases.map((item, i) => <li key={item.id}><button onClick={() => openSignal(item.id)}>
+        <span className="act-number" aria-hidden>{i + 1}</span>
+        <img src={signalMedia[item.media].path} alt="" loading="lazy" />
+        <span className="act-text">
+          <span className="act-meta">{item.world === "moon" ? "The Moon" : "Mars"} · {item.date}</span>
+          <strong>{item.shortTitle}</strong>
+          <span>{item.question}</span>
+        </span>
+        <span className="intro-arrow" aria-hidden>→</span>
+      </button></li>)}
+    </ol>
   </article>;
 }

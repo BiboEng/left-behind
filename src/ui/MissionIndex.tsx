@@ -1,18 +1,31 @@
 // The same mission catalogue is available from the title and either world's timeline.
 import { useEffect, useMemo, useRef, useState } from "react";
 import { relics } from "../data";
+import { evidenceCases } from "../data/signal";
+import { openSignal } from "../state/router";
 import { useTimeline } from "../state/timeline";
 import type { RelicStatus, World } from "../types/relic";
 import { worlds } from "../worlds";
 import { formatDate, STATUS_LABEL } from "./format";
 
 const ALL = [...relics.moon, ...relics.mars];
+const isMac = typeof navigator !== "undefined" && /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
 
 export default function MissionIndex({ world, className }: { world?: World; className?: string }) {
   const [open, setOpen] = useState(false);
+  // ⌘K / Ctrl+K opens the index from anywhere this button is on screen.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") { e.preventDefault(); setOpen(true); }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
   return (
     <>
-      <button className={className} onClick={() => setOpen(true)}>Mission index</button>
+      <button className={className} onClick={() => setOpen(true)} aria-keyshortcuts="Meta+K Control+K">
+        Search <kbd aria-hidden>{isMac ? "⌘K" : "Ctrl K"}</kbd>
+      </button>
       {open && <IndexDialog initialWorld={world} onClose={() => setOpen(false)} />}
     </>
   );
@@ -31,6 +44,15 @@ function IndexDialog({ initialWorld, onClose }: { initialWorld?: World; onClose:
         && words.every((word) => text.includes(word));
     }).sort((a, b) => a.arrived.localeCompare(b.arrived) || a.id.localeCompare(b.id));
   }, [query, world, status]);
+  // The four investigations are searchable too, so the palette reaches the whole experience.
+  const chapters = useMemo(() => {
+    const words = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+    if (!words.length) return [];
+    return evidenceCases.filter((c) => {
+      const text = [c.title, c.shortTitle, c.question, c.lead, c.observation].join(" ").toLocaleLowerCase();
+      return (world === "all" || c.world === world) && words.every((word) => text.includes(word));
+    });
+  }, [query, world]);
 
   useEffect(() => {
     ref.current?.showModal();
@@ -44,7 +66,7 @@ function IndexDialog({ initialWorld, onClose }: { initialWorld?: World; onClose:
         <button className="back" onClick={() => ref.current?.close()}>Close</button>
       </header>
       <div className="credits-body">
-        <p className="credits-lead">Find a machine. Follow its story.</p>
+        <p className="credits-lead">Find a machine or an investigation. Press Esc to close.</p>
         <div className="index-filters">
           <label className="index-search">Search missions
             <input type="search" value={query} onChange={(e) => setQuery(e.target.value)}
@@ -64,7 +86,19 @@ function IndexDialog({ initialWorld, onClose }: { initialWorld?: World; onClose:
             </select>
           </label>
         </div>
-        <p className="index-count mono" role="status">{results.length} of {ALL.length} relics</p>
+        {chapters.length > 0 && <>
+          <p className="index-count" role="status">Investigations</p>
+          <ol className="mission-results">
+            {chapters.map((c) => <li key={c.id}>
+              <button onClick={() => { ref.current?.close(); openSignal(c.id); }}>
+                <span className="mission-result-meta">After the Signal · Act {c.number}</span>
+                <strong>{c.title}</strong>
+                <span>{c.question}</span>
+              </button>
+            </li>)}
+          </ol>
+        </>}
+        <p className="index-count" role="status">{results.length} of {ALL.length} machines</p>
         {results.length ? (
           <ol className="mission-results">
             {results.map((r) => (

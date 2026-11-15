@@ -20,7 +20,7 @@ export default function Investigation({ item }: { item: EvidenceCase }) {
 
   return <article className={`investigation investigation-${item.id}`}>
     <header className="investigation-heading">
-      <p className="eyebrow">Act {item.number} <span> / </span> {item.world === "moon" ? "The Moon" : "Mars"} <span> / </span> {item.date}</p>
+      <p className="eyebrow">Act {Number(item.number)} of {evidenceCases.length} <span>·</span> {item.world === "moon" ? "The Moon" : "Mars"} <span>·</span> {item.date}</p>
       <p className="signal-question">{item.question}</p>
       <h1 id="signal-heading" tabIndex={-1}>{item.title}</h1>
       <p className="signal-lead">{item.lead}</p>
@@ -62,26 +62,25 @@ export default function Investigation({ item }: { item: EvidenceCase }) {
 
       <div className="evidence-column">
         <section className="evidence-step">
-          <p className="eyebrow"><span>01</span> The observation</p>
-          <h2>Start with what arrived on Earth.</h2>
+          <p className="step-label"><span>1</span> What arrived on Earth</p>
           <p>{item.observation}</p>
         </section>
-        <button className="signal-button reveal-button" aria-expanded={revealed} aria-controls="evidence-interpretation"
+        <button className="btn reveal-button" aria-expanded={revealed} aria-controls="evidence-interpretation"
           onClick={() => setRevealed(!revealed)}>
-          {revealed ? "Close the interpretation" : "Follow the evidence"} <span aria-hidden>{revealed ? "−" : "+"}</span>
+          {revealed ? "Hide what scientists concluded" : "What did scientists conclude?"} <span aria-hidden>{revealed ? "−" : "+"}</span>
         </button>
         <div id="evidence-interpretation" hidden={!revealed}>
           <section className="evidence-step interpretation">
-            <p className="eyebrow"><span>02</span> The scientific interpretation</p>
+            <p className="step-label"><span>2</span> What it means</p>
             <p>{item.interpretation}</p>
           </section>
           <section className="evidence-step evidence-limit">
-            <p className="eyebrow"><span>03</span> Where this evidence stops</p>
+            <p className="step-label"><span>3</span> Where the evidence stops</p>
             <p>{item.limit}</p>
           </section>
         </div>
         <section className="evidence-sources" aria-label="Primary sources for this investigation">
-          <h2 className="eyebrow">Keep the source attached.</h2>
+          <h2 className="step-label">Sources</h2>
           <ol>{item.sources.map((key) => <li key={key}><a href={signalSources[key].url} target="_blank" rel="noreferrer">{signalSources[key].title} <span aria-hidden>↗</span></a></li>)}</ol>
         </section>
         {item.partner && <aside className="partner-note" aria-label={item.partner.label}>
@@ -102,12 +101,12 @@ export default function Investigation({ item }: { item: EvidenceCase }) {
       <h2>{item.legacy}</h2>
       <p>{item.reflection}</p>
       <div className="legacy-actions">
-        <button className={`signal-button ${selected ? "is-collected" : "primary"}`} aria-pressed={selected}
+        <button className={`btn ${selected ? "is-collected" : ""}`} aria-pressed={selected}
           onClick={() => useSignal.getState().toggleCard(item.id)}>
-          {selected ? "Added to your exhibition" : "Keep this story"} <span aria-hidden>{selected ? "✓" : "+"}</span>
+          {selected ? "Kept in your exhibition" : "Keep this story"} <span aria-hidden>{selected ? "✓" : "+"}</span>
         </button>
-        <button className="signal-button" onClick={() => openSignal(next?.id ?? "exhibit")}>
-          {next ? `Next: ${next.shortTitle.toLowerCase()}` : "Create your exhibition"} <span aria-hidden>→</span>
+        <button className="btn btn-primary next-act" onClick={() => openSignal(next?.id ?? "exhibit")}>
+          {next ? <>Act {Number(next.number)}: {next.shortTitle}</> : "Build your exhibition"} <span className="arrow" aria-hidden>→</span>
         </button>
       </div>
       <p className="collection-note" role="status">{cards.length} of {evidenceCases.length} stories in your exhibition. You choose what to keep.</p>

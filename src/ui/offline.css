@@ -1,14 +1,22 @@
-.offline-pack { border-block: 1px solid #343c3a; padding: 2rem 0; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2rem; margin: 2rem 0; text-align: left; }
-.offline-pack .offline-kicker { color: #bca985; text-transform: uppercase; font-size: 0.55rem; letter-spacing: 0.15em; margin: 0 0 0.75rem; }
-.offline-pack h2 { color: #dfddd5; font-size: clamp(1.5rem, 2vw, 2rem); font-weight: 400; letter-spacing: -0.03em; margin: 0 0 1rem; line-height: 1.2; }
-.offline-pack .offline-explanation, .offline-pack .offline-status { color: #aab5af; font-size: 0.74rem; line-height: 1.85; margin: 0; max-width: 65ch; }
-.offline-pack .offline-status { color: #c4d3c6; margin-bottom: 1rem; }
+/* One quiet surface: what it does on the left, the single action on the right. */
+.offline-pack {
+  display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 2rem; align-items: center;
+  margin: 2rem auto; padding: clamp(1.5rem, 3vw, 2.5rem); text-align: left;
+  background: var(--surface-solid); border: 1px solid var(--surface-line); border-radius: var(--radius);
+}
+.offline-pack .offline-kicker { font: 600 var(--label)/1.4 var(--font-sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin: 0 0 0.6rem; }
+.offline-pack h2 { font: 400 var(--step-3)/1.05 var(--font-display); color: var(--ink); margin: 0 0 0.75rem; }
+.offline-pack .offline-explanation { color: var(--ink-2); font-size: var(--step-0); line-height: 1.6; margin: 0; max-width: 52ch; }
+.offline-pack .offline-status { color: var(--ink); font-size: var(--step-0); font-weight: 550; margin: 0 0 1rem; }
 .offline-pack .offline-buttons { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-.offline-pack button { display: inline-block; font: 0.7rem/1.7 var(--font-mono); color: #ddd7c8; border: 1px solid #807861; background: transparent; padding: 0.75rem 1rem; cursor: pointer; min-height: 2.75rem; text-align: left; }
-.offline-pack button:hover { color: white; border-color: #dfd0ab; background: #d1c3a309; }
+.offline-pack button {
+  display: inline-flex; align-items: center; min-height: 3rem; padding: 0.8rem 1.4rem; border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18); background: rgba(255, 255, 255, 0.04); color: var(--ink);
+  font: 550 var(--step-0)/1.2 var(--font-sans); cursor: pointer; transition: background-color 0.2s, border-color 0.2s;
+}
+.offline-pack button:hover { background: rgba(255, 255, 255, 0.09); border-color: rgba(255, 255, 255, 0.32); }
 .offline-pack button:disabled { cursor: default; opacity: 0.55; }
-.offline-pack .offline-note, .offline-pack .offline-error { color: #929f96; font-size: 0.61rem; line-height: 1.9; margin: 1rem 0 0; }
-.offline-pack .offline-error { color: #e2b8a1; }
-@media (max-width: 750px) { .offline-pack { grid-template-columns: 1fr; gap: 1.25rem; } }
+.offline-pack .offline-note, .offline-pack .offline-error { color: var(--ink-3); font-size: var(--step--1); line-height: 1.6; margin: 1rem 0 0; }
+.offline-pack .offline-error { color: #f0b9a0; }
+@media (max-width: 750px) { .offline-pack { grid-template-columns: 1fr; gap: 1.25rem; } .offline-pack button { width: 100%; justify-content: center; } }
 @media print { .offline-pack { display: none; } }
-@media (max-width: 760px) { .offline-pack .offline-explanation, .offline-pack .offline-status, .offline-pack .offline-note, .offline-pack .offline-error { font-size: 0.78rem; } }
