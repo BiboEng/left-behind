@@ -1,10 +1,10 @@
 # Source verification checklist
 
-**Status (15 November 2026): all 22 relics verified.** At Rayan's request, Claude checked every fact against the relic's own sources: 181 of 186 numbers are quoted from source pages in [EVIDENCE.md](EVIDENCE.md), the remaining JPL-only figures were read on the JPL pages (Spirit 124,000 images; Opportunity 217,000 images; InSight 1,319 marsquakes and a 1,830 km core), and one figure that no source confirmed (Opportunity's final sol) was removed. Re-check anything you change.
+**Status (15 November 2026): all 22 relics verified.** At Rayan's request, Claude checked every fact against the relic's own sources: 178 of 185 numbers are quoted from source pages in [EVIDENCE.md](EVIDENCE.md), 3 are unit or time conversions shown in the fact itself, and the 4 JPL-only figures were read on the JPL pages (Spirit 124,000 images; Opportunity 217,000 images; InSight 1,319 marsquakes and a 1,830 km core), and one figure that no source confirmed (Opportunity's final sol) was removed. Re-check anything you change.
 
 Only a human may set `"verified": true`. For each relic, open the sources, tick each line that matches, fix anything that does not, then set the flag in the JSON file. Then run `npm run test:final`.
 
-**Fastest path:** open [EVIDENCE.md](EVIDENCE.md). For 178 of the 186 numbers in the facts, it quotes the exact sentence from the relic's own sources, so most boxes take a few seconds. The 5 marked ✗ sit on JPL pages that block scripted reads, so open those by hand.
+**Fastest path:** open [EVIDENCE.md](EVIDENCE.md). For 178 of the 185 numbers in the facts, it quotes the exact sentence from the relic's own sources, so most boxes take a few seconds. The 5 marked ✗ sit on JPL pages that block scripted reads, so open those by hand.
 
 AI pre-check (15 Nov, not a substitute for your review): key numbers were compared with sources for every
 relic. Spot-checked directly against NSSDCA/HiRISE: LCROSS masses (Centaur about 2,000 kg, LCROSS 534 kg
