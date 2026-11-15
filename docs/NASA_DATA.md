@@ -6,7 +6,7 @@ credits its photo, hero cards credit their 3D model, and the Credits screen list
 | What | Dataset | Used for | Who | Notes |
 |---|---|---|---|---|
 | Moon globe | **NASA SVS CGI Moon Kit** (LRO LROC color map + LOLA displacement) · https://svs.gsfc.nasa.gov/4720 | Moon texture | Ibrahim | Ready-made 2k JPG: `https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_2k.jpg`. For 4k, download the 4k TIFF and run `npm run resize`. The map is **centered on 0° longitude** (`lonOffsetDeg: 0`). Credit: NASA's Scientific Visualization Studio |
-| Mars globe | **Viking global color mosaic** (NASA Viking Orbiter, processed by USGS Astrogeology) · https://astrogeology.usgs.gov/search/map/mars_viking_global_color_mosaic_925m (public domain) | Mars texture | Rayan | The originals are huge TIFFs. Find a smaller copy of a Viking MDIM color mosaic (simple cylindrical, -180°E to 180°E), then `npm run resize -- <file> public/mars/mars-color.jpg 4096`. Calibrate with Olympus Mons (see `docs/ENGINE.md`). Credit: NASA/JPL/USGS |
+| Mars globe | **Viking global color mosaic** (NASA Viking Orbiter, processed by USGS Astrogeology) · https://astrogeology.usgs.gov/search/map/mars_viking_global_color_mosaic_925m (public domain) | Mars texture | Rayan | Done: `public/mars/mars-color.jpg` (4096 × 2048). The originals are huge TIFFs, so it was fetched ready-sized from the USGS WMS: `https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/mars/mars_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=MDIM21_color&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=4096&height=2048&format=image/png`, then `npm run resize`. Centered on 0° longitude (`lonOffsetDeg: 0`), calibrated on Olympus Mons. Credit: NASA/JPL/USGS |
 | Relic photos | **NASA Image and Video Library API**: `https://images-api.nasa.gov/search?q=<query>&media_type=image` (no API key needed) | 1–3 photos per relic | both | Use the `~medium.jpg` version: `https://images-assets.nasa.gov/image/<nasa_id>/<nasa_id>~medium.jpg`. Page: `https://images.nasa.gov/details/<nasa_id>` |
 | Landing / crash sites from orbit | **LROC** (NASA Lunar Reconnaissance Orbiter Camera) · https://www.lroc.asu.edu | "Seen from orbit" Moon photos | Ibrahim | Great for Apollo sites, Lunokhod, Vikram debris. Credit: NASA/GSFC/Arizona State University |
 | Mars hardware from orbit | **HiRISE** (NASA Mars Reconnaissance Orbiter) · https://www.uahirise.org | "Seen from orbit" Mars photos | Rayan | Beagle 2, Phoenix, Schiaparelli, InSight, Spirit. Credit: NASA/JPL-Caltech/University of Arizona |
@@ -17,6 +17,10 @@ credits its photo, hero cards credit their 3D model, and the Credits screen list
 Non-NASA missions (Luna, Lunokhod, Mars 3, Beagle 2, Vikram, SLIM, Zhurong, Resilience): use the
 agency or company source, plus NASA orbital images of their sites where they exist. That way
 even the Soviet and Chinese relics are shown through NASA data.
+
+The Credits screen (`src/ui/Credits.tsx`) is built from the data: globe textures from `src/worlds/*.ts`,
+photos and models from each relic. Archives are recognized by web address in `DATASETS` in
+`src/data/credits.ts`; if you start using a new NASA archive, add it there.
 
 Rules: NASA images and models are generally free to use, but always credit them, and don't use
 the NASA logo ("meatball") or insignia as our branding.
