@@ -212,7 +212,7 @@ Sources:
 File: `src/data/mars/deep-space-2.json` · verified: **false**
 
 - [ ] Arrived 1999-12-03, last contact 1999-12-03, status `lost`
-- [ ] Site: Target area near the south polar layered terrain (never found) (-73, 150)
+- [ ] Site: Target area near the south polar layered terrain (never found) (-73, 150) — shown as target
 - [ ] Launched: 3 January 1999, Cape Canaveral, aboard Mars Polar Lander
 - [ ] Names: Amundsen and Scott, after the first explorers to reach the South Pole
 - [ ] Goal: Survive impact, penetrate the soil and test a sensor for subsurface water
@@ -231,7 +231,7 @@ Sources:
 File: `src/data/mars/mars-polar-lander.json` · verified: **false**
 
 - [ ] Arrived 1999-12-03, last contact 1999-12-03, status `lost`
-- [ ] Site: South polar layered terrain (targeted site; never found) (-76.1, 164.7)
+- [ ] Site: South polar layered terrain (targeted site; never found) (-76.1, 164.7) — shown as target
 - [ ] Launched: 3 January 1999, Cape Canaveral, on a Delta II
 - [ ] Last contact: 3 December 1999, about 20:00 UTC, just before atmospheric entry
 - [ ] Lander mass: 290 kg
@@ -315,17 +315,19 @@ Sources:
 - [NASA Photojournal: Ice on Mars - Now You See It (PIA10910)](https://science.nasa.gov/photojournal/ice-on-mars-now-you-see-it/)
 - [HiRISE: Phoenix Lander after One Mars Year (ESP_017716_2485)](https://www.uahirise.org/ESP_017716_2485)
 - [PDS Geosciences Node Phoenix Analyst's Notebook: Landing Site (68.2188 N, 234.2508 E, IAU 2000 areocentric)](https://an.rsl.wustl.edu/phx2008/help/landing_site.htm)
+- [Canadian Space Agency: Phoenix Mars Mission, Canada's meteorological station](https://www.asc-csa.gc.ca/eng/astronomy/mars/phoenix/)
 
 ### Curiosity's sky crane (Mars Science Laboratory descent stage)
 
 File: `src/data/mars/curiosity-sky-crane.json` · verified: **false**
 
 - [ ] Arrived 2012-08-06, last contact 2012-08-06, status `impacted`
-- [ ] Site: Gale crater, about 650 m from where Curiosity landed (-4.624, 137.402)
+- [ ] Site: Gale crater, about 650 m from where Curiosity landed (-4.624, 137.402) — shown as approximate
 - [ ] Landing: 6 August 2012 (UTC), Gale crater
 - [ ] Flew after setting the rover down: About 650 m before hitting the ground
 - [ ] First seen from orbit: 7 August 2012, by HiRISE (ESP_028269_1755)
 - [ ] Why it crashed: On purpose: it was programmed to fly away from the rover
+- [ ] Canadian connection: The rover it lowered carries Canada's APXS spectrometer, led from the University of Guelph
 - [ ] Story paragraphs match the sources (no invented numbers or quotes)
 
 Sources:
@@ -333,6 +335,7 @@ Sources:
 - [NASA Science: Inspecting Curiosity's Descent Stage Crash Site (PIA16023)](https://science.nasa.gov/resource/inspecting-curiositys-descent-stage-crash-site/)
 - [HiRISE: Bits and Pieces (ESP_028269_1755), the sky crane impact site](https://www.uahirise.org/ESP_028269_1755)
 - [NASA Science: Mars Science Laboratory (Curiosity)](https://science.nasa.gov/mission/msl-curiosity/)
+- [Canadian Space Agency: The APXS instrument, Canada's contribution to Curiosity](https://www.asc-csa.gc.ca/eng/astronomy/mars/apxs.asp)
 
 ### InSight lander
 
@@ -382,7 +385,7 @@ Sources:
 File: `src/data/mars/perseverance-parachute.json` · verified: **false**
 
 - [ ] Arrived 2021-02-18, status `abandoned`
-- [ ] Site: Jezero crater, around Perseverance's landing site (18.465, 77.43)
+- [ ] Site: Jezero crater, around Perseverance's landing site (18.465, 77.43) — shown as approximate
 - [ ] Parachute: 21.5 m wide, the biggest ever deployed on Mars
 - [ ] Hidden message: "DARE MIGHTY THINGS" in binary, plus JPL's GPS coordinates
 - [ ] Released: About 2.1 km above the surface
@@ -395,3 +398,7 @@ Sources:
 - [NASA Image Library: Mars Decoder Ring (PIA24431)](https://images.nasa.gov/details/PIA24431)
 - [NASA Image Library: Debris Field for Perseverance Landing Gear Seen from Mars Helicopter (PIA25218)](https://images.nasa.gov/details/PIA25218)
 - [HiRISE: Perseverance Hardware One Day after Landing (ESP_068294_1985)](https://www.uahirise.org/ESP_068294_1985)
+
+## After the Signal investigations
+
+These are in `src/data/signal.ts` (no verified flag). Check each observation, interpretation and limit against its listed sources, including Spirit's Canadian connection note (CSA APXS page).

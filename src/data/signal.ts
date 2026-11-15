@@ -40,6 +40,10 @@ export const signalSources = {
     title: "NASA Image Library: PIA09491",
     url: "https://images.nasa.gov/details/PIA09491",
   },
+  csaApxs: {
+    title: "Canadian Space Agency: The APXS instrument, Canada's contribution to Curiosity",
+    url: "https://www.asc-csa.gc.ca/eng/astronomy/mars/apxs.asp",
+  },
   insightSound: {
     title: "NASA: First likely marsquake, Sol 128 (23 April 2019)",
     url: "https://science.nasa.gov/resource/first-likely-marsquake-heard-by-nasas-insight/",
@@ -159,6 +163,8 @@ export interface EvidenceCase {
   reflection: string;
   media: keyof typeof signalMedia;
   sources: readonly SignalSourceId[];
+  /** Optional space-agency-partner link to the same story, with its own source. */
+  partner?: { label: string; text: string; source: SignalSourceId };
 }
 
 export const evidenceCases: readonly EvidenceCase[] = [
@@ -193,6 +199,11 @@ export const evidenceCases: readonly EvidenceCase[] = [
     reflection: "Which part can you see, and which part needs an instrument?",
     media: "spiritSoil",
     sources: ["spiritChemistry", "spiritPhoto"],
+    partner: {
+      label: "Canadian connection",
+      text: "The instrument family kept working after Spirit fell silent. Curiosity carries an updated alpha particle X-ray spectrometer, Canada's contribution to the mission. The Canadian Space Agency funded it, and its science team is led by principal investigator Ralf Gellert of the University of Guelph.",
+      source: "csaApxs",
+    },
   },
   {
     id: "insight", relicId: "insight", number: "03", world: "mars", date: "6 April 2019 · Sol 128",

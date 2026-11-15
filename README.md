@@ -68,7 +68,7 @@ model for every hero entry. Every hero now has a NASA model (Pathfinder became a
 NASA publishes no Pathfinder model), so the only remaining failure is human source verification
 (`verified: false`). Use [docs/VERIFY.md](docs/VERIFY.md). Do not mark sources verified without human review.
 
-Live: https://left-behind-steel.vercel.app · Demo deck: https://left-behind-steel.vercel.app/demo/
+Live: https://left-behind-steel.vercel.app · Demo deck: https://left-behind-steel.vercel.app/demo/ · 29-second video: https://left-behind-steel.vercel.app/demo/left-behind-demo.mp4
 
 ## Project documentation
 

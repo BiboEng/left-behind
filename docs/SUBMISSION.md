@@ -33,6 +33,9 @@ shared exhibition link and the offline save (29 files, all integrity-checked).
 https://left-behind-steel.vercel.app/demo/
 
 A seven-slide deck (the limit includes the title slide), hosted with the project, so it needs no sign-in.
+Slide 1 embeds a 29-second captioned walkthrough recorded from the live site, also available on its own at
+https://left-behind-steel.vercel.app/demo/left-behind-demo.mp4 (MP4/H.264, silent, under the 30-second limit).
+If you prefer to submit the video as the demo, use that link, or upload the MP4 to YouTube as Public or Unlisted.
 It shows the team name, members and challenge, as the guide requires. Use the arrow keys to move
 between slides. A PDF copy is in `docs/demo-deck.pdf` if a file upload is needed elsewhere.
 The deck shows no faces or voices: Space Apps forbids the likeness of anyone under 18.
@@ -113,6 +116,14 @@ transformation, not a calibrated measurement.
 The LSPE catalog is a published research product from NASA instrument records. The educational
 view counts events once, groups four sensor rows per event, and preserves source direction estimates
 and arrival picks. These are described transformations, not AI-generated scientific measurements.
+
+## Space Agency Partner data
+
+- [Canadian Space Agency: Phoenix Mars Mission](https://www.asc-csa.gc.ca/eng/astronomy/mars/phoenix/):
+  Canada's meteorological station on Phoenix, whose lidar detected snow falling from clouds about 4 km up.
+- [Canadian Space Agency: APXS, Canada's contribution to Curiosity](https://www.asc-csa.gc.ca/eng/astronomy/mars/apxs.asp):
+  the CSA-funded spectrometer whose science team is led by Ralf Gellert of the University of Guelph. Spirit's
+  investigation links its silica result to this successor instrument.
 
 ## Other references and tools
 

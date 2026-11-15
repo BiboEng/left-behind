@@ -84,6 +84,11 @@ export default function Investigation({ item }: { item: EvidenceCase }) {
           <h2 className="eyebrow">Keep the source attached.</h2>
           <ol>{item.sources.map((key) => <li key={key}><a href={signalSources[key].url} target="_blank" rel="noreferrer">{signalSources[key].title} <span aria-hidden>↗</span></a></li>)}</ol>
         </section>
+        {item.partner && <aside className="partner-note" aria-label={item.partner.label}>
+          <h2 className="eyebrow">{item.partner.label}</h2>
+          <p>{item.partner.text}</p>
+          <a href={signalSources[item.partner.source].url} target="_blank" rel="noreferrer">{signalSources[item.partner.source].title} <span aria-hidden>↗</span></a>
+        </aside>}
         <button className="text-link locate-relic" onClick={() => useTimeline.getState().jumpToRelic(item.relicId)}>
           Locate this machine in the atlas <span aria-hidden>↗</span>
         </button>

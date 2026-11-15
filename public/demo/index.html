@@ -43,7 +43,7 @@
   .s1 .team b { font-weight: 500; color: var(--ink); }
   .s1 .live { display: grid; gap: 18px; justify-items: start; }
   .s1 .live img.qr { width: clamp(120px, 14vw, 200px); }
-  .s1 .live img.hero { width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: top; border: 1px solid var(--line); }
+  .s1 .live .hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: top; border: 1px solid var(--line); }
 
   /* 2 · challenge */
   .s2 { grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 64px); align-items: center; }
@@ -107,7 +107,10 @@
     .s7 .close { flex-direction: column; align-items: start; }
     .hint { display: none; }
   }
+  .print-only { display: none; }
   @media print {
+    video.hero { display: none; }
+    .s1 .live img.print-only { display: block; }
     @page { size: 1600px 900px; margin: 0; }
     body { height: auto; overflow: visible; scroll-snap-type: none; }
     .slide { width: 1600px; height: 900px; min-height: 0; break-after: page; border: 0; }
@@ -129,7 +132,9 @@
     </div>
   </div>
   <div class="live">
-    <img class="hero" src="landing.jpg" alt="Left Behind landing screen: What survives the last signal? beside InSight's final selfie">
+    <video class="hero" src="left-behind-demo.mp4" poster="video-poster.jpg" controls muted playsinline preload="metadata" aria-label="29-second captioned walkthrough of Left Behind, silent"></video>
+    <img class="hero print-only" src="video-poster.jpg" alt="">
+    <a class="small mono" href="left-behind-demo.mp4">▶ 29-second walkthrough (MP4, captioned, no audio)</a>
     <div style="display:flex;gap:20px;align-items:center">
       <img class="qr" src="qr.svg" alt="QR code to the live project">
       <div class="small"><span class="eyebrow" style="color:var(--sage)">Try it now · no sign-in</span><br><a class="mono" href="https://left-behind-steel.vercel.app">left-behind-steel.vercel.app</a></div>
@@ -225,7 +230,7 @@
 <!-- 7 · DATA + FUTURE -->
 <section class="slide s7" aria-label="Slide 7 of 7: NASA data used and what comes next">
   <div>
-    <p class="eyebrow">NASA open data used</p>
+    <p class="eyebrow">NASA and partner open data used</p>
     <ul class="data">
       <li><b>Apollo 17 LSPE</b> · NASA PDS + CaltechDATA catalog (CC0)</li>
       <li><b>InSight SEIS</b> · Sol 128 sonification, NASA/JPL-Caltech</li>
@@ -237,6 +242,7 @@
       <li><b>MRO HiRISE</b> · Mars hardware seen from orbit</li>
       <li><b>Viking MDIM 2.1 / USGS, MOLA</b> · Mars globe</li>
       <li><b>NASA 3D Resources</b> · lander and rover models</li>
+      <li><b>Canadian Space Agency</b> · Phoenix's snow-detecting weather station; Curiosity's APXS, led from the University of Guelph</li>
     </ul>
   </div>
   <div>
