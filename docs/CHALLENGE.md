@@ -23,6 +23,8 @@ The team's selected challenge in its Space Apps registration is not stored in th
 | Show how the hardware worked | Eight optional NASA model references, with descriptions explaining generic, twin-mission and pre-damage models |
 | Reach younger and casual audiences | Searchable mission index, simple question feedback and a reading mode with no WebGL requirement |
 | Keep claims traceable | Per-photo/model credits, mission sources, an aggregate Credits dialog and a human-verification release gate |
+| Connect hardware to a surviving discovery | After the Signal investigates Ranger/Spirit imagery and InSight audio, separating observation, interpretation and limits |
+| Give visitors a role in the story | Reader-curated exhibitions, share URLs, print/PDF and source notes retain citations and uncertainty |
 
 The educational prompts are an initial learning layer, not a tested curriculum. No classroom
 learning outcomes or user-research results have been measured.
@@ -71,5 +73,10 @@ have an earlier deadline. Confirm the applicable event time on the official guid
 
 ## Development assistance
 
-See the README's AI-assistance disclosure. New questions link directly to cited NASA sources.
-No human source-verification flags were changed by the assistant.
+See the README and [SUBMISSION.md](SUBMISSION.md) for the AI-assistance disclosure, including the
+AI-proposed After the Signal extension. The current guide asks teams to originate their solution idea;
+the team must review this contribution against that guidance. Questions and investigations link to
+cited NASA sources. No human source-verification flags were changed by the assistant.
+
+[COMPETITION_STRATEGY.md](COMPETITION_STRATEGY.md) records prior-winner research, Best Use of
+Storytelling positioning, implemented rubric evidence and remaining human steps.

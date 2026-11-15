@@ -1,0 +1,75 @@
+/* NASA archive photography and editorial type; the page remains useful without WebGL. */
+.landing.documentary-landing {
+  --accent: #e4bc83;
+  display: block; height: 100%; padding: 0 clamp(1.25rem, 5vw, 6rem); text-align: left;
+  overflow-y: auto; background: #090a0c;
+}
+.documentary-landing .landing-masthead {
+  max-width: 1480px; margin: auto; display: flex; align-items: center; gap: 2rem;
+  min-height: 5.5rem; border-bottom: 1px solid var(--rule);
+}
+.documentary-landing .landing-wordmark { font-size: 1rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 650; }
+.documentary-landing .landing-masthead > .mono { font-size: 0.62rem; color: var(--muted); letter-spacing: 0.04em; margin-right: auto; }
+.documentary-landing .landing-masthead button { margin-left: auto; font-size: 0.75rem; padding: 0.5rem 0; border: 0; }
+.documentary-landing .landing-documentary {
+  display: grid; grid-template-columns: 1.05fr 1fr; max-width: 1480px; margin: auto; align-items: center; gap: clamp(2rem, 5vw, 6rem);
+  padding: clamp(3rem, 6vw, 6rem) 0;
+}
+.documentary-landing .landing-kicker { color: var(--accent); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; margin: 0 0 1.7rem; max-width: none; }
+.documentary-landing h1 {
+  text-transform: none; font-weight: 450; font-size: clamp(2.8rem, 5.2vw, 6rem);
+  letter-spacing: -0.065em; line-height: 1.04; margin: 0 0 1.7rem; color: #f1eee8;
+}
+.documentary-landing .landing-deck { max-width: 35ch; font-size: clamp(0.95rem, 1.2vw, 1.1rem); line-height: 1.8; margin: 0 0 2rem; color: #b0b2b5; }
+.documentary-landing .landing-primary {
+  display: flex; justify-content: space-between; align-items: center; gap: 2rem; padding: 1.1rem 1.3rem; background: var(--accent);
+  color: #151413; border: 1px solid var(--accent); font-size: 0.85rem; font-weight: 650; text-align: left; width: min(24rem, 100%);
+}
+.documentary-landing .landing-primary:hover { background: #f1d5b0; }
+.documentary-landing .landing-primary > span:last-child { font-size: 1.2rem; }
+.documentary-landing .landing-duration { font-size: 0.59rem; margin: 1rem 0 0; color: #92969a; line-height: 1.8; }
+.documentary-landing .landing-archive { margin: 0; min-width: 0; }
+.documentary-landing .landing-archive > img { display: block; width: 100%; aspect-ratio: 5/4; object-fit: cover; object-position: center; background: #171516; }
+.documentary-landing .landing-archive figcaption { border-top: 1px solid var(--rule); padding-top: 1rem; margin-top: 0.8rem; }
+.documentary-landing .landing-archive figcaption > span { color: var(--accent); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.documentary-landing .landing-archive figcaption p { font-size: 0.72rem; color: #afb0b3; margin: 0.5rem 0; line-height: 1.6; max-width: none; }
+.documentary-landing .landing-archive figcaption a { font-size: 0.6rem; color: #8e939b; }
+.documentary-landing .landing-atlas {
+  max-width: 1480px; margin: auto; padding: 2.5rem 0; border-top: 1px solid var(--rule);
+  display: grid; grid-template-columns: 0.85fr 1.5fr; gap: 3rem; align-items: start;
+}
+.documentary-landing .atlas-introduction .landing-kicker { margin-bottom: 0.75rem; color: var(--muted); }
+.documentary-landing h2 { font-size: clamp(1.5rem, 2vw, 2rem); font-weight: 450; letter-spacing: -0.04em; margin: 0 0 0.75rem; }
+.documentary-landing .atlas-introduction > p:last-child { font-size: 0.78rem; color: var(--muted); line-height: 1.7; margin: 0; max-width: 33ch; }
+.documentary-landing .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.documentary-landing .choice { padding: 1.3rem; width: auto; min-width: 0; display: flex; flex-direction: column; gap: 0.6rem; height: 100%; }
+.documentary-landing .choice .choice-name { display: flex; justify-content: space-between; gap: 1rem; font-size: 1.3rem; width: 100%; }
+.documentary-landing .choice .choice-name > span { color: var(--accent); font-size: 1rem; }
+.documentary-landing .choice .choice-tagline { font-size: 0.73rem; line-height: 1.65; }
+.documentary-landing .choice small { font-size: 0.6rem; margin-top: auto; padding-top: 0.5rem; }
+.documentary-landing .landing-actions {
+  max-width: 1480px; margin: auto; border-top: 1px solid var(--rule); padding: 1.3rem 0 2rem;
+  display: flex; justify-content: flex-start; align-items: center; gap: 1.5rem;
+}
+.documentary-landing .landing-actions button { border: 0; padding: 0.5rem 0; font-size: 0.73rem; display: block; }
+.documentary-landing .landing-actions > span { margin-left: auto; font-size: 0.57rem; color: var(--muted); }
+@media (max-width: 1000px) {
+  .documentary-landing .landing-documentary { gap: 2rem; }
+  .documentary-landing .landing-atlas { gap: 1.5rem; grid-template-columns: 1fr 1.6fr; }
+}
+@media (max-width: 759px) {
+  .landing.documentary-landing { padding: 0 1.25rem; }
+  .documentary-landing .landing-masthead { min-height: 4.5rem; gap: 1rem; }
+  .documentary-landing .landing-masthead > .mono { display: none; }
+  .documentary-landing .landing-documentary { grid-template-columns: 1fr; padding: 3rem 0 2rem; }
+  .documentary-landing h1 { font-size: clamp(2.6rem, 9vw, 4.5rem); }
+  .documentary-landing .landing-kicker { font-size: 0.56rem; }
+  .documentary-landing .landing-archive > img { aspect-ratio: 5/3; }
+  .documentary-landing .landing-atlas { grid-template-columns: 1fr; gap: 1.3rem; padding: 2rem 0; }
+  .documentary-landing .choices { grid-template-columns: 1fr 1fr; display: grid; }
+  .documentary-landing .choice { padding: 1rem; width: 100%; }
+  .documentary-landing .choice .choice-tagline { font-size: 0.68rem; }
+  .documentary-landing .landing-actions { gap: 1.25rem; flex-wrap: wrap; }
+  .documentary-landing .landing-actions > span { width: 100%; margin: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .documentary-landing .choice { transition: none; } }
