@@ -1,0 +1,58 @@
+{
+  "id": "surveyor-1",
+  "world": "moon",
+  "tier": "standard",
+  "name": "Surveyor 1 lander",
+  "mission": "Surveyor 1",
+  "agency": "NASA",
+  "arrived": "1966-06-02",
+  "lastContact": "1967-01-07",
+  "status": "retired",
+  "location": {
+    "name": "Oceanus Procellarum (Ocean of Storms), north of the crater Flamsteed",
+    "lat": -2.4745,
+    "lon": -43.3398
+  },
+  "headline": "America's first soft landing on the Moon, and 11,240 pictures of where it stood",
+  "story": [
+    "At 06:17 UT on 2 June 1966, Surveyor 1 settled onto a flat plain in the southwest of the Ocean of Storms, inside an old crater about 100 kilometers wide, north of Flamsteed. It touched down at about 3 meters per second. On the first try, NASA had landed a spacecraft gently on the Moon.",
+    "Its camera began sending pictures at once. By nightfall on 14 June it had returned 10,338 of them, showing a surface firm enough to hold a lander. Then it survived the two-week lunar night and took more photographs on its second lunar day, for 11,240 in all.",
+    "Its battery voltage dropped sharply after sunset, and the mission ended on 13 July 1966. Engineers kept calling it until 7 January 1967. Decades later, NASA's Lunar Reconnaissance Orbiter photographed Surveyor 1 from orbit, still standing on the plain where it landed."
+  ],
+  "facts": [
+    { "label": "Landed", "value": "2 June 1966, 06:17:36 UT" },
+    { "label": "First", "value": "U.S. soft landing on the Moon" },
+    { "label": "Mass at landing", "value": "294.3 kg" },
+    { "label": "Pictures returned", "value": "11,240" },
+    { "label": "Mission ended", "value": "13 July 1966; engineering contacts until 7 January 1967" }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA02976/PIA02976~medium.jpg",
+      "caption": "Late afternoon in the Ocean of Storms: Surveyor 1 photographs its own shadow, with the horizon at upper right.",
+      "credit": "NASA/JPL (PIA02976)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA02976"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA12910/PIA12910~orig.jpg",
+      "caption": "Surveyor 1, still sitting silently on Oceanus Procellarum, seen from orbit by NASA's Lunar Reconnaissance Orbiter.",
+      "credit": "NASA/GSFC/Arizona State University (PIA12910)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA12910"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NSSDCA Master Catalog: Surveyor 1 (1966-045A)",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1966-045A"
+    },
+    {
+      "title": "NASA Image Library: Surveyor 1, America's First Soft Lunar Landing (PIA12910)",
+      "url": "https://images.nasa.gov/details/PIA12910"
+    },
+    {
+      "title": "NASA Image Library: Surveyor 1 Shadow (PIA02976)",
+      "url": "https://images.nasa.gov/details/PIA02976"
+    }
+  ],
+  "verified": false
+}

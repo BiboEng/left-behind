@@ -13,7 +13,7 @@ sources, and, for hero relics, a spinning NASA 3D model.
 - `docs/PLAN.md`: loose backlog of what is done and what is left (no phases, no assignments)
 - `docs/ENGINE.md`: how the 3D works (keep it this simple)
 - `docs/DATA_CONTRACT.md`: the relic JSON format and voice
-- `docs/RELICS.md`: the 25 relics to research
+- `docs/RELICS.md`: the NASA relics, Moon and Mars
 - `docs/NASA_DATA.md`: every NASA dataset we use, and how to credit it
 
 ## Stack
@@ -48,6 +48,9 @@ in chat what you are working on, and `/sync` often.
 4. **Geo math**: `src/engine/geo.ts` is tested; use it, don't rewrite it.
 
 ## Rules
+- **NASA hardware only.** The challenge is telling the story of NASA equipment left on the Moon and
+  Mars. Every relic must be NASA (landers, rovers, impactors, descent stages, parachutes). No Soviet,
+  ESA, ISRO, JAXA, CNSA or commercial missions.
 - **Facts must be real and sourced.** No invented dates, numbers or quotes. If unsure, leave it out
   and keep `verified: false`. Only a human sets `verified: true`.
 - **NASA open data is required**: credit every photo, model and texture, and keep `docs/NASA_DATA.md`

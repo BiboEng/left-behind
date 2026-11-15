@@ -1,0 +1,62 @@
+{
+  "id": "lcross",
+  "world": "moon",
+  "tier": "standard",
+  "name": "LCROSS shepherding spacecraft and its Centaur upper stage",
+  "mission": "LCROSS (Lunar Crater Observation and Sensing Satellite)",
+  "agency": "NASA",
+  "arrived": "2009-10-09",
+  "lastContact": "2009-10-09",
+  "status": "impacted",
+  "location": {
+    "name": "Cabeus crater, near the lunar south pole (Centaur impact point)",
+    "lat": -84.678,
+    "lon": -48.725
+  },
+  "headline": "NASA crashed a spent rocket into a dark crater at the south pole, and found water",
+  "story": [
+    "At 11:31 UT on 9 October 2009, a spent Centaur rocket stage of about 2,000 kilograms slammed into Cabeus, a crater near the Moon's south pole whose floor never sees sunlight. It hit at about 2.5 kilometers per second, on purpose. Behind it, a small NASA spacecraft called LCROSS flew down through the rising plume with its instruments pointed at the impact.",
+    "For about four minutes, LCROSS measured the debris and radioed its data home. Then, at 11:35 UT, it struck the Moon too, a few kilometers away. NASA's Lunar Reconnaissance Orbiter, launched on the same rocket, observed the site from orbit.",
+    "On 13 November 2009, the team announced the result: Cabeus holds water. The Centaur had dug a crater about 20 meters wide and thrown up roughly 350 metric tons of lunar material. Both spacecraft now lie in permanent darkness, in the crater where they proved there is ice on the Moon."
+  ],
+  "facts": [
+    { "label": "Launched", "value": "18 June 2009, with the Lunar Reconnaissance Orbiter, on an Atlas V" },
+    { "label": "Centaur impact", "value": "9 October 2009, 11:31:19 UT, about 2.5 km/s" },
+    { "label": "LCROSS impact", "value": "11:35:36 UT, about four minutes later" },
+    { "label": "Mass", "value": "Centaur about 2,000 kg; LCROSS 534 kg dry" },
+    { "label": "Result", "value": "Water confirmed in Cabeus, announced 13 November 2009" }
+  ],
+  "images": [
+    {
+      "url": "https://science.nasa.gov/wp-content/uploads/2024/01/20110615lcross.jpg",
+      "caption": "Cabeus crater mapped by the laser altimeter on NASA's Lunar Reconnaissance Orbiter, which can see terrain in places sunlight never reaches. LCROSS struck a permanently shadowed region here.",
+      "credit": "NASA (Lunar Reconnaissance Orbiter, LOLA)",
+      "sourceUrl": "https://science.nasa.gov/image-detail/20110615lcross"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/ARC-2009-ACD09-0220-126/ARC-2009-ACD09-0220-126~medium.jpg",
+      "caption": "9 October 2009, NASA Ames: the LCROSS operations team shakes hands after confirming the spacecraft has hit its target crater.",
+      "credit": "NASA Ames Research Center",
+      "sourceUrl": "https://images.nasa.gov/details/ARC-2009-ACD09-0220-126"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NSSDCA Master Catalog: LCROSS (2009-031B)",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2009-031B"
+    },
+    {
+      "title": "NASA Science: LCROSS",
+      "url": "https://science.nasa.gov/mission/lcross/"
+    },
+    {
+      "title": "NASA press release, 13 November 2009: LCROSS Impact Data Indicates Water on Moon (NSSDCA copy)",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/text/lcross_pr_20091113.txt"
+    },
+    {
+      "title": "NASA Science: LCROSS impact site (LRO LOLA)",
+      "url": "https://science.nasa.gov/image-detail/20110615lcross"
+    }
+  ],
+  "verified": false
+}

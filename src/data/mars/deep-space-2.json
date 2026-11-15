@@ -1,0 +1,62 @@
+{
+  "id": "deep-space-2",
+  "world": "mars",
+  "tier": "standard",
+  "name": "Deep Space 2 microprobes Amundsen and Scott",
+  "mission": "Deep Space 2 (New Millennium Program), with Mars Polar Lander",
+  "agency": "NASA",
+  "arrived": "1999-12-03",
+  "lastContact": "1999-12-03",
+  "status": "lost",
+  "location": {
+    "name": "Target area near the south polar layered terrain (never found)",
+    "lat": -73,
+    "lon": 150
+  },
+  "headline": "Two probes built to slam into Mars and look for ice. Neither one ever called home",
+  "story": [
+    "Two small probes rode to Mars clamped to the sides of Mars Polar Lander. Part of NASA's New Millennium Program, they were called Deep Space 2, and named Amundsen and Scott after the first explorers to reach Earth's South Pole. Their job was to test new technology: survive a crash-like impact, push below the surface, and look for water in the soil.",
+    "On 3 December 1999, as Mars Polar Lander approached the planet, the two probes separated and fell toward the plains near 73 degrees south, close to the polar cap. They were meant to hit the ground at nearly the same moment the lander touched down.",
+    "No signal ever came from either probe, or from the lander. NASA stopped trying to reach them on 17 January 2000, and the review board that followed could not name a probable cause for the probes' failure. Wherever Amundsen and Scott came down, they have never been found."
+  ],
+  "facts": [
+    { "label": "Launched", "value": "3 January 1999, Cape Canaveral, aboard Mars Polar Lander" },
+    { "label": "Names", "value": "Amundsen and Scott, after the first explorers to reach the South Pole" },
+    { "label": "Goal", "value": "Survive impact, penetrate the soil and test a sensor for subsurface water" },
+    { "label": "Target", "value": "About 73° S, 210° W (150° E)" },
+    { "label": "Fate", "value": "Never heard from after separation" }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/KSC-98pc1645/KSC-98pc1645~medium.jpg",
+      "caption": "November 1998, Kennedy Space Center: JPL workers mount one of the two Deep Space 2 microprobes onto Mars Polar Lander.",
+      "credit": "NASA/KSC (photo KSC-98pc1645)",
+      "sourceUrl": "https://images.nasa.gov/details/KSC-98pc1645"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/KSC-98pc1644/KSC-98pc1644~medium.jpg",
+      "caption": "Two JPL workers measure a Mars microprobe before launch. It was designed to test a rugged way of detecting water below the surface.",
+      "credit": "NASA/KSC (photo KSC-98pc1644)",
+      "sourceUrl": "https://images.nasa.gov/details/KSC-98pc1644"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NASA Science: Mars Polar Lander / Deep Space 2",
+      "url": "https://science.nasa.gov/mission/mars-polar-lander-deep-space-2/"
+    },
+    {
+      "title": "NSSDCA: Mars Polar Lander and Deep Space 2 Landing Sites",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/mars/polar_lander/mpl_ds2_landsite.html"
+    },
+    {
+      "title": "JPL: Mars Penetrator Probes Named for Pioneering Polar Explorers",
+      "url": "https://www.jpl.nasa.gov/news/mars-penetrator-probes-named-for-pioneering-polar-explorers/"
+    },
+    {
+      "title": "JPL Special Review Board: Report on the Loss of the Mars Polar Lander and Deep Space 2 Missions (22 March 2000), NASA NTRS",
+      "url": "https://ntrs.nasa.gov/citations/20000061966"
+    }
+  ],
+  "verified": false
+}

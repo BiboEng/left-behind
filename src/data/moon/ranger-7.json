@@ -1,0 +1,68 @@
+{
+  "id": "ranger-7",
+  "world": "moon",
+  "tier": "standard",
+  "name": "Ranger 7",
+  "mission": "Ranger 7",
+  "agency": "NASA",
+  "arrived": "1964-07-31",
+  "lastContact": "1964-07-31",
+  "status": "impacted",
+  "location": {
+    "name": "Mare Cognitum (the Known Sea), between Mare Nubium and Oceanus Procellarum",
+    "lat": -10.634,
+    "lon": -20.677
+  },
+  "headline": "After six Rangers failed, the seventh photographed the Moon all the way down",
+  "story": [
+    "On 31 July 1964, Ranger 7 fell toward the Moon with its six television cameras running. Six Rangers before it had failed to return a single picture of the lunar surface. This one sent 4,308 in its last 17 minutes, each closer than the one before. The final frame was taken about 1,600 feet (490 meters) up, 2.3 seconds before impact.",
+    "It struck at about 2.6 kilometers per second on a plain between Mare Nubium and Oceanus Procellarum. The plain was renamed Mare Cognitum, \"the Known Sea\", the first place on the Moon ever seen up close. Ranger's pictures gave NASA confidence that the surface could hold a landing spacecraft, and the Surveyor landers came next.",
+    "Ranger 7 left a crater about 14 meters wide. Apollo 16 photographed it from orbit in 1972, and NASA's Lunar Reconnaissance Orbiter has imaged it many times since. The spacecraft's remains lie at that spot, on the Known Sea."
+  ],
+  "facts": [
+    { "label": "Launched", "value": "28 July 1964, Cape Canaveral, on an Atlas-Agena B" },
+    { "label": "Impact", "value": "31 July 1964, 13:25:48 UT, at 2.62 km/s" },
+    { "label": "Pictures returned", "value": "4,308, all in the final 17 minutes" },
+    { "label": "Mass", "value": "365.7 kg" },
+    { "label": "Crater left behind", "value": "About 14 m wide" }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA02975/PIA02975~orig.jpg",
+      "caption": "31 July 1964, 13:09 UT: the first picture of the Moon taken by a U.S. spacecraft, about 17 minutes before Ranger 7 hit the surface.",
+      "credit": "NASA/JPL (PIA02975)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA02975"
+    },
+    {
+      "url": "https://www.nasa.gov/wp-content/uploads/2024/07/ranger-7-9-final-image-jul-31-1964.jpg",
+      "caption": "Ranger 7's last picture, taken about 1,600 feet above the surface. The transmission cut off as the spacecraft hit.",
+      "credit": "NASA/JPL",
+      "sourceUrl": "https://www.nasa.gov/history/60-years-ago-ranger-7-photographs-the-moon/"
+    },
+    {
+      "url": "https://lroc.im-ldi.com/news/uploads/LROCiotw/lowsun_ranger7.png",
+      "caption": "The crater Ranger 7 left in Mare Cognitum, about 14 meters wide, seen in low sunlight by NASA's Lunar Reconnaissance Orbiter.",
+      "credit": "NASA/GSFC/Arizona State University",
+      "sourceUrl": "https://lroc.im-ldi.com/images/52"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NSSDCA Master Catalog: Ranger 7 (1964-041A)",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1964-041A"
+    },
+    {
+      "title": "NASA History: 60 Years Ago, Ranger 7 Photographs the Moon",
+      "url": "https://www.nasa.gov/history/60-years-ago-ranger-7-photographs-the-moon/"
+    },
+    {
+      "title": "LROC: Making an Impact on History (Ranger 7 crater)",
+      "url": "https://lroc.im-ldi.com/images/52"
+    },
+    {
+      "title": "NASA Image Library: First Image of the Moon taken by a U.S. Spacecraft (PIA02975)",
+      "url": "https://images.nasa.gov/details/PIA02975"
+    }
+  ],
+  "verified": false
+}

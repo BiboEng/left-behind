@@ -1,0 +1,68 @@
+{
+  "id": "viking-2-lander",
+  "world": "mars",
+  "tier": "standard",
+  "name": "Viking 2 Lander (Gerald A. Soffen Memorial Station)",
+  "mission": "Viking 2",
+  "agency": "NASA",
+  "arrived": "1976-09-03",
+  "lastContact": "1980-04-11",
+  "status": "retired",
+  "location": {
+    "name": "Utopia Planitia, about 200 km west of the crater Mie",
+    "lat": 47.6673,
+    "lon": 134.2809
+  },
+  "headline": "The second Viking lander spent 1,281 Martian days on the plains of Utopia",
+  "story": [
+    "On 3 September 1976, six weeks after its twin had landed in Chryse Planitia, Viking Lander 2 came down in Utopia Planitia, about 6,460 kilometers away. A radar misreading made its thrusters fire an extra 0.4 seconds, cracking the ground beneath it. It settled tilted 8.2 degrees, with one footpad resting on a rock.",
+    "It photographed the boulder-strewn plain around it and studied the soil and weather through the seasons. In the Martian winter its cameras caught a thin layer of frost on the ground, which scientists studied to learn whether it formed at night and vanished by day.",
+    "After 1,281 Martian days its batteries failed, and on 11 April 1980 it was switched off. In 2001 it was renamed the Gerald A. Soffen Memorial Station, after Viking's project scientist. In 2006 the HiRISE camera found it from orbit, still standing where it landed, with its heat shield and back shell nearby."
+  ],
+  "facts": [
+    { "label": "Landed", "value": "3 September 1976, Utopia Planitia" },
+    { "label": "Lander mass", "value": "572 kg" },
+    { "label": "Worked for", "value": "1,281 Martian days" },
+    { "label": "Switched off", "value": "11 April 1980, after its batteries failed" },
+    { "label": "Distance from Viking 1", "value": "About 6,460 km" }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA00396/PIA00396~orig.jpg",
+      "caption": "Viking Lander 2's first picture from the surface of Mars, taken minutes after it landed in Utopia Planitia.",
+      "credit": "NASA/JPL (PIA00396)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA00396"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA00573/PIA00573~orig.jpg",
+      "caption": "Late winter in Utopia Planitia, 1977: a thin layer of frost on the ground around the lander, looking southeast.",
+      "credit": "NASA/JPL (PIA00573)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA00573"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA01882/PIA01882~medium.jpg",
+      "caption": "Thirty years later: HiRISE on NASA's Mars Reconnaissance Orbiter locates Viking Lander 2 from orbit, along with its likely heat shield and back shell.",
+      "credit": "NASA/JPL-Caltech/University of Arizona (PIA01882)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA01882"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NSSDCA Master Catalog: Viking 2 Lander (1975-083C)",
+      "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-083C"
+    },
+    {
+      "title": "NASA Science: Viking 2",
+      "url": "https://science.nasa.gov/mission/viking-2/"
+    },
+    {
+      "title": "NASA Photojournal: Viking Lander 2 Gerald A. Soffen Memorial Station Imaged from Orbit (PIA01882)",
+      "url": "https://science.nasa.gov/photojournal/viking-lander-2-gerald-a-soffen-memorial-station-imaged-from-orbit"
+    },
+    {
+      "title": "NASA Photojournal: Frost at the Viking Lander 2 Site (PIA00573)",
+      "url": "https://science.nasa.gov/photojournal/frost-at-the-viking-lander-2-site"
+    }
+  ],
+  "verified": false
+}

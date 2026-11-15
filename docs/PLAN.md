@@ -8,14 +8,16 @@ done, add new ones as they come up.
 - [x] Project set up, on GitHub
 - [x] Engine: globe, camera, markers, story card, timeline rail, keyboard, scroll
 - [x] Moon texture (NASA CGI Moon Kit)
-- [x] Moon relics researched: Luna 2, Luna 9, Surveyor 3, Apollo 11, Lunokhod 1, Apollo 15, Apollo 17
+- [x] Moon relics researched: Ranger 7, Surveyor 1, Surveyor 3, Apollo 11, Apollo 15, Apollo 17, LCROSS
 - [x] Mars relics researched: all 12 in `docs/RELICS.md`
+- [x] NASA-only cleanup: removed Luna 2, Luna 9, Lunokhod 1, Mars 3, Beagle 2, Schiaparelli, Zhurong;
+      added Ranger 7, Surveyor 1, LCROSS, Viking 2, Deep Space 2, Curiosity sky crane, Perseverance parachute
 - [x] Mars texture (Viking MDIM 2.1 color mosaic), calibrated on Olympus Mons
 - [x] Credits screen (`src/ui/Credits.tsx`), built automatically from the data
 
 ## Still to do (any order)
 - [ ] Verify every relic: open its sources, then set `verified: true` (humans only)
-- [ ] More Moon relics: Lunokhod 2, Lunar Prospector, LCROSS, Vikram (Chandrayaan-2), SLIM, Resilience
+- [ ] More Moon relics (NASA only): Apollo 12 Intrepid, Apollo 14 Antares, Apollo 16 Orion, Lunar Prospector, GRAIL Ebb and Flow, LADEE
 - [x] Delete the `placeholder-*` files in `src/data/moon/` and `src/data/mars/`
 - [ ] Hero models: download the NASA `.glb`, optimize, put in `public/<world>/models/`, set `model` in the JSON
       (Moon: Apollo Lunar Module · Mars: Viking lander, Mars Exploration Rover, InSight, Ingenuity;

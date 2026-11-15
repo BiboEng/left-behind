@@ -1,0 +1,67 @@
+{
+  "id": "curiosity-sky-crane",
+  "world": "mars",
+  "tier": "standard",
+  "name": "Curiosity's sky crane (Mars Science Laboratory descent stage)",
+  "mission": "Mars Science Laboratory",
+  "agency": "NASA",
+  "arrived": "2012-08-06",
+  "lastContact": "2012-08-06",
+  "status": "impacted",
+  "location": {
+    "name": "Gale crater, about 650 m from where Curiosity landed",
+    "lat": -4.624,
+    "lon": 137.402
+  },
+  "headline": "The rocket crane that lowered Curiosity onto Mars, then flew off to crash on purpose",
+  "story": [
+    "On 6 August 2012, a rocket-powered platform hovered above Gale crater and lowered the rover Curiosity on cables until its wheels touched the ground. NASA called it the sky crane. Once the rover was down, the cables were cut.",
+    "Its job done, the descent stage flew away and crashed at a safe distance, as it had been programmed to, about 650 meters from the rover. One of Curiosity's rear hazard cameras may even have caught a distant cloud of dust thrown up by the impact.",
+    "HiRISE photographed the crash site from orbit the next day: a dark scar where the sky crane hit, with possible pieces of it scattered nearby. Scientists have watched the scar ever since; by 2015 it was fading more slowly than predicted. The broken descent stage still lies there, in the crater where it set Curiosity down."
+  ],
+  "facts": [
+    { "label": "Landing", "value": "6 August 2012 (UTC), Gale crater" },
+    { "label": "Flew after setting the rover down", "value": "About 650 m before hitting the ground" },
+    { "label": "First seen from orbit", "value": "7 August 2012, by HiRISE (ESP_028269_1755)" },
+    { "label": "Why it crashed", "value": "On purpose: it was programmed to fly away from the rover" }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA16023/PIA16023~orig.jpg",
+      "caption": "Days after landing: a HiRISE view annotated with Curiosity (right) and the impact site of its sky crane.",
+      "credit": "NASA/JPL-Caltech/University of Arizona (PIA16023)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA16023"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA16042/PIA16042~orig.jpg",
+      "caption": "Seen by a hazard camera on Curiosity: the distant blob may be the dust cloud raised by the descent stage crash.",
+      "credit": "NASA/JPL-Caltech (PIA16042)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA16042"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA19159/PIA19159~orig.jpg",
+      "caption": "The blast zone where the sky crane hit, from a sequence of HiRISE images that has tracked the scar since August 2012.",
+      "credit": "NASA/JPL-Caltech/Univ. of Arizona (PIA19159)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA19159"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NASA Photojournal: Changes in Scars From 2012 Mars Landing (PIA19159)",
+      "url": "https://science.nasa.gov/photojournal/changes-in-scars-from-2012-mars-landing"
+    },
+    {
+      "title": "NASA Science: Inspecting Curiosity's Descent Stage Crash Site (PIA16023)",
+      "url": "https://science.nasa.gov/resource/inspecting-curiositys-descent-stage-crash-site/"
+    },
+    {
+      "title": "HiRISE: Bits and Pieces (ESP_028269_1755), the sky crane impact site",
+      "url": "https://www.uahirise.org/ESP_028269_1755"
+    },
+    {
+      "title": "NASA Science: Mars Science Laboratory (Curiosity)",
+      "url": "https://science.nasa.gov/mission/msl-curiosity/"
+    }
+  ],
+  "verified": false
+}

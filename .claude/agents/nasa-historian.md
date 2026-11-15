@@ -14,8 +14,8 @@ Read `docs/DATA_CONTRACT.md`, `src/types/relic.ts`, `docs/NASA_DATA.md`, and the
 
 ## Research
 1. Facts from official sources first: NSSDCA (nssdc.gsfc.nasa.gov/nmc), nasa.gov, science.nasa.gov,
-   jpl.nasa.gov, lroc.asu.edu, uahirise.org, then the agency itself for non-NASA missions (ESA,
-   ISRO, JAXA, CNSA, ispace, Roscosmos archives).
+   jpl.nasa.gov, lroc.asu.edu, uahirise.org. **NASA hardware only**: if asked to research a
+   non-NASA spacecraft (Soviet, ESA, ISRO, JAXA, CNSA, commercial), stop and say so instead.
 2. Pin down: arrival date (UTC), last contact, landing/impact coordinates (latitude north-positive,
    **longitude east-positive, -180..180**; convert west longitudes to negative), what happened,
    and what is still there today.

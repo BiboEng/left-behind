@@ -1,0 +1,67 @@
+{
+  "id": "perseverance-parachute",
+  "world": "mars",
+  "tier": "standard",
+  "name": "Perseverance's parachute and backshell",
+  "mission": "Mars 2020 (Perseverance rover)",
+  "agency": "NASA",
+  "arrived": "2021-02-18",
+  "status": "abandoned",
+  "location": {
+    "name": "Jezero crater, around Perseverance's landing site",
+    "lat": 18.465,
+    "lon": 77.43
+  },
+  "headline": "The biggest parachute ever opened on Mars, with a secret message woven into it",
+  "story": [
+    "On 18 February 2021, Perseverance hit the Martian atmosphere at nearly 20,000 kilometers per hour. Its parachute, 21.5 meters wide and the biggest ever deployed on Mars, opened above Jezero crater. Its orange and white panels hid a binary code: the inner rings spelled \"DARE MIGHTY THINGS\", the motto of NASA's Jet Propulsion Laboratory.",
+    "About 2.1 kilometers above the ground, the parachute and the cone-shaped backshell it was tied to were let go. The rover dropped away beneath its own sky crane and landed safely. The parachute and backshell fell together and struck the crater floor at about 126 kilometers per hour.",
+    "In April 2022, the Ingenuity helicopter flew over them on its 26th flight and photographed them from 8 meters up, at the request of engineers planning to return samples from Mars. The backshell sits upright, its suspension lines streaming across the sand to the parachute. Both still lie where they fell."
+  ],
+  "facts": [
+    { "label": "Parachute", "value": "21.5 m wide, the biggest ever deployed on Mars" },
+    { "label": "Hidden message", "value": "\"DARE MIGHTY THINGS\" in binary, plus JPL's GPS coordinates" },
+    { "label": "Released", "value": "About 2.1 km above the surface" },
+    { "label": "Hit the ground at", "value": "About 126 km/h" },
+    { "label": "Photographed by Ingenuity", "value": "19 April 2022, Flight 26, from 8 m up" }
+  ],
+  "images": [
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA24431/PIA24431~orig.jpg",
+      "caption": "18 February 2021: a camera on the backshell looks up at the parachute during descent. The annotations decode the binary message hidden in its stripes.",
+      "credit": "NASA/JPL-Caltech (PIA24431)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA24431"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA25219/PIA25219~medium.jpg",
+      "caption": "19 April 2022, from 8 meters up: Ingenuity finds the backshell sitting upright, its suspension lines running to the parachute at upper left.",
+      "credit": "NASA/JPL-Caltech (PIA25219)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA25219"
+    },
+    {
+      "url": "https://images-assets.nasa.gov/image/PIA25218/PIA25218~medium.jpg",
+      "caption": "The debris field from the air: the backshell left of center and the parachute at far right.",
+      "credit": "NASA/JPL-Caltech (PIA25218)",
+      "sourceUrl": "https://images.nasa.gov/details/PIA25218"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NASA: NASA's Mars Helicopter Spots Gear That Helped Perseverance Rover Land (27 April 2022)",
+      "url": "https://www.nasa.gov/missions/mars-2020-perseverance/ingenuity-helicopter/nasas-mars-helicopter-spots-gear-that-helped-perseverance-rover-land/"
+    },
+    {
+      "title": "NASA Image Library: Mars Decoder Ring (PIA24431)",
+      "url": "https://images.nasa.gov/details/PIA24431"
+    },
+    {
+      "title": "NASA Image Library: Debris Field for Perseverance Landing Gear Seen from Mars Helicopter (PIA25218)",
+      "url": "https://images.nasa.gov/details/PIA25218"
+    },
+    {
+      "title": "HiRISE: Perseverance Hardware One Day after Landing (ESP_068294_1985)",
+      "url": "https://www.uahirise.org/ESP_068294_1985"
+    }
+  ],
+  "verified": false
+}

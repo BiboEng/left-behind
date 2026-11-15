@@ -39,8 +39,8 @@ verified and every hero has a model.
 1. **Verify the 12 relics.** For each file in `src/data/mars/`, open its `sources`, check the dates,
    coordinates, numbers and story against them, and fix anything wrong. Only then set
    `"verified": true`. Claude is not allowed to do this step; it has to be a human.
-   Relics: Mars 3, Viking 1, Mars Pathfinder, Mars Polar Lander, Beagle 2, Spirit, Opportunity,
-   Phoenix, Schiaparelli, InSight, Ingenuity, Zhurong.
+   Relics (NASA only): Viking 1, Viking 2, Mars Pathfinder, Mars Polar Lander, Deep Space 2, Spirit,
+   Opportunity, Phoenix, Curiosity sky crane, InSight, Ingenuity, Perseverance parachute.
 2. **Write the Mars tagline, intro and outro** in `src/worlds/mars.ts`: documentary narrator voice,
    third person (see `docs/DATA_CONTRACT.md`). Outro idea from `docs/RELICS.md`: Curiosity and
    Perseverance are still working there. **Check their current status before writing it.**
