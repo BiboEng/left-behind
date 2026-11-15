@@ -6,6 +6,7 @@
 // (see App.tsx), so scrolling the credits never scrolls the timeline.
 import { useEffect, useMemo, useRef } from "react";
 import { buildCredits, type DatasetUse } from "../data/credits";
+import { signalAudio, signalMedia, signalSources } from "../data/signal";
 import { useCredits } from "../state/credits";
 
 export default function Credits() {
@@ -136,13 +137,29 @@ function CreditsDialog() {
         </section>
 
         <section>
+          <h3>After the Signal: archival evidence</h3>
+          <p className="credits-note">Local archive copies keep the investigations usable when external image hosts are unavailable. Source links still require a connection.</p>
+          <ul className="credit-list">
+            {Object.entries(signalMedia).map(([key, media]) => <li key={key}>
+              <a href={signalSources[media.source].url} target="_blank" rel="noreferrer">{media.credit}</a>
+              <span className="credits-note">{media.processing}</span>
+            </li>)}
+            <li>
+              <strong>InSight Sol 128 audio and waveform</strong>
+              <a href={signalSources.insightSound.url} target="_blank" rel="noreferrer">{signalAudio.credit}</a>
+              <span className="credits-note">{signalAudio.processing} The displayed peak envelopes are derived from that file; they are not calibrated seismic data.</span>
+            </li>
+          </ul>
+        </section>
+
+        <section>
           <h3>Made by</h3>
           <p className="credits-note">
             Ibrahim and Rayan, for a NASA open data hackathon. Built with React, three.js, React Three Fiber and drei.
           </p>
           <p className="credits-note">
-            Development and draft educational questions assisted by Devin (Cognition). NASA photos and models are
-            credited originals. The team reviews mission facts against the sources on each card.
+            Development, draft educational questions and the After the Signal documentary were assisted by Devin
+            (Cognition). NASA photos, audio and models are credited source assets. Human source verification remains pending.
           </p>
           <p className="credits-note">
             Left Behind is not affiliated with or endorsed by NASA. Every image and model belongs to the owner credited

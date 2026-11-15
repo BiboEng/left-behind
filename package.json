@@ -11,7 +11,8 @@
     "test:final": "vitest run --mode final",
     "lint": "oxlint",
     "resize": "node scripts/resize-image.mjs",
-    "normal-map": "node scripts/make-normal-map.mjs"
+    "normal-map": "node scripts/make-normal-map.mjs",
+    "signal:waveform": "node scripts/build-signal-waveform.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.3.0",
