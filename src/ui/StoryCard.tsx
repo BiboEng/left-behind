@@ -5,6 +5,8 @@ import ModelViewer from "../engine/ModelViewer";
 import type { Relic, RelicImage } from "../types/relic";
 import ErrorBoundary from "./ErrorBoundary";
 import { formatCoords, formatDate, STATUS_LABEL } from "./format";
+import { worlds } from "../worlds";
+import { useTimeline } from "../state/timeline";
 
 interface Props {
   relic: Relic;
@@ -26,6 +28,10 @@ export default function StoryCard({ relic, index, total, direction }: Props) {
       {relic.images.length > 0 && <Gallery images={relic.images} />}
 
       <div className="story-body">
+        {index === 0 && <aside className="chapter-note">
+          <p className="kicker mono">The journey begins · {worlds[relic.world].name}</p>
+          <p>{worlds[relic.world].intro}</p>
+        </aside>}
         <p className="kicker mono">
           {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")} · {relic.agency}
         </p>
@@ -103,6 +109,13 @@ export default function StoryCard({ relic, index, total, direction }: Props) {
           </section>
         )}
 
+        {index === total - 1 && <aside className="chapter-note journey-end">
+          <p className="kicker mono">The story continues</p>
+          <p>{worlds[relic.world].outro}</p>
+          <button className="back" onClick={() => useTimeline.getState().setWorld(relic.world === "moon" ? "mars" : "moon")}>
+            Explore {relic.world === "moon" ? "Mars" : "the Moon"} <span aria-hidden>→</span>
+          </button>
+        </aside>}
         {/* Only in `npm run dev`: a reminder that a human still has to check this relic. */}
         {import.meta.env.DEV && !relic.verified && <p className="unverified mono">Unverified (dev only)</p>}
       </div>

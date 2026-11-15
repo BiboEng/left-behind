@@ -16,6 +16,7 @@ import { worlds } from "../worlds";
 import { year } from "./format";
 import { CreditsButton } from "./Credits";
 import StoryCard from "./StoryCard";
+import MissionIndex from "./MissionIndex";
 import TimelineRail, { ProgressBar } from "./TimelineRail";
 import YearCounter from "./YearCounter";
 
@@ -39,6 +40,7 @@ export default function Overlay({ world }: { world: World }) {
           Left Behind <span className="sep">·</span> {config.name}
         </p>
         {relic && <YearCounter year={year(relic.arrived)} className="current-year mono" />}
+        <MissionIndex world={world} className="back" />
         <CreditsButton className="back topbar-credits" />
       </header>
       <ProgressBar />
@@ -148,7 +150,8 @@ function useKeyboard(world: World) {
     const onKey = (e: KeyboardEvent) => {
       if (e.altKey || e.ctrlKey || e.metaKey) return;
       // The Credits screen handles its own keys (Esc closes it, arrows scroll it).
-      if (useCredits.getState().open) return;
+      if (useCredits.getState().open || document.querySelector("dialog[open]")) return;
+      if (e.target instanceof Element && e.target.closest("input, select, textarea, [contenteditable]")) return;
       if (e.key === "Escape") {
         goHome();
         return;
