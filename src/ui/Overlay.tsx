@@ -16,11 +16,13 @@ import { worlds } from "../worlds";
 import { year } from "./format";
 import { CreditsButton } from "./Credits";
 import StoryCard from "./StoryCard";
+import MissionIndex from "./MissionIndex";
 import TimelineRail, { ProgressBar } from "./TimelineRail";
 import YearCounter from "./YearCounter";
 
 export default function Overlay({ world }: { world: World }) {
   const config = worlds[world];
+  const reading = useTimeline((s) => s.mode === "reading");
   const list = relics[world];
   // During a jump this is the destination, so the card doesn't flash every relic on the way.
   const shownIndex = Math.min(useShownIndex(), list.length - 1);
@@ -30,7 +32,7 @@ export default function Overlay({ world }: { world: World }) {
   useKeyboard(world);
 
   return (
-    <div className="overlay" onWheel={forwardWheel}>
+    <div className="overlay" onWheel={reading ? undefined : forwardWheel}>
       <header className="topbar">
         <button className="back" onClick={goHome}>
           <span aria-hidden>‹</span> Back
@@ -39,6 +41,11 @@ export default function Overlay({ world }: { world: World }) {
           Left Behind <span className="sep">·</span> {config.name}
         </p>
         {relic && <YearCounter year={year(relic.arrived)} className="current-year mono" />}
+        <MissionIndex world={world} className="back topbar-index" />
+        <button className="back topbar-mode" aria-pressed={reading}
+          onClick={() => useTimeline.getState().setMode(reading ? "globe" : "reading")}>
+          {reading ? "Show globe" : "Reading mode"}
+        </button>
         <CreditsButton className="back topbar-credits" />
       </header>
       <ProgressBar />
@@ -53,9 +60,11 @@ export default function Overlay({ world }: { world: World }) {
       ) : (
         <>
           <TimelineRail list={list} />
-          <ScrollHint />
+          {reading
+            ? <p className="reading-note mono">Reading mode · {config.name} · {shownIndex + 1} of {list.length} relics</p>
+            : <ScrollHint />}
           <StepNav list={list} index={shownIndex} />
-          {relic && <StoryCard relic={relic} index={shownIndex} total={list.length} direction={direction} />}
+          {relic && <StoryCard key={relic.id} relic={relic} index={shownIndex} total={list.length} direction={direction} />}
         </>
       )}
     </div>
@@ -148,7 +157,8 @@ function useKeyboard(world: World) {
     const onKey = (e: KeyboardEvent) => {
       if (e.altKey || e.ctrlKey || e.metaKey) return;
       // The Credits screen handles its own keys (Esc closes it, arrows scroll it).
-      if (useCredits.getState().open) return;
+      if (useCredits.getState().open || document.querySelector("dialog[open]")) return;
+      if (e.target instanceof Element && e.target.closest("input, select, textarea, [contenteditable]")) return;
       if (e.key === "Escape") {
         goHome();
         return;

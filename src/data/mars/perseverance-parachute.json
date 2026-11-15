@@ -8,6 +8,8 @@
   "arrived": "2021-02-18",
   "status": "abandoned",
   "location": {
+    "precision": "approximate",
+    "note": "Regional marker around Perseverance's landing site, not surveyed coordinates of the parachute or backshell.",
     "name": "Jezero crater, around Perseverance's landing site",
     "lat": 18.465,
     "lon": 77.43

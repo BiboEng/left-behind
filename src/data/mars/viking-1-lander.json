@@ -46,6 +46,12 @@
       "sourceUrl": "https://www.uahirise.org/ESP_046170_2025"
     }
   ],
+  "model": {
+    "path": "/mars/models/viking-lander.glb",
+    "credit": "NASA 3D Resources",
+    "sourceUrl": "https://science.nasa.gov/3d-resources/viking-lander/",
+    "description": "Viking lander design, shown before years of exposure on Mars."
+  },
   "sources": [
     {
       "title": "NSSDCA Master Catalog: Viking 1 Lander",

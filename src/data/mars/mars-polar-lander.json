@@ -9,6 +9,8 @@
   "lastContact": "1999-12-03",
   "status": "lost",
   "location": {
+    "precision": "target",
+    "note": "Target region only. The lander has never been located; this marker does not identify wreckage.",
     "name": "South polar layered terrain (targeted site; never found)",
     "lat": -76.1,
     "lon": 164.7

@@ -1,7 +1,7 @@
 // Enforces docs/DATA_CONTRACT.md.
 //   npm test          → structure rules (always)
 //   npm run test:final → also fails on placeholders, unverified relics, missing photos (use in Phase 4)
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, test } from "vitest";
 import type { Relic } from "../types/relic";
@@ -42,6 +42,10 @@ describe("relic data", () => {
     expect(r.location.lat).toBeLessThanOrEqual(90);
     expect(r.location.lon, "lon must be east-positive, -180..180").toBeGreaterThanOrEqual(-180);
     expect(r.location.lon).toBeLessThanOrEqual(180);
+    if (r.location.precision) {
+      expect(["reported", "approximate", "target"]).toContain(r.location.precision);
+      if (r.location.precision !== "reported") expect(r.location.note?.trim()).toBeTruthy();
+    }
 
     expect(r.headline.length, "headline max 90 chars").toBeLessThanOrEqual(90);
     expect(r.story.length, "story must have 2–3 paragraphs").toBeGreaterThanOrEqual(2);
@@ -63,7 +67,19 @@ describe("relic data", () => {
         new RegExp(`^/${r.world}/models/[\\w.-]+\\.glb$`),
       );
       expect(existsSync(join(process.cwd(), "public", r.model.path)), `missing file public${r.model.path}`).toBe(true);
+      expect(r.tier).toBe("hero");
       expect(r.model.credit).toBeTruthy();
+      expect(isHttps(r.model.sourceUrl)).toBe(true);
+      const modelPath = join(process.cwd(), "public", r.model.path);
+      expect(statSync(modelPath).size, "model budget: <10 MB").toBeLessThan(10_000_000);
+      const bytes = readFileSync(modelPath);
+      expect(bytes.subarray(0, 4).toString()).toBe("glTF");
+      expect(bytes.readUInt32LE(4)).toBe(2);
+      expect(bytes.readUInt32LE(8)).toBe(bytes.length);
+      const document = JSON.parse(bytes.subarray(20, 20 + bytes.readUInt32LE(12)).toString());
+      for (const resource of [...(document.buffers ?? []), ...(document.images ?? [])]) {
+        expect(!resource.uri || resource.uri.startsWith("data:"), "model must embed its dependencies").toBe(true);
+      }
     }
 
     expect(r.sources.length, "at least one source").toBeGreaterThan(0);

@@ -40,6 +40,12 @@
       "sourceUrl": "https://images.nasa.gov/details/PIA12925"
     }
   ],
+  "model": {
+    "path": "/moon/models/apollo-lunar-module.glb",
+    "credit": "NASA 3D Resources",
+    "sourceUrl": "https://science.nasa.gov/3d-resources/apollo-lunar-module/",
+    "description": "Complete Apollo lunar module, including the ascent stage that departed. This is a hardware reference, not a reconstruction of the surviving descent stage."
+  },
   "sources": [
     {
       "title": "NSSDCA Master Catalog: Apollo 11 Lunar Module / EASEP (1969-059C)",

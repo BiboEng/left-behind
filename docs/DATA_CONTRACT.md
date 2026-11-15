@@ -23,12 +23,12 @@ same file as your teammate. The type is in `src/types/relic.ts`.
 | `arrived` | `YYYY-MM-DD` (UTC) it reached the surface |
 | `lastContact` | optional, `YYYY-MM-DD` it went silent; not before `arrived` |
 | `status` | `crashed` (accident) · `impacted` (crashed on purpose) · `lost` (contact lost unexpectedly) · `retired` (ended as planned / wore out) · `abandoned` (left behind on purpose) |
-| `location` | `{ name, lat, lon }`: degrees, latitude north-positive, **longitude east-positive, -180..180** |
+| `location` | `{ name, lat, lon, precision?, note? }`: degrees, latitude north-positive, **longitude east-positive, -180..180**. `precision` is `reported` (default), `approximate`, or `target`; the latter two require a `note` explaining what the marker represents. A target is not located hardware. |
 | `headline` | one line, ≤ 90 characters |
 | `story` | **2–3** short paragraphs (≤ ~70 words each), **documentary narrator**, third person |
 | `facts` | 1–5 `{ label, value }` |
 | `images` | 0–3 real photos: `{ url, caption, credit, sourceUrl }`. At least 1 by the end (see NASA_DATA.md) |
-| `model` | heroes only: `{ path: "/<world>/models/<file>.glb", credit, sourceUrl }`; the file must exist in `public/` |
+| `model` | heroes only: `{ path: "/<world>/models/<file>.glb", credit, sourceUrl, description? }`; file must exist in `public/`. Describe generic, twin-mission, or pre-damage models explicitly; do not imply a reconstruction of the surviving relic. Self-contained GLB, below 10 MB. |
 | `sources` | at least 1 `{ title, url }`, https, official where possible |
 | `verified` | `true` only after a **human** opened the sources and checked the facts |
 

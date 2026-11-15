@@ -2,9 +2,10 @@
 //
 // <ScrollControls pages={n + 1}> makes an invisible page that is (n + 1) screens tall. Scrolling it
 // doesn't move anything by itself; CameraRig reads how far down you are and turns the globe.
-import { ScrollControls, Stars } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
+import { ScrollControls, Stars, useProgress } from "@react-three/drei";
+import { Canvas, useThree } from "@react-three/fiber";
+import { Suspense, useEffect } from "react";
+import { useTimeline } from "../state/timeline";
 import { relics } from "../data";
 import type { World } from "../types/relic";
 import ErrorBoundary from "../ui/ErrorBoundary";
@@ -18,12 +19,14 @@ export default function Experience({ world }: { world: World }) {
   const n = relics[world].length;
 
   return (
+    <>
     <Canvas
       className="experience-canvas"
       dpr={[1, 2]} // sharp on retina screens, but never more than 2× (performance)
       camera={{ position: [0, 0, 2.3], fov: 40, near: 0.1, far: 200 }}
       gl={{ antialias: true }}
     >
+      <ContextRecovery />
       <color attach="background" args={["#000"]} />
 
       {/* The "Sun": one light from the upper left, so craters and the edge of the planet get shadow.
@@ -49,5 +52,25 @@ export default function Experience({ world }: { world: World }) {
         </CameraRig>
       </ScrollControls>
     </Canvas>
+    <LoadingStatus />
+    </>
   );
+}
+
+function LoadingStatus() {
+  const { active, progress } = useProgress();
+  return active ? <p className="globe-loading mono" role="status">Loading NASA assets · {Math.round(progress)}%</p> : null;
+}
+
+function ContextRecovery() {
+  const canvas = useThree((s) => s.gl.domElement);
+  useEffect(() => {
+    const lost = (e: Event) => {
+      e.preventDefault();
+      useTimeline.getState().setMode("reading");
+    };
+    canvas.addEventListener("webglcontextlost", lost);
+    return () => canvas.removeEventListener("webglcontextlost", lost);
+  }, [canvas]);
+  return null;
 }

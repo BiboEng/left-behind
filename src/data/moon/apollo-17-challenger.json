@@ -46,6 +46,12 @@
       "sourceUrl": "https://lroc.im-ldi.com/images/72"
     }
   ],
+  "model": {
+    "path": "/moon/models/apollo-lunar-module.glb",
+    "credit": "NASA 3D Resources",
+    "sourceUrl": "https://science.nasa.gov/3d-resources/apollo-lunar-module/",
+    "description": "Generic complete Apollo lunar module. Challenger's rover and mission-specific equipment are not shown; the ascent stage did not remain at the landing site."
+  },
   "sources": [
     {
       "title": "NSSDCA: Apollo 17 Lunar Module / ALSEP",

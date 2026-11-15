@@ -4,9 +4,9 @@ import type { WorldConfig } from "./types";
 export const moon: WorldConfig = {
   id: "moon",
   name: "The Moon",
-  tagline: "TODO (Ibrahim): one line about what humanity left on the Moon",
-  intro: "TODO (Ibrahim): documentary intro, 1–2 sentences",
-  outro: "TODO (Ibrahim): 'this is today', plus what's coming next",
+  tagline: "Footprints, fallen spacecraft, and the cars we never drove home.",
+  intro: "Robots reached the surface before people did. Follow a selection of NASA machines from Ranger 7's final photographs to the rocket stage that helped reveal water in a dark polar crater.",
+  outro: "Leaving the Moon did not mean taking everything home. Descent stages, rovers, experiments, and impact craters preserve the history of these journeys; NASA's Lunar Reconnaissance Orbiter has photographed many of the sites from above.",
   // NASA SVS CGI Moon Kit, LRO LROC color map (2048 × 1024). Centered on 0° longitude, east to the right.
   // Calibrated: Apollo 11 lands on the SW edge of Mare Tranquillitatis with lonOffsetDeg 0 (open /?calibrate).
   texture: "/moon/moon-color-2k.jpg",

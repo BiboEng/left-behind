@@ -45,7 +45,13 @@ export interface Relic {
   lastContact?: string;
   status: RelicStatus;
   /** degrees; latitude north-positive, longitude EAST-positive (-180..180) */
-  location: { name: string; lat: number; lon: number };
+  location: {
+    name: string; lat: number; lon: number;
+    /** Omitted = reported site. Target regions must never be presented as found hardware. */
+    precision?: "reported" | "approximate" | "target";
+    /** Explain which feature/region the marker represents; required for non-reported sites. */
+    note?: string;
+  };
   /** one line, max 90 characters */
   headline: string;
   /** 2–3 short paragraphs, documentary narrator voice (third person) */
@@ -55,7 +61,7 @@ export interface Relic {
   /** 1–3 real photos */
   images: RelicImage[];
   /** hero relics only: NASA 3D model in public/<world>/models/ */
-  model?: { path: string; credit: string; sourceUrl: string };
+  model?: { path: string; credit: string; sourceUrl: string; description?: string };
   sources: Source[];
   /** true only after a human opened the sources and checked the facts */
   verified: boolean;

@@ -27,5 +27,22 @@ photos and models from each relic. Archives are recognized by web address in `DA
 Rules: NASA images and models are generally free to use, but always credit them, and don't use
 the NASA logo ("meatball") or insignia as our branding.
 
+## Bundled NASA models
+
+The model source URL and credit are stored on each relevant relic and included automatically in Credits.
+These self-contained, unmodified NASA GLBs are each below 10 MB:
+
+| Asset | Official source | Used by |
+| --- | --- | --- |
+| Apollo Lunar Module | https://science.nasa.gov/3d-resources/apollo-lunar-module/ | Apollo 11, 15 and 17; generic LM reference, not mission-specific remains |
+| Viking Lander | https://science.nasa.gov/3d-resources/viking-lander/ | Viking 1 |
+| Mars Exploration Rover Opportunity | https://science.nasa.gov/3d-resources/mars-exploration-rover-opportunity-mer-b/ | Opportunity and Spirit's shared rover design |
+| InSight | https://science.nasa.gov/3d-resources/insight-cruise-lander/ | InSight; reference configuration described on its card |
+| Ingenuity Mars Helicopter | https://science.nasa.gov/3d-resources/ingenuity-mars-helicopter/ | Ingenuity before rotor damage |
+
+Draco decompression is served locally from `public/decoders/`, copied from Three.js's compatible
+glTF decoder distribution. Its Apache 2.0 license and provenance are included there. The model
+viewer does not require an external decoder CDN.
+
 ## Avoid
 - The **Mars Rover Photos API** (api.nasa.gov) has been archived. Don't build on it.

@@ -1,15 +1,68 @@
 # Left Behind
 
-Everything humanity has left on the Moon and Mars, from the first crash to today, told through
-NASA open data on a scroll-through-time 3D globe.
+An interactive documentary atlas of **selected NASA hardware left on the Moon and Mars**.
+Explore 19 stories through NASA imagery, a scroll-through-time globe, and an accessible reading mode.
 
-NASA open data hackathon project by Ibrahim (Moon) and Rayan (Mars).
+A NASA Space Apps project by **Ibrahim and Rayan**, responding to
+[Abandoned but not Forgotten: Storytelling about NASA's Discarded Equipment on the Moon and Mars](https://www.spaceappschallenge.org/2026/challenges/nasas-discarded-equipment-storytelling/).
 
-- New here? → [`START-HERE.md`](START-HERE.md)
-- The plan → [`docs/PLAN.md`](docs/PLAN.md)
-- NASA data used → [`docs/NASA_DATA.md`](docs/NASA_DATA.md)
+## Run locally
 
-```
-npm install
+Use Node.js 22 and npm. These commands work on macOS and Windows:
+
+```text
+npm ci
 npm run dev
 ```
+
+Build and serve the production version:
+
+```text
+npm run build
+npm run preview
+```
+
+## Explore
+
+- Choose the Moon or Mars, then scroll through the timeline or use the labeled Previous / Next buttons.
+- Open **Mission index** to search stories, dates and places, or filter by world and mission status.
+- Select **Read without 3D** before choosing a world, or **Reading mode** while exploring. All stories and navigation work without WebGL. A WebGL failure also opens reading mode.
+- Share a selected relic using the browser URL. For example: `/?view=reading#mars/ingenuity`. Browser Back and Forward restore the location.
+- Use the arrow keys, Page Up / Down, or Home / End to navigate. Keyboard shortcuts pause while a dialog or form control has focus.
+- Six **Think like an explorer** questions connect mission engineering to scientific evidence, with feedback and a NASA reference.
+- Eight hero entries offer optional NASA 3D reference models. Models load only on request; rotation can be paused and respects reduced-motion preferences.
+- Every photo/model links to its source. Target regions and approximate positions are labeled; a target marker does not mean lost hardware has been found.
+
+The globe uses real NASA/USGS textures. Small marker symbols and 3D reference models are illustrative, not photographs of the surviving hardware. This is a curated selection, not a complete inventory of objects in space.
+
+## Validate
+
+```text
+npm test
+npm run lint
+npm run build
+npm run test:final
+```
+
+The first three checks validate data contracts, coordinates, credits, embedded GLB resources,
+timeline state, routing, and the production bundle. Pull requests run them in GitHub Actions.
+
+**The final check is a stricter release gate.** It also requires human source verification and a
+model for every hero entry. Source verification remains pending (`verified: false`); Pathfinder
+still has no suitable bundled NASA model. Do not mark sources verified without human review.
+
+## Project documentation
+
+- [Start here](START-HERE.md)
+- [Engine architecture](docs/ENGINE.md)
+- [Relic data contract](docs/DATA_CONTRACT.md)
+- [NASA data and attribution](docs/NASA_DATA.md)
+- [Challenge alignment and submission reference](docs/CHALLENGE.md)
+
+## AI assistance
+
+Ibrahim and Rayan defined the project concept and original direction. Devin (Cognition) assisted
+with mission discovery, narrative polish, reading-mode/navigation changes, model integration,
+draft educational questions, tests and documentation. New educational text is an AI-assisted
+draft grounded in the linked NASA sources and still needs the team's source review. NASA photos,
+textures and spacecraft models are credited source assets, not AI-generated imagery.

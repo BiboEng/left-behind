@@ -1,27 +1,20 @@
-// SHARED state between the 3D globe and the HTML overlay.
-// The engine WRITES progress + activeIndex, clears jumpTo, and clears target when a jump ends.
-// The UI sets world and calls jumpToRelic(). Everyone reads everything.
+// Shared navigation works with or without the renderer. Only the globe needs deferred jumps.
 import { create } from "zustand";
 import { relicById, relics } from "../data";
 import type { World } from "../types/relic";
 
-interface TimelineState {
-  /** null = landing screen */
-  world: World | null;
-  /** 0 = oldest relic, 1 = newest */
-  progress: number;
-  /** index into relics[world] of the relic the GLOBE is facing right now */
-  activeIndex: number;
-  /** relic id the engine should scroll to next (UI sets it, engine clears it) */
-  jumpTo: string | null;
-  /**
-   * index the timeline is travelling to after a jump (rail click, keys, Prev/Next), or null when
-   * the user is scrolling freely. While set, the UI shows this relic instead of every relic the
-   * globe glides past on the way, and a second key press counts from here.
-   */
-  target: number | null;
+export type ViewMode = "globe" | "reading";
 
+interface TimelineState {
+  world: World | null;
+  mode: ViewMode;
+  progress: number;
+  activeIndex: number;
+  jumpTo: string | null;
+  /** Destination shown while the globe travels, or null when settled. */
+  target: number | null;
   setWorld: (world: World | null) => void;
+  setMode: (mode: ViewMode) => void;
   setProgress: (progress: number) => void;
   setActiveIndex: (index: number) => void;
   jumpToRelic: (relicId: string) => void;
@@ -29,14 +22,28 @@ interface TimelineState {
   clearTarget: () => void;
 }
 
+const progressAt = (index: number, count: number) => count > 1 ? index / (count - 1) : 0;
+
 export const useTimeline = create<TimelineState>()((set, get) => ({
   world: null,
+  mode: "globe",
   progress: 0,
   activeIndex: 0,
   jumpTo: null,
   target: null,
-
   setWorld: (world) => set({ world, progress: 0, activeIndex: 0, jumpTo: null, target: null }),
+  setMode: (mode) => {
+    const s = get();
+    if (s.mode === mode) return;
+    const index = s.target ?? s.activeIndex;
+    const list = s.world ? relics[s.world] : [];
+    const relic = list[index];
+    set({
+      mode, activeIndex: index, progress: progressAt(index, list.length),
+      jumpTo: mode === "globe" && relic ? relic.id : null,
+      target: mode === "globe" && relic ? index : null,
+    });
+  },
   setProgress: (progress) => {
     if (progress !== get().progress) set({ progress });
   },
@@ -46,9 +53,18 @@ export const useTimeline = create<TimelineState>()((set, get) => ({
   jumpToRelic: (relicId) => {
     const relic = relicById.get(relicId);
     if (!relic) return;
-    if (relic.world !== get().world) set({ world: relic.world, progress: 0, activeIndex: 0 });
-    const target = relics[relic.world].findIndex((r) => r.id === relicId);
-    set({ jumpTo: relicId, target });
+    const list = relics[relic.world];
+    const index = list.findIndex((r) => r.id === relicId);
+    if (get().mode === "reading") {
+      set({ world: relic.world, activeIndex: index, progress: progressAt(index, list.length), jumpTo: null, target: null });
+    } else {
+      // Atomic across worlds: subscribers never observe the old world's pending destination.
+      const changedWorld = relic.world !== get().world;
+      set({
+        world: relic.world, jumpTo: relicId, target: index,
+        ...(changedWorld ? { progress: 0, activeIndex: 0 } : {}),
+      });
+    }
   },
   clearJump: () => set({ jumpTo: null }),
   clearTarget: () => {
@@ -56,5 +72,4 @@ export const useTimeline = create<TimelineState>()((set, get) => ({
   },
 }));
 
-/** The relic the UI should show: the jump destination while travelling, else the one in focus. */
 export const useShownIndex = () => useTimeline((s) => s.target ?? s.activeIndex);

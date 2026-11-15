@@ -1,29 +1,45 @@
-// A small, separate 3D view inside the story card for hero relics' NASA models (.glb).
-// It's its own <Canvas>, so it has nothing to do with the globe; StoryCard only mounts it for the
-// active hero, so at most one model is ever loaded at a time.
-import { OrbitControls, Stage, useGLTF } from "@react-three/drei";
+// Models load only when requested. Draco decoders ship locally rather than relying on a CDN.
+import { Environment, Html, Lightformer, OrbitControls, Stage, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
+import { useReducedMotion } from "../state/reducedMotion";
 
 function Model({ path }: { path: string }) {
-  const { scene } = useGLTF(path);
+  const { scene } = useGLTF(path, "/decoders/");
   return <primitive object={scene} />;
 }
 
 export default function ModelViewer({ path, label }: { path: string; label: string }) {
+  const reduced = useReducedMotion();
+  const [rotate, setRotate] = useState(true);
+  const spinning = rotate && !reduced;
   return (
-    <div className="model-viewer" role="img" aria-label={`3D model of ${label}, rotating. Drag to turn it.`}>
-      <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 4], fov: 35 }}>
-        <Suspense fallback={null}>
-          {/* Stage centers the model, scales the camera to fit, and adds soft studio lighting. */}
-          <Stage environment={null} intensity={1.2} shadows={false} adjustCamera={1.2}>
-            <Model path={path} />
-          </Stage>
-        </Suspense>
-        <ambientLight intensity={0.6} />
-        {/* Zoom off so the mouse wheel keeps scrolling the timeline instead. */}
-        <OrbitControls makeDefault autoRotate autoRotateSpeed={1.5} enablePan={false} enableZoom={false} />
-      </Canvas>
+    <div role="group" aria-label={`3D model of ${label}`}>
+      <div className="model-viewer">
+        <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 4], fov: 35 }}>
+          <color attach="background" args={["#14171c"]} />
+          <Suspense fallback={<Html center><span className="model-loading mono">Loading NASA model…</span></Html>}>
+            {/* Metallic spacecraft need something to reflect. Generate studio lighting locally:
+                no HDR/CDN request, and no changes to NASA's original model materials. */}
+            <Environment resolution={128}>
+              <color attach="background" args={["#39414c"]} />
+              <Lightformer intensity={3} position={[0, 4, 4]} scale={[6, 6, 1]} target={[0, 0, 0]} />
+              <Lightformer intensity={2} position={[-4, 1, -2]} scale={[4, 5, 1]} target={[0, 0, 0]} />
+            </Environment>
+            <Stage environment={null} intensity={1.2} shadows={false} adjustCamera={1}>
+              <Model path={path} />
+            </Stage>
+          </Suspense>
+          <ambientLight intensity={0.6} />
+          <OrbitControls makeDefault autoRotate={spinning} autoRotateSpeed={1.5} enablePan={false} enableZoom={false} />
+        </Canvas>
+      </div>
+      <div className="model-controls">
+        <span>Drag to turn</span>
+        <button className="back" aria-pressed={spinning} disabled={reduced} onClick={() => setRotate(!rotate)}>
+          {reduced ? "Reduced motion" : spinning ? "Pause rotation" : "Rotate model"}
+        </button>
+      </div>
     </div>
   );
 }
