@@ -34,7 +34,9 @@ Sources:
 
 A globe and waveform are established formats. Our proposed distinction is the evidence-to-exhibition
 story: an unfinished photograph, a clue exposed by damage, and a record outliving its instrument.
-We have not established a world-first claim.
+The fourth chapter adds a reversal: abandoned equipment itself became a source recorded by
+nearby equipment. Visitors can return to a published Apollo 17 catalog and compare that source's
+direction, with reproducible event counts and four-sensor arrival picks. We have not established a world-first claim.
 
 ## Implementation
 
@@ -52,11 +54,21 @@ We have not established a world-first claim.
    share a URL. Print/PDF and text exports retain citations and uncertainty.
 7. **Wider context.** Jump into the relevant atlas relic. Mission search, reading mode, models,
    approximate-location labels and aggregate Credits remain available.
+8. **Apollo 17: the machine becomes the signal.** Revisit Civilini, Husker and Weber's NASA-funded
+   analysis of LSPE data. Compare 3,250 cataloged events by month, direction and estimate quality;
+   inspect each event's four published arrival picks. The direction comparison has a fixed scale.
+   The share URL and downloadable receipt retain the exact filters, event, counts and provenance.
+   A direction match is not presented as proof of an individual event's source.
 
-The evidence room requires no WebGL. Five images and the unchanged source audio total less than
-600 kB; a separate 2.56 MB, 16,000 Hz playback WAV avoids native-browser failures with the source's
+The evidence room requires no WebGL. Six images and the unchanged InSight source audio total less than
+750 kB; a separate 2.56 MB, 16,000 Hz playback WAV avoids native-browser failures with the source's
 unusual 1,200 Hz rate. The resampling is disclosed beside the player and in exports. Both copies
 are local. The whole application is not an offline/PWA product.
+
+The Apollo catalog's 13,000 original sensor rows are grouped into 3,250 events. Its derived view
+loads only when the Apollo chapter is opened (about 128 kB gzip). The original 2.73 MB CSV remains
+available for download. The checksum and every derived entry are checked automatically. Credits
+distinguish NASA's instrument, the researchers' published result and our educational presentation.
 
 ## Rubric evidence
 

@@ -1,11 +1,14 @@
 // The reader can inspect the record before revealing its interpretation.
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { evidenceCases, signalMedia, signalSources, type EvidenceCase } from "../../data/signal";
 import { openSignal } from "../../state/router";
 import { useSignal } from "../../state/signal";
 import { useTimeline } from "../../state/timeline";
 import ArchiveFigure from "./ArchiveFigure";
 import SeismicRecord from "./SeismicRecord";
+
+// The catalog is downloaded only when this chapter is opened, never on the landing page.
+const LunarLab = lazy(() => import("./LunarLab"));
 
 export default function Investigation({ item }: { item: EvidenceCase }) {
   const cards = useSignal((s) => s.cards);
@@ -54,6 +57,7 @@ export default function Investigation({ item }: { item: EvidenceCase }) {
             </section>}
         </>}
         {item.id === "insight" && <SeismicRecord />}
+        {item.id === "apollo" && <ArchiveFigure media={signalMedia.apolloLander} eager />}
       </div>
 
       <div className="evidence-column">
@@ -86,6 +90,8 @@ export default function Investigation({ item }: { item: EvidenceCase }) {
       </div>
     </div>
 
+    {item.id === "apollo" && <Suspense fallback={<p role="status">Opening the Apollo catalog…</p>}><LunarLab /></Suspense>}
+
     <section className="legacy-panel">
       <p className="eyebrow">What the machine left us</p>
       <h2>{item.legacy}</h2>
@@ -99,7 +105,7 @@ export default function Investigation({ item }: { item: EvidenceCase }) {
           {next ? `Next: ${next.shortTitle.toLowerCase()}` : "Create your exhibition"} <span aria-hidden>→</span>
         </button>
       </div>
-      <p className="collection-note" role="status">{cards.length} of 3 stories in your exhibition. You choose what to keep.</p>
+      <p className="collection-note" role="status">{cards.length} of {evidenceCases.length} stories in your exhibition. You choose what to keep.</p>
     </section>
   </article>;
 }

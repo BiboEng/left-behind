@@ -76,6 +76,11 @@ function CreditsDialog() {
         <section>
           <h3>Data archives</h3>
           <ul className="credit-list">
+            <li>
+              <strong>Apollo 17 LSPE event catalog</strong>
+              <a href={signalSources.apolloCatalog.url} target="_blank" rel="noreferrer">Francesco Civilini, Allen Husker and Renee Weber · CaltechDATA v2.0 · CC0</a>
+              <span className="credits-note">NASA-funded reanalysis of NASA Apollo 17 data: 3,250 events, four sensor picks per event. The unchanged catalog is bundled; direction and variance use geo1. Filters and relative arrivals are exploratory displays, not new source locations.</span>
+            </li>
             {credits.datasets.map((use) => (
               <li key={use.dataset.url}>
                 <a href={use.dataset.url} target="_blank" rel="noreferrer">

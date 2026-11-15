@@ -44,7 +44,7 @@ export default function Exhibition() {
     </header>
     <section className="exhibit-editor no-print" aria-label="Curate your exhibition">
       <fieldset>
-        <legend>Choose your stories <span className="mono">{cards.length} / 3</span></legend>
+        <legend>Choose your stories <span className="mono">{cards.length} / {evidenceCases.length}</span></legend>
         <div className="exhibit-choices">
           {evidenceCases.map((item) => <label key={item.id}>
             <input type="checkbox" checked={cards.includes(item.id)} onChange={() => useSignal.getState().toggleCard(item.id)} />

@@ -21,9 +21,12 @@ describe("evidence provenance", () => {
       expect(allRelics.find((r) => r.id === item.relicId)?.world).toBe(item.world);
       expect(signalMedia[item.media]).toBeDefined();
       expect(item.sources).toContain(signalMedia[item.media].source);
+      expect(item.sources.some((key) => new URL(signalSources[key].url).hostname.endsWith(".nasa.gov"))).toBe(true);
       for (const key of item.sources) {
         expect(signalSources[key].title.trim()).toBeTruthy();
-        nasaUrl(signalSources[key].url);
+        const url = new URL(signalSources[key].url);
+        expect(url.protocol).toBe("https:");
+        expect(["nasa.gov", "caltech.edu"].some((host) => url.hostname === host || url.hostname.endsWith("." + host))).toBe(true);
       }
       for (const text of [item.observation, item.interpretation, item.limit, item.legacy]) expect(text.trim()).toBeTruthy();
     }

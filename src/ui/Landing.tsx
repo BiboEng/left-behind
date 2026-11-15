@@ -33,7 +33,7 @@ export default function Landing() {
           <button className="landing-primary" onClick={() => openSignal()}>
             <span>Enter After the Signal</span><span aria-hidden>↗</span>
           </button>
-          <p className="landing-duration mono">Three investigations · Two worlds · A story to take home</p>
+          <p className="landing-duration mono">Four investigations · Two worlds · A story to take home</p>
         </div>
         <figure className="landing-archive">
           <img src={hero.path} alt={hero.alt} fetchPriority="high" />
