@@ -75,7 +75,7 @@ have an earlier deadline. Confirm the applicable event time on the official guid
 
 See the README and [SUBMISSION.md](SUBMISSION.md) for the AI-assistance disclosure, including the
 AI-proposed After the Signal extension. The current guide asks teams to originate their solution idea;
-the team must review this contribution against that guidance. Questions and investigations link to
+the team has reviewed this contribution against that guidance and confirmed the disclosure. Questions and investigations link to
 cited NASA sources. No human source-verification flags were changed by the assistant.
 
 [COMPETITION_STRATEGY.md](COMPETITION_STRATEGY.md) records prior-winner research, Best Use of

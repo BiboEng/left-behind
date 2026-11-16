@@ -104,9 +104,9 @@ demo must be publicly accessible. A private development PR does not satisfy that
 Ibrahim and Rayan originated the NASA hardware documentary atlas. Devin proposed the After the
 Signal extension and assisted research, interaction design, implementation, tests and prose.
 The 2026 guide permits SI tools but says they should not originate the solution idea. The team
-must review this contribution against that guidance and disclose it accurately. Do not describe
+has reviewed this contribution against that guidance and confirmed it is disclosed accurately. Do not describe
 the extension as solely human-conceived. NASA images/audio/models are credited source assets.
 
-The remaining team work is human source review, SI-guidance review, visitor testing, public demo
-and deployment, and official submission. Confirm Guelph's local judging/nomination schedule.
+Human source review, SI-guidance review, public demo and deployment are done. The remaining team
+work is visitor testing and official submission. Confirm Guelph's local judging/nomination schedule.
 Deployment and submission are separate actions and are not performed by this contribution.

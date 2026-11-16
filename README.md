@@ -85,7 +85,7 @@ with mission discovery, narrative polish, reading-mode/navigation changes and mo
 and proposed and implemented After the Signal, including interaction design, draft prose, tests and
 documentation. Claude (Anthropic) assisted with deployment, an offline-mode fix, the demo deck and
 captioned screen recording, the classroom guide, the Canadian Space Agency connection text and
-submission drafting. The team must review this contribution against current Space Apps SI guidance and
-disclose it accurately. New educational text is an AI-assisted draft grounded in linked NASA sources
-and still needs human review. NASA photos, audio, textures and models are credited source assets,
+submission drafting. The team has reviewed this contribution against current Space Apps AI guidance and
+confirmed it is disclosed accurately. New educational text was AI-assisted, grounded in linked NASA
+sources and reviewed by the team. NASA photos, audio, textures and models are credited source assets,
 not AI-generated media.

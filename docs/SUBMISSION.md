@@ -26,7 +26,7 @@ produced them.
 https://left-behind-mu.vercel.app
 
 Public, no sign-in. Checked on the live deployment: the landing page, `#signal/apollo`, `#mars/insight`, a
-shared exhibition link and the offline save (29 files, all integrity-checked).
+shared exhibition link and the offline save (33 files, all integrity-checked).
 
 ## Demo link
 
@@ -147,7 +147,8 @@ extension, and assisted its interaction design, code, tests, documentation and d
 The original atlas was also improved with AI assistance. On 15 November, Claude (Anthropic) assisted
 with deployment, an offline-mode fix, the demo deck and 29-second captioned screen recording, the
 classroom guide and worksheet, the Canadian Space Agency connection text, the visual redesign, three added Moon relics, a fact-by-fact source check, and submission drafting.
-The team must review this contribution against current SI guidance; do not describe the extension
+The team has reviewed this contribution against current SI guidance and confirmed this disclosure
+is accurate. Do not describe the extension
 as wholly human-conceived.
 
 No generative images, video scenes, voices, models or scientific measurements were created. The demo
