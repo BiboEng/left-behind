@@ -40,11 +40,11 @@ npm run preview
 - InSight plays a browser-compatible resampling of NASA's 60× stereo sonification. The unchanged original drives the waveform.
 - Rebuild its sample-derived display with `npm run signal:waveform`. Regenerating the committed playback copy uses `npm run signal:audio` and requires FFmpeg; normal builds do not.
 
-- Choose the Moon or Mars, then scroll through the timeline or use the labeled Previous / Next buttons.
-- Open **Mission index** to search stories, dates and places, or filter by world and mission status.
-- Select **Read without 3D** before choosing a world, or **Reading mode** while exploring. All stories and navigation work without WebGL. A WebGL failure also opens reading mode.
+- Choose the Moon or Mars, then scroll through the timeline, use the labeled Previous / Next buttons, or the **Next stop** button at the end of each story. **Investigations** in the top bar opens After the Signal from any screen.
+- Open **Search** (Ctrl K / ⌘K) to find stories, dates and places across both worlds, or filter by world and mission status. Enter opens the top result.
+- Select **Read without 3D** under the world choices before choosing a world, or **Reading mode** while exploring. All stories and navigation work without WebGL. A WebGL failure also opens reading mode.
 - Share a selected relic using the browser URL. For example: `/?view=reading#mars/ingenuity`. Browser Back and Forward restore the location.
-- Use the arrow keys, Page Up / Down, or Home / End to navigate. Keyboard shortcuts pause while a dialog or form control has focus.
+- Use the arrow keys, Page Up / Down, or Home / End to navigate. Keyboard shortcuts pause while a dialog or form control has focus. Esc closes dialogs; it no longer leaves the globe (use **Home**).
 - Six **Think like an explorer** questions connect mission engineering to scientific evidence, with feedback and a NASA reference.
 - Eight hero entries offer optional NASA 3D reference models. Models load only on request; rotation can be paused and respects reduced-motion preferences.
 - Every photo/model links to its source. Target regions and approximate positions are labeled; a target marker does not mean lost hardware has been found.

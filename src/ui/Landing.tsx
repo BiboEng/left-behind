@@ -26,7 +26,7 @@ export default function Landing() {
       <header className="site-header">
         <span className="wordmark display">Left Behind</span>
         <nav aria-label="Main">
-          <button onClick={() => openSignal()}>The story</button>
+          <button onClick={() => openSignal()}>Investigations</button>
           <button onClick={() => setWorld("moon")}>Moon</button>
           <button onClick={() => setWorld("mars")}>Mars</button>
           <MissionIndex className="nav-search" />
@@ -41,7 +41,7 @@ export default function Landing() {
           <p className="hero-question display">What survives the last signal?</p>
           <p className="hero-deck">NASA's machines on the Moon and Mars have gone silent. Their photographs, measurements and recordings are still changing what we know.</p>
           <div className="hero-actions">
-            <button className="btn btn-primary" onClick={() => openSignal()}>Begin the story <span className="arrow" aria-hidden>→</span></button>
+            <button className="btn btn-primary" onClick={() => openSignal()}>Start investigating <span className="arrow" aria-hidden>→</span></button>
             <button className="btn" onClick={showWays}>Choose a world</button>
           </div>
           <p className="hero-meta">{evidenceCases.length} investigations · {total} machines · no sign-in</p>
@@ -59,7 +59,7 @@ export default function Landing() {
         <div className="ways-grid">
           <button className="way surface" onClick={() => openSignal()}>
             <img src={signalMedia.rangerLast.path} alt="" loading="lazy" />
-            <span className="label">The story · After the Signal</span>
+            <span className="label">Investigations · After the Signal</span>
             <strong className="display">Four records that outlived their machines</strong>
             <span className="way-text">A last photograph, a scar in the soil, a marsquake and an Apollo mystery. Then build your own exhibition.</span>
             <span className="way-go">Begin <span className="arrow" aria-hidden>→</span></span>
@@ -75,15 +75,19 @@ export default function Landing() {
             </button>;
           })}
         </div>
+        {/* Right under the choices it affects, not down in the footer. */}
+        <p className="ways-reading">
+          {mode === "reading" ? "Reading mode is on: Moon and Mars open as text, without the 3D globe." : "Prefer text only?"}{" "}
+          <button className="link" aria-pressed={mode === "reading"}
+            onClick={() => useTimeline.getState().setMode(mode === "reading" ? "globe" : "reading")}>
+            {mode === "reading" ? "Use the globe" : "Read without 3D"}
+          </button>
+        </p>
       </section>
 
       <OfflinePack />
 
       <footer className="site-footer">
-        <button className="link" aria-pressed={mode === "reading"}
-          onClick={() => useTimeline.getState().setMode(mode === "reading" ? "globe" : "reading")}>
-          {mode === "reading" ? "Reading mode is on" : "Read without 3D"}
-        </button>
         <a className="link" href="/classroom/" target="_blank" rel="noreferrer">Classroom guide</a>
         <a className="link" href="/demo/" target="_blank" rel="noreferrer">Project demo</a>
         <span>Real NASA records. Sources stay attached.</span>

@@ -17,6 +17,10 @@ export function formatDate(iso: string): string {
 
 export const year = (iso: string) => iso.slice(0, 4);
 
+/** Drops parentheticals, for tight buttons: "Viking 1 Lander (Thomas A. Mutch Memorial Station)" →
+ *  "Viking 1 Lander"; "Apollo 17 … Challenger (descent stage) and Lunar Roving Vehicle" keeps "and …". */
+export const shortName = (name: string) => name.replace(/\s*\([^)]*\)/g, "").trim();
+
 /** 0.674, 23.473 → "0.67° N · 23.47° E" */
 export function formatCoords(lat: number, lon: number): string {
   const ns = lat >= 0 ? "N" : "S";

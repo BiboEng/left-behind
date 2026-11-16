@@ -1,5 +1,7 @@
 // The reader can inspect the record before revealing its interpretation.
 import { lazy, Suspense, useState } from "react";
+import { relicById } from "../../data";
+import { shortName } from "../format";
 import { evidenceCases, signalMedia, signalSources, type EvidenceCase } from "../../data/signal";
 import { openSignal } from "../../state/router";
 import { useSignal } from "../../state/signal";
@@ -17,6 +19,7 @@ export default function Investigation({ item }: { item: EvidenceCase }) {
   const [rangerFrame, setRangerFrame] = useState<"first" | "last">("last");
   const [spiritView, setSpiritView] = useState<"camera" | "chemistry">("camera");
   const next = evidenceCases[evidenceCases.findIndex((entry) => entry.id === item.id) + 1];
+  const relic = relicById.get(item.relicId);
 
   return <article className={`investigation investigation-${item.id}`}>
     <header className="investigation-heading">
@@ -88,8 +91,9 @@ export default function Investigation({ item }: { item: EvidenceCase }) {
           <p>{item.partner.text}</p>
           <a href={signalSources[item.partner.source].url} target="_blank" rel="noreferrer">{signalSources[item.partner.source].title} <span aria-hidden>↗</span></a>
         </aside>}
+        {/* → not ↗: this stays in the app (↗ is kept for links that open a new tab). */}
         <button className="text-link locate-relic" onClick={() => useTimeline.getState().jumpToRelic(item.relicId)}>
-          Locate this machine in the atlas <span aria-hidden>↗</span>
+          Find {relic ? shortName(relic.name) : "this machine"} on the {item.world === "moon" ? "Moon" : "Mars"} globe <span aria-hidden>→</span>
         </button>
       </div>
     </div>

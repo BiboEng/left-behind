@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { useShownIndex, useTimeline } from "../state/timeline";
 import type { Relic } from "../types/relic";
-import { year } from "./format";
+import { shortName, year } from "./format";
 
 export default function TimelineRail({ list }: { list: Relic[] }) {
   // During a jump the rail highlights the destination right away.
@@ -31,7 +31,7 @@ export default function TimelineRail({ list }: { list: Relic[] }) {
                 <span className="dot" aria-hidden />
                 <span className="year mono">{year(r.arrived)}</span>
                 {/* Always rendered; CSS shows it for the active stop, and on hover/focus for the rest. */}
-                <span className="rail-name">{r.name}</span>
+                <span className="rail-name">{shortName(r.name)}</span>
               </button>
             </li>
           );

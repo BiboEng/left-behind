@@ -254,3 +254,5 @@
 .relay-step strong + span { color: var(--ink-2); }
 .relay li > a { color: var(--ink-3); font-size: var(--step--1); white-space: nowrap; padding-right: 0.5rem; }
 @media (max-width: 680px) { .relay-step { grid-template-columns: 3.5rem minmax(0, 1fr); gap: 0.75rem; } .relay li { flex-wrap: wrap; } .relay li > a { padding: 0 0.5rem 1rem 4.25rem; } }
+/* Relay steps open the Moon globe: say so. */
+.relay-step .relay-go { display: block; margin-top: 0.5rem; color: var(--gold); font-size: var(--step--1); font-weight: 600; }

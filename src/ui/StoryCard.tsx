@@ -6,7 +6,7 @@ import ExplorerQuestion from "./ExplorerQuestion";
 const ModelViewer = lazy(() => import("../engine/ModelViewer"));
 import type { Relic, RelicImage } from "../types/relic";
 import ErrorBoundary from "./ErrorBoundary";
-import { formatCoords, formatDate, STATUS_LABEL } from "./format";
+import { formatCoords, formatDate, shortName, STATUS_LABEL, year } from "./format";
 import { worlds } from "../worlds";
 import { useTimeline } from "../state/timeline";
 import { evidenceCases } from "../data/signal";
@@ -16,11 +16,13 @@ interface Props {
   relic: Relic;
   index: number;
   total: number;
+  /** The next stop in time, for the "Next stop" button at the end of the card (none on the last). */
+  next?: Relic;
   /** 1 = moving forward in time (card slides up from below), -1 = moving back (slides down) */
   direction: 1 | -1;
 }
 
-export default function StoryCard({ relic, index, total, direction }: Props) {
+export default function StoryCard({ relic, index, total, next, direction }: Props) {
   const [showModel, setShowModel] = useState(false);
   const reading = useTimeline((s) => s.mode === "reading");
   const investigation = evidenceCases.find((c) => c.relicId === relic.id);
@@ -80,7 +82,7 @@ export default function StoryCard({ relic, index, total, direction }: Props) {
 
         <p className="headline">{relic.headline}</p>
         {investigation && <button className="investigate-link" onClick={() => openSignal(investigation.id)}>
-          <span className="label">Part of the story · Act {Number(investigation.number)}</span>
+          <span className="label">Investigation · Act {Number(investigation.number)}</span>
           <span>{investigation.title}</span>
           <span className="arrow" aria-hidden>→</span>
         </button>}
@@ -134,6 +136,14 @@ export default function StoryCard({ relic, index, total, direction }: Props) {
           </section>
         )}
 
+        {/* An explicit way on at the end of the card, so finishing a story is a choice rather than
+            one scroll too many. */}
+        {next && <button className="next-stop" onClick={() => useTimeline.getState().jumpToRelic(next.id)}>
+          <span className="label">Next stop · {year(next.arrived)}</span>
+          <span>{shortName(next.name)}</span>
+          <span className="arrow" aria-hidden>→</span>
+        </button>}
+
         {index === total - 1 && <aside className="chapter-note journey-end">
           <p className="kicker">The story continues</p>
           <p>{worlds[relic.world].outro}</p>
@@ -141,7 +151,7 @@ export default function StoryCard({ relic, index, total, direction }: Props) {
             <button className="btn btn-primary" onClick={() => useTimeline.getState().setWorld(relic.world === "moon" ? "mars" : "moon")}>
               Travel to {relic.world === "moon" ? "Mars" : "the Moon"} <span className="arrow" aria-hidden>→</span>
             </button>
-            <button className="btn" onClick={() => openSignal()}>Open the evidence room</button>
+            <button className="btn" onClick={() => openSignal()}>Open the investigations</button>
           </div>
         </aside>}
         {/* Only in `npm run dev`: a reminder that a human still has to check this relic. */}

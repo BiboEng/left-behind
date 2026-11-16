@@ -97,11 +97,11 @@ function OfflinePackControl() {
   const busy = status === "saving" || status === "removing" || status === "checking";
   return <section className="offline-pack" aria-label="Offline evidence pack">
     <div><p className="offline-kicker mono">Take the evidence with you</p>
-      <h2>An evidence room that travels.</h2>
+      <h2>Investigations that travel.</h2>
       <p className="offline-explanation">Save all four investigations, the NASA audio, Apollo catalog and exhibition tools in this browser. NASA source websites and atlas media still need a connection.</p>
     </div>
     <div className="offline-controls">
-      <p className="offline-status" role="status">{status === "saved" ? `${online ? "Saved for offline use" : "You’re offline · saved edition ready"}.` : status === "saving" ? "Saving the complete evidence room… Keep this page open." : status === "removing" ? "Removing saved evidence…" : status === "checking" ? "Checking this browser’s saved evidence…" : status === "unsupported" ? "Offline saving isn’t supported in this browser." : notice || (online ? "Optional. No account needed." : "Connect to save an offline edition.")}</p>
+      <p className="offline-status" role="status">{status === "saved" ? `${online ? "Saved for offline use" : "You’re offline · saved edition ready"}.` : status === "saving" ? "Saving all four investigations… Keep this page open." : status === "removing" ? "Removing saved evidence…" : status === "checking" ? "Checking this browser’s saved evidence…" : status === "unsupported" ? "Offline saving isn’t supported in this browser." : notice || (online ? "Optional. No account needed." : "Connect to save an offline edition.")}</p>
       {supported && <div className="offline-buttons">
         {status === "saved" ? <button onClick={remove}>Remove saved pack</button> : <button disabled={busy || !online} onClick={save}>{status === "saving" ? "Saving…" : status === "error" ? "Retry saving" : `Save offline pack${size}`}</button>}
         {updateReady && <button disabled={busy} onClick={update}>Reload to open the new edition</button>}

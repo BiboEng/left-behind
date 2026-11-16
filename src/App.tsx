@@ -17,7 +17,7 @@ export default function App() {
   const reading = useTimeline((s) => s.mode === "reading");
   return (
     <>
-      {chapter ? <Suspense fallback={<p className="signal-loading" role="status">Opening the evidence room…</p>}>
+      {chapter ? <Suspense fallback={<p className="signal-loading" role="status">Opening the investigations…</p>}>
         <SignalRoom chapter={chapter} />
       </Suspense> : world ? (
         <main className={`experience ${reading ? "reading-mode" : ""}`} key={world}

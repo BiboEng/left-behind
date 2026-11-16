@@ -112,7 +112,7 @@ export default function Exhibition() {
               <ul>{item.sources.map((key) => <li key={key}><a href={signalSources[key].url} target="_blank" rel="noreferrer">{signalSources[key].title}</a></li>)}</ul>
               {item.id === "insight" && <p><strong>Audio credit:</strong> {signalAudio.credit}. {signalAudio.processing}</p>}
             </details>
-            <button className="text-link no-print" onClick={() => openSignal(item.id)}>Reopen this investigation <span aria-hidden>↗</span></button>
+            <button className="text-link no-print" onClick={() => openSignal(item.id)}>Reopen this investigation <span aria-hidden>→</span></button>
           </div>
         </article>)}
       </div>
@@ -127,7 +127,9 @@ export default function Exhibition() {
         {RELAY.map((step) => <li key={step.relic}>
           <button className="relay-step" onClick={() => useTimeline.getState().jumpToRelic(step.relic)}>
             <span className="relay-year">{step.year}</span>
-            <span><strong>{step.title}</strong><span>{step.text}</span></span>
+            <span><strong>{step.title}</strong><span>{step.text}</span>
+              {/* Says where the click goes: this leaves the page for the Moon globe. */}
+              <span className="relay-go">On the Moon globe <span aria-hidden>→</span></span></span>
           </button>
           <a href={step.source} target="_blank" rel="noreferrer">Source ↗</a>
         </li>)}

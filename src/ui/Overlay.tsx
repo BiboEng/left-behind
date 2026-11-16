@@ -9,11 +9,11 @@ import { relics } from "../data";
 import { CALIBRATION, calibrating } from "../engine/calibration";
 import { scrollTimelineBy } from "../engine/scrollBridge";
 import { useCredits } from "../state/credits";
-import { goHome } from "../state/router";
+import { goHome, openSignal } from "../state/router";
 import { useShownIndex, useTimeline } from "../state/timeline";
 import type { Relic, World } from "../types/relic";
 import { worlds } from "../worlds";
-import { year } from "./format";
+import { shortName, year } from "./format";
 import { CreditsButton } from "./Credits";
 import HomeButton from "./HomeButton";
 import StoryCard from "./StoryCard";
@@ -41,9 +41,11 @@ export default function Overlay({ world }: { world: World }) {
           {(["moon", "mars"] as World[]).map((w) => <button key={w} aria-pressed={w === world}
             onClick={() => w !== world && useTimeline.getState().setWorld(w)}>{worlds[w].name}</button>)}
         </div>
+        {/* The same third destination as the landing and investigation headers. */}
+        <button className="back topbar-signal" onClick={() => openSignal()}>Investigations</button>
         <span className="sr-only">{config.name}</span>
         {relic && <YearCounter year={year(relic.arrived)} className="current-year mono" />}
-        <MissionIndex world={world} className="back topbar-index" />
+        <MissionIndex className="back topbar-index" />
         <button className="back topbar-mode" aria-pressed={reading}
           onClick={() => useTimeline.getState().setMode(reading ? "globe" : "reading")}>
           {reading ? "Show globe" : "Reading mode"}
@@ -66,7 +68,8 @@ export default function Overlay({ world }: { world: World }) {
             ? <p className="reading-note">Reading mode · {config.name} · {shownIndex + 1} of {list.length}</p>
             : <ScrollHint />}
           <StepNav list={list} index={shownIndex} />
-          {relic && <StoryCard key={relic.id} relic={relic} index={shownIndex} total={list.length} direction={direction} />}
+          {relic && <StoryCard key={relic.id} relic={relic} index={shownIndex} total={list.length}
+            next={list[shownIndex + 1]} direction={direction} />}
         </>
       )}
     </div>
@@ -89,14 +92,15 @@ function ScrollHint() {
   if (dismissed || moved) return null;
   return (
     <p className="scroll-hint" aria-hidden>
-      <span className="hint-desktop">Scroll to travel forward in time</span>
+      <span className="hint-desktop">Scroll or press ↓ to travel forward in time</span>
       <span className="hint-touch">Swipe the globe to travel in time</span>
       <span className="hint-arrow">↓</span>
     </p>
   );
 }
 
-/** Phone only (hidden on desktop by CSS): previous / next relic buttons above the bottom sheet. */
+/** Previous / next relic buttons: under the globe on desktop, above the bottom sheet on phones.
+ *  They name the machine, not just the year: several Mars neighbours share a year (1976, 2004…). */
 function StepNav({ list, index }: { list: Relic[]; index: number }) {
   const jumpToRelic = useTimeline((s) => s.jumpToRelic);
   const prev = list[index - 1];
@@ -104,15 +108,19 @@ function StepNav({ list, index }: { list: Relic[]; index: number }) {
   return (
     <nav className="step-nav" aria-label="Previous and next relic">
       {prev ? (
-        <button onClick={() => jumpToRelic(prev.id)} aria-label={`Previous: ${prev.name}`}>
-          <span aria-hidden>‹</span> {year(prev.arrived)}
+        <button onClick={() => jumpToRelic(prev.id)} aria-label={`Previous: ${prev.name}`}
+          aria-keyshortcuts="ArrowUp" title={`Previous: ${prev.name} (↑ key)`}>
+          <span aria-hidden>←</span>
+          <span className="step-text"><span className="step-dir">Previous</span> {year(prev.arrived)} {shortName(prev.name)}</span>
         </button>
       ) : (
         <span />
       )}
       {next && (
-        <button onClick={() => jumpToRelic(next.id)} aria-label={`Next: ${next.name}`}>
-          {year(next.arrived)} <span aria-hidden>›</span>
+        <button onClick={() => jumpToRelic(next.id)} aria-label={`Next: ${next.name}`}
+          aria-keyshortcuts="ArrowDown" title={`Next: ${next.name} (↓ key)`}>
+          <span className="step-text"><span className="step-dir">Next</span> {year(next.arrived)} {shortName(next.name)}</span>
+          <span aria-hidden>→</span>
         </button>
       )}
     </nav>
@@ -152,7 +160,9 @@ function forwardWheel(e: WheelEvent<HTMLDivElement>) {
   scrollTimelineBy(dy);
 }
 
-/** ↑/↓ and PageUp/PageDown: previous/next relic. Home/End: first/last. Esc: back to the title. */
+/** ↑/↓ and PageUp/PageDown: previous/next relic. Home/End: first/last.
+ *  Esc deliberately does nothing here: people press it to dismiss things, and it used to throw
+ *  them all the way back to the title page. Dialogs still close on Esc by themselves. */
 function useKeyboard(world: World) {
   useEffect(() => {
     const list = relics[world];
@@ -161,10 +171,6 @@ function useKeyboard(world: World) {
       // The Credits screen handles its own keys (Esc closes it, arrows scroll it).
       if (useCredits.getState().open || document.querySelector("dialog[open]")) return;
       if (e.target instanceof Element && e.target.closest("input, select, textarea, [contenteditable]")) return;
-      if (e.key === "Escape") {
-        goHome();
-        return;
-      }
       // Arrow keys inside the story card scroll its text, like on any page. PageUp/Down still step.
       const inCard = e.target instanceof Element && e.target.closest(".story-card");
       if (inCard && (e.key === "ArrowDown" || e.key === "ArrowUp")) return;

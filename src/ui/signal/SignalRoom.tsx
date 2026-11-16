@@ -39,7 +39,7 @@ export default function SignalRoom({ chapter }: { chapter: SignalChapter }) {
         <button className="wordmark display" onClick={goHome} tabIndex={-1} aria-hidden>Left Behind</button>
       </div>
       <nav aria-label="Main">
-        <button aria-current="page" onClick={() => openSignal("intro")}>The story</button>
+        <button aria-current="page" onClick={() => openSignal("intro")}>Investigations</button>
         <button onClick={() => useTimeline.getState().setWorld("moon")}>Moon</button>
         <button onClick={() => useTimeline.getState().setWorld("mars")}>Mars</button>
         <MissionIndex className="nav-search" />

@@ -5,7 +5,7 @@ import { goHome } from "../state/router";
 export default function HomeButton() {
   return (
     <button type="button" className="back home-button" onClick={goHome} title="Back to the Left Behind title page">
-      <span aria-hidden>←</span> Home
+      Home
     </button>
   );
 }
