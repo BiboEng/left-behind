@@ -172,13 +172,13 @@ Avoid invented user statistics, global-first claims or a claim that this one cli
 
 ## Final submission steps
 
-1. **Human source review**: work through [VERIFY.md](VERIFY.md) and set `verified: true` only after
-   checking each relic yourselves. Redeploy afterwards (`npx vercel deploy --prod`).
+1. **Human source review**: done. Every relic was checked against its sources on 15 November 2026
+   ([VERIFY.md](VERIFY.md)).
 2. **SI disclosure**: the guide says SI tools "should not be used to come up with your idea". The
    atlas concept is yours; After the Signal was proposed by Devin. Describe this accurately in the SI field.
 3. **Team page**: confirm both members are registered for the Guelph Local Event and appear on the
-   Members tab. Edit the Project tab and paste the fields above. Replace the team name on slides 1 and 7 of
-   `public/demo/index.html` if it is not "Left Behind".
+   Members tab. Edit the Project tab and paste the fields above. The team name is **Space Agents**
+   (slides 1 and 7 of `public/demo/index.html` and `docs/demo-deck.pdf`).
 4. **Links**: open both links in a private window to confirm they work without signing in.
 5. Optional but recommended by Space Apps: request a FortiGuard Web Filter classification for
    `left-behind-mu.vercel.app` (category: Education) so judges' networks do not block it.
