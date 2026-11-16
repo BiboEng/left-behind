@@ -89,7 +89,6 @@ export default function Landing() {
 
       <footer className="site-footer">
         <a className="link" href="/classroom/" target="_blank" rel="noreferrer">Classroom guide</a>
-        <a className="link" href="/demo/" target="_blank" rel="noreferrer">Project demo</a>
         <span>Real NASA records. Sources stay attached.</span>
       </footer>
     </main>
