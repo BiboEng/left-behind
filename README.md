@@ -66,7 +66,7 @@ timeline state, routing, and the production bundle. Pull requests run them in Gi
 **The final check is a stricter release gate.** It also requires human source verification and a
 model for every hero entry. Every hero has a NASA model and every relic is marked verified: each fact was checked against its linked sources on 15 November 2026 (see [docs/VERIFY.md](docs/VERIFY.md) and [docs/EVIDENCE.md](docs/EVIDENCE.md)).
 
-Live: https://left-behind-steel.vercel.app · Demo deck: https://left-behind-steel.vercel.app/demo/ · 29-second video: https://left-behind-steel.vercel.app/demo/left-behind-demo.mp4
+Live: https://left-behind-mu.vercel.app · Demo deck: https://left-behind-mu.vercel.app/demo/ · 29-second video: https://left-behind-mu.vercel.app/demo/left-behind-demo.mp4
 
 ## Project documentation
 

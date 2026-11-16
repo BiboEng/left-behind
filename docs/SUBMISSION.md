@@ -23,18 +23,18 @@ produced them.
 
 ## Final project link
 
-https://left-behind-steel.vercel.app
+https://left-behind-mu.vercel.app
 
 Public, no sign-in. Checked on the live deployment: the landing page, `#signal/apollo`, `#mars/insight`, a
 shared exhibition link and the offline save (29 files, all integrity-checked).
 
 ## Demo link
 
-https://left-behind-steel.vercel.app/demo/
+https://left-behind-mu.vercel.app/demo/
 
 A seven-slide deck (the limit includes the title slide), hosted with the project, so it needs no sign-in.
 Slide 1 embeds a 29-second captioned walkthrough recorded from the live site, also available on its own at
-https://left-behind-steel.vercel.app/demo/left-behind-demo.mp4 (MP4/H.264, silent, under the 30-second limit).
+https://left-behind-mu.vercel.app/demo/left-behind-demo.mp4 (MP4/H.264, silent, under the 30-second limit).
 If you prefer to submit the video as the demo, use that link, or upload the MP4 to YouTube as Public or Unlisted.
 It shows the team name, members and challenge, as the guide requires. Use the arrow keys to move
 between slides. A PDF copy is in `docs/demo-deck.pdf` if a file upload is needed elsewhere.
@@ -87,7 +87,7 @@ resource before the complete batch is saved. Updates wait for an explicit reload
 seeking uses byte-range responses. External source websites and atlas media still need a connection.
 
 The audience is school-age explorers and casual space enthusiasts. A printable 45-minute teacher guide
-and student worksheet (https://left-behind-steel.vercel.app/classroom/) fits Ontario Grade 6 Science and
+and student worksheet (https://left-behind-mu.vercel.app/classroom/) fits Ontario Grade 6 Science and
 Technology (Strand E: Space) and Grade 9 Science (SNC1W, Strand E). It asks students to separate
 observations from interpretations and to name what further evidence they need. These are intended
 benefits, not measured classroom outcomes; the next step is a trial with students in Guelph.
@@ -181,6 +181,6 @@ Avoid invented user statistics, global-first claims or a claim that this one cli
    `public/demo/index.html` if it is not "Left Behind".
 4. **Links**: open both links in a private window to confirm they work without signing in.
 5. Optional but recommended by Space Apps: request a FortiGuard Web Filter classification for
-   `left-behind-steel.vercel.app` (category: Education) so judges' networks do not block it.
+   `left-behind-mu.vercel.app` (category: Education) so judges' networks do not block it.
 6. Tick both checkboxes and click **Submit for Judging** before 11:59 p.m. ET. A confirmation banner
    appears when it worked. You can edit and resubmit until the deadline.

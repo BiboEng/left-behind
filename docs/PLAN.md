@@ -25,6 +25,6 @@ done, add new ones as they come up.
 - [ ] Landing screen polish; loading screen so textures don't pop in
 - [ ] Read every card start to end and fix anything awkward
 - [ ] Test: `/preview` on both laptops and a phone; `npm run test:final` passes
-- [x] Deployed: https://left-behind-steel.vercel.app (Vercel project `left-behind`)
-- [x] Demo: 7-slide deck at https://left-behind-steel.vercel.app/demo/ (Space Apps allows 7 slides or 30 s of video, not 1–2 minutes)
+- [x] Deployed: https://left-behind-mu.vercel.app (Vercel project `left-behind`)
+- [x] Demo: 7-slide deck at https://left-behind-mu.vercel.app/demo/ (Space Apps allows 7 slides or 30 s of video, not 1–2 minutes)
 - [ ] Submit on the Space Apps team page before 11:59 p.m. ET, 15 Nov 2026 (fields in `docs/SUBMISSION.md`)
