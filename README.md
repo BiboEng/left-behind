@@ -2,81 +2,98 @@
 
 **They went silent. Their evidence didn't.**
 
-An interactive documentary about NASA hardware left on the Moon and Mars. **After the Signal**
-invites visitors to investigate archive images and seismic audio, then curate a source-linked
-exhibition to share or print. The companion atlas explores 22 relic stories through NASA imagery,
-a scroll-through-time globe and an accessible reading mode.
-
-A NASA Space Apps project by **Ibrahim and Rayan**, responding to
+An interactive documentary about the NASA hardware left behind on the Moon and Mars, built for
+**NASA Space Apps Challenge 2026** in response to
 [Abandoned but not Forgotten: Storytelling about NASA's Discarded Equipment on the Moon and Mars](https://www.spaceappschallenge.org/2026/challenges/nasas-discarded-equipment-storytelling/).
+
+**[Live site](https://left-behind-mu.vercel.app)** · [Demo deck](https://left-behind-mu.vercel.app/demo/) · [29-second video](https://left-behind-mu.vercel.app/demo/left-behind-demo.mp4)
+
+![Left Behind landing page](public/demo/landing.jpg)
+
+## What it is
+
+Left Behind has two parts:
+
+- **After the Signal** takes you through four investigations: Ranger 7's last photographs, Spirit's silica
+  discovery, InSight's final vibrations and an Apollo 17 seismic mystery. You work from real NASA
+  images and seismic audio, separate what was observed from what was interpreted, then curate a
+  source-linked exhibition you can share or print.
+- **The atlas** covers 22 relic stories on a 3D globe of the Moon or Mars. Scroll through time and
+  the globe turns to face each landing site, with NASA imagery, optional 3D models and a reading
+  mode that works without WebGL.
+
+| The Moon | Investigation | Apollo 17 seismic explorer |
+| --- | --- | --- |
+| ![Moon globe](public/demo/moon.jpg) | ![After the Signal](public/demo/signal.jpg) | ![Apollo seismic rose](public/demo/apollo-rose.jpg) |
+
+## Highlights
+
+- **Scroll-driven 3D globe:** real NASA/USGS textures and normal maps. As you scroll, the globe
+  slerps between relic coordinates, so their real positions drive the story.
+- **Seismic data explorer:** 3,250 published Apollo moonquake events, filterable by month and
+  estimate quality, with per-sensor arrival picks and a downloadable evidence receipt.
+- **Opt-in offline pack:** a service worker caches every investigation, audio file and the
+  catalog, using SHA-256 Subresource Integrity and versioned editions.
+- **Accessible by default:** full keyboard navigation, reading mode without WebGL,
+  reduced-motion support and shareable deep links for every relic and view.
+- **Source-verified:** every fact links to a NASA source and was checked by hand. A stricter
+  `test:final` gate enforces verification and attribution.
+
+## Tech stack
+
+- **Frontend:** React 19, TypeScript, Vite
+- **3D:** Three.js, React Three Fiber, drei, maath
+- **State:** Zustand
+- **Offline:** custom service worker with Subresource Integrity
+- **Quality:** Vitest, oxlint, GitHub Actions CI
+- **Hosting:** Vercel
+
+## How it works
+
+```
+src/
+  engine/    3D globe, camera rig, site markers, model viewer
+  ui/        landing, story cards, timeline rail, search, reading mode
+  data/      relic stories and the source-linked data contract
+  offline/   opt-in service worker and offline pack
+  state/     timeline and routing state (Zustand)
+```
+
+The engine is deliberately simple: one textured sphere, one camera and a scroll offset. The scroll
+position becomes a fractional relic index. The globe interpolates between "face this site"
+quaternions for neighbouring relics, and the camera eases out between sites and back in when a
+site is centred. See [docs/ENGINE.md](docs/ENGINE.md) for details.
 
 ## Run locally
 
-Use Node.js 22 and npm. These commands work on macOS and Windows:
+Requires Node.js 22.
 
 ```text
 npm ci
 npm run dev
 ```
 
-Build and serve the production version:
+Production build and checks:
 
 ```text
-npm run build
-npm run preview
-```
-
-## Explore
-
-- Enter **After the Signal**: Ranger 7's incomplete photographs, Spirit's silica discovery, InSight's recorded vibrations and an Apollo 17 seismic mystery.
-- Separate observation from interpretation, reveal scientific limits and inspect NASA sources.
-- Keep stories and build an exhibition. Copy its link, print/Save PDF or download source notes.
-- Direct links include #signal/ranger, #signal/spirit, #signal/insight, #signal/apollo and #signal/exhibit.
-- In Apollo's **Find the machine in the measurement**, compare the published directions of 3,250 events, filter by month and estimate quality, and inspect four sensors' arrival picks. Share the exact view or download its evidence receipt with counts, picks, methods, checksum and limits.
-- Rebuild the catalog's browser view with `npm run lunar:catalog`. The unchanged CC0 CSV from Civilini, Husker and Weber's NASA-funded study is included; this explorer calculates no new source locations.
-- **Save offline pack** on the landing screen or in the evidence-room footer saves all four investigations, both audio WAVs, the Apollo catalog, fonts and exhibition tools on this device. It registers a service worker only after the visitor opts in. NASA websites and atlas media still need a connection.
-- Offline saving works on HTTPS or localhost in the production build (`npm run build`, then `npm run preview`). Open the page while online, save, wait for **Saved for offline use**, then disconnect and reload. An unvisited Apollo chapter and the original catalog download are included. Audio seeking uses local HTTP byte-range responses.
-- A content fingerprint pins each saved edition; every resource is fetched with SHA-256 Subresource Integrity so a missing-file HTML fallback cannot be mistaken for evidence. A downloaded update offers **Reload to open the new edition**; it does not interrupt an exhibition. **Remove saved pack** unregisters this app's worker and removes only its caches. Browser storage can be cleared or evicted; confirm the saved status before travelling.
-- InSight plays a browser-compatible resampling of NASA's 60× stereo sonification. The unchanged original drives the waveform.
-- Rebuild its sample-derived display with `npm run signal:waveform`. Regenerating the committed playback copy uses `npm run signal:audio` and requires FFmpeg; normal builds do not.
-
-- Choose the Moon or Mars, then scroll through the timeline, use the labeled Previous / Next buttons, or the **Next stop** button at the end of each story. **Investigations** in the top bar opens After the Signal from any screen.
-- Open **Search** (Ctrl K / ⌘K) to find stories, dates and places across both worlds, or filter by world and mission status. Enter opens the top result.
-- Select **Read without 3D** under the world choices before choosing a world, or **Reading mode** while exploring. All stories and navigation work without WebGL. A WebGL failure also opens reading mode.
-- Share a selected relic using the browser URL. For example: `/?view=reading#mars/ingenuity`. Browser Back and Forward restore the location.
-- Use the arrow keys, Page Up / Down, or Home / End to navigate. Keyboard shortcuts pause while a dialog or form control has focus. Esc closes dialogs; it no longer leaves the globe (use **Home**).
-- Six **Think like an explorer** questions connect mission engineering to scientific evidence, with feedback and a NASA reference.
-- Eight hero entries offer optional NASA 3D reference models. Models load only on request; rotation can be paused and respects reduced-motion preferences.
-- Every photo/model links to its source. Target regions and approximate positions are labeled; a target marker does not mean lost hardware has been found.
-
-The globe uses real NASA/USGS textures. Small marker symbols and 3D reference models are illustrative, not photographs of the surviving hardware. This is a curated selection, not a complete inventory of objects in space.
-
-## Validate
-
-```text
+npm run build && npm run preview
 npm test
 npm run lint
-npm run build
-npm run test:final
 ```
 
-The first three checks validate data contracts, coordinates, credits, embedded GLB resources,
-timeline state, routing, and the production bundle. Pull requests run them in GitHub Actions.
+## Documentation
 
-**The final check is a stricter release gate.** It also requires human source verification and a
-model for every hero entry. Every hero has a NASA model and every relic is marked verified: each fact was checked against its linked sources on 15 November 2026 (see [docs/VERIFY.md](docs/VERIFY.md) and [docs/EVIDENCE.md](docs/EVIDENCE.md)).
-
-Live: https://left-behind-mu.vercel.app · Demo deck: https://left-behind-mu.vercel.app/demo/ · 29-second video: https://left-behind-mu.vercel.app/demo/left-behind-demo.mp4
-
-## Project documentation
-
-- [Start here](START-HERE.md)
+- [User guide](docs/GUIDE.md): every feature, keyboard shortcuts, offline pack, data scripts and validation
 - [Engine architecture](docs/ENGINE.md)
 - [Relic data contract](docs/DATA_CONTRACT.md)
 - [NASA data and attribution](docs/NASA_DATA.md)
-- [Challenge alignment and submission reference](docs/CHALLENGE.md)
-- [Global award strategy and prior-winner research](docs/COMPETITION_STRATEGY.md)
-- [Submission draft and 30-second demo script](docs/SUBMISSION.md)
+- [Source verification](docs/VERIFY.md) and [evidence log](docs/EVIDENCE.md)
+- [Challenge alignment](docs/CHALLENGE.md) and [submission](docs/SUBMISSION.md)
+
+## Team
+
+Built by **Ibrahim** ([BiboEng](https://github.com/BiboEng)) and **Rayan** ([rayanali2](https://github.com/rayanali2)) as **Team Space Agents**
+for NASA Space Apps Challenge 2026.
 
 ## AI assistance
 
@@ -85,7 +102,16 @@ with mission discovery, narrative polish, reading-mode/navigation changes and mo
 and proposed and implemented After the Signal, including interaction design, draft prose, tests and
 documentation. Claude (Anthropic) assisted with deployment, an offline-mode fix, the demo deck and
 captioned screen recording, the classroom guide, the Canadian Space Agency connection text and
-submission drafting. The team has reviewed this contribution against current Space Apps AI guidance and
+submission drafting. The team reviewed this contribution against current Space Apps AI guidance and
 confirmed it is disclosed accurately. New educational text was AI-assisted, grounded in linked NASA
 sources and reviewed by the team. NASA photos, audio, textures and models are credited source assets,
 not AI-generated media.
+
+## License and credits
+
+Code is released under the [MIT License](LICENSE). NASA imagery, audio, textures and 3D models are
+NASA/USGS source assets credited in-app and in [docs/NASA_DATA.md](docs/NASA_DATA.md). The Apollo
+seismic catalog is the unchanged CC0 dataset from Civilini, Husker and Weber. This is a curated
+selection of stories, not a complete inventory of objects on the Moon or Mars.
+
+*This project is not affiliated with or endorsed by NASA.*
